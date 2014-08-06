@@ -5,10 +5,10 @@
 #'
 #'@return A model object with a valid predict method
 #'
-#'@name modelLR
+#'@name logisticRegression
 
 
-modelLR <- function (df) {
+logisticRegression <- function (df) {
   if (!all(df$type %in% c('presence', 'absence', 'background'))) {
     stop ('only for presence/absence or presence/background data')
   }

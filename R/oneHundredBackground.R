@@ -15,11 +15,11 @@
 #'       columns 5-n - the values of the covariates for each records (the names of
 #'               these columns should correspond exactly to the names of the 
 #'               layers in ras)
-#'@name processA
+#'@name oneHundredBackground
 
 
 
-processA <- function (occ, ras) {
+oneHundredBackground <- function (occ, ras) {
   
   require (dismo)
   

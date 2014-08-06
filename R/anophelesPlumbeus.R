@@ -14,11 +14,11 @@
 #'       lon - the longitude of the record
 #'       lat - the latitutude of the record
 #'
-#'@name occurrenceCp
+#'@name anophelesPlumbeus
 
 
 
-occurrenceCp <- function (extent) {
+anophelesPlumbeus <- function (extent) {
   require (dismo)
   
   raw <- gbif(genus = 'Anopheles',

@@ -9,11 +9,11 @@
 #'@return a Raster* object (class from the raster package) with the gridded
 #'      covariates used to train and predict from the SDM.
 #'
-#'@name covariateAir
+#'@name airNCEP
 
 
 
-covariateAir <- function (extent) {
+airNCEP <- function (extent) {
   require(RNCEP)
   
   c1 <- NCEP.gather(variable = 'air',

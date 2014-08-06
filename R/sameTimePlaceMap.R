@@ -7,10 +7,10 @@
 #'@return A Raster object giving the probabilistic model predictions for each
 #'      cell of ras
 #'
-#'@name mapA
+#'@name sameTimePlaceMap
 
 
-mapA <- function (model, ras) {
+sameTimePlaceMap <- function (model, ras) {
   
   vals <- data.frame(getValues(ras))
   colnames(vals) <- names(ras)
