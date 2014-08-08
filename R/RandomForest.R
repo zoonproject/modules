@@ -5,11 +5,11 @@
 #'
 #'@return A model object with a valid predict method
 #'
-#'@name randomForest
+#'@name RandomForest
 
 
 
-randomForest <- function (df) {
+RandomForest <- function (df) {
   
   require ('randomForest')
   
