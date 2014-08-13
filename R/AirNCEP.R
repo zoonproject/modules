@@ -15,6 +15,7 @@
 
 AirNCEP <- function(){
   require(RNCEP)
+  require(raster)
   
   extent <- uk.extent <- c(xmin = -10,
               xmax = 10,

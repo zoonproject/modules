@@ -3,7 +3,6 @@
 NoProcess <-
 function(occurrence, ras){
 
-  require (dismo)
   
   noccurrence <- nrow(occurrence)
   
@@ -13,7 +12,7 @@ function(occurrence, ras){
   
   # combine with the occurrence data
   df <- cbind(occurrence,
-                   covs)
+                   occ_covs)
   
   names(df)[5:ncol(df)] <- names(ras)
   
