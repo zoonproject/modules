@@ -20,6 +20,12 @@
 
 AnophelesPlumbeus <- function(extent){
   require (dismo)
+
+  
+  extent <- uk.extent <- c(xmin = -10,
+              xmax = 10,
+              ymin = 45,
+              ymax = 65)
   
   raw <- gbif(genus = 'Anopheles',
               species = 'plumbeus',
