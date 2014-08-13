@@ -13,9 +13,14 @@
 
 
 
-AirNCEP <- function(extent){
+AirNCEP <- function(){
   require(RNCEP)
   
+  extent <- uk.extent <- c(xmin = -10,
+              xmax = 10,
+              ymin = 45,
+              ymax = 65)
+
   c1 <- NCEP.gather(variable = 'air',
                     level = 850,
                     months.minmax = c(1:2),
