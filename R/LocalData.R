@@ -1,9 +1,9 @@
 # A zoon module
-#@occurrence
+# @occurrence
 LocalData <-
 function(filename, occurrenceType){
   type <- tolower(occurrenceType)
-  assert_that(type %in% c('presence', 'presence/absence', 'abundance'))
+  #assert_that(type %in% c('presence', 'presence/absence', 'abundance'))
   occurrence <- read.csv(filename, header=TRUE)
   
   if(type == 'presence/absence') {
