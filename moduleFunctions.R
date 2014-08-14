@@ -1,27 +1,12 @@
+library(zoon)
 
-
-AnophelesPlumbeus <- function(extent){
-  require (dismo)
-  
-  raw <- gbif(genus = 'Anopheles',
-              species = 'plumbeus',
-              ext = extent)
-  
-  occurrence <- raw[, c('lon', 'lat')]
-  
-  occurrence$value <- 1
-  
-  occurrence$type <- 'presence'
-  
-  return(occurrence)
-}
 
 
 # Just a function to read local data in. 
 
 LocalData <- function(filename, occurrenceType){
   type <- tolower(occurrenceType)
-  assert_that(type %in% c('presence', 'presence/absence', 'abundance'))
+  #assert_that(type %in% c('presence', 'presence/absence', 'abundance'))
   occurrence <- read.csv(filename, header=TRUE)
   
   if(type == 'presence/absence') {
@@ -35,11 +20,14 @@ LocalData <- function(filename, occurrenceType){
   return(occurrence)
 }
 
+BuildModule(LocalData, 'occurrence', dir='~/Dropbox/zoon/modules/R')
+
+
+
 
 
 NoProcess <- function(occurrence, ras){
 
-  require (dismo)
   
   noccurrence <- nrow(occurrence)
   
@@ -49,7 +37,7 @@ NoProcess <- function(occurrence, ras){
   
   # combine with the occurrence data
   df <- cbind(occurrence,
-                   covs)
+                   occ_covs)
   
   names(df)[5:ncol(df)] <- names(ras)
   
@@ -57,6 +45,23 @@ NoProcess <- function(occurrence, ras){
   
 }
 
+BuildModule(NoProcess, 'process', dir='~/Dropbox/zoon/modules/R')
+
+
+
+
+# spocc module
+
+SpOcc <- function(species, extent, databases = 'gbif'){
+  require(spocc)
+  raw <- occ2df(occ(query = species, geometry = extent, from = databases, limit=10e5))
+  occurrence <- raw[,c('longitude', 'latitude')]
+  occurrence$value <- 1
+  occurrence$type <- 'presence'
+  return(occurrence) 
+}
+
+BuildModule(SpOcc, 'occurrence', dir = '~/Dropbox/zoon/modules/R')
 
 
 
