@@ -19,7 +19,7 @@
 
 
 
-OneHundredBackground <- function (occ, ras) {
+OneHundredBackground <- function (occurrence, ras) {
   
   require (dismo)
   
@@ -28,8 +28,7 @@ OneHundredBackground <- function (occ, ras) {
   }
   
   # generate pseudo-absence data
-  pa <- randomPoints(ras,
-                     100)
+  pa <- randomPoints(ras, 100)
   
   
   npres <- nrow(occ)
@@ -37,12 +36,11 @@ OneHundredBackground <- function (occ, ras) {
   npabs <- nrow(pa)
   
   # extract covariates
-  occ_covs <- as.matrix(extract(ras, occ[, c('lon', 'lat')]))
+  occ_covs <- as.matrix(extract(ras, occ[, c('longitude', 'latitude')]))
   
   pa_covs <- as.matrix(extract(ras, pa))
   
-  covs <- rbind(occ_covs,
-                pa_covs)
+  covs <- rbind(occ_covs, pa_covs)
   
   # combine with the occurrence data
   df <- data.frame(value = rep(c(1, 0),
