@@ -3,7 +3,7 @@
 #'process module to generate up to 100 background records at random in
 #'      cells of ras and return these along with the presence only data.
 #'
-#'@param occ Occurrence data, the output from an occurrence module
+#'@param occurrence Occurrence data, the output from an occurrence module
 #'@param ras Covariate data, the output from a covariate module
 #'
 #'@return Dataframe with at least 5 columns
@@ -23,7 +23,7 @@ OneHundredBackground <- function (occurrence, ras) {
   
   require (dismo)
   
-  if (!all(occ$type == 'presence')) {
+  if (!all(occurrence$type == 'presence')) {
     stop ('this function only works for presence-only data')
   }
   
@@ -31,12 +31,12 @@ OneHundredBackground <- function (occurrence, ras) {
   pa <- randomPoints(ras, 100)
   
   
-  npres <- nrow(occ)
+  npres <- nrow(occurrence)
   
   npabs <- nrow(pa)
   
   # extract covariates
-  occ_covs <- as.matrix(extract(ras, occ[, c('longitude', 'latitude')]))
+  occ_covs <- as.matrix(extract(ras, occurrence[, c('longitude', 'latitude')]))
   
   pa_covs <- as.matrix(extract(ras, pa))
   
@@ -47,8 +47,8 @@ OneHundredBackground <- function (occurrence, ras) {
                                c(npres, npabs)),
                    type = rep(c('presence', 'background'),
                               c(npres, npabs)),
-                   lon = c(occ$lon, pa[, 1]),
-                   lat = c(occ$lat, pa[, 2]),
+                   lon = c(occurrence$lon, pa[, 1]),
+                   lat = c(occurrence$lat, pa[, 2]),
                    covs)
   
   names(df)[5:ncol(df)] <- names(ras)
