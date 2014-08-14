@@ -1,7 +1,7 @@
 # A zoon module
 # @occurrence
 SpOcc <-
-function(species, extent, databases = c('gbif', 'bison', 'inat', 'ebird', 'ecoengine')){
+function(species, extent, databases = 'gbif'){
   require(spocc)
   raw <- occ2df(occ(query = species, geometry = extent, from = databases, limit=10e5))
   occurrence <- raw[,c('longitude', 'latitude')]
