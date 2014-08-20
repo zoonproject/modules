@@ -27,24 +27,41 @@ function(df, modelType){
   # Create a global predict method
   predict.BIOMOD.models.out <<- function(object, newdata, type='response'){
 
-    assert_that(class(newdata) == 'RasterLayer' || class(newdata) == 'RasterStack')
+    assert_that(class(newdata) == 'RasterLayer' || class(newdata) == 'RasterStack' || class(newdata) == 'data.frame')
 
-    if(class(newdata)=='RasterLayer'){
+    if(class(newdata) == 'RasterLayer'){
       new.data.stack <- stack(newdata)
-    } else {
+    } else if (class(newdata) == 'RasterStack') {
       new.data.stack <- newdata
+    } else {
+      if(!all(names(newdata) %in% object@expl.var.names) ){
+        stop('Variable names in newdata and the model object do not match')
+      }
+      new.data.df <- newdata
     }
 
+    if(class(newdata) == 'RasterLayer' || class(newdata) == 'RasterStack'){
+      biomodProject <- BIOMOD_Projection(
+        modeling.output = object,
+        new.env = new.data.stack,
+        proj.name ='current',
+        selected.models ='all',
+        clamping.mask = F,
+        output.format ='.grd',
+        silent=TRUE
+      )
+    } else {
+      biomodProject <- BIOMOD_Projection(
+        modeling.output = object,
+        new.env = new.data.df,
+        proj.name ='current',
+        selected.models ='all',
+        clamping.mask = F,
+        output.format ='.RData',
+        silent=TRUE
+      )
+    }
 
-    biomodProject <- BIOMOD_Projection(
-      modeling.output = object,
-      new.env = new.data.stack,
-      proj.name ='current',
-      selected.models ='all',
-      clamping.mask = F,
-      output.format ='.grd',
-      silent=TRUE
-    )
 
     preds <- get_predictions(biomodProject)
     
