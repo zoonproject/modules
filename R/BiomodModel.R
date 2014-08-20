@@ -25,7 +25,7 @@ function(df, modelType){
   )
 
   # Create a global predict method
-  predict.BIOMOD.models.out <<- function(object, newdata){
+  predict.BIOMOD.models.out <<- function(object, newdata, type='response'){
 
     assert_that(class(newdata) == 'RasterLayer' || class(newdata) == 'RasterStack')
 
