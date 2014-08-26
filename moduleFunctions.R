@@ -166,7 +166,11 @@ BiomodModel <- function(df, modelType){
 
   }
 
-  assign('predict.BIOMOD.models.out', biomodPredictMethod, pos = sys.frame(2))
+  assign('predict.BIOMOD.models.out', biomodPredictMethod, pos = sys.frame(-2))
+
+  print('HEllo')
+  print(where('biomodPredictMethod'))
+  print(where('predict.BIOMOD.models.out'))
 
   return(myBiomodModelOut)
 
