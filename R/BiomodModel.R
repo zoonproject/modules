@@ -71,7 +71,7 @@ function(df, modelType){
   }
   print(sys.status())
 
-  assign('predict.BIOMOD.models.out', biomodPredictMethod, pos=-2)
+  assign('predict.BIOMOD.models.out', biomodPredictMethod, envir=.modules)
 
   return(myBiomodModelOut)
 
