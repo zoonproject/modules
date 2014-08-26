@@ -28,7 +28,7 @@ function(df, modelType){
   biomodPredictMethod <- function(object, newdata, type='response'){
   #  predict.BIOMOD.models.out <<- function(object, newdata, type='response'){
 
-    assert_that(class(newdata) == 'RasterLayer' || class(newdata) == 'RasterStack' || class(newdata) == 'data.frame')
+    assertthat::assert_that(class(newdata) == 'RasterLayer' || class(newdata) == 'RasterStack' || class(newdata) == 'data.frame')
 
     if(class(newdata) == 'RasterLayer'){
       new.data.stack <- stack(newdata)
