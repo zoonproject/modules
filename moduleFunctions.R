@@ -166,7 +166,7 @@ BiomodModel <- function(df, modelType){
 
   }
 
-  assign('predict.BIOMOD.models.out', biomodPredictMethod, pos=-3)
+  assign('predict.BIOMOD.models.out', biomodPredictMethod, pos=1)
 
   return(myBiomodModelOut)
 
