@@ -169,8 +169,8 @@ BiomodModel <- function(df, modelType){
   assign('predict.BIOMOD.models.out', biomodPredictMethod)
 
   print('HEllo')
-  try(print(where('biomodPredictMethod')))
-  try(print(where('predict.BIOMOD.models.out')))
+  try(paste('infunc1', print(where('biomodPredictMethod'))))
+  try(paste('infunc2',print(where('predict.BIOMOD.models.out'))))
 
   return(myBiomodModelOut)
 
