@@ -166,8 +166,8 @@ BiomodModel <- function(df, modelType){
 
   }
 
-  predict.BIOMOD.models.out <<- biomodPredictMethod
-  #assign('predict.BIOMOD.models.out', biomodPredictMethod)
+
+  assign('predict.BIOMOD.models.out', biomodPredictMethod, envir = .GlobalEnv)
 
   return(myBiomodModelOut)
 
