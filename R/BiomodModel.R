@@ -25,7 +25,7 @@ function(df, modelType){
   )
 
   # Create a global predict method
-  biomodPredictMethod <- function(object, newdata, type='response'){
+  predict.BIOMOD.models.out <<- function(object, newdata, type='response'){
   #  predict.BIOMOD.models.out <<- function(object, newdata, type='response'){
 
     assertthat::assert_that(class(newdata) == 'RasterLayer' || class(newdata) == 'RasterStack' || class(newdata) == 'data.frame')
@@ -70,11 +70,7 @@ function(df, modelType){
 
   }
 
-  assign('predict.BIOMOD.models.out', biomodPredictMethod)
-
-  print('HEllo')
-  try(print(paste('infunc1', where('biomodPredictMethod'))))
-  try(print(paste('infunc2',where('predict.BIOMOD.models.out'))))
+  #assign('predict.BIOMOD.models.out', biomodPredictMethod)
 
   return(myBiomodModelOut)
 
