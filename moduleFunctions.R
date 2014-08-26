@@ -166,10 +166,11 @@ BiomodModel <- function(df, modelType){
 
   }
 
-  assign('predict.BIOMOD.models.out', biomodPredictMethod, pos = .GlobalEnv())
+  assign('predict.BIOMOD.models.out', biomodPredictMethod)
 
   print('HEllo')
   try(print(where('biomodPredictMethod')))
+  try(print(where('predict.BIOMOD.models.out')))
 
   return(myBiomodModelOut)
 
@@ -177,23 +178,6 @@ BiomodModel <- function(df, modelType){
 
 
 BuildModule(BiomodModel, 'model', dir='~/Dropbox/zoon/modules/R')
-
-
-
-
-x <- function(){
-    y()
-    z()
-    print('done')
-}
-
-y <- function(){
-  z <- function(){
-    print('hello?')
-  }
-  assign('z', z, pos = sys.frame(1))
-
-}
 
 
 # NCEP data

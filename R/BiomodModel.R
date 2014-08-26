@@ -70,10 +70,11 @@ function(df, modelType){
 
   }
 
-  assign('predict.BIOMOD.models.out', biomodPredictMethod, pos = .GlobalEnv())
+  assign('predict.BIOMOD.models.out', biomodPredictMethod)
 
   print('HEllo')
   try(print(where('biomodPredictMethod')))
+  try(print(where('predict.BIOMOD.models.out')))
 
   return(myBiomodModelOut)
 
