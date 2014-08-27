@@ -95,6 +95,10 @@ UKAnophelesPlumbeus <- function(){
 BuildModule(UKAnophelesPlumbeus, 'occurrence', dir='~/Dropbox/zoon/modules/R')
 
 
+
+
+
+
 # Wrapper for biomod2 model function
 
 BiomodModel <- function(df, modelType){
@@ -103,7 +107,7 @@ BiomodModel <- function(df, modelType){
   biomodData <- BIOMOD_FormatingData(resp.var = df$value, expl.var = df[,5:NCOL(df), drop=FALSE], resp.xy = df[,c('lon', 'lat')], resp.name = 'Species')
 
   myBiomodOptions <- BIOMOD_ModelingOptions()
-
+  #print(sys.status())
   
   myBiomodModelOut <- BIOMOD_Modeling(
     biomodData,
@@ -160,15 +164,14 @@ BiomodModel <- function(df, modelType){
     }
 
 
-    preds <- get_predictions(biomodProject)
+    preds <- as.vector(get_predictions(biomodProject))
     
     return(preds)  
 
   }
-  print(sys.status())
 
-  assign('predict.BIOMOD.models.out', biomodPredictMethod, envir=.modules)
 
+  assign('predict.BIOMOD.models.out', biomodPredictMethod, envir=parent.frame(1))
   return(myBiomodModelOut)
 
 }
