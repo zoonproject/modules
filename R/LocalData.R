@@ -1,5 +1,11 @@
-# A zoon module
-# @occurrence
+#'Format local occurrence data to be used with zoon. 
+#'
+#'@param filename The path to the file. Currently assumed a .csv file.
+#'@param occurrenceType What type data is it? 
+#'One of 'presence', 'presence/absence', 'abundance')
+#'
+#'@seealso \code{\link{read.csv}}
+#'@name LocalData
 LocalData <-
 function(filename, occurrenceType){
   type <- tolower(occurrenceType)

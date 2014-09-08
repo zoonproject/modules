@@ -1,5 +1,15 @@
-# A zoon module
-# @model
+#'Model module wrapper for BIOMOD_Modeling()
+#'
+#'@param modelType A character vector to describe models to use. Select from 
+#''GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT' 
+#'
+#'@return a Raster* object (class from the raster package) with the gridded
+#'      covariates used to train and predict from the SDM.
+#'
+#'@name AirNCEP
+#'@seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}
+
+
 BiomodModel <-
 function(df, modelType){
   require(biomod2)

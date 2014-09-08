@@ -1,5 +1,22 @@
-# A zoon module
-# @occurrence
+#'Occurrence module to collect occurrence data from a number of data bases.
+#'
+#'@param species A character string giving the species name.
+#'  e.g. 'Anopheles plumbeus'.
+#'  
+#'@param extent A numeric vector of length 4 giving the coordinates of the 
+#'  rectangular region within which to carry out the analysis, in the 
+#'  order: xmin, xmax, ymin, ymax.
+#'
+#'@param databases A character vector giving the databases to use.
+#'  Choose from "gbif", "bison", "inat", "ebird", "ecoengine", "antweb".
+#'  Defaults to gbif. Note I have had some problems with databases other
+#'  than gbif.
+#'@seealso \code{\link{spooc::occ}}
+#'
+#'
+#'@name SpOcc
+
+
 SpOcc <-
 function(species, extent, databases = 'gbif'){
   require(spocc)

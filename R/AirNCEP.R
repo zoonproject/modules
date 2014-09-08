@@ -1,16 +1,12 @@
-
 #'covariate module to grab a coarse resolution mean air temperature raster from
-#'       January-February 2001-2002 for the given extent.
+#'  January-February 2001-2002 for the given extent.
 #'
-#'@param extent A numeric vector of length 4 giving the coordinates of the 
-#'      rectangular region within which to carry out the analysis, in the 
-#'      order: xmin, xmax, ymin, ymax.
 #'
 #'@return a Raster* object (class from the raster package) with the gridded
-#'      covariates used to train and predict from the SDM.
+#'  covariates used to train and predict from the SDM.
 #'
+#'@seealso \code{\link{RNCEP::NCEP.gather}}
 #'@name AirNCEP
-
 
 
 AirNCEP <- function(){

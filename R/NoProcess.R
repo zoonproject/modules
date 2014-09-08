@@ -1,5 +1,14 @@
-# A zoon module
-# @process
+
+#'Process module that does nothing. A place holder for if nothing should be
+#'done to the data before modelling.
+#'
+#'
+#'@return a Raster* object (class from the raster package) with the gridded
+#'      covariates used to train and predict from the SDM.
+#'
+#'@name NoProcess
+
+
 NoProcess <-
 function(occurrence, ras){
 
