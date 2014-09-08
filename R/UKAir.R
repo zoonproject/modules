@@ -1,6 +1,6 @@
 #'Return some UK air temperature data from NCEP. Data is bundled with package.
 #'
-#'@name UKAnophelesPlumbeus
+#'@name UKAir
 UKAir <-
 function(){
   return(UKAirRas)

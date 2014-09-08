@@ -6,7 +6,7 @@
 #'@return a Raster* object (class from the raster package) with the gridded
 #'      covariates used to train and predict from the SDM.
 #'
-#'@name AirNCEP
+#'@name BiomodModel
 #'@seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}
 
 
