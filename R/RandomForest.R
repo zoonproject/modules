@@ -1,5 +1,5 @@
 
-#' model module to fit a simple RandomForest classification model
+#'Model module to fit a simple RandomForest classification model
 #'
 #'@param df A dataframe, the output from a process module
 #'

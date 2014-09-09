@@ -1,5 +1,5 @@
 
-#' model module to fit a simple logistic regression model
+#'Model module to fit a simple logistic regression model
 #'
 #'@param df A dataframe, the output from a process module
 #'

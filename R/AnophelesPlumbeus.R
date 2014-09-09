@@ -1,5 +1,5 @@
 
-#'occurrence module to grab *Anopheles plumbeus* (a mosquito) occurrence (i.e.
+#'Occurrence module to grab *Anopheles plumbeus* (a mosquito) occurrence (i.e.
 #'       presence-only) data from GBIF, in the area bounded by extent.
 #'       Perhaps this should have temporal interval too for future-proofing?
 #'

@@ -1,12 +1,9 @@
-#'covariate module to grab a coarse resolution mean air temperature raster from
+#'Covariate module to grab a coarse resolution mean air temperature raster from
 #'  January-February 2001-2002 for the given extent.
-#'
-#'
-#'@return a Raster* object (class from the raster package) with the gridded
-#'  covariates used to train and predict from the SDM.
 #'
 #'@seealso \code{\link{RNCEP::NCEP.gather}}
 #'@name AirNCEP
+#'
 
 
 AirNCEP <- function(){

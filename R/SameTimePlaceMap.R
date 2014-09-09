@@ -1,5 +1,5 @@
 
-#' A function for outputing the raster of the predictions from an analysis
+#'Output module. A function for outputing the raster of the predictions from an analysis
 #'
 #'@param model A model object, the output from a model module
 #'@param ras A Raster* object, the output from a covariate module

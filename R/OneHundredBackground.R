@@ -1,6 +1,6 @@
 
 
-#'process module to generate up to 100 background records at random in
+#'Process module to generate up to 100 background records at random in
 #'      cells of ras and return these along with the presence only data.
 #'
 #'@param occurrence Occurrence data, the output from an occurrence module
