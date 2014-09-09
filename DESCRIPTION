@@ -11,8 +11,8 @@ URL: www.github.com/zoonproject/modules
 Imports:
     
 Depends:
-    NA
+    
 Suggests:
-    NA
+    
 VignetteBuilder: NA
 LazyData: NA

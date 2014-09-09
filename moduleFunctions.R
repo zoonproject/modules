@@ -238,9 +238,37 @@ SurfaceMap <- function (model, ras, dir='.') {
   
 }
 
-BuildModule(SurfaceMap, 'Output', '~', 
-  description='Plot a map of predicted surface.', paras=list(dir="Where to save figures. Defaults to the working directory.")) 
+BuildModule(SurfaceMap, 'Output', '~/Dropbox/zoon/modules/R', 
+  description='Make a png of a map of predicted surface.', paras=list(dir="Where to save figures. Defaults to the working directory.")) 
 
+
+
+
+# Surface map
+
+PrintMap <- function (model, ras) {
+  
+  vals <- data.frame(getValues(ras))
+  colnames(vals) <- names(ras)
+  
+  pred <- predict(model,
+                  newdata = vals,
+                  type = 'response')
+  
+  pred_ras <- ras[[1]]
+  
+  pred_ras <- setValues(pred_ras, pred)
+
+
+  plot(ras) 
+  
+  
+  return(NULL)
+  
+}
+
+BuildModule(PrintMap, 'Output', '~/Dropbox/zoon/modules/R', 
+  description='Plot a map of predicted surface.') 
 
 
 
