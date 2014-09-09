@@ -1,0 +1,18 @@
+Package: ZoonModules
+Type: Package
+Title: Modules for the zoon package.
+Version: 0.1
+Date: 2014-09-05
+Author: Tim Lucas, Nick Golding, Greg McInerny, Emiel van Loon
+Maintainer: Tim Lucas <timcdlucas@gmail.com>
+Description: 
+License: BSD_3_clause + file LICENSE.md
+URL: www.github.com/zoonproject/modules
+Imports:
+    
+Depends:
+    NA
+Suggests:
+    NA
+VignetteBuilder: NA
+LazyData: NA
