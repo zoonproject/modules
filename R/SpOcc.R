@@ -1,3 +1,5 @@
+#'Occurrence module: SpOcc
+#'
 #'Occurrence module to collect occurrence data from a number of data bases.
 #'
 #'@param species A character string giving the species name.

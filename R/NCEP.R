@@ -1,3 +1,5 @@
+#'Covariate module: NCEP
+#'
 #'Covariate module to grab coarse resolution environmental data from NCEP
 #'
 #'@param extent A numeric vector of length 4 giving the coordinates of the 
@@ -13,8 +15,6 @@
 #'       *‘uwnd’*   U-Wind Component [East/West]    m/s      
 #'       *‘vwnd’*   V-Wind Component [North/South]  m/s      
 #'
-#'@return a Raster* object (class from the raster package) with the gridded
-#'  covariates used to train and predict from the SDM.
 #'
 #'@seealso \code{\link{RNCEP::NCEP.gather}}
 #'@name NCEP

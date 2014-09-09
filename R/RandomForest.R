@@ -1,7 +1,6 @@
-
-#'Model module to fit a simple RandomForest classification model
+#'Model module: RandomForest
 #'
-#'@param df A dataframe, the output from a process module
+#'Model module to fit a simple RandomForest classification model
 #'
 #'@return A model object with a valid predict method
 #'

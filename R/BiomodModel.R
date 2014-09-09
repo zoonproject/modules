@@ -1,3 +1,5 @@
+#'Model module: BiomodModel
+#'
 #'Model module wrapper for BIOMOD_Modeling()
 #'
 #'@param modelType A character vector to describe models to use. Select from 

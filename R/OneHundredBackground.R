@@ -1,10 +1,9 @@
 
-
+#'Process module: OneHundredBackground
+#'
 #'Process module to generate up to 100 background records at random in
 #'      cells of ras and return these along with the presence only data.
 #'
-#'@param occurrence Occurrence data, the output from an occurrence module
-#'@param ras Covariate data, the output from a covariate module
 #'
 #'@return Dataframe with at least 5 columns
 #'       value - a numeric value which may give 1 for presences, 0 for absences 

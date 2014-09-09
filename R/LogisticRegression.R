@@ -1,9 +1,8 @@
-
+#'Model module: LogisticRegression
+#'
 #'Model module to fit a simple logistic regression model
 #'
-#'@param df A dataframe, the output from a process module
-#'
-#'@return A model object with a valid predict method
+#'@seealso \code{\link{glm}}
 #'
 #'@name LogisticRegression
 

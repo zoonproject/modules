@@ -1,16 +1,14 @@
-
-#'Output module. A function for outputing the raster of the predictions from an analysis
+#'Output module: SameTimePlaceMap
 #'
-#'@param model A model object, the output from a model module
-#'@param ras A Raster* object, the output from a covariate module
+#'Output module. A function for outputing the raster of the predictions from an analysis
 #'
 #'@return A Raster object giving the probabilistic model predictions for each
 #'      cell of ras
 #'
-#'@name sameTimePlaceMap
+#'@name SameTimePlaceMap
 
 
-sameTimePlaceMap <- function (model, ras) {
+SameTimePlaceMap <- function (model, ras) {
   
   vals <- data.frame(getValues(ras))
   colnames(vals) <- names(ras)
