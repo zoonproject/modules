@@ -215,24 +215,31 @@ BuildModule(NCEP, 'covariate', dir='~/Dropbox/zoon/modules/R')
 
 
 
+# Surface map
 
+SurfaceMap <- function (model, ras, dir='.') {
+  
+  vals <- data.frame(getValues(ras))
+  colnames(vals) <- names(ras)
+  
+  pred <- predict(model,
+                  newdata = vals,
+                  type = 'response')
+  
+  pred_ras <- ras[[1]]
+  
+  pred_ras <- setValues(pred_ras, pred)
 
+  png(paste0(dir,"/ZoonMap", Sys.time(), ".png"))
+  plot(ras) 
+  dev.off()
+  
+  return(NULL)
+  
+}
 
-
-# Get world clim data
-#  library(raster)
-# w = getData('worldclim', var='tmin', res=0.5, lon=5, lat=45)
-
-
-
-
-
-
-
-#  
-# 
-#
-#
+BuildModule(SurfaceMap, 'Output', '~', 
+  description='Plot a map of predicted surface.', paras=list(dir="Where to save figures. Defaults to the working directory.")) 
 
 
 

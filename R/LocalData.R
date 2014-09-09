@@ -1,4 +1,4 @@
-#'Occurence module: LocalData
+#'Occurrence module: LocalData
 #'
 #'Occurrence module to format local occurrence data to be used with zoon. 
 #'
