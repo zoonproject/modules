@@ -2,9 +2,6 @@
 \name{OneHundredBackground}
 \alias{OneHundredBackground}
 \title{Process module: OneHundredBackground}
-\usage{
-OneHundredBackground(occurrence, ras)
-}
 \value{
 Dataframe with at least 5 columns
       value - a numeric value which may give 1 for presences, 0 for absences

@@ -2,9 +2,6 @@
 \name{NoProcess}
 \alias{NoProcess}
 \title{Process module: NoProcess}
-\usage{
-NoProcess(occurrence, ras)
-}
 \value{
 a Raster* object (class from the raster package) with the gridded
      covariates used to train and predict from the SDM.

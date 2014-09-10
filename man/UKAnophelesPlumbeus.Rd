@@ -3,9 +3,6 @@
 \alias{UKAnophelesPlumbeus}
 \title{Return some Anopheles plumbeus data that is bundled with package.
  Data taken from GBIF and is UK extent.}
-\usage{
-UKAnophelesPlumbeus()
-}
 \description{
 Return some Anopheles plumbeus data that is bundled with package.
  Data taken from GBIF and is UK extent.

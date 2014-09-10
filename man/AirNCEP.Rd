@@ -2,9 +2,6 @@
 \name{AirNCEP}
 \alias{AirNCEP}
 \title{Covariate module: AirNCEP}
-\usage{
-AirNCEP()
-}
 \description{
 Covariate module to grab a coarse resolution mean air temperature raster from
  January-February 2001-2002 for the given extent.

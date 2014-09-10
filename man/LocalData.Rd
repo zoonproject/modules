@@ -2,9 +2,6 @@
 \name{LocalData}
 \alias{LocalData}
 \title{Occurrence module: LocalData}
-\usage{
-LocalData(filename, occurrenceType)
-}
 \arguments{
 \item{filename}{The path to the file. Currently assumed a .csv file.}
 

@@ -2,9 +2,6 @@
 \name{RandomForest}
 \alias{RandomForest}
 \title{Model module: RandomForest}
-\usage{
-RandomForest(df)
-}
 \value{
 A model object with a valid predict method
 }

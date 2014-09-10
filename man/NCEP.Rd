@@ -2,9 +2,6 @@
 \name{NCEP}
 \alias{NCEP}
 \title{Covariate module: NCEP}
-\usage{
-NCEP(extent, variables)
-}
 \arguments{
 \item{extent}{A numeric vector of length 4 giving the coordinates of the
 rectangular region within which to carry out the analysis, in the
