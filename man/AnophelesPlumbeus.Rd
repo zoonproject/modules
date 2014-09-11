@@ -2,6 +2,9 @@
 \name{AnophelesPlumbeus}
 \alias{AnophelesPlumbeus}
 \title{Occurrence module: AnophelesPlumbeus}
+\usage{
+AnophelesPlumbeus(extent)
+}
 \arguments{
 \item{extent}{A numeric vetor of length 4 giving the coordinates of the
       rectangular region within which to carry out the analysis, in the

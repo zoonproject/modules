@@ -1,20 +1,20 @@
 
-#'Process module: OneHundredBackground
+#'Process module: BackgroundAndCrossvalid
 #'
 #'Process module to generate up to 100 background records at random in
-#'      cells of ras and return these along with the presence only data.
+#'      cells of ras and split all data in k folds for cross validation.
 #'
 #'
-#'@name OneHundredBackground
+#'@name BackgroundAndCrossvalid
 
 
 
-OneHundredBackground <- function (occurrence, ras) {
+BackgroundAndCrossvalid <- function (occurrence, ras, k=5) {
   
   require (dismo)
   
   if (!all(occurrence$type == 'presence')) {
-    stop ('this function only works for presence-only data')
+    stop ('"BackgroundAndCrossvalid" module only works for presence-only data')
   }
   
   # generate pseudo-absence data
@@ -43,11 +43,12 @@ OneHundredBackground <- function (occurrence, ras) {
                                c(npres, npabs)),
                    type = rep(c('presence', 'background'),
                               c(npres, npabs)),
+                   fold = c(sample(1:k, npres, replace=TRUE), sample(1:k, npabs, replace=TRUE)),
                    lon = c(occurrence$lon, pa[, 1]),
                    lat = c(occurrence$lat, pa[, 2]),
                    covs)
   
-  names(df)[5:ncol(df)] <- names(ras)
+  names(df)[6:ncol(df)] <- names(ras)
   
   return(df)
   

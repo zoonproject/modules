@@ -2,6 +2,9 @@
 \name{BiomodModel}
 \alias{BiomodModel}
 \title{Model module: BiomodModel}
+\usage{
+BiomodModel(df, modelType)
+}
 \arguments{
 \item{modelType}{A character vector to describe models to use. Select from
 'GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT'}

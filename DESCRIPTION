@@ -9,10 +9,6 @@ Description:
 License: BSD_3_clause + file LICENSE.md
 URL: www.github.com/zoonproject/modules
 Imports:
-    
-Depends:
-    NA
-Suggests:
-    NA
+    assertthat
 VignetteBuilder: NA
 LazyData: NA

@@ -27,10 +27,15 @@ AnophelesPlumbeus <- function(extent){
               ext = extent)
   
   occurrence <- raw[, c('lon', 'lat')]
+  colnames(occurrence) <-  c('longitude', 'latitude')
   
   occurrence$value <- 1
   
   occurrence$type <- 'presence'
+
+  occurrence$fold <- 1
+
+
   
   return(occurrence)
 }

@@ -2,6 +2,9 @@
 \name{LogisticRegression}
 \alias{LogisticRegression}
 \title{Model module: LogisticRegression}
+\usage{
+LogisticRegression(df)
+}
 \description{
 Model module to fit a simple logistic regression model
 }

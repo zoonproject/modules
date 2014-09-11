@@ -2,6 +2,9 @@
 \name{SpOcc}
 \alias{SpOcc}
 \title{Occurrence module: SpOcc}
+\usage{
+SpOcc(species, extent, databases = "gbif")
+}
 \arguments{
 \item{species}{A character string giving the species name.
  e.g. 'Anopheles plumbeus'.}
