@@ -35,8 +35,6 @@ AnophelesPlumbeus <- function(extent){
 
   occurrence$fold <- 1
 
-
-  
   return(occurrence)
 }
 

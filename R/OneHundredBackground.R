@@ -43,11 +43,12 @@ OneHundredBackground <- function (occurrence, ras) {
                                c(npres, npabs)),
                    type = rep(c('presence', 'background'),
                               c(npres, npabs)),
+                   fold = rep(1, npres + npabs),
                    lon = c(occurrence$lon, pa[, 1]),
                    lat = c(occurrence$lat, pa[, 2]),
                    covs)
   
-  names(df)[5:ncol(df)] <- names(ras)
+  names(df)[6:ncol(df)] <- names(ras)
   
   return(df)
   

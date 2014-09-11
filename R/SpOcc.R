@@ -11,7 +11,7 @@
 #'
 #'@param databases A character vector giving the databases to use.
 #'  Choose from "gbif", "bison", "inat", "ebird", "ecoengine", "antweb".
-#'  Defaults to gbif. Note I have had some problems with databases other
+#'  Defaults to gbif. NB I have had some problems with databases other
 #'  than gbif.
 #'@seealso \code{\link{spooc::occ}}
 #'
@@ -26,5 +26,6 @@ function(species, extent, databases = 'gbif'){
   occurrence <- raw[,c('longitude', 'latitude')]
   occurrence$value <- 1
   occurrence$type <- 'presence'
+  occurrence$fold <- 1
   return(occurrence) 
 }

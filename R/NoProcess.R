@@ -18,14 +18,16 @@ function(occurrence, ras){
   
   
   # extract covariates
-  occ_covs <- as.matrix(extract(ras, occurrence[, c('lon', 'lat')]))
+  occ_covs <- as.matrix(extract(ras, occurrence[, c('longitude', 'latitude')]))
   
   # combine with the occurrence data
   df <- cbind(occurrence,
                    occ_covs)
   
-  names(df)[5:ncol(df)] <- names(ras)
+  names(df)[6:ncol(df)] <- names(ras)
   
   return(df)
   
 }
+
+
