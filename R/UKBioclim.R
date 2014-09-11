@@ -10,6 +10,7 @@
 UKBioclim <-
   function() {
     world <- getData('worldclim', var = 'bio', res = 5)
-    uk <- crop(tmp, extent(-12, 4, 50, 60))
+    uk <- crop(world, extent(-10, 10, 45, 65))
+#     uk <- uk [[1]]
     return (uk)
   }
