@@ -43,6 +43,7 @@ OneThousandBackground <- function (occurrence, ras) {
                                c(npres, npabs)),
                    type = rep(c('presence', 'background'),
                               c(npres, npabs)),
+                   fold = 1,
                    lon = c(occurrence$lon, pa[, 1]),
                    lat = c(occurrence$lat, pa[, 2]),
                    covs)

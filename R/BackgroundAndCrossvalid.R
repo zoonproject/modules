@@ -51,6 +51,8 @@ BackgroundAndCrossvalid <- function (occurrence, ras, k=5) {
   
   names(df)[6:ncol(df)] <- names(ras)
   
+  df <- na.omit(df)
+
   return(df)
   
 }
