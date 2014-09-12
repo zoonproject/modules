@@ -15,12 +15,17 @@ function (model, ras, dir='.') {
                   newdata = vals,
                   type = 'response')
   
+  # if pred is a matrix/dataframe, take only the first column
+  if(!is.null(dim(pred))) {
+    pred <- pred[, 1]
+  }
+
   pred_ras <- ras[[1]]
   
   pred_ras <- setValues(pred_ras, pred)
 
   png(paste0(dir,"/ZoonMap", Sys.time(), ".png"))
-  plot(ras) 
+  plot(pred_ras) 
   dev.off()
   
   return(NULL)
