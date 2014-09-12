@@ -13,7 +13,7 @@
 #'  Choose from "gbif", "bison", "inat", "ebird", "ecoengine", "antweb".
 #'  Defaults to gbif. NB I have had some problems with databases other
 #'  than gbif.
-#'@seealso \code{\link{spooc::occ}}
+#'@seealso \code{\link{spocc::occ}}
 #'
 #'
 #'@name SpOcc

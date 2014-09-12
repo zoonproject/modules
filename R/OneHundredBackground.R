@@ -50,6 +50,9 @@ OneHundredBackground <- function (occurrence, ras) {
   
   names(df)[6:ncol(df)] <- names(ras)
   
+  # remove missing values
+  df <- na.omit(df)
+  
   return(df)
   
 }
