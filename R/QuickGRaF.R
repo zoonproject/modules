@@ -8,7 +8,7 @@
 QuickGRaF <-
 function (df) {
   
-  GetPackage('GRaF')
+  zoon:::GetPackage('GRaF')
   
   if (!all(df$type %in% c('presence', 'absence', 'background'))) {
     stop ('only for presence/absence or presence/background data')

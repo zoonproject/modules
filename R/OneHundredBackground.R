@@ -11,8 +11,8 @@
 
 OneHundredBackground <- function (occurrence, ras) {
   
-  require (dismo)
-  
+  zoon:::GetPackage(dismo)
+ 
   if (!all(occurrence$type == 'presence')) {
     stop ('this function only works for presence-only data')
   }
