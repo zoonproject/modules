@@ -13,7 +13,7 @@ SameTimePlaceMap <- function (model, ras) {
   vals <- data.frame(getValues(ras))
   colnames(vals) <- names(ras)
   
-  pred <- predict(model,
+  pred <- predict(model$model,
                   newdata = vals,
                   type = 'response')
   

@@ -2,6 +2,9 @@
 \name{UKAir}
 \alias{UKAir}
 \title{Covariate module: UKAir}
+\usage{
+UKAir()
+}
 \description{
 Return some UK air temperature data from NCEP. Data is bundled with package.
 }

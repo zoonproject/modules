@@ -22,5 +22,9 @@ function(filename, occurrenceType){
 
   colnames(occurrence) <- c('lon', 'lat', 'value', 'type')
 
+  occurrence$fold <- 1
+
   return(occurrence)
 }
+
+

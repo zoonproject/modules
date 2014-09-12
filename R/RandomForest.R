@@ -10,19 +10,23 @@
 
 RandomForest <- function (df) {
   
-  require ('randomForest')
+
+  if(!require(randomForest)){
+    install.packages('randomForest')
+    library(randomForest)
+  }
   
   if (!all(df$type %in% c('presence', 'absence', 'background'))) {
     stop ('only for presence/absence or presence/background data')
   }
   
-  covs <- as.data.frame(df[, 5:ncol(df)])
-  names(covs) <- names(df)[5:ncol(df)]
+  covs <- as.data.frame(df[, 6:ncol(df)])
+  names(covs) <- names(df)[6:ncol(df)]
   m <- randomForest(df$value ~ .,
                     data = covs,
                     weights = rep(1, nrow(covs)),
                     size = 1)
-  
+
   return (m)
 }
 

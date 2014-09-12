@@ -2,6 +2,9 @@
 \name{SameTimePlaceMap}
 \alias{SameTimePlaceMap}
 \title{Output module: SameTimePlaceMap}
+\usage{
+SameTimePlaceMap(model, ras)
+}
 \value{
 A Raster object giving the probabilistic model predictions for each
      cell of ras

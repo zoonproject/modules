@@ -2,6 +2,9 @@
 \name{SurfaceMap}
 \alias{SurfaceMap}
 \title{Output module: SurfaceMap}
+\usage{
+SurfaceMap(model, ras, dir = ".")
+}
 \arguments{
 \item{dir}{Where to save figures. Defaults to the working directory.}
 }

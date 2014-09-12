@@ -2,6 +2,9 @@
 \name{PrintMap}
 \alias{PrintMap}
 \title{Output module: PrintMap}
+\usage{
+PrintMap(model, ras)
+}
 \arguments{
 \item{model}{}
 

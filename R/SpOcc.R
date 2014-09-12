@@ -11,7 +11,7 @@
 #'
 #'@param databases A character vector giving the databases to use.
 #'  Choose from "gbif", "bison", "inat", "ebird", "ecoengine", "antweb".
-#'  Defaults to gbif. Note I have had some problems with databases other
+#'  Defaults to gbif. NB I have had some problems with databases other
 #'  than gbif.
 #'@seealso \code{\link{spocc::occ}}
 #'
@@ -21,10 +21,15 @@
 
 SpOcc <-
 function(species, extent, databases = 'gbif'){
-  require(spocc)
+
+  if(!require(spocc)){
+    install.packages('spocc')
+    library(spocc)
+  }
   raw <- occ2df(occ(query = species, geometry = extent, from = databases, limit=10e5))
   occurrence <- raw[,c('longitude', 'latitude')]
   occurrence$value <- 1
   occurrence$type <- 'presence'
+  occurrence$fold <- 1
   return(occurrence) 
 }

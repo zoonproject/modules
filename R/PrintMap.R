@@ -13,14 +13,13 @@ function (model, ras) {
   vals <- data.frame(getValues(ras))
   colnames(vals) <- names(ras)
   
-  pred <- predict(model,
+  pred <- predict(model$model,
                   newdata = vals,
                   type = 'response')
   
   pred_ras <- ras[[1]]
   
   pred_ras <- setValues(pred_ras, pred)
-
 
   plot(ras) 
   
