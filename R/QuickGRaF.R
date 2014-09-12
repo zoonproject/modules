@@ -2,9 +2,9 @@
 #'
 #'Model module to fit a quick GRaF model, without parameter optimisation.
 #'
-#'@param df  
 #'@name QuickGRaF
-#'@keywords Model
+
+
 QuickGRaF <-
 function (df) {
   

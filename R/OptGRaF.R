@@ -2,9 +2,9 @@
 #'
 #'Model module to fit a (slow) GRaF model, with parameter optimisation.
 #'
-#'@param df  
 #'@name OptGRaF
-#'@keywords Model
+
+
 OptGRaF <-
 function (df) {
   
