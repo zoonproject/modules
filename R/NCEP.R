@@ -21,7 +21,12 @@
 NCEP <-
 function(extent, variables){
   
-  require(RNCEP)
+
+  if(!require(RNCEP)){
+    install.packages('RNCEP')
+    library(RNCEP)
+  }
+
   layers <- list()
 
   for(i in 1:length(variables)){

@@ -14,7 +14,12 @@
 
 BiomodModel <-
 function(df, modelType){
-  require(biomod2)
+
+
+  if(!require(biomod2){
+    install.packages('biomod2')
+    library(biomod2)
+  }
  
   biomodData <- BIOMOD_FormatingData(resp.var = df$value, expl.var = df[,5:NCOL(df), drop=FALSE], resp.xy = df[,c('lon', 'lat')], resp.name = 'Species')
 
