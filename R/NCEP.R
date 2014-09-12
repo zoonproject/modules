@@ -22,10 +22,7 @@ NCEP <-
 function(extent, variables){
   
 
-  if(!require(RNCEP)){
-    install.packages('RNCEP')
-    library(RNCEP)
-  }
+  zoon:::GetPackage(RNCEP)
 
   layers <- list()
 

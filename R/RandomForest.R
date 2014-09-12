@@ -10,11 +10,7 @@
 
 RandomForest <- function (df) {
   
-
-  if(!require(randomForest)){
-    install.packages('randomForest')
-    library(randomForest)
-  }
+  zoon:::GetPackage(randomForest)
   
   if (!all(df$type %in% c('presence', 'absence', 'background'))) {
     stop ('only for presence/absence or presence/background data')

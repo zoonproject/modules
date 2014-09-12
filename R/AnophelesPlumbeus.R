@@ -14,9 +14,9 @@
 
 
 AnophelesPlumbeus <- function(extent){
-  require (dismo)
 
-  
+  zoon:::GetPackage(dismo)
+
   extent <- uk.extent <- c(xmin = -10,
               xmax = 10,
               ymin = 45,
