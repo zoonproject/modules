@@ -10,9 +10,11 @@
 
 
 
-BackgroundAndCrossvalid <- function (occurrence, ras, k=5) {
+BackgroundAndCrossvalid <- function (data, k=5) {
   
-  zoon:::GetPackage(dismo)
+  occurrence <- data$df
+  ras <- data$ras
+
   
   if (!all(occurrence$type == 'presence')) {
     stop ('"BackgroundAndCrossvalid" module only works for presence-only data')
