@@ -9,7 +9,7 @@
 
 
 AirNCEP <- function(){
-  require(RNCEP)
+  zoon:::GetPackage(RNCEP)
   
   extent <- uk.extent <- c(xmin = -10,
               xmax = 10,

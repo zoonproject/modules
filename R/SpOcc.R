@@ -22,10 +22,8 @@
 SpOcc <-
 function(species, extent, databases = 'gbif'){
 
-  if(!require(spocc)){
-    install.packages('spocc')
-    library(spocc)
-  }
+  zoon:::GetPackage(spocc)
+
   raw <- occ2df(occ(query = species, geometry = extent, from = databases, limit=10e5))
   occurrence <- raw[,c('longitude', 'latitude')]
   occurrence$value <- 1

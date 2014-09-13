@@ -17,11 +17,17 @@ function (model, ras) {
                   newdata = vals,
                   type = 'response')
   
+  # if pred is a matrix/dataframe, take only the first column
+  if(!is.null(dim(pred))) {
+    pred <- pred[, 1]
+  }
+
   pred_ras <- ras[[1]]
   
   pred_ras <- setValues(pred_ras, pred)
 
-  plot(ras) 
+  plot(pred_ras) 
+
   
   
   return(NULL)
