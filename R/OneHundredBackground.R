@@ -9,13 +9,15 @@
 
 
 
-OneHundredBackground <- function (occurrence, ras) {
+OneHundredBackground <- function (data) {
   
-  require (dismo)
+  occurrence <- data$df
+  ras <- data$ras
+
   
-  if (!all(occurrence$type == 'presence')) {
-    stop ('this function only works for presence-only data')
-  }
+  #if (!all(occurrence$type == 'presence')) {
+  #  stop ('this function only works for presence-only data')
+  #}
   
   # generate pseudo-absence data
   points <- 100
@@ -44,8 +46,8 @@ OneHundredBackground <- function (occurrence, ras) {
                    type = rep(c('presence', 'background'),
                               c(npres, npabs)),
                    fold = rep(1, npres + npabs),
-                   lon = c(occurrence$lon, pa[, 1]),
-                   lat = c(occurrence$lat, pa[, 2]),
+                   longitude = c(occurrence$lon, pa[, 1]),
+                   latitude = c(occurrence$lat, pa[, 2]),
                    covs)
   
   names(df)[6:ncol(df)] <- names(ras)
@@ -53,7 +55,7 @@ OneHundredBackground <- function (occurrence, ras) {
   # remove missing values
   df <- na.omit(df)
   
-  return(df)
+  return(list(df=df, ras=ras))
   
 }
 
