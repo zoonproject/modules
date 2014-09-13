@@ -55,7 +55,7 @@ BackgroundAndCrossvalid <- function (data, k=5) {
   
   df <- na.omit(df)
 
-  return(df)
+  return(list(df=df, ras=ras))
   
 }
 
