@@ -14,8 +14,8 @@ function (df) {
     stop ('only for presence/absence or presence/background data')
   }
   
-  covs <- as.data.frame(df[, 5:ncol(df)])
-  names(covs) <- names(df)[5:ncol(df)]
+  covs <- as.data.frame(df[, 6:ncol(df)])
+  names(covs) <- names(df)[6:ncol(df)]
   m <- graf(df$value,
             covs,
             opt.l = TRUE)

@@ -7,9 +7,11 @@
 #'@name OneThousandBackground
 
 
-OneThousandBackground <- function (occurrence, ras) {
+OneThousandBackground <- function (data) {
   
-  zoon:::GetPackage(dismo) 
+
+  occurrence <- data$df
+  ras <- data$ras
  
   if (!all(occurrence$type == 'presence')) {
     stop ('this function only works for presence-only data')
@@ -40,11 +42,11 @@ OneThousandBackground <- function (occurrence, ras) {
                    lat = c(occurrence$lat, pa[, 2]),
                    covs)
   
-  names(df)[5:ncol(df)] <- names(ras)
+  names(df)[6:ncol(df)] <- names(ras)
   
   # remove missing values
   df <- na.omit(df)
   
-  return(df)
+  return(list(df=df, ras=ras))
   
 }

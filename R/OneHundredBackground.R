@@ -16,7 +16,7 @@ OneHundredBackground <- function (data) {
   ras <- data$ras
  
   if (!all(occurrence$type == 'presence')) {
-    stop ('"BackgroundAndCrossvalid" module only works for presence-only data')
+    stop ('"OneHundredBackground" module only works for presence-only data')
   }
   
   # generate pseudo-absence data
