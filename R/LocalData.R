@@ -20,7 +20,7 @@ function(filename, occurrenceType){
     occurrence$type <- type
   }
 
-  colnames(occurrence) <- c('lon', 'lat', 'value', 'type')
+  colnames(occurrence) <- c('longitude', 'latitude', 'value', 'type')
 
   occurrence$fold <- 1
 
