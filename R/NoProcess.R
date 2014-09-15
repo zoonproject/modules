@@ -20,13 +20,6 @@ function (data) {
   noccurrence <- nrow(occurrence)
   
   
-  # extract covariates
-  occ_covs <- as.matrix(extract(ras, occurrence[, c('longitude', 'latitude')]))
-  
-  # combine with the occurrence data
-  df <- cbind(occurrence,
-                   occ_covs)
-  
   names(df)[6:ncol(df)] <- names(ras)
   
   return(list(df=df, ras=ras))
