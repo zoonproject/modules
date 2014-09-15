@@ -18,7 +18,7 @@ function(df, modelType){
 
   zoon:::GetPackage(biomod2)
  
-  biomodData <- BIOMOD_FormatingData(resp.var = df$value, expl.var = df[,5:NCOL(df), drop=FALSE], resp.xy = df[,c('lon', 'lat')], resp.name = 'Species')
+  biomodData <- BIOMOD_FormatingData(resp.var = df$value, expl.var = df[,5:NCOL(df), drop=FALSE], resp.xy = df[,c('longitude', 'latitude')], resp.name = 'Species')
 
   myBiomodOptions <- BIOMOD_ModelingOptions()
   #print(sys.status())
