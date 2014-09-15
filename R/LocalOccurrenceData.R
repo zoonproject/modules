@@ -23,7 +23,7 @@ function(filename, occurrenceType, externalValidation=FALSE){
     occurrence$type <- type
   }
 
-  colnames(occurrence) <- c('lon', 'lat', 'value', 'type')
+  colnames(occurrence) <- c('longitude', 'latitude', 'value', 'type')
 
   if (externalValidation){
     occurrence$fold <- 0
