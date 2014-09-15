@@ -25,7 +25,7 @@ function(filename, occurrenceType, externalValidation=FALSE){
 
   colnames(occurrence) <- c('lon', 'lat', 'value', 'type')
 
-  if (!externalValidation){
+  if (externalValidation){
     occurrence$fold <- 0
   } else {
     occurrence$fold <- 1
