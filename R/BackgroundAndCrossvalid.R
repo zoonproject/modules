@@ -47,8 +47,8 @@ BackgroundAndCrossvalid <- function (data, k=5) {
                    type = rep(c('presence', 'background'),
                               c(npres, npabs)),
                    fold = c(sample(1:k, npres, replace=TRUE), sample(1:k, npabs, replace=TRUE)),
-                   lon = c(occurrence$lon, pa[, 1]),
-                   lat = c(occurrence$lat, pa[, 2]),
+                   longitude = c(occurrence$lon, pa[, 1]),
+                   latitude = c(occurrence$lat, pa[, 2]),
                    covs)
   
   names(df)[6:ncol(df)] <- names(ras)
