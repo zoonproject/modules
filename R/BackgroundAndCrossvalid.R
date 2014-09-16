@@ -4,7 +4,7 @@
 #'Process module to generate up to 100 background records at random in
 #'      cells of ras and split all data in k folds for cross validation.
 #'
-#'@param k The number of folds you wish to have. Will later implement a 'leaveoneout' opt
+#'@param k The number of folds you wish to have. Will later implement a leaveoneout opt
 #'
 #'@name BackgroundAndCrossvalid
 

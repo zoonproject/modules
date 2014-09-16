@@ -1,6 +1,6 @@
 #'Occurrence module: LocalOccurrenceData
 #'
-#'Occurrence module to format local occurrence data to be used with zoon.
+#'Occurrence module to format local occurrence data to be used with zoon. Must be a .csv file with three columns longitude, latitude and value in that order.
 #'
 #'@param filename The path to the file. Currently assumes a .csv file. 
 #'
@@ -25,10 +25,10 @@ function(filename, occurrenceType, externalValidation=FALSE){
 
   colnames(occurrence) <- c('longitude', 'latitude', 'value', 'type')
 
-  if (externalValidation){
-    occurrence$fold <- 0
-  } else {
+  if (!externalValidation){
     occurrence$fold <- 1
+  } else {
+    occurrence$fold <- 0
   }                     
 
   return(occurrence)
