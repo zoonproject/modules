@@ -12,11 +12,10 @@ LASSO <- function(df, alpha=1){
 
   GetPackage("glmnet")
   
-  covs <- as.data.frame(df[, 6:ncol(df)])
+  covs <- as.matrix(df[, 6:ncol(df)])
   names(covs) <- names(df)[6:ncol(df)]
-  m <- glmnet(formula = df$value ~ .,
-         data = covs,
-         family = binomial, 
+  m <- glmnet(y = df$value, x = covs,
+         family = 'binomial', 
          alpha=alpha)
 
 # Output a model object. The object class must have a predict method available.
