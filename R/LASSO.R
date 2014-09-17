@@ -14,7 +14,7 @@ LASSO <- function(df, alpha=1){
   
   covs <- as.data.frame(df[, 6:ncol(df)])
   names(covs) <- names(df)[6:ncol(df)]
-  m <- gam::gam(formula = df$value ~ .,
+  m <- glmnet(formula = df$value ~ .,
          data = covs,
          family = binomial, 
          alpha=alpha)
