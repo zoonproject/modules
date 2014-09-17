@@ -10,7 +10,7 @@
 Bioclim <-
 function(extent, resolution = 5) {
     
-    if(!(res %in% c(2.5, 5, 10))){
+    if(!(resolution %in% c(2.5, 5, 10))){
       stop('only 2.5, 5 and 10 degree resolutions are supported currently')
     }
 
@@ -20,5 +20,5 @@ function(extent, resolution = 5) {
 
     world <- getData('worldclim', var = 'bio', res = resolution)
     cropped <- crop(world, extent(extent))
-    return (coppred)
+    return (cropped)
   }
