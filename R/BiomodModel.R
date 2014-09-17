@@ -36,7 +36,7 @@ function(df, modelType){
     SaveObj = TRUE,
     rescal.all.models = TRUE,
     do.full.models = FALSE,
-    modeling.id = paste('zoon',Sys.time(),sep=" "),
+    modeling.id =  as.character(format(Sys.time(), '%s')),
     silent=TRUE
   )
 
