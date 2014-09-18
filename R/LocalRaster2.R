@@ -4,7 +4,7 @@
 #'
 #'@param filenames Either a string of the filename of the raster layer, or a list of strings of filenames to rasters that will be stacked. 
 #'
-#'@name LocalRaster
+#'@name LocalRaster2
 LocalRaster2 <-
 function(filenames){
 
