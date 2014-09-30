@@ -37,7 +37,7 @@ OneThousandBackground <- function (data) {
                                c(npres, npabs)),
                    type = rep(c('presence', 'background'),
                               c(npres, npabs)),
-                   fold = 1,
+                   fold = rep(1, npres + npabs),
                    lon = c(occurrence$lon, pa[, 1]),
                    lat = c(occurrence$lat, pa[, 2]),
                    covs)
@@ -45,7 +45,9 @@ OneThousandBackground <- function (data) {
   names(df)[6:ncol(df)] <- names(ras)
   
   # remove missing values
-  df <- na.omit(df)
+  if(NROW(na.omit(df)) > 0){
+    df <- na.omit(df)
+  }
   
   return(list(df=df, ras=ras))
   

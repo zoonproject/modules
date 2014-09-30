@@ -3,16 +3,30 @@
 \alias{LocalOccurrenceData}
 \title{Occurrence module: LocalOccurrenceData}
 \usage{
-LocalOccurrenceData(filename, occurrenceType, externalValidation = FALSE)
+LocalOccurrenceData(filename, occurrenceType, columns,
+  externalValidation = FALSE)
 }
 \arguments{
-\item{filename}{The path to the file. Currently assumes a .csv file.}
+\item{filename}{The path to the spreadsheet. The spreadsheet should have a
+ header giving column names. .csv, .tab, .tsv handled. The xlsx
+ package is used for excel files.}
 
-\item{occurrenceType}{What type data is it? One of 'presence', 'presence/absence', 'abundance'}
+\item{occurrenceType}{What type data is it? One of 'presence',
+'presence/absence', 'abundance', 'probability'}
 
-\item{externalValidation}{Logical indicating whether this data is external validation data. Cross validation is handled elsewhere and this argument should be left as FALSE for data that will be used in cross validation.}
+\item{columns}{Which columns in the spreadsheet relate to longitude, latitude
+ and response value? Takes a named character vector e.g.
+ c(long = 'longitude', lat = 'latitude', value = 'responseVals'). If an
+ unnamed character vector is given, the order is assumed to be
+ long, lat, value.}
+
+\item{externalValidation}{Logical indicating whether this data is external
+ validation data. Cross validation is handled elsewhere and this argument
+ should be left as FALSE for data that will be used in cross validation.}
 }
 \description{
-Occurrence module to format local occurrence data to be used with zoon. Must be a .csv file with three columns longitude, latitude and value in that order.
+Occurrence module to format local occurrence data to be used with zoon.
+ Must be a .csv file with three columns longitude, latitude and value
+ in that order.
 }
 

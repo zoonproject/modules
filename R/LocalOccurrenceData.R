@@ -4,8 +4,9 @@
 #'  Must be a .csv file with three columns longitude, latitude and value 
 #'  in that order.
 #'
-#'@param filename The path to the file. Should have columns named long, lat 
-#'  and value.
+#'@param filename The path to the spreadsheet. The spreadsheet should have a 
+#'  header giving column names. .csv, .tab, .tsv handled. The xlsx
+#'  package is used for excel files.
 #'
 #'@param occurrenceType What type data is it? One of 'presence', 
 #' 'presence/absence', 'abundance', 'probability' 
@@ -14,10 +15,20 @@
 #'  validation data. Cross validation is handled elsewhere and this argument 
 #'  should be left as FALSE for data that will be used in cross validation. 
 #'
+#'@param columns Which columns in the spreadsheet relate to longitude, latitude
+#'  and response value? Takes a named character vector e.g.
+#'  c(long = 'longitude', lat = 'latitude', value = 'responseVals'). If an
+#'  unnamed character vector is given, the order is assumed to be 
+#'  long, lat, value.
+#'
 #'@name LocalOccurrenceData
 LocalOccurrenceData <-
-function(filename, occurrenceType, externalValidation = FALSE){
+function(filename, occurrenceType, columns, externalValidation = FALSE){
 
+  # If occurrence type is not a string, turn it into one.
+  if(!is.string(occurrenceType)){
+    occurrenceType <- deparse(substitute(occurrenceType))
+  }
   
   assert_that(is.logical(externalValidation))
   type <- tolower(occurrenceType)
@@ -51,36 +62,52 @@ function(filename, occurrenceType, externalValidation = FALSE){
     sep <- separators[[extension]]
     data <- read.table(filename, header = TRUE, stringsAsFactors = FALSE, sep = sep)
   } else if (extension %in% c('xls', 'xlsx')) {
-    GetPackages(xlsx)
-    read.xlsx("myfile.xlsx", sheetName = "Sheet1")
-    read.xlsx2("myfile.xlsx", sheetName = "Sheet1")
+    GetPackage(xlsx)
+    data <- read.xlsx(filename, header = TRUE, sheetIndex = 1)
+  } else if (extension == 'dbf') {
+    GetPackage(foreign)
+    data <- read.dbf(filename)
+  } else {
+    stop("Can't open spreadsheet. Is it one of supported formats?")
   }
 
-
-
+  
+  # Get column names from args
+  if(is.null(names(columns))){
+    longName <- columns[1]
+    latName <- columns[2]
+    valName <- columns[3]
+  } else {
+    longName <- columns['long']
+    latName <- columns['lat']
+    valName <- columns['value']
   }
-  
 
+  df <- data.frame(longitude = data[,longName],
+                   latitude = data[,latName],
+                   value = data[,valName])
 
-
-
-
-
-  
-
+  # If presence absence, give correct type name
+  # Otherwise type is just type.
   if(type == 'presence/absence') {
-    occurrence$type <- ifelse(occurrence[,3] == 1, 'presence', 'absence')
+    df$type <- ifelse(df[,3] == 1, 'presence', 'absence')
   } else {
-    occurrence$type <- type
+    df$type <- type
   }
 
-  colnames(occurrence) <- c('longitude', 'latitude', 'value', 'type')
-
-  if (!externalValidation){
-    occurrence$fold <- 1
+  # Fold gets 1 unless this is external validation data.
+  if(externalValidation){
+    df$fold <- 0
   } else {
-    occurrence$fold <- 0
-  }                     
+    df$fold <- 1
+  }
 
-  return(occurrence)
-}
+  return(df)
+
+  }
+  
+
+
+
+
+  

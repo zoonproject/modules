@@ -16,7 +16,7 @@ LogisticRegression <- function(df){
   names(covs) <- names(df)[6:ncol(df)]
   m <- glm(df$value ~ .,
            data = covs,
-           family = binomial)
+           family = 'binomial')
   
   return (m)
 }

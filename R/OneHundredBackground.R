@@ -8,7 +8,6 @@
 #'@name OneHundredBackground
 
 
-
 OneHundredBackground <- function (data) {
   
 
@@ -53,8 +52,10 @@ OneHundredBackground <- function (data) {
   names(df)[6:ncol(df)] <- names(ras)
   
   # remove missing values
-  df <- na.omit(df)
-  
+  if(NROW(na.omit(df)) > 0){
+    df <- na.omit(df)
+  }
+
   return(list(df=df, ras=ras))
   
 }
