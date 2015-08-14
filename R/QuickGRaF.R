@@ -25,22 +25,23 @@ function (df, l = NULL) {
   
   # set up l
   if (!is.null(l)) {
+    
+    # duplicate if necessary
     if (length(l) == 1) {
       l <- rep(l, ncol(covs))
     }
-  }
 
-  # check l has the correct length
-  if (length(l) != ncol(covs)) {
-    stop (sprintf('l has %i elements, but there are %i covariates', length(l), ncol(covs)))
+    # check l has the correct length
+    if (length(l) != ncol(covs)) {
+      stop (sprintf('l has %i elements, but there are %i covariates', length(l), ncol(covs)))
+    }
+  
+    # check l is of the correct value
+    if (any(l <= 0)) {
+      stop(sprintf('l must be positive, but the values provided were: %s',
+                   paste(format(l, digits = 3), collapse = ', ')))
+    }
   }
-
-  # check l is of the correct value
-  if (any(l <= 0)) {
-    stop(sprintf('l must be positive, but the values provided were: %s',
-                 paste(format(l, digits = 3), collapse = ', ')))
-  }
-
   # fit the model
   m <- graf(df$value,
                     covs)
