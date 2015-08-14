@@ -23,5 +23,5 @@
 #'@name CWBZimbabwe
 CWBZimbabwe <-
 function(){
-  return(CWBZimbabwe)
+  return(CWBZim)
 } 
