@@ -54,7 +54,12 @@ ResponseCurve <- function (model, ras, cov = 1) {
     # Add in variation for variable of focus
     Etest[kk] <- Epred[kk]
     # make predictions
-    Eres[kk] <- predict(model$model, Etest, type = 'response')
+    p <- predict(model$model, Etest, type = 'response')
+    
+    # make sure it's flat
+    if (!is.null(dim(p))) p <- p[, 1]
+    
+    Eres[kk] <- p
     
   }	
   
