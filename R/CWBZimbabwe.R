@@ -23,5 +23,6 @@
 #'@name CWBZimbabwe
 CWBZimbabwe <-
 function(){
-  return(CWBZim)
+  data('CWBZim')
+  return(df)
 } 
