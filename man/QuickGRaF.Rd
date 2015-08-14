@@ -4,7 +4,15 @@
 \alias{QuickGRaF}
 \title{Model module: QuickGRaF}
 \usage{
-QuickGRaF(df)
+QuickGRaF(df, l = NULL)
+}
+\arguments{
+\item{l}{lengthscale parameter, a positive number controlling the complexity
+of the fitted model with respect to each covariate.
+Can either be a single number (in which case it is used for all covariates),
+a vector of numbers of the same length as the number of covariates,
+or \code{NULL} in which case GRaF will calculate a fixed approximation to
+a sensible lengthscale.}
 }
 \description{
 Model module to fit a quick GRaF model, without parameter optimisation.
