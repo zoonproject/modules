@@ -44,7 +44,8 @@ function (df, l = NULL) {
   }
   # fit the model
   m <- graf(df$value,
-                    covs)
+            covs,
+            l = l)
   
   return (m)
 }
