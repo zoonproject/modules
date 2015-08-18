@@ -2,7 +2,7 @@
 #'
 #'Get worldclim environment data. Downloads then stores locally.
 #'
-#'@param extent Length 4 character vector giving min lat, max lat, min long, max long. 
+#'@param extent Length 4 character vector giving min longitude, max longitude, min latitude, max latitude. 
 #'
 #'@param resolution Resolution in minutes. Must be one of 2.5, 5 or 10. Default is 5. 
 #'
