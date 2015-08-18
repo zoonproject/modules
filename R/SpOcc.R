@@ -24,7 +24,9 @@ function(species, extent, databases = 'gbif'){
 
   zoon:::GetPackage(spocc)
 
-  raw <- occ2df(occ(query = species, geometry = extent, from = databases, limit=1e5))
+  reorderExtent <- extent[c(1, 3, 2, 4)]
+
+  raw <- occ2df(occ(query = species, geometry = reorderExtent, from = databases, limit=1e5))
   occurrence <- raw[,c('longitude', 'latitude')]
   occurrence$value <- 1
   occurrence$type <- 'presence'
