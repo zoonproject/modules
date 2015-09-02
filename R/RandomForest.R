@@ -19,9 +19,6 @@ RandomForest <- function (df) {
   covs <- as.data.frame(df[, 6:ncol(df)])
   names(covs) <- names(df)[6:ncol(df)]
 
-  # set the response to a factor to make sure it's regression not classification
-  df$value <- factor(df$value)
-
   m <- randomForest(df$value ~ .,
                     data = covs,
                     weights = rep(1, nrow(covs)),
