@@ -24,7 +24,8 @@ function (model, ras, dir='.') {
   
   pred_ras <- setValues(pred_ras, pred)
 
-  png(paste0(dir,"/ZoonMap", Sys.time(), ".png"))
+  png(paste0(dir,"/ZoonMap", 
+    format(Sys.time(), "%Y_%m_%d-%H%M"), ".png"))
   plot(pred_ras) 
   dev.off()
   
