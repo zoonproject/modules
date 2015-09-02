@@ -17,6 +17,9 @@ function(df, modelType){
 
 
   zoon:::GetPackage(biomod2)
+  
+  # If our response in an integer, convert to numeric
+  if(class(df$value) == 'integer') df$value <- as.numeric(df$value)
  
   biomodData <- BIOMOD_FormatingData(resp.var = df$value, 
     expl.var = df[,6:NCOL(df), drop=FALSE], resp.xy = df[,c('longitude', 'latitude')], 
