@@ -8,32 +8,69 @@
 
 #'@name InteractiveMap
 InteractiveMap <-
-function (model, ras) {
- 
-  # unload the leafletR package if it's installed
-  # as it conflicts with leaflet
-  
-  zoon:::GetPackage('environmentalinformatics-marburg/Rsenal', github = TRUE)
- 
-  vals <- data.frame(getValues(ras))
-  colnames(vals) <- names(ras)
-  
-  pred <- predict(model$model,
-                  newdata = vals,
-                  type = 'response')
-  
-  # if pred is a matrix/dataframe, take only the first column
-  if(!is.null(dim(pred))) {
-    pred <- pred[, 1]
+  function (model, ras) {
+    
+    # This function draws inspiration from a previous version of
+    # the Rsenal package: https://github.com/environmentalinformatics-marburg/Rsenal
+    # and of course relies heavily on the wonderful leaflet package whose
+    # functions it relies on
+    
+    # load required packages
+    zoon:::GetPackage('leaflet')
+    zoon:::GetPackage('htmlwidgets')
+    zoon:::GetPackage('viridis')
+    
+    
+    vals <- data.frame(getValues(ras))
+    colnames(vals) <- names(ras)
+    
+    pred <- predict(model$model,
+                    newdata = vals,
+                    type = 'response')
+    
+    # if pred is a matrix/dataframe, take only the first column
+    if(!is.null(dim(pred))) {
+      pred <- pred[, 1]
+    }
+    
+    pred_ras <- ras[[1]]
+    
+    pred_ras <- setValues(pred_ras, pred)
+    names(pred_ras) <- 'prediction'
+    
+    
+    # set up a map with background layers
+    m <- leaflet::leaflet()
+    m <- leaflet::addTiles(m, group = 'OpenStreetMap')
+    m <- leaflet::addProviderTiles(m,
+                                   provider = 'Esri.WorldImagery',
+                                   group = 'Esri.WorldImagery')
+    
+    # get legend values
+    values <- round(seq(0, 1, length.out = 10), 3)
+    
+    # get colour palette
+    pal <- leaflet::colorNumeric(viridis(10), 
+                                 domain = values, 
+                                 na.color = 'transparent')
+    
+    # add the raster
+    m <- leaflet::addRasterImage(map = m,
+                                 x = pred_ras,
+                                 colors = pal,
+                                 project = TRUE,
+                                 opacity = 0.8,
+                                 group = names(pred_ras))
+    
+    # add a legend
+    m <- leaflet::addLegend(map = m,
+                            pal = pal,
+                            opacity = 0.8, 
+                            values = values, 
+                            title = names(pred_ras))
+    
+    htmlwidgets:::print.htmlwidget(m)
+    
+    return (NULL)
+    
   }
-
-  pred_ras <- ras[[1]]
-  
-  pred_ras <- setValues(pred_ras, pred)
-  names(pred_ras) <- 'prediction'
-
-  htmlwidgets:::print.htmlwidget(mapView(pred_ras))
-  
-  return (NULL)
-  
-}
