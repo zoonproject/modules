@@ -59,10 +59,10 @@ InteractiveMap <-
                                  colors = pred_pal,
                                  project = TRUE,
                                  opacity = 0.8,
-                                 group = 'Predicted distribution')
+                                 group = 'predicted distribution')
     
     # add to the overlay groups list
-    overlay_groups <- 'Predicted distribution'
+    overlay_groups <- 'predicted distribution'
     
     
     # add legend
@@ -70,7 +70,7 @@ InteractiveMap <-
                             pal = pred_pal,
                             opacity = 0.8, 
                             values = legend_values, 
-                            title = 'Predicted distribution')
+                            title = 'predicted distribution')
 
     # add training data
     df <- model$data
