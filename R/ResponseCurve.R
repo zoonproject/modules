@@ -5,10 +5,21 @@
 #'
 #'@param model  
 #'@param ras  
-#'@param cov which of the covariates to plot the response against
+#'@param cov which of the covariates to plot the response against.
+#'If \code{NULL}, the function is executed for all covariates, one after another.
+#'Else it should be a single numeric identifying the covariate to plot.
 #'@name ResponseCurve
-ResponseCurve <- function (model, ras, cov = 1) {
+ResponseCurve <- function (model, ras, cov = NULL) {
   
+  # by default, plot all covariates
+  if (is.null(cov)) {
+    for (i in 1:(ncol(model$data) - 6)) {
+      ResponseCurve(model, ras, cov = i)
+    }
+    return(invisible())
+  }
+
+
   rescale <- function (x) {
     # scale to 0/1 for colour schemes
     x <- x - min(x)
