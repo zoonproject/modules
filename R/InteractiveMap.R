@@ -1,6 +1,7 @@
 #'Output module: InteractiveMap
 #'
-#'Plot an interactive map of the predicted distribution.
+#'Plot an zoomable and scrollable map of the predicted distribution
+#' and training data.
 #'
 #'@param model  
 #'
@@ -44,9 +45,12 @@ InteractiveMap <-
                                    provider = 'Esri.WorldImagery',
                                    group = 'Esri.WorldImagery')
     
+    # get legend values
+    legend_values <- round(seq(0, 1, length.out = 10), 3)
+    
     # get prediction colour palette
     pred_pal <- leaflet::colorNumeric(viridis(10), 
-                                 domain = values, 
+                                 domain = legend_values, 
                                  na.color = 'transparent')
     
     # add the prediction raster
@@ -60,8 +64,6 @@ InteractiveMap <-
     # add to the overlay groups list
     overlay_groups <- 'Predicted distribution'
     
-    # get legend values
-    legend_values <- round(seq(0, 1, length.out = 10), 3)
     
     # add legend
     m <- leaflet::addLegend(map = m,
