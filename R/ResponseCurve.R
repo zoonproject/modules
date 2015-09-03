@@ -107,7 +107,17 @@ ResponseCurve <- function (model, ras, cov = 1) {
   covar_max <- max( covar )
   # get subsets for both presences and background points
   pres_idx <- which(model$data$type=="presence")
-  back_idx <- which(model$data$type=="background")
+  
+  # if there are absence points, use them
+  if (any(model$data$type == 'absence')) {
+    back_idx <- which(model$data$type=="absence")
+    back_name <- 'Absence'
+  } else if (any(model$data$type == 'background')) {
+    back_idx <- which(model$data$type=="background")
+    back_name <- 'Background'
+  } else {
+    stop ('no background or absence records present')
+  }
   
   ###___ Plot RESPONSE FUNCTION
   par(mar=c(0,1,1,1))
@@ -150,7 +160,7 @@ ResponseCurve <- function (model, ras, cov = 1) {
   par(mar=c(4,1,0.5,1))
   plot(-99,-99, xlim=c(1,100), ylim=c(1,100), cex=0, main="", axes = FALSE, xlab="", ylab="")
   #points(50,50,pch=19, cex=10)
-  text(1,90, labels="Background", col=coltits2, adj=0, cex= cexlab)
+  text(1,90, labels=back_name, col=coltits2, adj=0, cex= cexlab)
   text(1,75, labels="Data", col=coltits2, adj=0, cex= cexlab)
   text(85, 50, labels="density", col=coltits, cex=cexlab3, srt=90, font=3)
   
