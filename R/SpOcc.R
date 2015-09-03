@@ -24,6 +24,7 @@ function(species, extent, databases = 'gbif'){
 
   zoon:::GetPackage(spocc)
 
+  # reorder the extent to match the xmin, ymin, xmax, yamx order that spocc expects now
   reorderExtent <- extent[c(1, 3, 2, 4)]
 
   raw <- occ2df(occ(query = species, geometry = reorderExtent, from = databases, limit=1e5))

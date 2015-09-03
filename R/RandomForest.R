@@ -18,6 +18,7 @@ RandomForest <- function (df) {
   
   covs <- as.data.frame(df[, 6:ncol(df)])
   names(covs) <- names(df)[6:ncol(df)]
+
   m <- randomForest(df$value ~ .,
                     data = covs,
                     weights = rep(1, nrow(covs)),
