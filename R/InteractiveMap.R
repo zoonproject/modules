@@ -20,7 +20,7 @@ InteractiveMap <-
     zoon:::GetPackage('htmlwidgets')
     zoon:::GetPackage('viridis')
     
-    
+    # Make the prediction
     vals <- data.frame(getValues(ras))
     colnames(vals) <- names(ras)
     
@@ -36,8 +36,6 @@ InteractiveMap <-
     pred_ras <- ras[[1]]
     
     pred_ras <- setValues(pred_ras, pred)
-    names(pred_ras) <- 'prediction'
-    
     
     # set up a map with background layers
     m <- leaflet::leaflet()
@@ -60,14 +58,21 @@ InteractiveMap <-
                                  colors = pal,
                                  project = TRUE,
                                  opacity = 0.8,
-                                 group = names(pred_ras))
+                                 group = 'Predicted distribution')
     
     # add a legend
     m <- leaflet::addLegend(map = m,
                             pal = pal,
                             opacity = 0.8, 
                             values = values, 
-                            title = names(pred_ras))
+                            title = 'Predicted distribution')
+    
+    # add toggle for the layers
+    m <- leaflet::addLayersControl(map = m,
+                                   position = "topleft",
+                                   baseGroups = c('OpenStreetMap',
+                                                  'Esri.WorldImagery'),
+                                   overlayGroups = 'Predicted distribution')
     
     htmlwidgets:::print.htmlwidget(m)
     
