@@ -44,18 +44,15 @@ InteractiveMap <-
                                    provider = 'Esri.WorldImagery',
                                    group = 'Esri.WorldImagery')
     
-    # get legend values
-    values <- round(seq(0, 1, length.out = 10), 3)
-    
-    # get colour palette
-    pal <- leaflet::colorNumeric(viridis(10), 
+    # get prediction colour palette
+    pred_pal <- leaflet::colorNumeric(viridis(10), 
                                  domain = values, 
                                  na.color = 'transparent')
     
-    # add the raster
+    # add the prediction raster
     m <- leaflet::addRasterImage(map = m,
                                  x = pred_ras,
-                                 colors = pal,
+                                 colors = pred_pal,
                                  project = TRUE,
                                  opacity = 0.8,
                                  group = 'Predicted distribution')
@@ -63,11 +60,14 @@ InteractiveMap <-
     # add to the overlay groups list
     overlay_groups <- 'Predicted distribution'
     
-    # add a legend
+    # get legend values
+    legend_values <- round(seq(0, 1, length.out = 10), 3)
+    
+    # add legend
     m <- leaflet::addLegend(map = m,
-                            pal = pal,
+                            pal = pred_pal,
                             opacity = 0.8, 
-                            values = values, 
+                            values = legend_values, 
                             title = 'Predicted distribution')
 
     # add training data
