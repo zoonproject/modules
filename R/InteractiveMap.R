@@ -39,8 +39,8 @@ InteractiveMap <-
     
     # set up a map with background layers
     m <- leaflet::leaflet()
-    m <- leaflet::addTiles(m, group = 'OpenStreetMap')
-    m <- leaflet::addProviderTiles(m,
+    m <- leaflet::addTiles(map = m, group = 'OpenStreetMap')
+    m <- leaflet::addProviderTiles(map = m,
                                    provider = 'Esri.WorldImagery',
                                    group = 'Esri.WorldImagery')
     
@@ -60,21 +60,57 @@ InteractiveMap <-
                                  opacity = 0.8,
                                  group = 'Predicted distribution')
     
+    # add to the overlay groups list
+    overlay_groups <- 'Predicted distribution'
+    
     # add a legend
     m <- leaflet::addLegend(map = m,
                             pal = pal,
                             opacity = 0.8, 
                             values = values, 
                             title = 'Predicted distribution')
+
+    # add training data
+    df <- model$data
     
+    # color palettes for circles
+    fill_pal <- colorFactor(grey(c(1, 0, 0.2)),
+                            domain = c('presence',
+                                       'absence',
+                                       'background'))
+
+    border_pal <- colorFactor(grey(c(0, 1, 1)),
+                            domain = c('presence',
+                                       'absence',
+                                       'background'))
+    
+    for (type in c('background', 'absence', 'presence')) {
+      if (any(df$type == type)) {
+        idx <- df$type == type
+        group_name <- paste(type, 'data')
+        overlay_groups <- c(overlay_groups, group_name)
+        m <- leaflet::addCircleMarkers(map = m,
+                                 lng = df$longitude[idx],
+                                 lat = df$latitude[idx],
+                                 color = grey(0.4),
+                                 fillColor = fill_pal(type),
+                                 weight = 1,
+                                 opacity = 1,
+                                 fillOpacity = 1,
+                                 radius = 5,
+                                 group = group_name)
+        
+      }
+    }
+        
     # add toggle for the layers
     m <- leaflet::addLayersControl(map = m,
                                    position = "topleft",
                                    baseGroups = c('OpenStreetMap',
                                                   'Esri.WorldImagery'),
-                                   overlayGroups = 'Predicted distribution')
+                                   overlayGroups = overlay_groups)
     
-    htmlwidgets:::print.htmlwidget(m)
+    htmlwidgets:::print.htmlwidget(x = m)
     
     return (NULL)
     
