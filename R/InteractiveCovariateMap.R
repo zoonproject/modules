@@ -2,16 +2,16 @@
 #'
 #'Plot a zoomable and scrollable map of a covariate layer.
 #'
-#'@param model  
+#'@param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'
 #'
-#'@param ras
+#'@param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
 #'@param which which covariate to plot.
 #' A single numeric giving the index of the covariate to plot
 
 #'@name InteractiveCovariateMap
 InteractiveCovariateMap <-
-  function (model, ras, which = 1) {
+  function (.model, .ras, which = 1) {
     
     # This function draws inspiration from a previous version of
     # the Rsenal package: https://github.com/environmentalinformatics-marburg/Rsenal
@@ -31,28 +31,28 @@ InteractiveCovariateMap <-
                                    group = 'Esri.WorldImagery')
     
     # get the required covariate
-    ras <- ras[[which]]
+    .ras <- .ras[[which]]
     
     # get covariates colour palette
     cov_pal <- leaflet::colorNumeric(viridis(10), 
-                                      domain = c(minValue(ras),
-                                                 maxValue(ras)), 
+                                      domain = c(minValue(.ras),
+                                                 maxValue(.ras)), 
                                       na.color = 'transparent')
     
     m <- leaflet::addRasterImage(map = m,
-                                 x = ras,
+                                 x = .ras,
                                  colors = cov_pal,
                                  project = TRUE,
                                  opacity = 0.8,
-                                 group = names(ras))
+                                 group = names(.ras))
     
     # add to list of overlay layers
-    overlay_groups <- names(ras)
+    overlay_groups <- names(.ras)
     
     
     # get legend values
-    legend_values <- round(seq(minValue(ras),
-                               maxValue(ras),
+    legend_values <- round(seq(minValue(.ras),
+                               maxValue(.ras),
                                length.out = 10), 3)
     
     # add legend
@@ -60,10 +60,10 @@ InteractiveCovariateMap <-
                             pal = cov_pal,
                             opacity = 0.8, 
                             values = legend_values, 
-                            title = names(ras))
+                            title = names(.ras))
     
     # add training data
-    df <- model$data
+    df <- .model$data
     
     # color palettes for circles
     fill_pal <- colorFactor(grey(c(1, 0, 0.2)),

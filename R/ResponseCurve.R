@@ -15,8 +15,8 @@ ResponseCurve <- function (.model, .ras, cov = NULL) {
   
   # by default, plot all covariates
   if (is.null(cov)) {
-    for (i in 1:(ncol(model$data) - 6)) {
-      ResponseCurve(model, ras, cov = i)
+    for (i in 1:(ncol(.model$data) - 6)) {
+      ResponseCurve(.model, .ras, cov = i)
     }
     return(invisible())
   }
@@ -113,14 +113,14 @@ ResponseCurve <- function (.model, .ras, cov = NULL) {
   covar_max <- max( covar )
   # get subsets for both presences and background points
 
-  pres_idx <- which(model$data$type=="presence")
+  pres_idx <- which(.model$data$type=="presence")
   
   # if there are absence points, use them
-  if (any(model$data$type == 'absence')) {
-    back_idx <- which(model$data$type=="absence")
+  if (any(.model$data$type == 'absence')) {
+    back_idx <- which(.model$data$type=="absence")
     back_name <- 'Absence'
-  } else if (any(model$data$type == 'background')) {
-    back_idx <- which(model$data$type=="background")
+  } else if (any(.model$data$type == 'background')) {
+    back_idx <- which(.model$data$type=="background")
     back_name <- 'Background'
   } else {
     stop ('no background or absence records present')
