@@ -91,8 +91,8 @@ InteractiveMap <- function (.model, .ras) {
         group_name <- paste(type, 'data')
         overlay_groups <- c(overlay_groups, group_name)
         m <- leaflet::addCircleMarkers(map = m,
-                                 lng = df$longitude[idx],
-                                 lat = df$latitude[idx],
+                                 lng = df$lon[idx],
+                                 lat = df$lat[idx],
                                  color = grey(0.4),
                                  fillColor = fill_pal(type),
                                  weight = 1,
