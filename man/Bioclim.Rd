@@ -7,7 +7,7 @@
 Bioclim(extent, resolution = 5)
 }
 \arguments{
-\item{extent}{Length 4 character vector giving min longitude, max longitude, min latitude, max latitude.}
+\item{extent}{Length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude.}
 
 \item{resolution}{Resolution in minutes. Must be one of 2.5, 5 or 10. Default is 5.}
 }

@@ -4,12 +4,12 @@
 \alias{ResponseCurve}
 \title{Output module: ResponseCurve}
 \usage{
-ResponseCurve(model, ras, cov = 1)
+ResponseCurve(.model, .ras, cov = 1)
 }
 \arguments{
-\item{model}{}
+\item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
 
-\item{ras}{}
+\item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
 
 \item{cov}{which of the covariates to plot the response against}
 }

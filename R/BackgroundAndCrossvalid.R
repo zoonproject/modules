@@ -4,16 +4,15 @@
 #'Process module to generate up to 100 background records at random in
 #'      cells of ras and split all data in k folds for cross validation.
 #'
+#'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
+#'
 #'@param k The number of folds you wish to have. Will later implement a leaveoneout opt
 #'
 #'@name BackgroundAndCrossvalid
-
-
-
-BackgroundAndCrossvalid <- function (data, k=5) {
+BackgroundAndCrossvalid <- function (.data, k=5) {
   
-  occurrence <- data$df
-  ras <- data$ras
+  occurrence <- .data$df
+  ras <- .data$ras
 
   
   if (!all(occurrence$type == 'presence')) {

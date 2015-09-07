@@ -4,9 +4,11 @@
 \alias{Crossvalidate}
 \title{Process module: Crossvalidate}
 \usage{
-Crossvalidate(data, k = 5)
+Crossvalidate(.data, k = 5)
 }
 \arguments{
+\item{.data}{\strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.}
+
 \item{k}{Positive integer number of folds to split the data into. Default is 5.}
 }
 \description{

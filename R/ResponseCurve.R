@@ -3,11 +3,13 @@
 #'Plot a detailed conditional response curve from the model
 #' against one covariate.
 #'
-#'@param model  
-#'@param ras  
+#'@param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
+#' 
+#'@param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
+#'
 #'@param cov which of the covariates to plot the response against
 #'@name ResponseCurve
-ResponseCurve <- function (model, ras, cov = 1) {
+ResponseCurve <- function (.model, .ras, cov = 1) {
   
   rescale <- function (x) {
     # scale to 0/1 for colour schemes
@@ -16,7 +18,7 @@ ResponseCurve <- function (model, ras, cov = 1) {
   }
   
   # extract covariates matrix
-  covars <- model$data[, 7:ncol(model$data), drop = FALSE]
+  covars <- .model$data[, 7:ncol(.model$data), drop = FALSE]
   
   # name of key covariate
   name <- colnames(covars)[cov]
@@ -31,7 +33,7 @@ ResponseCurve <- function (model, ras, cov = 1) {
   #select how many pred points to use
   Ntestpoints = 500
   #get the number of coefficients in the model
-  Ncoff <- ncol(covars)		#	length(coefficients(model$model))-1 
+  Ncoff <- ncol(covars)		#	length(coefficients(.model$model))-1 
   # create a dummy data frame
   Epred <- as.data.frame( matrix(0, nrow=Ntestpoints , ncol=Ncoff) )
   colnames(Epred) <- colnames(covars)
@@ -54,7 +56,7 @@ ResponseCurve <- function (model, ras, cov = 1) {
     # Add in variation for variable of focus
     Etest[kk] <- Epred[kk]
     # make predictions
-    p <- predict(model$model, Etest, type = 'response')
+    p <- predict(.model$model, Etest, type = 'response')
     
     # make sure it's flat
     if (!is.null(dim(p))) p <- p[, 1]
@@ -106,8 +108,8 @@ ResponseCurve <- function (model, ras, cov = 1) {
   covar_min <- min( covar)
   covar_max <- max( covar )
   # get subsets for both presences and background points
-  pres_idx <- which(model$data$type=="presence")
-  back_idx <- which(model$data$type=="background")
+  pres_idx <- which(.model$data$type=="presence")
+  back_idx <- which(.model$data$type=="background")
   
   ###___ Plot RESPONSE FUNCTION
   par(mar=c(0,1,1,1))

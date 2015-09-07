@@ -2,6 +2,10 @@
 #'
 #'Upload your workflow call, model, occurrance and covariate data to figshare as a RData file. Uploads privately but be aware I cannot assure the privacy of any data. This module is a work in progress, and will obviously want to upload the output from the output modules.
 #'
+#'@param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'
+#'
+#'@param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
+#'
 #'@param title String giving the title 
 #'
 #'@param description  String describing the workflow 
@@ -14,12 +18,9 @@
 #'
 #'@name Figshare
 Figshare <-
-function (model, ras, title, description='zoon workflow', authors='zoon', categories='SDM', tags='zoon'){
+function (.model, .ras, title, description='zoon workflow', authors='zoon', categories='SDM', tags='zoon'){
 
-  GetPackage(rfigshare)
-
-  
-
+  zoon:::GetPackage(rfigshare)
 
   bits <- sys.call(1)
 
@@ -34,7 +35,7 @@ function (model, ras, title, description='zoon workflow', authors='zoon', catego
                  ')')
 
 
-  save(call, model, ras, file = 'zoonTMPfigshare.RData')
+  save(call, .model, .ras, file = 'zoonTMPfigshare.RData')
   
 
   id <- fs_new_article(title = title, description = description, 

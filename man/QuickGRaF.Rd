@@ -4,9 +4,11 @@
 \alias{QuickGRaF}
 \title{Model module: QuickGRaF}
 \usage{
-QuickGRaF(df, l = NULL)
+QuickGRaF(.df, l = NULL)
 }
 \arguments{
+\item{.df}{\strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.}
+
 \item{l}{lengthscale parameter, a positive number controlling the complexity
 of the fitted model with respect to each covariate.
 Can either be a single number (in which case it is used for all covariates),

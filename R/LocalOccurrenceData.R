@@ -25,6 +25,8 @@
 LocalOccurrenceData <-
 function(filename, occurrenceType, columns, externalValidation = FALSE){
 
+  zoon:::GetPackage('assertthat')
+  
   # If occurrence type is not a string, turn it into one.
   if(!is.string(occurrenceType)){
     occurrenceType <- deparse(substitute(occurrenceType))

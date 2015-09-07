@@ -3,15 +3,16 @@
 #'Process module to generate up to 1000 background records at random in
 #'      cells of the covariate raster and return these along with the occurrence data.
 #'
+#'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'
 #'@name OneThousandBackground
 
 
-OneThousandBackground <- function (data) {
+OneThousandBackground <- function (.data) {
   
 
-  occurrence <- data$df
-  ras <- data$ras
+  occurrence <- .data$df
+  ras <- .data$ras
  
   if (!all(occurrence$type == 'presence')) {
     stop ('this function only works for presence-only data')

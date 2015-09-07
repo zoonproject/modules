@@ -4,9 +4,11 @@
 \alias{BackgroundAndCrossvalid}
 \title{Process module: BackgroundAndCrossvalid}
 \usage{
-BackgroundAndCrossvalid(data, k = 5)
+BackgroundAndCrossvalid(.data, k = 5)
 }
 \arguments{
+\item{.data}{\strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.}
+
 \item{k}{The number of folds you wish to have. Will later implement a leaveoneout opt}
 }
 \description{
