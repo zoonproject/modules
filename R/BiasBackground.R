@@ -65,11 +65,3 @@ BiasBackground <- function (.data, bias, n = 100) {
   return(list(df=df, ras=ras))
   
 }
-
-
-library(zoon)
-work2 <- workflow(occurrence = UKAnophelesPlumbeus,
-                  covariate  = UKBioclim,
-                  process    = OneHundredBackground,
-                  model      = RandomForest,
-                  output     = InteractiveMap)
