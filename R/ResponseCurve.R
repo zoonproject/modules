@@ -78,6 +78,9 @@ ResponseCurve <- function (.model, .ras, cov = NULL) {
   
   # ~~~~~~~~~~~~~~~~~~~~
   # plotting
+  # save default, for resetting...
+  def.par <- par(no.readonly = TRUE) 
+  
   
   # formatting
   cexlab  = 1.3	# subtitles
@@ -185,5 +188,8 @@ ResponseCurve <- function (.model, .ras, cov = NULL) {
   plot(-99,-99, xlim=c(1,100), ylim=c(1,100), cex=0, main="", axes = FALSE, xlab="", ylab="")
   text(1,90, labels=c(name), 
        col=coltits, adj=0, cex= cexlab2, font=2)
+  
+  # Reset to default
+  par(def.par)  
   
 }
