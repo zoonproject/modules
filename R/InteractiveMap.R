@@ -3,13 +3,12 @@
 #'Plot an zoomable and scrollable map of the predicted distribution
 #' and training data.
 #'
-#'@param model  
+#'@param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'
 #'
-#'@param ras  
-
+#'@param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
+#'
 #'@name InteractiveMap
-InteractiveMap <-
-  function (model, ras) {
+InteractiveMap <- function (.model, .ras) {
     
     # This function draws inspiration from a previous version of
     # the Rsenal package: https://github.com/environmentalinformatics-marburg/Rsenal
@@ -22,10 +21,10 @@ InteractiveMap <-
     zoon:::GetPackage('viridis')
     
     # Make the prediction
-    vals <- data.frame(getValues(ras))
-    colnames(vals) <- names(ras)
+    vals <- data.frame(getValues(.ras))
+    colnames(vals) <- names(.ras)
     
-    pred <- predict(model$model,
+    pred <- predict(.model$model,
                     newdata = vals,
                     type = 'response')
     
@@ -34,7 +33,7 @@ InteractiveMap <-
       pred <- pred[, 1]
     }
     
-    pred_ras <- ras[[1]]
+    pred_ras <- .ras[[1]]
     
     pred_ras <- setValues(pred_ras, pred)
     
@@ -73,7 +72,7 @@ InteractiveMap <-
                             title = 'predicted distribution')
 
     # add training data
-    df <- model$data
+    df <- .model$data
     
     # color palettes for circles
     fill_pal <- colorFactor(grey(c(1, 0, 0.2)),

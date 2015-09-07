@@ -2,7 +2,7 @@
 % Please edit documentation in R/LocalRaster.R
 \name{LocalRaster}
 \alias{LocalRaster}
-\title{LocalRaster: Read in a single raster or a list of rasters and stack them.}
+\title{Covariate module: LocalRaster}
 \usage{
 LocalRaster(filenames)
 }
@@ -10,10 +10,10 @@ LocalRaster(filenames)
 \item{filenames}{Either a string of the filename of the raster layer, or a list of strings of filenames to rasters that will be stacked.}
 }
 \description{
-Read in a single raster or a list of rasters and stack them.
+LocalRaster: Read in a single raster or a list of rasters and stack them.
 }
 \details{
-Module Type: Covariate
+Read in a single raster or a list of rasters and stack them.
 }
 \author{
 Tim Lucas

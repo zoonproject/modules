@@ -1,6 +1,9 @@
 #'Model module: QuickGRaF
 #'
 #'Model module to fit a quick GRaF model, without parameter optimisation.
+#'
+#'@param .df \strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.
+#'
 #'@param l lengthscale parameter, a positive number controlling the complexity
 #' of the fitted model with respect to each covariate.
 #' Can either be a single number (in which case it is used for all covariates),
@@ -8,20 +11,18 @@
 #' or \code{NULL} in which case GRaF will calculate a fixed approximation to
 #' a sensible lengthscale.
 #'@name QuickGRaF
-
-
 QuickGRaF <-
-function (df, l = NULL) {
+function (.df, l = NULL) {
   
   zoon:::GetPackage('GRaF')
   
-  if (!all(df$type %in% c('presence', 'absence', 'background'))) {
+  if (!all(.df$type %in% c('presence', 'absence', 'background'))) {
     stop ('only for presence/absence or presence/background data')
   }
   
   # get the covariates
-  covs <- as.data.frame(df[, 6:ncol(df)])
-  names(covs) <- names(df)[6:ncol(df)]
+  covs <- as.data.frame(.df[, 6:ncol(.df)])
+  names(covs) <- names(.df)[6:ncol(.df)]
   
   # set up l
   if (!is.null(l)) {
@@ -43,7 +44,7 @@ function (df, l = NULL) {
     }
   }
   # fit the model
-  m <- graf(df$value,
+  m <- graf(.df$value,
             covs,
             l = l)
   

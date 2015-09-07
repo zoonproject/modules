@@ -2,6 +2,8 @@
 #'
 #'Model module wrapper for BIOMOD_Modeling()
 #'
+#'@param .df \strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.
+#'
 #'@param modelType A character vector to describe models to use. Select from 
 #''GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT' 
 #'
@@ -13,16 +15,16 @@
 
 
 BiomodModel <-
-function(df, modelType){
+function(.df, modelType){
 
 
   zoon:::GetPackage(biomod2)
   
   # If our response in an integer, convert to numeric
-  if(class(df$value) == 'integer') df$value <- as.numeric(df$value)
+  if(class(.df$value) == 'integer') .df$value <- as.numeric(.df$value)
  
-  biomodData <- BIOMOD_FormatingData(resp.var = df$value, 
-    expl.var = df[,6:NCOL(df), drop=FALSE], resp.xy = df[,c('longitude', 'latitude')], 
+  biomodData <- BIOMOD_FormatingData(resp.var = .df$value, 
+    expl.var = .df[,6:NCOL(.df), drop=FALSE], resp.xy = .df[,c('longitude', 'latitude')], 
     resp.name = 'Species')
 
   myBiomodOptions <- BIOMOD_ModelingOptions()

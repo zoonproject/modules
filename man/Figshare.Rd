@@ -4,10 +4,14 @@
 \alias{Figshare}
 \title{Output module: Figshare}
 \usage{
-Figshare(model, ras, title, description = "zoon workflow", authors = "zoon",
-  categories = "SDM", tags = "zoon")
+Figshare(.model, .ras, title, description = "zoon workflow",
+  authors = "zoon", categories = "SDM", tags = "zoon")
 }
 \arguments{
+\item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'}
+
+\item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
+
 \item{title}{String giving the title}
 
 \item{description}{String describing the workflow}

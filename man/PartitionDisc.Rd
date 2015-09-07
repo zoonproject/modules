@@ -4,9 +4,11 @@
 \alias{PartitionDisc}
 \title{PartitionDisc: Leave-one-disc-out cross-validation}
 \usage{
-PartitionDisc(data, radius = 2, buffer = 1)
+PartitionDisc(.data, radius = 2, buffer = 1)
 }
 \arguments{
+\item{.data}{\strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.}
+
 \item{radius}{Numeric the radius of the disc, in degrees}
 
 \item{buffer}{Numeric, the size of the buffer zone in degrees}
