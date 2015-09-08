@@ -13,6 +13,12 @@
 #'  Choose from "gbif", "bison", "inat", "ebird", "ecoengine", "antweb".
 #'  Defaults to gbif. NB I have had some problems with databases other
 #'  than gbif.
+#'
+#'@param type A string giving the type of occurrence data to treat these records as.
+#'  Must be one of \code{'presence'} (the default and most common use case),
+#'  \code{'absence'} or \code{'background'} (which may be used to implement
+#'  a 'target background group' approach for overcoming observation bias).
+#'
 #'@seealso \code{\link{spocc::occ}}
 #'
 #'
@@ -20,7 +26,12 @@
 
 
 SpOcc <-
-function(species, extent, databases = 'gbif'){
+function(species, extent, databases = 'gbif', type = 'presence'){
+
+  if (!(type %in% c('presence', 'absence', 'background'))) {
+    stop(paste('occurrence type', type, 'cannot be used, type must be one of:',
+               "'presence', 'absence' or 'background'"))
+  }
 
   zoon:::GetPackage(spocc)
 
@@ -37,8 +48,12 @@ function(species, extent, databases = 'gbif'){
                'for the given extent'))
   }
   occurrence <- raw[,c('longitude', 'latitude')]
-  occurrence$value <- 1
-  occurrence$type <- 'presence'
+  if (type == 'presence') {
+    occurrence$value <- 1 
+  } else {
+    occurrence$value <- 0 
+  }
+  occurrence$type <- type
   occurrence$fold <- 1
   return(occurrence) 
 }
