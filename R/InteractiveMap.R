@@ -24,9 +24,8 @@ InteractiveMap <- function (.model, .ras) {
     vals <- data.frame(getValues(.ras))
     colnames(vals) <- names(.ras)
     
-    pred <- predict(.model$model,
-                    newdata = vals,
-                    type = 'response')
+    pred <- ZoonPredict(.model$model,
+                        newdata = vals)
     
     # if pred is a matrix/dataframe, take only the first column
     # and coerce to a vector
