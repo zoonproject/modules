@@ -48,5 +48,11 @@ function (.df, l = NULL) {
             covs,
             l = l)
   
-  return (m)
+  ZoonModel(model = m,
+            code = {
+              GRaF::predict.graf(model,
+                                newdata,
+                                type = 'response')[, 1]
+            },
+            packages = 'GRaF')
 }

@@ -25,6 +25,12 @@ RandomForest <- function (.df) {
                     weights = rep(1, nrow(covs)),
                     size = 1)
 
-  return (m)
+  ZoonModel(model = m,
+            code = {
+              randomForest:::predict.randomForest(model,
+                                newdata,
+                                type = 'response')
+            },
+            packages = 'randomForest')
 }
 
