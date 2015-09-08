@@ -4,7 +4,7 @@
 \alias{SpOcc}
 \title{Occurrence module: SpOcc}
 \usage{
-SpOcc(species, extent, databases = "gbif")
+SpOcc(species, extent, databases = "gbif", type = "presence")
 }
 \arguments{
 \item{species}{A character string giving the species name.
@@ -15,9 +15,14 @@ SpOcc(species, extent, databases = "gbif")
  order: xmin, xmax, ymin, ymax.}
 
 \item{databases}{A character vector giving the databases to use.
-Choose from "gbif", "bison", "inat", "ebird", "ecoengine", "antweb".
-Defaults to gbif. NB I have had some problems with databases other
-than gbif.}
+ Choose from "gbif", "bison", "inat", "ebird", "ecoengine", "antweb".
+ Defaults to gbif. NB I have had some problems with databases other
+ than gbif.}
+
+\item{type}{A string giving the type of occurrence data to treat these records as.
+ Must be one of \code{'presence'} (the default and most common use case),
+ \code{'absence'} or \code{'background'} (which may be used to implement
+ a 'target background group' approach for overcoming observation bias).}
 }
 \description{
 Occurrence module to collect occurrence data from a number of data bases.

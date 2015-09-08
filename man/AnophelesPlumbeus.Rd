@@ -4,16 +4,15 @@
 \alias{AnophelesPlumbeus}
 \title{Occurrence module: AnophelesPlumbeus}
 \usage{
-AnophelesPlumbeus(extent)
+AnophelesPlumbeus(extent = c(-10, 10, 45, 65))
 }
 \arguments{
-\item{extent}{A numeric vetor of length 4 giving the coordinates of the
+\item{extent}{A numeric vector of length 4 giving the coordinates of the
       rectangular region within which to carry out the analysis, in the
-      order: xmin, xmax, ymin, ymax.}
+      order: xmin, xmax, ymin, ymax. By default the extent of the UK.}
 }
 \description{
-Occurrence module to grab *Anopheles plumbeus* (a mosquito) occurrence (i.e.
-      presence-only) data from GBIF, in the area bounded by extent.
-      Perhaps this should have temporal interval too for future-proofing?
+Occurrence module to grab *Anopheles plumbeus* (a mosquito) presence
+      (presence-only) data from GBIF, in the area bounded by extent.
 }
 
