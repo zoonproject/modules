@@ -29,6 +29,7 @@ InteractiveMap <- function (.model, .ras) {
                     type = 'response')
     
     # if pred is a matrix/dataframe, take only the first column
+    # and coerce to a vector
     if(NCOL(pred) > 1) {
       pred <- pred[, 1]
     }
