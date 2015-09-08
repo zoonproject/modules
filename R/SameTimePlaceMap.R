@@ -22,10 +22,12 @@ SameTimePlaceMap <- function (.model, .ras) {
                   type = 'response')
   
   # if pred is a matrix/dataframe, take only the first column
-  if(!is.null(dim(pred))) {
+  # and coerce to a vector
+  if(NCOL(pred) > 1) {
     pred <- pred[, 1]
   }
-  
+  pred <- as.vector(pred)
+ 
   pred_ras <- .ras[[1]]
   
   pred_ras <- setValues(pred_ras, pred)
