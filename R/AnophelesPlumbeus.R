@@ -1,27 +1,21 @@
 #'Occurrence module: AnophelesPlumbeus
 #'
-#'Occurrence module to grab *Anopheles plumbeus* (a mosquito) occurrence (i.e.
-#'       presence-only) data from GBIF, in the area bounded by extent.
-#'       Perhaps this should have temporal interval too for future-proofing?
+#'Occurrence module to grab *Anopheles plumbeus* (a mosquito) presence
+#'       (presence-only) data from GBIF, in the area bounded by extent.
 #'
-#'@param extent A numeric vetor of length 4 giving the coordinates of the 
+#'@param extent A numeric vector of length 4 giving the coordinates of the 
 #'       rectangular region within which to carry out the analysis, in the 
-#'       order: xmin, xmax, ymin, ymax.
+#'       order: xmin, xmax, ymin, ymax. By default the extent of the UK.
 #'
 #'
 #'@name AnophelesPlumbeus
 
 
 
-AnophelesPlumbeus <- function(extent){
+AnophelesPlumbeus <- function(extent = c(-10, 10, 45, 65)){
 
   zoon:::GetPackage(dismo)
-
-  extent <- uk.extent <- c(xmin = -10,
-              xmax = 10,
-              ymin = 45,
-              ymax = 65)
-  
+   
   raw <- gbif(genus = 'Anopheles',
               species = 'plumbeus',
               ext = extent)
