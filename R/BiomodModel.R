@@ -56,7 +56,9 @@ BiomodModel <- function(.df, modelType){
                                      clamping.mask = FALSE,
                                      output.format = '.RData',
                                      silent = TRUE)
-              as.vector(get_predictions(p)) / 1000
+              p <- as.vector(get_predictions(p))
+              # convert to 0-1 scale
+              pmin(1, pmax(0, p / 1000))
             },
             packages = 'biomod2')
   
