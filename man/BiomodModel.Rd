@@ -7,17 +7,16 @@
 BiomodModel(.df, modelType)
 }
 \arguments{
-\item{.df}{\strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.}
+\item{.df}{\strong{Internal parameter, do not use in the workflow function}.
+\code{.df} is data frame that combines the occurrence data and covariate
+ data. \code{.df} is passed automatically in workflow from the process
+ module(s) to the model module(s) and should not be passed by the user.}
 
 \item{modelType}{A character vector to describe models to use. Select from
 'GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT'}
 }
-\value{
-a Raster* object (class from the raster package) with the gridded
-     covariates used to train and predict from the SDM.
-}
 \description{
-Model module wrapper for BIOMOD_Modeling()
+Model module wrapper for the biomod2 function BIOMOD_Modeling()
 }
 \seealso{
 \code{\link{biomod2::BIOMOD_ModelingOptions}}

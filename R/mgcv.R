@@ -52,6 +52,14 @@ mgcv <-
                   data = covs,
                   family = binomial)
 
-    return (m)
+    # create a ZoonModel object and return it
+    ZoonModel(model = m,
+              code = {
+                p <- mgcv::predict.gam(model,
+                                  newdata,
+                                  type = 'response')
+                as.vector(p)
+              },
+              packages = 'mgcv')
   
 }

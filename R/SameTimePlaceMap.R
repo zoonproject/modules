@@ -17,16 +17,8 @@ SameTimePlaceMap <- function (.model, .ras) {
   vals <- data.frame(getValues(.ras))
   colnames(vals) <- names(.ras)
   
-  pred <- predict(.model$model,
-                  newdata = vals,
-                  type = 'response')
-  
-  # if pred is a matrix/dataframe, take only the first column
-  # and coerce to a vector
-  if(NCOL(pred) > 1) {
-    pred <- pred[, 1]
-  }
-  pred <- as.vector(pred)
+  pred <- ZoonPredict(.model$model,
+                      newdata = vals)
  
   pred_ras <- .ras[[1]]
   

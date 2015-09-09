@@ -1,98 +1,65 @@
 #'Model module: BiomodModel
 #'
-#'Model module wrapper for BIOMOD_Modeling()
+#'Model module wrapper for the biomod2 function BIOMOD_Modeling()
 #'
-#'@param .df \strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.
+#'@param .df \strong{Internal parameter, do not use in the workflow function}.
+#' \code{.df} is data frame that combines the occurrence data and covariate
+#'  data. \code{.df} is passed automatically in workflow from the process
+#'  module(s) to the model module(s) and should not be passed by the user.
 #'
-#'@param modelType A character vector to describe models to use. Select from 
+#'@param modelType A character vector to describe models to use. Select from
 #''GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT' 
-#'
-#'@return a Raster* object (class from the raster package) with the gridded
-#'      covariates used to train and predict from the SDM.
 #'
 #'@name BiomodModel
 #'@seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}
 
 
-BiomodModel <-
-function(.df, modelType){
-
-
+BiomodModel <- function(.df, modelType){
+  
   zoon:::GetPackage(biomod2)
   
   # If our response in an integer, convert to numeric
-  if(class(.df$value) == 'integer') .df$value <- as.numeric(.df$value)
- 
-  biomodData <- BIOMOD_FormatingData(resp.var = .df$value, 
-    expl.var = .df[,6:NCOL(.df), drop=FALSE], resp.xy = .df[,c('longitude', 'latitude')], 
-    resp.name = 'Species')
-
-  myBiomodOptions <- BIOMOD_ModelingOptions()
-  #print(sys.status())
-  
-  myBiomodModelOut <- BIOMOD_Modeling(
-    biomodData,
-    models = modelType,
-    models.options = myBiomodOptions,
-    NbRunEval=1,
-    DataSplit=100,
-    Prevalence=0.5,
-    VarImport=0,
-    SaveObj = TRUE,
-    rescal.all.models = TRUE,
-    do.full.models = FALSE,
-    modeling.id =  as.character(format(Sys.time(), '%s')),
-    silent=TRUE
-  )
-
-  # Create a global predict method
-  biomodPredictMethod <- function(object, newdata, type='response'){
-  #  predict.BIOMOD.models.out <<- function(object, newdata, type='response'){
-
-    assertthat::assert_that(class(newdata) == 'RasterLayer' || class(newdata) == 'RasterStack' || class(newdata) == 'data.frame')
-
-    if(class(newdata) == 'RasterLayer'){
-      new.data.stack <- stack(newdata)
-    } else if (class(newdata) == 'RasterStack') {
-      new.data.stack <- newdata
-    } else {
-      if(!all(names(newdata) %in% object@expl.var.names) ){
-        stop('Variable names in newdata and the model object do not match')
-      }
-      new.data.df <- newdata
-    }
-
-    if(class(newdata) == 'RasterLayer' || class(newdata) == 'RasterStack'){
-      biomodProject <- BIOMOD_Projection(
-        modeling.output = object,
-        new.env = new.data.stack,
-        proj.name ='current',
-        selected.models ='all',
-        clamping.mask = F,
-        output.format ='.grd',
-        silent=TRUE
-      )
-    } else {
-      biomodProject <- BIOMOD_Projection(
-        modeling.output = object,
-        new.env = new.data.df,
-        proj.name ='current',
-        selected.models ='all',
-        clamping.mask = F,
-        output.format ='.RData',
-        silent=TRUE
-      )
-    }
-
-
-    preds <- as.vector(get_predictions(biomodProject))
-    
-    return(preds)  
-
+  if(class(.df$value) == 'integer') {
+    .df$value <- as.numeric(.df$value)
   }
-
-
-  assign('predict.BIOMOD.models.out', biomodPredictMethod, envir=parent.frame(4))
-  return(myBiomodModelOut)
-
+  
+  coords <- data.frame(.df$lon, .df$lat)
+  
+  biomodData <- BIOMOD_FormatingData(resp.var = .df$value, 
+                                     expl.var = .df[,6:NCOL(.df), drop = FALSE],
+                                     resp.xy = coords, 
+                                     resp.name = 'Species')
+  
+  myBiomodOptions <- BIOMOD_ModelingOptions()
+  
+  id <- as.character(format(Sys.time(), '%s'))
+  
+  myBiomodModelOut <- BIOMOD_Modeling(biomodData,
+                                      models = modelType,
+                                      models.options = myBiomodOptions,
+                                      NbRunEval = 1,
+                                      DataSplit = 100,
+                                      Prevalence = 0.5,
+                                      VarImport = 0,
+                                      SaveObj = TRUE,
+                                      rescal.all.models = TRUE,
+                                      do.full.models = FALSE,
+                                      modeling.id = id,
+                                      silent = TRUE)
+  
+  ZoonModel(model = myBiomodModelOut,
+            code = {
+              p <- BIOMOD_Projection(modeling.output = model,
+                                     new.env = newdata,
+                                     proj.name = 'current',
+                                     selected.models = 'all',
+                                     clamping.mask = FALSE,
+                                     output.format = '.RData',
+                                     silent = TRUE)
+              p <- as.vector(get_predictions(p))
+              # convert to 0-1 scale
+              pmin(1, pmax(0, p / 1000))
+            },
+            packages = 'biomod2')
+  
 }
