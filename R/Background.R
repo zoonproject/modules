@@ -1,26 +1,33 @@
-#'Process module: OneThousandBackground
+#'Process module: HundredBackground
 #'
-#'Process module to generate up to 1000 background records at random in
-#'      cells of the covariate raster and return these along with the occurrence data.
+#'Process module to generate background records at random in
+#'      cells of the covariate raster and return these along with the presence only data.
 #'
 #'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'
-#'@name OneThousandBackground
-
-
-OneThousandBackground <- function (.data) {
+#'@param n the number of background points to sample
+#'
+#'@name Background
+Background <- function (.data, n = 100) {
   
-
+  zoon:::GetPackage(dismo)
+  
   occurrence <- .data$df
   ras <- .data$ras
  
   if (!all(occurrence$type == 'presence')) {
-    stop ('this function only works for presence-only data')
+    stop ('"OneHundredBackground" module only works for presence-only data')
   }
   
   # generate pseudo-absence data
-  # suppressing warnings when the number is restricted
-  suppressWarnings(pa <- randomPoints(ras, 1000))
+  points <- n
+  if(ncell(ras) < n){
+    points <- ncell(ras)
+    warning(paste0('There are fewer than 100 cells in the environmental raster.', 
+      '\nUsing all available cells (', ncell(ras), ') instead'))
+  }
+  pa <- randomPoints(ras, points)
+  
   
   npres <- nrow(occurrence)
   
@@ -49,7 +56,8 @@ OneThousandBackground <- function (.data) {
   if(NROW(na.omit(df)) > 0){
     df <- na.omit(df)
   }
-  
+
   return(list(df=df, ras=ras))
   
 }
+
