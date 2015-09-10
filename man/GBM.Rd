@@ -4,8 +4,7 @@
 \alias{GBM}
 \title{Model module: GBM}
 \usage{
-GBM(.df, max.trees = 1000, interaction.depth = 5, shrinkage = 0.001,
-  cv.folds = 3)
+GBM(.df, max.trees = 1000, interaction.depth = 5, shrinkage = 0.001)
 }
 \arguments{
 \item{.df}{\strong{Internal parameter, do not use in the workflow function}.
@@ -22,10 +21,6 @@ The number of trees is equivalent to the number of iterations and
 
 \item{shrinkage}{a shrinkage parameter applied to each tree in the expansion.
 Also known as the learning rate or step-size reduction.}
-
-\item{cv.folds}{Number of cross-validation folds to perform when selecting
-the optimal number of trees and calculating an internal estimate of
- generalization error, returned in cv.error.}
 }
 \description{
 Model module to fit a generalized boosted regression (aka boosted regression
