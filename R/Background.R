@@ -16,7 +16,7 @@ Background <- function (.data, n = 100) {
   ras <- .data$ras
  
   if (!all(occurrence$type == 'presence')) {
-    stop ('"OneHundredBackground" module only works for presence-only data')
+    stop ('"Background" module only works for presence-only data')
   }
   
   # generate pseudo-absence data
