@@ -19,6 +19,8 @@
 #'  \code{'absence'} or \code{'background'} (which may be used to implement
 #'  a 'target background group' approach for overcoming observation bias).
 #'
+#'@param limit The maximum number of occurrence records to return.
+#'
 #'@seealso \code{\link{spocc::occ}}
 #'
 #'
@@ -26,7 +28,7 @@
 
 
 SpOcc <-
-function(species, extent, databases = 'gbif', type = 'presence'){
+function(species, extent, databases = 'gbif', type = 'presence', limit = 10000){
 
   if (!(type %in% c('presence', 'absence', 'background'))) {
     stop(paste('occurrence type', type, 'cannot be used, type must be one of:',
@@ -39,7 +41,7 @@ function(species, extent, databases = 'gbif', type = 'presence'){
   reorderExtent <- extent[c(1, 3, 2, 4)]
 
   # Get the data
-  raw <- occ2df(occ(query = species, geometry = reorderExtent, from = databases, limit=1e5))
+  raw <- occ2df(occ(query = species, geometry = reorderExtent, from = databases, limit = limit))
   
   # If no data is returned issue an error
   if(nrow(raw) == 0){

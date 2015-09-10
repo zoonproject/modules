@@ -4,7 +4,8 @@
 \alias{SpOcc}
 \title{Occurrence module: SpOcc}
 \usage{
-SpOcc(species, extent, databases = "gbif", type = "presence")
+SpOcc(species, extent, databases = "gbif", type = "presence",
+  limit = 10000)
 }
 \arguments{
 \item{species}{A character string giving the species name.
@@ -23,6 +24,8 @@ SpOcc(species, extent, databases = "gbif", type = "presence")
  Must be one of \code{'presence'} (the default and most common use case),
  \code{'absence'} or \code{'background'} (which may be used to implement
  a 'target background group' approach for overcoming observation bias).}
+
+\item{limit}{The maximum number of occurrence records to return.}
 }
 \description{
 Occurrence module to collect occurrence data from a number of data bases.
