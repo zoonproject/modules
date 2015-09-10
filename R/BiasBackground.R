@@ -51,8 +51,8 @@ BiasBackground <- function (.data, bias, n = 100) {
                    type = rep(c('presence', 'background'),
                               c(npres, npabs)),
                    fold = rep(1, npres + npabs),
-                   lon = c(occurrence$lon, pa[, 1]),
-                   lat = c(occurrence$lat, pa[, 2]),
+                   longitude = c(occurrence$lon, pa[, 1]),
+                   latitude = c(occurrence$lat, pa[, 2]),
                    covs)
   
   names(df)[6:ncol(df)] <- names(ras)
