@@ -18,17 +18,12 @@
 #'@param shrinkage a shrinkage parameter applied to each tree in the expansion.
 #' Also known as the learning rate or step-size reduction.
 #'
-#'@param cv.folds Number of cross-validation folds to perform when selecting
-#' the optimal number of trees and calculating an internal estimate of
-#'  generalization error, returned in cv.error.
-#'
 #'@name GBM
 GBM <-
   function (.df,
             max.trees = 1000,
             interaction.depth = 5,
-            shrinkage = 0.001,
-            cv.folds = 3) {
+            shrinkage = 0.001) {
     
     zoon:::GetPackage('gbm')
     
@@ -46,13 +41,12 @@ GBM <-
                   distribution = 'bernoulli',
                   n.trees = max.trees,
                   interaction.depth = interaction.depth,
-                  shrinkage = shrinkage,
-                  cv.folds = cv.folds)
+                  shrinkage = shrinkage)
     
     # get the optimum number of trees
     n.trees <- gbm.perf(m,
                         plot.it = FALSE,
-                        method = 'cv')
+                        method = 'OOB')
     
     # set this in m
     m$n.trees <- n.trees
