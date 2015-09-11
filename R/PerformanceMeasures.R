@@ -1,6 +1,6 @@
 #'Output module: PerformanceMeasures
 #'
-#'Calculate a suite of performance metrics on either crossvalidation or external validation data
+#'Calculate a suite of performance metrics on either crossvalidation, external validation data or (at your own risk) in-sample validation.
 #'
 #'@param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
 #'
@@ -10,7 +10,7 @@
 #'
 #'@name PerformanceMeasures
 PerformanceMeasures <-
-function(.model, .ras, threshold=0.5){
+function(.model, .ras, threshold = 0.5){
 
   zoon:::GetPackage(SDMTools)
 
@@ -19,10 +19,26 @@ function(.model, .ras, threshold=0.5){
   }
 
   if (all(.model$data$fold == 1)){
-    stop('You have no validation data to apply PerformanceMeasures module to')
-  }
+    warning('You have no cross-validation folds, validation statistics may be misleading')
 
-  if (all(.model$data$fold != 0)){
+    # make predictions for the model
+    covs <- .model$data[, 7:NCOL(.model$data), drop = FALSE]
+    p <- ZoonPredict(zoonModel = .model$model,
+                     newdata = covs)
+    
+    confusion <- SDMTools::confusion.matrix(.model$data$value,
+                                            p,
+                                            threshold)
+    
+    performance <- list(
+      auc = SDMTools::auc(.model$data$value, p),
+      kappa = Kappa(confusion),
+      omissions = omission(confusion),
+      sensitivity = sensitivity(confusion),
+      specificity = specificity(confusion),
+      proportionCorrect = prop.correct(confusion)
+    )
+  } else if (all(.model$data$fold > 1)){
     
     confusion <- SDMTools::confusion.matrix(.model$data$value, .model$data$predictions)
 
@@ -34,6 +50,7 @@ function(.model, .ras, threshold=0.5){
       specificity = specificity(confusion),
       proportionCorrect = prop.correct(confusion)
     )
+    
   } else if (all(.model$data$fold %in% c(0,1))){
 
     data <- .model$data[.model$data$fold == 0,]
@@ -48,7 +65,16 @@ function(.model, .ras, threshold=0.5){
       proportionCorrect = prop.correct(confusion)
     )
   }
+  
+  message('Model performance measures:')
+  for(i in 1:length(performance)) {
+    line <- paste0(names(performance)[i],
+                   ' :  ',
+                   performance[i])
+    message(line)
+  }
+  message(' ')
 
-  return(performance)
+  return (performance)
 
 }
