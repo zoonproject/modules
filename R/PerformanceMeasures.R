@@ -38,7 +38,7 @@ function(.model, .ras, threshold = 0.5){
       specificity = specificity(confusion),
       proportionCorrect = prop.correct(confusion)
     )
-  } else if (all(.model$data$fold > 1)){
+  } else if (all(.model$data$fold >= 1)){
     
     confusion <- SDMTools::confusion.matrix(.model$data$value, .model$data$predictions)
 
