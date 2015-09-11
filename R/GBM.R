@@ -56,10 +56,17 @@ GBM <-
     # argument is required by predict.gbm
     ZoonModel(model = m,
               code = {
-                gbm::predict.gbm(model,
-                                  newdata,
-                                  n.trees = model$n.trees,
-                                  type = 'response')
+                # create empty vector
+                p <- rep(NA, nrow(newdata))
+                # omit NAs in new data
+                newdata_clean <- na.omit(newdata)
+                # get their indices
+                na_idx <- attr(newdata_clean, 'na.action')
+                p[-na_idx] <- gbm::predict.gbm(model,
+                                               newdata,
+                                               n.trees = model$n.trees,
+                                               type = 'response')
+                return (p)
               },
               packages = 'gbm')
   }
