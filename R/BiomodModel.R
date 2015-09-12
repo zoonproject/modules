@@ -11,6 +11,7 @@
 #''GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT' 
 #'
 #'@name BiomodModel
+#'@family model
 #'@seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}
 
 

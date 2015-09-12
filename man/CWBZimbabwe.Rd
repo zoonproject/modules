@@ -29,4 +29,9 @@ Dryad data package:
      leuconotus} P.) in Zimbabwe. Dryad Digital Repository.
   \url{http://dx.doi.org/10.1371/journal.pone.0073432}
 }
+\seealso{
+Other occurrence: \code{\link{AnophelesPlumbeus}};
+  \code{\link{LocalOccurrenceData}}; \code{\link{SpOcc}};
+  \code{\link{UKAnophelesPlumbeus}}
+}
 

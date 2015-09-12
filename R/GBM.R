@@ -19,6 +19,7 @@
 #' Also known as the learning rate or step-size reduction.
 #'
 #'@name GBM
+#'@family model
 GBM <-
   function (.df,
             max.trees = 1000,

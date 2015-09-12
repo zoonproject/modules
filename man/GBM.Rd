@@ -26,4 +26,10 @@ Also known as the learning rate or step-size reduction.}
 Model module to fit a generalized boosted regression (aka boosted regression
 trees) model
 }
+\seealso{
+Other model: \code{\link{BiomodModel}};
+  \code{\link{LogisticRegression}}; \code{\link{MaxEnt}};
+  \code{\link{OptGRaF}}; \code{\link{QuickGRaF}};
+  \code{\link{RandomForest}}; \code{\link{mgcv}}
+}
 

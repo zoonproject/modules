@@ -7,6 +7,7 @@
 #'@param k Positive integer number of folds to split the data into. Default is 5. 
 #'
 #'@name Crossvalidate
+#'@family process
 Crossvalidate <-
 function (.data, k=5) {
   

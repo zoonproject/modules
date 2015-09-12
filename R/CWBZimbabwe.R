@@ -22,6 +22,7 @@
 #'   \url{http://dx.doi.org/10.1371/journal.pone.0073432} 
 #' 
 #'@name CWBZimbabwe
+#'@family occurrence
 CWBZimbabwe <-
 function(){
   return(CWBZim)

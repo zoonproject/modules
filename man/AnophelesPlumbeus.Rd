@@ -15,4 +15,9 @@ AnophelesPlumbeus(extent = c(-10, 10, 45, 65))
 Occurrence module to grab *Anopheles plumbeus* (a mosquito) presence
       (presence-only) data from GBIF, in the area bounded by extent.
 }
+\seealso{
+Other occurrence: \code{\link{CWBZimbabwe}};
+  \code{\link{LocalOccurrenceData}}; \code{\link{SpOcc}};
+  \code{\link{UKAnophelesPlumbeus}}
+}
 

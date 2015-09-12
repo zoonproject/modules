@@ -9,7 +9,7 @@
 #'@param extent Length 4 character vector giving the new extent to be predicted over. Must be within the covariate data collected in the covariate module.
 #'
 #'@name PredictNewAreaMap
-
+#'@family output
 
 PredictNewAreaMap <- function (.model, .ras, extent) {
   

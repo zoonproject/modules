@@ -26,4 +26,10 @@ smoothing basis to use. (eg "tp" for thin plate regression spline,
 Model module to fit a generalized additive model using generalized
 crossvalidation via the mgcv R package.
 }
+\seealso{
+Other model: \code{\link{BiomodModel}}; \code{\link{GBM}};
+  \code{\link{LogisticRegression}}; \code{\link{MaxEnt}};
+  \code{\link{OptGRaF}}; \code{\link{QuickGRaF}};
+  \code{\link{RandomForest}}
+}
 

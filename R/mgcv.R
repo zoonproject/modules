@@ -19,6 +19,7 @@
 #'  for an overview of what is available.
 #'
 #'@name mgcv
+#'@family model
 mgcv <-
   function (.df,
             k = -1,

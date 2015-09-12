@@ -13,4 +13,11 @@ OneHundredBackground(.data)
 Process module to generate up to 100 background records at random in
      cells of ras and return these along with the presence only data.
 }
+\seealso{
+Other process: \code{\link{BackgroundAndCrossvalid}};
+  \code{\link{Background}}; \code{\link{BiasBackground}};
+  \code{\link{Crossvalidate}}; \code{\link{NoProcess}};
+  \code{\link{OneThousandBackground}};
+  \code{\link{PartitionDisc}}
+}
 

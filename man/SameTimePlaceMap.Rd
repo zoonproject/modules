@@ -18,4 +18,12 @@ A Raster object giving the probabilistic model predictions for each
 \description{
 Output module. A function for outputing the raster of the predictions from an analysis
 }
+\seealso{
+Other output: \code{\link{Figshare}};
+  \code{\link{InteractiveCovariateMap}};
+  \code{\link{InteractiveMap}};
+  \code{\link{PerformanceMeasures}};
+  \code{\link{PredictNewAreaMap}}; \code{\link{PrintMap}};
+  \code{\link{ResponseCurve}}; \code{\link{SurfaceMap}}
+}
 

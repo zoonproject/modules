@@ -9,6 +9,7 @@
 #'@param dir Where to save figures. Defaults to the working directory. 
 #'
 #'@name SurfaceMap
+#'@family output
 SurfaceMap <-
 function (.model, .ras, dir='.') {
   

@@ -15,4 +15,12 @@ Background(.data, n = 100)
 Process module to generate background records at random in
      cells of the covariate raster and return these along with the presence only data.
 }
+\seealso{
+Other process: \code{\link{BackgroundAndCrossvalid}};
+  \code{\link{BiasBackground}};
+  \code{\link{Crossvalidate}}; \code{\link{NoProcess}};
+  \code{\link{OneHundredBackground}};
+  \code{\link{OneThousandBackground}};
+  \code{\link{PartitionDisc}}
+}
 

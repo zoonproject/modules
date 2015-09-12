@@ -14,4 +14,9 @@ Bioclim(extent, resolution = 5)
 \description{
 Get worldclim environment data. Downloads then stores locally.
 }
+\seealso{
+Other covariate: \code{\link{AirNCEP}};
+  \code{\link{LocalRaster}}; \code{\link{NCEP}};
+  \code{\link{UKAir}}; \code{\link{UKBioclim}}
+}
 

@@ -16,4 +16,12 @@ PerformanceMeasures(.model, .ras, threshold = 0.5)
 \description{
 Calculate a suite of performance metrics on either crossvalidation, external validation data or (at your own risk) in-sample validation.
 }
+\seealso{
+Other output: \code{\link{Figshare}};
+  \code{\link{InteractiveCovariateMap}};
+  \code{\link{InteractiveMap}};
+  \code{\link{PredictNewAreaMap}}; \code{\link{PrintMap}};
+  \code{\link{ResponseCurve}};
+  \code{\link{SameTimePlaceMap}}; \code{\link{SurfaceMap}}
+}
 

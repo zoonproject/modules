@@ -13,4 +13,11 @@ OneThousandBackground(.data)
 Process module to generate up to 1000 background records at random in
      cells of the covariate raster and return these along with the occurrence data.
 }
+\seealso{
+Other process: \code{\link{BackgroundAndCrossvalid}};
+  \code{\link{Background}}; \code{\link{BiasBackground}};
+  \code{\link{Crossvalidate}}; \code{\link{NoProcess}};
+  \code{\link{OneHundredBackground}};
+  \code{\link{PartitionDisc}}
+}
 

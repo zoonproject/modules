@@ -19,6 +19,7 @@
 #'@seealso \code{\link{dismo::maxent}}
 #'
 #'@name MaxEnt
+#'@family model
 MaxEnt <- function(.df){
   
   zoon:::GetPackage('dismo')

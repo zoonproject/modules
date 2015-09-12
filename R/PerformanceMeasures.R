@@ -9,6 +9,7 @@
 #'@param threshold A chosen threshold value for measures that need 0/1 predictions 
 #'
 #'@name PerformanceMeasures
+#'@family output
 PerformanceMeasures <-
 function(.model, .ras, threshold = 0.5){
 

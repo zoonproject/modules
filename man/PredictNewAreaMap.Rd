@@ -16,4 +16,12 @@ PredictNewAreaMap(.model, .ras, extent)
 \description{
 Output module. Predict a model across a new area.
 }
+\seealso{
+Other output: \code{\link{Figshare}};
+  \code{\link{InteractiveCovariateMap}};
+  \code{\link{InteractiveMap}};
+  \code{\link{PerformanceMeasures}};
+  \code{\link{PrintMap}}; \code{\link{ResponseCurve}};
+  \code{\link{SameTimePlaceMap}}; \code{\link{SurfaceMap}}
+}
 

@@ -9,7 +9,7 @@
 #'	Use the \code{Bioclim} module for bioclim data with other extents.
 #'
 #'@name UKBioclim
-#'@keywords Covariate
+#'@family covariate
 UKBioclim <-
   function() {
     world <- getData('worldclim', var = 'bio', res = 5)

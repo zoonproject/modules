@@ -24,4 +24,11 @@ Tom August'
 
 tomaug@ceh.ac.uk'
 }
+\seealso{
+Other process: \code{\link{BackgroundAndCrossvalid}};
+  \code{\link{Background}}; \code{\link{BiasBackground}};
+  \code{\link{Crossvalidate}}; \code{\link{NoProcess}};
+  \code{\link{OneHundredBackground}};
+  \code{\link{OneThousandBackground}}
+}
 

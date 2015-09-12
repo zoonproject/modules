@@ -25,7 +25,7 @@
 #'
 #'
 #'@name SpOcc
-
+#'@family occurrence
 
 SpOcc <-
 function(species, extent, databases = 'gbif', type = 'presence', limit = 10000){

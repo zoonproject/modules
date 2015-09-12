@@ -9,6 +9,7 @@
 #'@param k The number of folds you wish to have. Will later implement a leaveoneout opt
 #'
 #'@name BackgroundAndCrossvalid
+#'@family process
 BackgroundAndCrossvalid <- function (.data, k=5) {
   
   occurrence <- .data$df

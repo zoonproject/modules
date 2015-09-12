@@ -13,6 +13,7 @@
 #'@author Tom August'
 #'@author tomaug@@ceh.ac.uk'
 #'@name PartitionDisc
+#'@family process
 PartitionDisc <-
   function(.data, radius = 2, buffer = 1){
     
