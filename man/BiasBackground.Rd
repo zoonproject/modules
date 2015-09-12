@@ -28,4 +28,12 @@ Module type: Process
 \author{
 Nick Golding
 }
+\seealso{
+Other process: \code{\link{BackgroundAndCrossvalid}};
+  \code{\link{Background}}; \code{\link{Crossvalidate}};
+  \code{\link{NoProcess}};
+  \code{\link{OneHundredBackground}};
+  \code{\link{OneThousandBackground}};
+  \code{\link{PartitionDisc}}
+}
 

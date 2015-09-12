@@ -26,5 +26,9 @@ Covariate module to grab coarse resolution environmental data from NCEP
 }
 \seealso{
 \code{\link{RNCEP::NCEP.gather}}
+
+Other covariate: \code{\link{AirNCEP}};
+  \code{\link{Bioclim}}; \code{\link{LocalRaster}};
+  \code{\link{UKAir}}; \code{\link{UKBioclim}}
 }
 

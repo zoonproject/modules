@@ -18,6 +18,7 @@
 #'
 #'@author Nick Golding
 #'@name BiasBackground
+#'@family process
 BiasBackground <- function (.data, bias, n = 100) {
   
   # get the internal data

@@ -7,6 +7,7 @@
 #'@param resolution Resolution in minutes. Must be one of 2.5, 5 or 10. Default is 5. 
 #'
 #'@name Bioclim
+#'@family covariate
 Bioclim <-
 function(extent, resolution = 5) {
     

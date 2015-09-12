@@ -15,5 +15,9 @@ Load Bioclim rasters at 5 degree resolution for the UK
 	see `?getData' for more details of what that function does.
 	Use the \code{Bioclim} module for bioclim data with other extents.
 }
-\keyword{Covariate}
+\seealso{
+Other covariate: \code{\link{AirNCEP}};
+  \code{\link{Bioclim}}; \code{\link{LocalRaster}};
+  \code{\link{NCEP}}; \code{\link{UKAir}}
+}
 

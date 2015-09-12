@@ -16,4 +16,13 @@ SurfaceMap(.model, .ras, dir = ".")
 \description{
 Make a png of a map of predicted surface.
 }
+\seealso{
+Other output: \code{\link{Figshare}};
+  \code{\link{InteractiveCovariateMap}};
+  \code{\link{InteractiveMap}};
+  \code{\link{PerformanceMeasures}};
+  \code{\link{PredictNewAreaMap}}; \code{\link{PrintMap}};
+  \code{\link{ResponseCurve}};
+  \code{\link{SameTimePlaceMap}}
+}
 

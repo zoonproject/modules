@@ -19,4 +19,12 @@ Else it should be a single numeric identifying the covariate to plot.}
 Plot a detailed conditional response curve from the model
 against one covariate.
 }
+\seealso{
+Other output: \code{\link{Figshare}};
+  \code{\link{InteractiveCovariateMap}};
+  \code{\link{InteractiveMap}};
+  \code{\link{PerformanceMeasures}};
+  \code{\link{PredictNewAreaMap}}; \code{\link{PrintMap}};
+  \code{\link{SameTimePlaceMap}}; \code{\link{SurfaceMap}}
+}
 

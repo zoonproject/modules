@@ -27,5 +27,10 @@ development kit (which you may already have installed).
 }
 \seealso{
 \code{\link{dismo::maxent}}
+
+Other model: \code{\link{BiomodModel}}; \code{\link{GBM}};
+  \code{\link{LogisticRegression}}; \code{\link{OptGRaF}};
+  \code{\link{QuickGRaF}}; \code{\link{RandomForest}};
+  \code{\link{mgcv}}
 }
 

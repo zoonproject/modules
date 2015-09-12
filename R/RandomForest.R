@@ -7,7 +7,7 @@
 #'@return A model object with a valid predict method
 #'
 #'@name RandomForest
-
+#'@family model
 
 
 RandomForest <- function (.df) {

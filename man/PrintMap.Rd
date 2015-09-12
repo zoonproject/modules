@@ -14,4 +14,13 @@ PrintMap(.model, .ras)
 \description{
 Plot a map of predicted surface.
 }
+\seealso{
+Other output: \code{\link{Figshare}};
+  \code{\link{InteractiveCovariateMap}};
+  \code{\link{InteractiveMap}};
+  \code{\link{PerformanceMeasures}};
+  \code{\link{PredictNewAreaMap}};
+  \code{\link{ResponseCurve}};
+  \code{\link{SameTimePlaceMap}}; \code{\link{SurfaceMap}}
+}
 

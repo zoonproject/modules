@@ -25,4 +25,12 @@ Figshare(.model, .ras, title, description = "zoon workflow",
 \description{
 Upload your workflow call, model, occurrance and covariate data to figshare as a RData file. Uploads privately but be aware I cannot assure the privacy of any data. This module is a work in progress, and will obviously want to upload the output from the output modules.
 }
+\seealso{
+Other output: \code{\link{InteractiveCovariateMap}};
+  \code{\link{InteractiveMap}};
+  \code{\link{PerformanceMeasures}};
+  \code{\link{PredictNewAreaMap}}; \code{\link{PrintMap}};
+  \code{\link{ResponseCurve}};
+  \code{\link{SameTimePlaceMap}}; \code{\link{SurfaceMap}}
+}
 

@@ -9,7 +9,7 @@
 #'
 #'
 #'@name AnophelesPlumbeus
-
+#'@family occurrence
 
 
 AnophelesPlumbeus <- function(extent = c(-10, 10, 45, 65)){

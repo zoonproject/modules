@@ -11,6 +11,7 @@
 #' or \code{NULL} in which case GRaF will calculate a fixed approximation to
 #' a sensible lengthscale.
 #'@name QuickGRaF
+#'@family model
 QuickGRaF <-
 function (.df, l = NULL) {
   

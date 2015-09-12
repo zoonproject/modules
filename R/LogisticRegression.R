@@ -7,7 +7,7 @@
 #'@seealso \code{\link{glm}}
 #'
 #'@name LogisticRegression
-
+#'@family model
 
 LogisticRegression <- function(.df){
   #if (!all(df$type %in% c('presence', 'absence', 'background'))) {

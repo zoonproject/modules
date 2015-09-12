@@ -8,6 +8,7 @@
 #'@param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
 #'@name InteractiveMap
+#'@family output
 InteractiveMap <- function (.model, .ras) {
     
     # This function draws inspiration from a previous version of

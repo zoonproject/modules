@@ -15,4 +15,12 @@ InteractiveMap(.model, .ras)
 Plot an zoomable and scrollable map of the predicted distribution
 and training data.
 }
+\seealso{
+Other output: \code{\link{Figshare}};
+  \code{\link{InteractiveCovariateMap}};
+  \code{\link{PerformanceMeasures}};
+  \code{\link{PredictNewAreaMap}}; \code{\link{PrintMap}};
+  \code{\link{ResponseCurve}};
+  \code{\link{SameTimePlaceMap}}; \code{\link{SurfaceMap}}
+}
 

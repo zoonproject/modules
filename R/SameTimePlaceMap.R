@@ -10,7 +10,7 @@
 #'      cell of ras
 #'
 #'@name SameTimePlaceMap
-
+#'@family output
 
 SameTimePlaceMap <- function (.model, .ras) {
   

@@ -20,5 +20,10 @@ Model module wrapper for the biomod2 function BIOMOD_Modeling()
 }
 \seealso{
 \code{\link{biomod2::BIOMOD_ModelingOptions}}
+
+Other model: \code{\link{GBM}};
+  \code{\link{LogisticRegression}}; \code{\link{MaxEnt}};
+  \code{\link{OptGRaF}}; \code{\link{QuickGRaF}};
+  \code{\link{RandomForest}}; \code{\link{mgcv}}
 }
 

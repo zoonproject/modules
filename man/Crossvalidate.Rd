@@ -14,4 +14,12 @@ Crossvalidate(.data, k = 5)
 \description{
 Run k fold crossvalidation. If presence absence, split presences and absences separately so folds have equally balanced data. Otherwise just sample.
 }
+\seealso{
+Other process: \code{\link{BackgroundAndCrossvalid}};
+  \code{\link{Background}}; \code{\link{BiasBackground}};
+  \code{\link{NoProcess}};
+  \code{\link{OneHundredBackground}};
+  \code{\link{OneThousandBackground}};
+  \code{\link{PartitionDisc}}
+}
 

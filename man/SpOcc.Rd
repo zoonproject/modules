@@ -32,5 +32,10 @@ Occurrence module to collect occurrence data from a number of data bases.
 }
 \seealso{
 \code{\link{spocc::occ}}
+
+Other occurrence: \code{\link{AnophelesPlumbeus}};
+  \code{\link{CWBZimbabwe}};
+  \code{\link{LocalOccurrenceData}};
+  \code{\link{UKAnophelesPlumbeus}}
 }
 

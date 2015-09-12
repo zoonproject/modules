@@ -11,6 +11,7 @@
 #'If \code{NULL}, the function is executed for all covariates, one after another.
 #'Else it should be a single numeric identifying the covariate to plot.
 #'@name ResponseCurve
+#'@family output
 ResponseCurve <- function (.model, .ras, cov = NULL) {
   
   # by default, plot all covariates

@@ -17,4 +17,12 @@ A single numeric giving the index of the covariate to plot}
 \description{
 Plot a zoomable and scrollable map of a covariate layer.
 }
+\seealso{
+Other output: \code{\link{Figshare}};
+  \code{\link{InteractiveMap}};
+  \code{\link{PerformanceMeasures}};
+  \code{\link{PredictNewAreaMap}}; \code{\link{PrintMap}};
+  \code{\link{ResponseCurve}};
+  \code{\link{SameTimePlaceMap}}; \code{\link{SurfaceMap}}
+}
 

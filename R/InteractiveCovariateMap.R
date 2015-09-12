@@ -8,8 +8,8 @@
 #'
 #'@param which which covariate to plot.
 #' A single numeric giving the index of the covariate to plot
-
 #'@name InteractiveCovariateMap
+#'@family output
 InteractiveCovariateMap <-
   function (.model, .ras, which = 1) {
     

@@ -8,6 +8,7 @@
 #'@param n the number of background points to sample
 #'
 #'@name Background
+#'@family process
 Background <- function (.data, n = 100) {
   
   zoon:::GetPackage(dismo)
