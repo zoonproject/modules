@@ -4,13 +4,21 @@
 \alias{MaxEnt}
 \title{Model module: MaxEnt}
 \usage{
-MaxEnt(.df)
+MaxEnt(.df, args = "")
 }
 \arguments{
 \item{.df}{\strong{Internal parameter, do not use in the workflow function}.
 \code{.df} is data frame that combines the occurrence data and covariate
 data. \code{.df} is passed automatically in workflow from the process
 module(s) to the model module(s) and should not be passed by the user.}
+
+\item{args}{Additional arguments to pass to MaxEnt to modify model fitting,
+in the form of flags to the java executable.
+Unfortunately these are a bit cryptic and the maxent
+help files, which list all of the options, aren't available on the web.
+You could try the MaxEnt graphical user interface, otherwise there is a list
+(which may or may not be up-to-date) in this forum:
+\url{https://groups.google.com/d/msg/maxent/yRBlvZ1_9rQ/Fj8Two0lmHIJ}.}
 }
 \description{
 Model module to fit MaxEnt model via he dismo package
