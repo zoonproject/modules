@@ -2,14 +2,11 @@
 #'
 #'Model module to fit MaxEnt model via he dismo package
 #'
-#'@details \strong{In order to fit a MaxEnt model, you must first download the
-#'MaxEnt executable file \code{maxent.jar} from:
-#'\url{http://www.cs.princeton.edu/~schapire/maxent/} and save it under the
-#' java directory in the dismo package in your R package library. You can find
-#' the correct location with this command:
-#' \code{paste0(system.file(package = 'dismo'), '/java/')}}.
-#' Running MaxEnt also requires an up-to-date version of java and the java
-#' development kit (which you may already have installed).
+#'@details In order to fit a MaxEnt model, you must first download the
+#' MaxEnt executable file \code{maxent.jar} and save it in the correct location.
+#' The zoon function \code{GetMaxEnt} can orchestrate this for you.
+#' Running MaxEnt also requires an up-to-date version of java 
+#' (which you may already have installed).
 #'
 #'@param .df \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.df} is data frame that combines the occurrence data and covariate
