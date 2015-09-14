@@ -41,9 +41,9 @@ InteractiveCovariateMap <-
                                       na.color = 'transparent')
     
     # reproject pred_ras, suppressing warnings
-    suppressWarnings(ext <- raster::projectExtent(pred_ras,
+    suppressWarnings(ext <- raster::projectExtent(.ras,
                                                   crs = sp::CRS('+init=epsg:3857')))
-    suppressWarnings(pred_ras <- raster::projectRaster(pred_ras,
+    suppressWarnings(.ras <- raster::projectRaster(.ras,
                                                        ext))
     
     m <- leaflet::addRasterImage(map = m,
