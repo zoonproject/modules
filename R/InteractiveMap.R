@@ -20,6 +20,7 @@ InteractiveMap <- function (.model, .ras) {
     zoon:::GetPackage('leaflet')
     zoon:::GetPackage('htmlwidgets')
     zoon:::GetPackage('viridis')
+    zoon:::GetPackage('rgdal')
     
     # Make the prediction
     vals <- data.frame(getValues(.ras))
@@ -47,11 +48,17 @@ InteractiveMap <- function (.model, .ras) {
                                  domain = legend_values, 
                                  na.color = 'transparent')
     
+    # reproject pred_ras, suppressing warnings
+    suppressWarnings(ext <- raster::projectExtent(pred_ras,
+                                 crs = sp::CRS('+init=epsg:3857')))
+    suppressWarnings(pred_ras <- raster::projectRaster(pred_ras,
+                                      ext))
+      
     # add the prediction raster
     m <- leaflet::addRasterImage(map = m,
                                  x = pred_ras,
                                  colors = pred_pal,
-                                 project = TRUE,
+                                 project = FALSE,
                                  opacity = 0.8,
                                  group = 'predicted distribution')
     
