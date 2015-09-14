@@ -49,7 +49,8 @@ function(species, extent, databases = 'gbif', type = 'presence', limit = 10000){
                paste(databases, collapse = ','),
                'for the given extent'))
   }
-  occurrence <- raw[,c('longitude', 'latitude')]
+  occurrence <- data.frame(longitude = as.numeric(raw$longitude),
+                           latitude = as.numeric(raw$latitude))
   if (type == 'presence') {
     occurrence$value <- 1 
   } else {
