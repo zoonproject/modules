@@ -63,7 +63,9 @@ GBM <-
                 newdata_clean <- na.omit(newdata)
                 # get their indices
                 na_idx <- attr(newdata_clean, 'na.action')
-                p[-na_idx] <- gbm::predict.gbm(model,
+                if (is.null(na_idx)) idx <- 1:nrow(newdata)
+		else idx <- -na_idx
+		p[idx] <- gbm::predict.gbm(model,
                                                newdata_clean,
                                                n.trees = model$n.trees,
                                                type = 'response')

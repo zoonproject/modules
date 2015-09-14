@@ -49,7 +49,9 @@ MaxEnt <- function(.df, args = ''){
               newdata_clean <- na.omit(newdata)
               # get their indices
               na_idx <- attr(newdata_clean, 'na.action')
-              p[-na_idx] <- dismo::predict(model,
+              if (is.null(na_idx)) idx <- 1:nrow(newdata)
+              else idx <- -na_idx
+	      p[idx] <- dismo::predict(model,
                              newdata_clean,
                              type = 'response')
               return (p)
