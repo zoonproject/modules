@@ -31,6 +31,7 @@
 MaxEnt <- function(.df, args = ''){
   
   zoon:::GetPackage('dismo')
+  zoon:::GetPackage('rJava')
   
   covs <- as.data.frame(.df[, 6:ncol(.df)])
   names(covs) <- names(.df)[6:ncol(.df)]
