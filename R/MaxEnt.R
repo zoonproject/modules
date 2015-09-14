@@ -15,12 +15,20 @@
 #' \code{.df} is data frame that combines the occurrence data and covariate
 #' data. \code{.df} is passed automatically in workflow from the process
 #' module(s) to the model module(s) and should not be passed by the user.
+#' 
+#' @param args Additional arguments to pass to MaxEnt to modify model fitting,
+#' in the form of flags to the java executable.
+#' Unfortunately these are a bit cryptic and the maxent
+#' help files, which list all of the options, aren't available on the web.
+#' You could try the MaxEnt graphical user interface, otherwise there is a list
+#' (which may or may not be up-to-date) in this forum:
+#' \url{https://groups.google.com/d/msg/maxent/yRBlvZ1_9rQ/Fj8Two0lmHIJ}.
 #'
 #'@seealso \code{\link{dismo::maxent}}
 #'
 #'@name MaxEnt
 #'@family model
-MaxEnt <- function(.df){
+MaxEnt <- function(.df, args = ''){
   
   zoon:::GetPackage('dismo')
   
@@ -28,7 +36,8 @@ MaxEnt <- function(.df){
   names(covs) <- names(.df)[6:ncol(.df)]
   
   m <- maxent(x = covs,
-              p = .df$value)
+              p = .df$value,
+              args = args)
   
   # create a ZoonModel object and return it
   ZoonModel(model = m,
