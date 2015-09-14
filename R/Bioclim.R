@@ -15,8 +15,8 @@ function(extent, resolution = 5) {
       stop('only 2.5, 5 and 10 degree resolutions are supported currently')
     }
 
-    assert_that(length(extent) == 4)
-    assert_that(all(is.numeric(extent)))
+    stopifnot(length(extent) == 4)
+    stopifnot(all(is.numeric(extent)))
 
 
     world <- getData('worldclim', var = 'bio', res = resolution)
