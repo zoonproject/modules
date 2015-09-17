@@ -28,7 +28,8 @@ crossvalidation via the mgcv R package.
 }
 \seealso{
 Other model: \code{\link{BiomodModel}}; \code{\link{GBM}};
-  \code{\link{LogisticRegression}}; \code{\link{MaxEnt}};
+  \code{\link{LogisticRegression}};
+  \code{\link{MachineLearn}}; \code{\link{MaxEnt}};
   \code{\link{OptGRaF}}; \code{\link{QuickGRaF}};
   \code{\link{RandomForest}}
 }

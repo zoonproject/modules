@@ -14,7 +14,8 @@ Model module to fit a (slow) GRaF model, with parameter optimisation.
 }
 \seealso{
 Other model: \code{\link{BiomodModel}}; \code{\link{GBM}};
-  \code{\link{LogisticRegression}}; \code{\link{MaxEnt}};
+  \code{\link{LogisticRegression}};
+  \code{\link{MachineLearn}}; \code{\link{MaxEnt}};
   \code{\link{QuickGRaF}}; \code{\link{RandomForest}};
   \code{\link{mgcv}}
 }
