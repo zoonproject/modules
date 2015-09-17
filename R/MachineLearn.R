@@ -5,6 +5,26 @@
 #'@param .df \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.df} is data frame that combines the occurrence
 #'
+#'@param method The machine learning method to use. Common examples are "glm", 
+#'  "nnet", "gbm", "glmnet", "rf". See 
+#'  http://topepo.github.io/caret/modelList.html for a full list. Only 
+#'  classification or dual use models are useable.
+#'
+#'@param tuneLength How many values of each tuning/hyperparameter should be tried?
+#'
+#'@param number How many folds to use in cross validation.
+#'
+#'@param repeats How many times should the entire cross validation process be 
+#'  repeated. Increasing this will reduce instability in your model performace,
+#'  but will take longer to run.
+#'
+#'@param tuneGrid Explicitely pass a data frame of tuning/hyperparameter combinations. If
+#'  NULL, tuneLength will be used instead.
+#'
+#'@param trControl A named list of further arguments to pass to trainControl. See 
+#'  \code{\link[caret]{trainControl}} for details.
+#'
+#'@param ... Other arguments passed to \code{\link[caret]{train}}.
 #'
 #'@name MachineLearn
 #'@family model
@@ -12,7 +32,14 @@
 
 #'@family model
 MachineLearn <-
-  function (.df, method, tuneLength = 8, metric = 'ROC', number = 5, repeats = 1, ...) {
+  function (.df, 
+            method, 
+            tuneLength = 8, 
+            metric = 'ROC', 
+            number = 5, 
+            repeats = 1, 
+            tuneGrid = NULL, 
+            trControl = NULL, ...) {
     
     zoon:::GetPackage('caret')
     
@@ -37,14 +64,21 @@ MachineLearn <-
 
     .df$value <- factor(ifelse(.df$value, 'pres', 'abs'))
 
-
-    # Train control setup
     trContr <- trainControl(method = 'repeatedcv', 
                             number = number, 
                             summaryFunction = twoClassSummary,
                             repeats = repeats,
                             classProbs = TRUE)
 
+    if(!is.null(trContr)){
+      # Train control add use inputted vars.
+      
+
+    }
+
+    
+
+      
 
 
     # Do cross validation to select hyperparameters
@@ -53,9 +87,10 @@ MachineLearn <-
                       y = .df$value,
                       method = method,
                       tuneLength = tuneLength,
+                      tuneGrid = tuneGrid,
                       trControl = trContr,
-                      metric = metric)
-#, ...)
+                      metric = metric, ...)
+
 
 
     

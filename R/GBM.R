@@ -72,4 +72,4 @@ GBM <-
                 return (p)
               },
               packages = 'gbm')
-  }
+}
