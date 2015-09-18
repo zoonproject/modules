@@ -17,7 +17,8 @@ Model module to fit a simple RandomForest classification model
 }
 \seealso{
 Other model: \code{\link{BiomodModel}}; \code{\link{GBM}};
-  \code{\link{LogisticRegression}}; \code{\link{MaxEnt}};
+  \code{\link{LogisticRegression}};
+  \code{\link{MachineLearn}}; \code{\link{MaxEnt}};
   \code{\link{OptGRaF}}; \code{\link{QuickGRaF}};
   \code{\link{mgcv}}
 }

@@ -28,7 +28,8 @@ trees) model
 }
 \seealso{
 Other model: \code{\link{BiomodModel}};
-  \code{\link{LogisticRegression}}; \code{\link{MaxEnt}};
+  \code{\link{LogisticRegression}};
+  \code{\link{MachineLearn}}; \code{\link{MaxEnt}};
   \code{\link{OptGRaF}}; \code{\link{QuickGRaF}};
   \code{\link{RandomForest}}; \code{\link{mgcv}}
 }

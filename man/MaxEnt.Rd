@@ -21,7 +21,7 @@ You could try the MaxEnt graphical user interface, otherwise there is a list
 \url{https://groups.google.com/d/msg/maxent/yRBlvZ1_9rQ/Fj8Two0lmHIJ}.}
 }
 \description{
-Model module to fit MaxEnt model via he dismo package
+Model module to fit MaxEnt model via the dismo package
 }
 \details{
 In order to fit a MaxEnt model, you must first download the
@@ -34,7 +34,8 @@ Running MaxEnt also requires an up-to-date version of java
 \code{\link{dismo::maxent}}
 
 Other model: \code{\link{BiomodModel}}; \code{\link{GBM}};
-  \code{\link{LogisticRegression}}; \code{\link{OptGRaF}};
+  \code{\link{LogisticRegression}};
+  \code{\link{MachineLearn}}; \code{\link{OptGRaF}};
   \code{\link{QuickGRaF}}; \code{\link{RandomForest}};
   \code{\link{mgcv}}
 }

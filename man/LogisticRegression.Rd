@@ -16,8 +16,8 @@ Model module to fit a simple logistic regression model
 \code{\link{glm}}
 
 Other model: \code{\link{BiomodModel}}; \code{\link{GBM}};
-  \code{\link{MaxEnt}}; \code{\link{OptGRaF}};
-  \code{\link{QuickGRaF}}; \code{\link{RandomForest}};
-  \code{\link{mgcv}}
+  \code{\link{MachineLearn}}; \code{\link{MaxEnt}};
+  \code{\link{OptGRaF}}; \code{\link{QuickGRaF}};
+  \code{\link{RandomForest}}; \code{\link{mgcv}}
 }
 

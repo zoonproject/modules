@@ -29,7 +29,8 @@ Running MaxEnt also requires an up-to-date version of java
 \code{\link{biomod2::BIOMOD_ModelingOptions}}
 
 Other model: \code{\link{GBM}};
-  \code{\link{LogisticRegression}}; \code{\link{MaxEnt}};
+  \code{\link{LogisticRegression}};
+  \code{\link{MachineLearn}}; \code{\link{MaxEnt}};
   \code{\link{OptGRaF}}; \code{\link{QuickGRaF}};
   \code{\link{RandomForest}}; \code{\link{mgcv}}
 }
