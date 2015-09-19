@@ -24,11 +24,14 @@ function (.model, .ras) {
 
   par(mar = c(4, 4, 0, 2) + 0.1)
   plot(pred_ras, col = cls, xlab = 'Longitude2', ylab = 'Latitude') 
-  points(.model$data$longitude[.model$data$value == 0], .model$data$latitude[.model$data$value == 0], 
-  pch = 16, col = '#00000055')
-  points(.model$data$longitude[.model$data$value == 1], .model$data$latitude[.model$data$value == 1], 
-  pch = 16, col = '#e41a1c55')
- 
+  if(any(.model$data$value == 0)){
+    points(.model$data$longitude[.model$data$value == 0], .model$data$latitude[.model$data$value == 0], 
+      pch = 16, col = '#00000055')
+  } 
+  if(any(.model$data$value == 1)){
+    points(.model$data$longitude[.model$data$value == 1], .model$data$latitude[.model$data$value == 1], 
+      pch = 16, col = '#e41a1c55')
+  }
   legend('topright', legend = c('Presence', 'Absence'), fill = c( '#e41a1c', '#000000'), 
     bty = 'n', border = NA, inset=c(-0.23, 0.1), xpd = TRUE)
 
