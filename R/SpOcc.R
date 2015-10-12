@@ -35,8 +35,8 @@ function(species, extent, databases = 'gbif', type = 'presence', limit = 10000){
                "'presence', 'absence' or 'background'"))
   }
 
-  zoon::GetPackage(spocc)
   zoon::GetPackage(MASS)
+  zoon::GetPackage(spocc)
   
   # reorder the extent to match the xmin, ymin, xmax, yamx order that spocc expects now
   reorderExtent <- extent[c(1, 3, 2, 4)]
