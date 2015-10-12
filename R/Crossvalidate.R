@@ -7,6 +7,7 @@
 #'@param k Positive integer number of folds to split the data into. Default is 5. 
 #'
 #'@name Crossvalidate
+#'@family process
 Crossvalidate <-
 function (.data, k=5) {
   
@@ -29,15 +30,17 @@ function (.data, k=5) {
   }
 
   # extract covariates
-  covs <- as.matrix(extract(ras, occurrence[, c('longitude', 'latitude')]))
+  coords <- cbind(occurrence$lon,
+                  occurrence$lat)
+  covs <- as.matrix(extract(ras, coords))
 
 
   # combine with the occurrence data
   df <- data.frame(value = occurrence$value,
                    type = occurrence$type,
                    fold = fold,
-                   longitude = occurrence$longitude,
-                   latitude = occurrence$latitude,
+                   longitude = occurrence$lon,
+                   latitude = occurrence$lat,
                    covs)
   
   names(df)[6:ncol(df)] <- names(ras)

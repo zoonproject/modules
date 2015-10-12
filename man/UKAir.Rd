@@ -7,7 +7,11 @@
 UKAir()
 }
 \description{
-Return some UK air temperature data from NCEP. Data is bundled with package.
+Return some UK air temperature data from NCEP. Data is bundled with package and has the extent \code{c(-10, 10, 45, 65)}.
 }
-\keyword{Covariate}
+\seealso{
+Other covariate: \code{\link{AirNCEP}};
+  \code{\link{Bioclim}}; \code{\link{LocalRaster}};
+  \code{\link{NCEP}}; \code{\link{UKBioclim}}
+}
 

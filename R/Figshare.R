@@ -17,6 +17,7 @@
 #'@param tags Character vector of searchable tags. 
 #'
 #'@name Figshare
+#'@family output
 Figshare <-
 function (.model, .ras, title, description='zoon workflow', authors='zoon', categories='SDM', tags='zoon'){
 

@@ -6,7 +6,7 @@
 #'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'
 #'@name OneThousandBackground
-
+#'@family process
 
 OneThousandBackground <- function (.data) {
   
@@ -39,8 +39,8 @@ OneThousandBackground <- function (.data) {
                    type = rep(c('presence', 'background'),
                               c(npres, npabs)),
                    fold = rep(1, npres + npabs),
-                   lon = c(occurrence$lon, pa[, 1]),
-                   lat = c(occurrence$lat, pa[, 2]),
+                   longitude = c(occurrence$lon, pa[, 1]),
+                   latitude = c(occurrence$lat, pa[, 2]),
                    covs)
   
   names(df)[6:ncol(df)] <- names(ras)

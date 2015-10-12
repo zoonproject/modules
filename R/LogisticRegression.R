@@ -7,7 +7,7 @@
 #'@seealso \code{\link{glm}}
 #'
 #'@name LogisticRegression
-
+#'@family model
 
 LogisticRegression <- function(.df){
   #if (!all(df$type %in% c('presence', 'absence', 'background'))) {
@@ -20,5 +20,12 @@ LogisticRegression <- function(.df){
            data = covs,
            family = 'binomial')
   
-  return (m)
+  # create a ZoonModel object and return it
+  ZoonModel(model = m,
+            code = {
+              stats::predict.glm(model,
+                                 newdata,
+                                 type = 'response')
+            },
+            packages = 'stats')
 }

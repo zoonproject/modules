@@ -7,19 +7,31 @@
 BiomodModel(.df, modelType)
 }
 \arguments{
-\item{.df}{\strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.}
+\item{.df}{\strong{Internal parameter, do not use in the workflow function}.
+\code{.df} is data frame that combines the occurrence data and covariate
+ data. \code{.df} is passed automatically in workflow from the process
+ module(s) to the model module(s) and should not be passed by the user.}
 
 \item{modelType}{A character vector to describe models to use. Select from
 'GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT'}
 }
-\value{
-a Raster* object (class from the raster package) with the gridded
-     covariates used to train and predict from the SDM.
-}
 \description{
-Model module wrapper for BIOMOD_Modeling()
+Model module wrapper for the biomod2 function BIOMOD_Modeling()
+}
+\details{
+In order to fit a MaxEnt model, you must first download the
+MaxEnt executable file \code{maxent.jar} and save it in the correct location.
+The zoon function \code{GetMaxEnt} can orchestrate this for you.
+Running MaxEnt also requires an up-to-date version of java
+(which you may already have installed).
 }
 \seealso{
 \code{\link{biomod2::BIOMOD_ModelingOptions}}
+
+Other model: \code{\link{GBM}};
+  \code{\link{LogisticRegression}};
+  \code{\link{MachineLearn}}; \code{\link{MaxEnt}};
+  \code{\link{OptGRaF}}; \code{\link{QuickGRaF}};
+  \code{\link{RandomForest}}; \code{\link{mgcv}}
 }
 

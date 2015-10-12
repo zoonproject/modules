@@ -3,12 +3,17 @@
 \name{UKAnophelesPlumbeus}
 \alias{UKAnophelesPlumbeus}
 \title{Return some Anopheles plumbeus data that is bundled with package.
- Data taken from GBIF and is UK extent.}
+ Data taken from GBIF and has the extent \code{c(-10, 10, 45, 65)}.}
 \usage{
 UKAnophelesPlumbeus()
 }
 \description{
 Return some Anopheles plumbeus data that is bundled with package.
- Data taken from GBIF and is UK extent.
+ Data taken from GBIF and has the extent \code{c(-10, 10, 45, 65)}.
+}
+\seealso{
+Other occurrence: \code{\link{AnophelesPlumbeus}};
+  \code{\link{CWBZimbabwe}};
+  \code{\link{LocalOccurrenceData}}; \code{\link{SpOcc}}
 }
 

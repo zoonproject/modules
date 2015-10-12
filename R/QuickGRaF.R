@@ -11,6 +11,7 @@
 #' or \code{NULL} in which case GRaF will calculate a fixed approximation to
 #' a sensible lengthscale.
 #'@name QuickGRaF
+#'@family model
 QuickGRaF <-
 function (.df, l = NULL) {
   
@@ -48,5 +49,11 @@ function (.df, l = NULL) {
             covs,
             l = l)
   
-  return (m)
+  ZoonModel(model = m,
+            code = {
+              GRaF::predict.graf(model,
+                                newdata,
+                                type = 'response')[, 1]
+            },
+            packages = 'GRaF')
 }

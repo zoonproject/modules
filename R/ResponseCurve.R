@@ -11,6 +11,7 @@
 #'If \code{NULL}, the function is executed for all covariates, one after another.
 #'Else it should be a single numeric identifying the covariate to plot.
 #'@name ResponseCurve
+#'@family output
 ResponseCurve <- function (.model, .ras, cov = NULL) {
   
   # by default, plot all covariates
@@ -66,7 +67,8 @@ ResponseCurve <- function (.model, .ras, cov = NULL) {
     # Add in variation for variable of focus
     Etest[kk] <- Epred[kk]
     # make predictions
-    p <- predict(.model$model, Etest, type = 'response')
+    p <- ZoonPredict(.model$model,
+                     newdata = Etest)
     
     # make sure it's flat
     if (!is.null(dim(p))) p <- p[, 1]
@@ -115,7 +117,7 @@ ResponseCurve <- function (.model, .ras, cov = NULL) {
   covar_min <- min( covar)
   covar_max <- max( covar )
   # get subsets for both presences and background points
-
+  
   pres_idx <- which(.model$data$type=="presence")
   
   # if there are absence points, use them
@@ -128,7 +130,7 @@ ResponseCurve <- function (.model, .ras, cov = NULL) {
   } else {
     stop ('no background or absence records present')
   }
-
+  
   ###___ Plot RESPONSE FUNCTION
   par(mar=c(0,1,1,1))
   plot(-99,-99, xlim=c(1,100), ylim=c(1,100), cex=0, main="", axes = FALSE, xlab="", ylab="")

@@ -17,4 +17,12 @@ a Raster object (class from the raster package) with the gridded
 Process module that does nothing. A place holder for if nothing should be
 done to the data before modelling.
 }
+\seealso{
+Other process: \code{\link{BackgroundAndCrossvalid}};
+  \code{\link{Background}}; \code{\link{BiasBackground}};
+  \code{\link{Crossvalidate}};
+  \code{\link{OneHundredBackground}};
+  \code{\link{OneThousandBackground}};
+  \code{\link{PartitionDisc}}
+}
 

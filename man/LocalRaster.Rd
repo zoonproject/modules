@@ -20,4 +20,9 @@ Tim Lucas
 
 Email: timcdlucas@gmail.com
 }
+\seealso{
+Other covariate: \code{\link{AirNCEP}};
+  \code{\link{Bioclim}}; \code{\link{NCEP}};
+  \code{\link{UKAir}}; \code{\link{UKBioclim}}
+}
 

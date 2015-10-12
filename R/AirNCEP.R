@@ -5,6 +5,7 @@
 #'
 #'@seealso \code{\link{RNCEP::NCEP.gather}}
 #'@name AirNCEP
+#'@family covariate
 AirNCEP <- function(){
   zoon:::GetPackage(RNCEP)
   

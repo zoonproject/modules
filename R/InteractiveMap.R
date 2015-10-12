@@ -8,6 +8,7 @@
 #'@param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
 #'@name InteractiveMap
+#'@family output
 InteractiveMap <- function (.model, .ras) {
     
     # This function draws inspiration from a previous version of
@@ -19,20 +20,15 @@ InteractiveMap <- function (.model, .ras) {
     zoon:::GetPackage('leaflet')
     zoon:::GetPackage('htmlwidgets')
     zoon:::GetPackage('viridis')
+    zoon:::GetPackage('rgdal')
     
     # Make the prediction
     vals <- data.frame(getValues(.ras))
     colnames(vals) <- names(.ras)
     
-    pred <- predict(.model$model,
-                    newdata = vals,
-                    type = 'response')
-    
-    # if pred is a matrix/dataframe, take only the first column
-    if(!is.null(dim(pred))) {
-      pred <- pred[, 1]
-    }
-    
+    pred <- ZoonPredict(.model$model,
+                        newdata = vals)
+
     pred_ras <- .ras[[1]]
     
     pred_ras <- setValues(pred_ras, pred)
@@ -52,11 +48,17 @@ InteractiveMap <- function (.model, .ras) {
                                  domain = legend_values, 
                                  na.color = 'transparent')
     
+    # reproject pred_ras, suppressing warnings
+    suppressWarnings(ext <- raster::projectExtent(pred_ras,
+                                 crs = sp::CRS('+init=epsg:3857')))
+    suppressWarnings(pred_ras <- raster::projectRaster(pred_ras,
+                                      ext))
+      
     # add the prediction raster
     m <- leaflet::addRasterImage(map = m,
                                  x = pred_ras,
                                  colors = pred_pal,
-                                 project = TRUE,
+                                 project = FALSE,
                                  opacity = 0.8,
                                  group = 'predicted distribution')
     
@@ -91,8 +93,8 @@ InteractiveMap <- function (.model, .ras) {
         group_name <- paste(type, 'data')
         overlay_groups <- c(overlay_groups, group_name)
         m <- leaflet::addCircleMarkers(map = m,
-                                 lng = df$longitude[idx],
-                                 lat = df$latitude[idx],
+                                 lng = df$lon[idx],
+                                 lat = df$lat[idx],
                                  color = grey(0.4),
                                  fillColor = fill_pal(type),
                                  weight = 1,

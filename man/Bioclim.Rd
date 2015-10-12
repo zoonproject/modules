@@ -4,14 +4,21 @@
 \alias{Bioclim}
 \title{Covariate module: Bioclim}
 \usage{
-Bioclim(extent, resolution = 5)
+Bioclim(extent = c(-180, 180, -90, 90), resolution = 5, layers = 1:19)
 }
 \arguments{
 \item{extent}{Length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude.}
 
 \item{resolution}{Resolution in minutes. Must be one of 2.5, 5 or 10. Default is 5.}
+
+\item{layers}{which bioclim layers to obtain, a vector of integers between 1 and 19.}
 }
 \description{
 Get worldclim environment data. Downloads then stores locally.
+}
+\seealso{
+Other covariate: \code{\link{AirNCEP}};
+  \code{\link{LocalRaster}}; \code{\link{NCEP}};
+  \code{\link{UKAir}}; \code{\link{UKBioclim}}
 }
 

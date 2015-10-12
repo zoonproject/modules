@@ -9,7 +9,7 @@
 #'      covariates used to train and predict from the SDM.
 #'
 #'@name NoProcess
-
+#'@family process
 
 NoProcess <-
 function (.data) {

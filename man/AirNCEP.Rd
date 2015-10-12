@@ -12,5 +12,9 @@ Covariate module to grab a coarse resolution mean air temperature raster from
 }
 \seealso{
 \code{\link{RNCEP::NCEP.gather}}
+
+Other covariate: \code{\link{Bioclim}};
+  \code{\link{LocalRaster}}; \code{\link{NCEP}};
+  \code{\link{UKAir}}; \code{\link{UKBioclim}}
 }
 

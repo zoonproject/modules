@@ -9,20 +9,15 @@
 #'@param dir Where to save figures. Defaults to the working directory. 
 #'
 #'@name SurfaceMap
+#'@family output
 SurfaceMap <-
 function (.model, .ras, dir='.') {
   
   vals <- data.frame(getValues(.ras))
   colnames(vals) <- names(.ras)
   
-  pred <- predict(.model$model,
-                  newdata = vals,
-                  type = 'response')
-  
-  # if pred is a matrix/dataframe, take only the first column
-  if(!is.null(dim(pred))) {
-    pred <- pred[, 1]
-  }
+  pred <- ZoonPredict(.model$model,
+                      newdata = vals)
 
   pred_ras <- .ras[[1]]
   

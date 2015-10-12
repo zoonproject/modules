@@ -8,11 +8,16 @@ UKBioclim()
 }
 \description{
 Load Bioclim rasters at 5 degree resolution for the UK
-	(a region bounded by longitudes -12 and 4 and by latitudes 50 and 60).
+	(extent \code{c(-10, 10, 45, 65)}).
 	The first time this module is used the data are downloaded from the web,
 	subsequently a local copy is used so it's much faster.
 	This is essentially a wrapper around the `raster` function `getData`,
 	see `?getData' for more details of what that function does.
+	Use the \code{Bioclim} module for bioclim data with other extents.
 }
-\keyword{Covariate}
+\seealso{
+Other covariate: \code{\link{AirNCEP}};
+  \code{\link{Bioclim}}; \code{\link{LocalRaster}};
+  \code{\link{NCEP}}; \code{\link{UKAir}}
+}
 

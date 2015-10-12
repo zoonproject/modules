@@ -8,8 +8,8 @@
 #'
 #'@param which which covariate to plot.
 #' A single numeric giving the index of the covariate to plot
-
 #'@name InteractiveCovariateMap
+#'@family output
 InteractiveCovariateMap <-
   function (.model, .ras, which = 1) {
     
@@ -22,6 +22,7 @@ InteractiveCovariateMap <-
     zoon:::GetPackage('leaflet')
     zoon:::GetPackage('htmlwidgets')
     zoon:::GetPackage('viridis')
+    zoon:::GetPackage('rgdal')
     
     # set up a map with background layers
     m <- leaflet::leaflet()
@@ -39,10 +40,16 @@ InteractiveCovariateMap <-
                                                  maxValue(.ras)), 
                                       na.color = 'transparent')
     
+    # reproject pred_ras, suppressing warnings
+    suppressWarnings(ext <- raster::projectExtent(.ras,
+                                                  crs = sp::CRS('+init=epsg:3857')))
+    suppressWarnings(.ras <- raster::projectRaster(.ras,
+                                                       ext))
+    
     m <- leaflet::addRasterImage(map = m,
                                  x = .ras,
                                  colors = cov_pal,
-                                 project = TRUE,
+                                 project = FALSE,
                                  opacity = 0.8,
                                  group = names(.ras))
     
@@ -82,8 +89,8 @@ InteractiveCovariateMap <-
         group_name <- paste(type, 'data')
         overlay_groups <- c(overlay_groups, group_name)
         m <- leaflet::addCircleMarkers(map = m,
-                                       lng = df$longitude[idx],
-                                       lat = df$latitude[idx],
+                                       lng = df$lon[idx],
+                                       lat = df$lat[idx],
                                        color = grey(0.4),
                                        fillColor = fill_pal(type),
                                        weight = 1,

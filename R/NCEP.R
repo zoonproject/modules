@@ -18,6 +18,7 @@
 #'
 #'@seealso \code{\link{RNCEP::NCEP.gather}}
 #'@name NCEP
+#'@family covariate
 NCEP <-
 function(extent, variables){
   

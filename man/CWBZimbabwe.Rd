@@ -2,7 +2,7 @@
 % Please edit documentation in R/CWBZimbabwe.R
 \name{CWBZimbabwe}
 \alias{CWBZimbabwe}
-\title{Occurrence module: coffee white Stem borer surveys in Zimbabwe}
+\title{Occurrence module: coffee white stem borer surveys in Zimbabwe}
 \usage{
 CWBZimbabwe()
 }
@@ -11,8 +11,9 @@ This is an example presence/absence dataset for the
 coffee white stem borer \emph{Monochamus leuconotus} P. taken from an
 open access dataset on the Dryad data repository.
 The data are made available by those authors under a Creative Commons CC0
-These data are used in the module CWBZimbabwe which can be used for running
+and are used in the module \code{CWBZimbabwe} which can be used for running
 toy presence/absence species distribution models.
+The data all fall withing the extent \code{c(32, 34, -21, -18)}.
 }
 \details{
 Original publication:
@@ -27,5 +28,10 @@ Dryad data package:
     pests: the case of the coffee white stem borer (\emph{Monochamus
      leuconotus} P.) in Zimbabwe. Dryad Digital Repository.
   \url{http://dx.doi.org/10.1371/journal.pone.0073432}
+}
+\seealso{
+Other occurrence: \code{\link{AnophelesPlumbeus}};
+  \code{\link{LocalOccurrenceData}}; \code{\link{SpOcc}};
+  \code{\link{UKAnophelesPlumbeus}}
 }
 

@@ -14,6 +14,14 @@ PerformanceMeasures(.model, .ras, threshold = 0.5)
 \item{threshold}{A chosen threshold value for measures that need 0/1 predictions}
 }
 \description{
-Calculate a suite of performance metrics on either crossvalidation or external validation data
+Calculate a suite of performance metrics on either crossvalidation, external validation data or (at your own risk) in-sample validation.
+}
+\seealso{
+Other output: \code{\link{Figshare}};
+  \code{\link{InteractiveCovariateMap}};
+  \code{\link{InteractiveMap}};
+  \code{\link{PredictNewAreaMap}}; \code{\link{PrintMap}};
+  \code{\link{ResponseCurve}};
+  \code{\link{SameTimePlaceMap}}; \code{\link{SurfaceMap}}
 }
 

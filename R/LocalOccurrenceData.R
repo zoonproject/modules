@@ -22,6 +22,7 @@
 #'  long, lat, value.
 #'
 #'@name LocalOccurrenceData
+#'@family occurrence
 LocalOccurrenceData <-
 function(filename, occurrenceType, columns, externalValidation = FALSE){
 
