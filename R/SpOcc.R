@@ -22,8 +22,9 @@
 SpOcc <-
 function(species, extent, databases = 'gbif'){
 
-  zoon:::GetPackage(spocc)
-
+  zoon::GetPackage(spocc)
+  zoon::GetPackage(MASS)
+  
   # reorder the extent to match the xmin, ymin, xmax, yamx order that spocc expects now
   reorderExtent <- extent[c(1, 3, 2, 4)]
 
