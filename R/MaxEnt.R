@@ -1,6 +1,6 @@
-#'Model module: MaxEnt
+#' @title Model module: MaxEnt
 #'
-#'Model module to fit MaxEnt model via the dismo package
+#' @description Model module to fit MaxEnt model via the dismo package
 #'
 #'@details In order to fit a MaxEnt model, you must first download the
 #' MaxEnt executable file \code{maxent.jar} and save it in the correct location.

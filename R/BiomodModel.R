@@ -1,6 +1,6 @@
-#'Model module: BiomodModel
+#' @title Model module: BiomodModel
 #'
-#'Model module wrapper for the biomod2 function BIOMOD_Modeling()
+#' @description Model module wrapper for the biomod2 function BIOMOD_Modeling()
 #'
 #'@details In order to fit a MaxEnt model, you must first download the
 #' MaxEnt executable file \code{maxent.jar} and save it in the correct location.

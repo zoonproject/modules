@@ -1,6 +1,6 @@
-#'Output module: ResponseCurve
+#' @title Output module: ResponseCurve
 #'
-#'Plot a detailed conditional response curve from the model
+#' @description Plot a detailed conditional response curve from the model
 #' against one covariate.
 #'
 #'@param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.

@@ -1,6 +1,6 @@
-#'Occurrence module: LocalOccurrenceData
+#' @title Occurrence module: LocalOccurrenceData
 #'
-#'Occurrence module to format local occurrence data to be used with zoon. 
+#' @description Occurrence module to format local occurrence data to be used with zoon. 
 #'  Must be a .csv file with three columns longitude, latitude and value 
 #'  in that order.
 #'

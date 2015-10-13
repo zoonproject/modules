@@ -1,6 +1,6 @@
-#'Output module: SameTimePlaceMap
+#' @title Output module: SameTimePlaceMap
 #'
-#'Output module. A function for outputing the raster of the predictions from an analysis
+#' @description Output module. A function for outputing the raster of the predictions from an analysis
 #'
 #'@param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
 #'

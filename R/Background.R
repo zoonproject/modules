@@ -1,14 +1,14 @@
-#'Process module: Background
+#' @title Process module: Background
 #'
-#'Process module to generate background records at random in
+#' @description Process module to generate background records at random in
 #'      cells of the covariate raster and return these along with the presence only data.
 #'
-#'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
+#' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'
-#'@param n the number of background points to sample
+#' @param n the number of background points to sample
 #'
-#'@name Background
-#'@family process
+#' @name Background
+#' @family process
 Background <- function (.data, n = 100) {
   
   zoon:::GetPackage(dismo)

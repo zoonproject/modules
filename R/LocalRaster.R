@@ -1,8 +1,8 @@
-#'Covariate module: LocalRaster
+#' @title Covariate module: LocalRaster
 #'
-#'LocalRaster: Read in a single raster or a list of rasters and stack them.
+#' @description LocalRaster: Read in a single raster or a list of rasters and stack them.
 #'
-#'Read in a single raster or a list of rasters and stack them.
+#' @details Read in a single raster or a list of rasters and stack them.
 #'
 #'@param filenames Either a string of the filename of the raster layer, or a list of strings of filenames to rasters that will be stacked. 
 #'

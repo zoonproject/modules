@@ -1,6 +1,6 @@
-#'Model module: MachineLearn
+#' @title Model module: MachineLearn
 #'
-#'Model module to fit a very large number of machine learning models.
+#' @description Model module to fit a very large number of machine learning models.
 #' 
 #'@param .df \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.df} is data frame that combines the occurrence
