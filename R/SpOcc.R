@@ -1,6 +1,6 @@
-#'Occurrence module: SpOcc
+#' @title Occurrence module: SpOcc
 #'
-#'Occurrence module to collect occurrence data from a number of data bases.
+#' @description Occurrence module to collect occurrence data from a number of data bases.
 #'
 #'@param species A character string giving the species name.
 #'  e.g. 'Anopheles plumbeus'.

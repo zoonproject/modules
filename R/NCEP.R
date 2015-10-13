@@ -1,6 +1,6 @@
-#'Covariate module: NCEP
+#' @title Covariate module: NCEP
 #'
-#'Covariate module to grab coarse resolution environmental data from NCEP
+#' @description Covariate module to grab coarse resolution environmental data from NCEP
 #'
 #'@param extent A numeric vector of length 4 giving the coordinates of the 
 #'  rectangular region within which to carry out the analysis, in the 

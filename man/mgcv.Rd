@@ -23,6 +23,9 @@ smoothing basis to use. (eg "tp" for thin plate regression spline,
  for an overview of what is available.}
 }
 \description{
+Model module:mgcv
+}
+\details{
 Model module to fit a generalized additive model using generalized
 crossvalidation via the mgcv R package.
 }

@@ -1,11 +1,11 @@
-#'Covariate module: AirNCEP
+#' @title Covariate module: AirNCEP
 #'
-#'Covariate module to grab a coarse resolution mean air temperature raster from
+#' @description Covariate module to grab a coarse resolution mean air temperature raster from
 #'  January-February 2001-2002 for the UK.
 #'
-#'@seealso \code{\link{RNCEP::NCEP.gather}}
-#'@name AirNCEP
-#'@family covariate
+#' @seealso \code{\link{RNCEP::NCEP.gather}}
+#' @name AirNCEP
+#' @family covariate
 AirNCEP <- function(){
   zoon:::GetPackage(RNCEP)
   

@@ -1,6 +1,6 @@
-#'Covariate module: Bioclim
+#' @title Covariate module: Bioclim
 #'
-#'Get worldclim environment data. Downloads then stores locally.
+#' @description Get worldclim environment data. Downloads then stores locally.
 #'
 #'@param extent Length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude. 
 #'

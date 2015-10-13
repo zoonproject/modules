@@ -1,6 +1,6 @@
-#'Occurrence module: AnophelesPlumbeus
+#' @title Occurrence module: AnophelesPlumbeus
 #'
-#'Occurrence module to grab *Anopheles plumbeus* (a mosquito) presence
+#' @description Occurrence module to grab *Anopheles plumbeus* (a mosquito) presence
 #'       (presence-only) data from GBIF, in the area bounded by extent.
 #'
 #'@param extent A numeric vector of length 4 giving the coordinates of the 
