@@ -2,7 +2,7 @@
 % Please edit documentation in R/Background.R
 \name{Background}
 \alias{Background}
-\title{Process module: HundredBackground}
+\title{Process module: Background}
 \usage{
 Background(.data, n = 100)
 }

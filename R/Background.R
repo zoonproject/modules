@@ -1,4 +1,4 @@
-#'Process module: HundredBackground
+#'Process module: Background
 #'
 #'Process module to generate background records at random in
 #'      cells of the covariate raster and return these along with the presence only data.
