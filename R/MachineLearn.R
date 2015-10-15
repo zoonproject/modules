@@ -28,9 +28,6 @@
 #'
 #'@name MachineLearn
 #'@family model
-
-
-#'@family model
 MachineLearn <-
   function (.df, 
             method, 
