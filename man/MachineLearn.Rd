@@ -4,8 +4,8 @@
 \alias{MachineLearn}
 \title{Model module: MachineLearn}
 \usage{
-MachineLearn(.df, method, tuneLength = 8, metric = "ROC", number = 5,
-  repeats = 1, tuneGrid = NULL, trControl = NULL, ...)
+MachineLearn(.df, method = "glmnet", tuneLength = 8, metric = "ROC",
+  number = 5, repeats = 1, tuneGrid = NULL, trControl = NULL, ...)
 }
 \arguments{
 \item{.df}{\strong{Internal parameter, do not use in the workflow function}.
