@@ -30,6 +30,7 @@
 #'
 #'@param ... Other arguments passed to \code{\link[caret]{train}}.
 #'
+#'@seealso \code{\link{caret::train}} \code{\link{trainControl}}
 #'@name MachineLearn
 #'@family model
 MachineLearn <-
