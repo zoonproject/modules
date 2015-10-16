@@ -1,6 +1,6 @@
-#'Model module: MachineLearn
+#'@title Model module: MachineLearn
 #'
-#'Model module to fit a very large number of machine learning models.
+#'@description Model module to fit a very large number of machine learning models.
 #' 
 #'@param .df \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.df} is data frame that combines the occurrence
@@ -11,6 +11,10 @@
 #'  classification or dual use models are useable.
 #'
 #'@param tuneLength How many values of each tuning/hyperparameter should be tried?
+#'
+#'@param metric a string that specifies what summary metric will be used to
+#'          select the optimal model. Options are "ROC", "Accuracy" and
+#'          "Kappa".
 #'
 #'@param number How many folds to use in cross validation.
 #'
@@ -26,6 +30,7 @@
 #'
 #'@param ... Other arguments passed to \code{\link[caret]{train}}.
 #'
+#'@seealso \code{\link{caret::train}} \code{\link{trainControl}}
 #'@name MachineLearn
 #'@family model
 
