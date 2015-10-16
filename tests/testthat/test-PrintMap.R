@@ -3,6 +3,8 @@ context('Test PrintMap.')
 
 test_that('Presence-absence works', {
 
+skip('not run')
+
 w1 <- workflow(occurrence = CWBZimbabwe,
                   covariate = Bioclim(extent = c(28, 38, -25, -15),
                                       res = 2.5),
@@ -22,6 +24,7 @@ graphics.off()
 
 test_that('Presence only works', {
 
+skip('not run')
 
 w2 <- workflow(occurrence = SpOcc(species = 'Eresus kollari', 
                                        extent = c(-10, 10, 45, 65)),
@@ -41,6 +44,8 @@ graphics.off()
 })
 
 test_that('Previous bugs work', {
+
+skip('not run')
 
 w3 <- workflow(occurrence = UKAnophelesPlumbeus,
                   covariate = UKAir,
@@ -63,9 +68,7 @@ graphics.off()
 
 test_that('Abundance works', {
 
-
-
-
+skip('not run')
 
 }) 
 

@@ -2,6 +2,8 @@ context('Test the MachineLearn module.')
 
 test_that('basic caret MachineLearn works (including a list of popular models)', {
 
+skip('not run')
+
 m1 <- workflow(occurrence = UKAnophelesPlumbeus,
                   covariate = UKBioclim,
                   process = OneHundredBackground,
@@ -63,6 +65,8 @@ expect_is(m5$model.output[[1]][[1]]$model, 'train')
 
 
 test_that('MachineLearn works with some other output modules.', {
+
+skip('not run')
 
 m6 <- workflow(occurrence = UKAnophelesPlumbeus,
                   covariate = UKBioclim,
