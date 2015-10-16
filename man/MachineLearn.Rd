@@ -18,6 +18,10 @@ MachineLearn(.df, method, tuneLength = 8, metric = "ROC", number = 5,
 
 \item{tuneLength}{How many values of each tuning/hyperparameter should be tried?}
 
+\item{metric}{a string that specifies what summary metric will be used to
+         select the optimal model. Options are "ROC", "Accuracy" and
+         "Kappa".}
+
 \item{number}{How many folds to use in cross validation.}
 
 \item{repeats}{How many times should the entire cross validation process be

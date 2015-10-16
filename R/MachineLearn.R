@@ -12,6 +12,10 @@
 #'
 #'@param tuneLength How many values of each tuning/hyperparameter should be tried?
 #'
+#'@param metric a string that specifies what summary metric will be used to
+#'          select the optimal model. Options are "ROC", "Accuracy" and
+#'          "Kappa".
+#'
 #'@param number How many folds to use in cross validation.
 #'
 #'@param repeats How many times should the entire cross validation process be 
