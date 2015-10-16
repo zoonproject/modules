@@ -38,7 +38,7 @@
 #'@family model
 MachineLearn <-
   function (.df, 
-            method, 
+            method = 'glmnet', 
             tuneLength = 8, 
             metric = 'ROC', 
             number = 5, 
@@ -69,7 +69,7 @@ MachineLearn <-
 
     .df$value <- factor(ifelse(.df$value, 'pres', 'abs'))
 
-    trContr <- trainControl(method = 'repeatedcv', 
+    trContr <- caret::trainControl(method = 'repeatedcv', 
                             number = number, 
                             summaryFunction = twoClassSummary,
                             repeats = repeats,
