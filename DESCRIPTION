@@ -8,7 +8,7 @@ Description: A dummy package containing SDM code modules for use in SDM workflow
   via the zoon R package. Note that this repository is only set up as an R package
   to facilitate compiling documentation and testing modules. It is NOT intended to
   be installed and used in an R session.
-License: BSD_3_clause + file LICENSE.md
+License: BSD_3_clause + file LICENSE
 URL: www.github.com/zoonproject/modules
 Imports:
     assertthat
