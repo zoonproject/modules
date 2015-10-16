@@ -2,6 +2,7 @@ context('Soft test each module in turn. Only expect object to exists i.e. throw 
 
 test_that('Occurrence modules all work', {
 
+  skip('not run')
   
   o1 <- workflow('UKAnophelesPlumbeus', 'UKAir', 'OneHundredBackground', 
           'LogisticRegression', 'SameTimePlaceMap')
@@ -34,6 +35,9 @@ test_that('Occurrence modules all work', {
 
 
 test_that('Covariate modules all work', {
+
+  skip('not run')
+
   c1 <- workflow('UKAnophelesPlumbeus', 'UKAir', 'OneHundredBackground', 
           'LogisticRegression', 'SameTimePlaceMap')
   c2 <- workflow('UKAnophelesPlumbeus', 'AirNCEP', 'OneHundredBackground', 
@@ -53,6 +57,9 @@ test_that('Covariate modules all work', {
 
 
 test_that('Process modules all work', {
+  
+  skip('not run')
+  
   p1 <- workflow('UKAnophelesPlumbeus', 'UKAir', 'OneHundredBackground', 
           'LogisticRegression', 'SameTimePlaceMap')
   p2 <- workflow('UKAnophelesPlumbeus', 'UKAir', 'OneThousandBackground', 
@@ -75,6 +82,9 @@ test_that('Process modules all work', {
 })
 
 test_that('Model modules all work', {
+  
+  skip('not run')
+  
   m1 <- workflow('UKAnophelesPlumbeus', 'UKAir', 'OneHundredBackground', 
           'LogisticRegression', 'SameTimePlaceMap')
   m2 <- workflow('UKAnophelesPlumbeus', 'UKAir', 'OneHundredBackground', 
