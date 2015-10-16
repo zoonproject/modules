@@ -12,6 +12,10 @@
 #'
 #'@param tuneLength How many values of each tuning/hyperparameter should be tried?
 #'
+#'@param metric a string that specifies what summary metric will be used to
+#'          select the optimal model. Options are "ROC", "Accuracy" and
+#'          "Kappa".
+#'
 #'@param number How many folds to use in cross validation.
 #'
 #'@param repeats How many times should the entire cross validation process be 
@@ -26,11 +30,12 @@
 #'
 #'@param ... Other arguments passed to \code{\link[caret]{train}}.
 #'
+#'@seealso \code{\link{caret::train}} \code{\link{trainControl}}
 #'@name MachineLearn
 #'@family model
 MachineLearn <-
   function (.df, 
-            method, 
+            method = 'glmnet', 
             tuneLength = 8, 
             metric = 'ROC', 
             number = 5, 
@@ -61,7 +66,7 @@ MachineLearn <-
 
     .df$value <- factor(ifelse(.df$value, 'pres', 'abs'))
 
-    trContr <- trainControl(method = 'repeatedcv', 
+    trContr <- caret::trainControl(method = 'repeatedcv', 
                             number = number, 
                             summaryFunction = twoClassSummary,
                             repeats = repeats,
@@ -74,10 +79,6 @@ MachineLearn <-
     }
 
     
-
-      
-
-
     # Do cross validation to select hyperparameters
     # And fit fully model
     m <- caret::train(x = as.matrix(covs),
@@ -88,13 +89,6 @@ MachineLearn <-
                       trControl = trContr,
                       metric = metric, ...)
 
-
-
-    
-    
-    # note this won't work without a bespoke prediction method
-    # passed out from this function (using n.trees) since that
-    # argument is required by predict.gbm
     ZoonModel(model = m,
               code = {
                 # create empty vector
