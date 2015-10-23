@@ -1,8 +1,8 @@
-#'PartitionDisc: Leave-one-disc-out cross-validation
+#' @title PartitionDisc: Leave-one-disc-out cross-validation
 #'
-#'This process module partitions the sample into training and tests set by selecting circular test areas (possibly surrounded by an exclusion buffer) and using the remaining samples as training samples. See function partition.disc in package sperrorest for more details
+#' @description This process module partitions the sample into training and tests set by selecting circular test areas (possibly surrounded by an exclusion buffer) and using the remaining samples as training samples. See function partition.disc in package sperrorest for more details
 #'
-#'Module type: Process
+#' @details Module type: Process
 #'
 #'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'

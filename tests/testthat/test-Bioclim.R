@@ -4,6 +4,8 @@ context('Test the Bioclim module')
 
 test_that('Default global extent works', {
 
+skip('not run')
+
 set.seed(1)
 
 w1 <- workflow(occurrence = CWBZimbabwe,

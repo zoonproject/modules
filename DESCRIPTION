@@ -1,14 +1,19 @@
 Package: ZoonModules
 Type: Package
-Title: Modules for the zoon package.
+Title: Species Distribution Modelling Code Modules for the ZOON Package
 Version: 0.1
-Date: 2014-09-05
-Author: Tim Lucas, Nick Golding, Greg McInerny, Emiel van Loon
-Maintainer: Tim Lucas <timcdlucas@gmail.com>
-Description: 
-License: BSD_3_clause + file LICENSE.md
+Author: Tim Lucas, Tom August, Nick Golding, Greg McInerny, Emiel van Loon
+Maintainer: Tom August <tomaug@ceh.ac.uk>
+Description: A dummy package containing SDM code modules for use in SDM workflows
+  via the zoon R package. Note that this repository is only set up as an R package
+  to facilitate compiling documentation and testing modules. It is NOT intended to
+  be installed and used in an R session.
+License: BSD_3_clause + file LICENSE
 URL: www.github.com/zoonproject/modules
 Imports:
     assertthat
-VignetteBuilder: NA
-LazyData: NA
+Suggests:
+    knitr,
+    testthat
+VignetteBuilder: knitr
+LazyData: TRUE

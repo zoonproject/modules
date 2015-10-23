@@ -1,6 +1,6 @@
-#'Model module: GBM
+#' @title Model module: GBM
 #'
-#'Model module to fit a generalized boosted regression (aka boosted regression
+#' @description Model module to fit a generalized boosted regression (aka boosted regression
 #' trees) model
 #' 
 #'@param .df \strong{Internal parameter, do not use in the workflow function}.
