@@ -31,6 +31,7 @@
 #'@param ... Other arguments passed to \code{\link[caret]{train}}.
 #'
 #'@seealso \code{\link{caret::train}} \code{\link{trainControl}}
+#'@author Tim CD Lucas, \email{timcdlucas@gmail.com}
 #'@name MachineLearn
 #'@family model
 MachineLearn <-
