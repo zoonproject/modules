@@ -1,6 +1,6 @@
 #' @title Model module:mgcv
 #'
-#' @details Model module to fit a generalized additive model using generalized
+#' @description  Model module to fit a generalized additive model using generalized
 #' crossvalidation via the mgcv R package.
 #' 
 #'@param .df \strong{Internal parameter, do not use in the workflow function}.
