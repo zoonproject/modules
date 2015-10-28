@@ -6,6 +6,8 @@
 #'
 #'@param k Positive integer number of folds to split the data into. Default is 5. 
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name Crossvalidate
 #'@family process
 Crossvalidate <-

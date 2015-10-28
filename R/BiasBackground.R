@@ -16,7 +16,8 @@
 #'
 #'@param n Positive integer giving the number of background points required.
 #'
-#'@author Nick Golding
+#'
+#'@author Nick Golding \email{nick.golding.research@@gmail.com}
 #'@name BiasBackground
 #'@family process
 BiasBackground <- function (.data, bias, n = 100) {

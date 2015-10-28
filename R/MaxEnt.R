@@ -23,6 +23,8 @@
 #'
 #'@seealso \code{\link{dismo::maxent}}
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name MaxEnt
 #'@family model
 MaxEnt <- function(.df, args = ''){

@@ -25,6 +25,7 @@
 #'   \url{http://dx.doi.org/10.1371/journal.pone.0073432} 
 #' 
 #'@name CWBZimbabwe
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
 #'@family occurrence
 CWBZimbabwe <-
 function(){

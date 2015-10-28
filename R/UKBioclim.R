@@ -9,6 +9,8 @@
 #' 	see `?getData' for more details of what that function does.
 #'	Use the \code{Bioclim} module for bioclim data with other extents.
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name UKBioclim
 #'@family covariate
 UKBioclim <-

@@ -21,6 +21,8 @@
 #'  unnamed character vector is given, the order is assumed to be 
 #'  long, lat, value.
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name LocalOccurrenceData
 #'@family occurrence
 LocalOccurrenceData <-

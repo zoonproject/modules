@@ -15,6 +15,7 @@
 #'       *‘uwnd’*   U-Wind Component [East/West]    m/s      
 #'       *‘vwnd’*   V-Wind Component [North/South]  m/s      
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
 #'
 #'@seealso \code{\link{RNCEP::NCEP.gather}}
 #'@name NCEP

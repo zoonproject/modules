@@ -9,6 +9,8 @@
 #'@return A Raster object giving the probabilistic model predictions for each
 #'      cell of ras
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name SameTimePlaceMap
 #'@family output
 

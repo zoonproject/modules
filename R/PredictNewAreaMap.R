@@ -8,6 +8,8 @@
 #'
 #'@param extent Length 4 character vector giving the new extent to be predicted over. Must be within the covariate data collected in the covariate module.
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name PredictNewAreaMap
 #'@family output
 

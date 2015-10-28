@@ -4,6 +4,7 @@
 #'  January-February 2001-2002 for the UK.
 #'
 #' @seealso \code{\link{RNCEP::NCEP.gather}}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @name AirNCEP
 #' @family covariate
 AirNCEP <- function(){

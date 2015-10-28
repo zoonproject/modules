@@ -7,6 +7,8 @@
 #'
 #' @param n the number of background points to sample
 #'
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #' @name Background
 #' @family process
 Background <- function (.data, n = 100) {

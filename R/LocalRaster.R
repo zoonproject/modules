@@ -8,8 +8,7 @@
 #'
 #'@name LocalRaster
 #'@family covariate
-#'@author Tim Lucas
-#'@author Email: timcdlucas@@gmail.com
+#'@author Tim Lucas \email{timcdlucas@@gmail.com}
 LocalRaster <-
 function(filenames){
 

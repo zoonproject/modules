@@ -10,6 +10,9 @@
 #'@param cov which of the covariates to plot the response against.
 #'If \code{NULL}, the function is executed for all covariates, one after another.
 #'Else it should be a single numeric identifying the covariate to plot.
+#'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name ResponseCurve
 #'@family output
 ResponseCurve <- function (.model, .ras, cov = NULL) {
