@@ -1,6 +1,8 @@
 ### General module tests ###
 context('General module tests')
 
+if (!capabilities('libcurl')) skip('skipping as libcurl not supported')  
+
 library(zoon, quietly = TRUE)
 
 # These tests are generic and do not depend on module type

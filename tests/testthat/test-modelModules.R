@@ -1,6 +1,8 @@
 ### Test Model modules ###
 context('Testing for Model modules')
 
+if (!capabilities('libcurl')) skip('skipping as libcurl not supported')  
+
 library(zoon, quietly = TRUE)
 
 # Get a list of Model modules

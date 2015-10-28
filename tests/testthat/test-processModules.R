@@ -1,6 +1,8 @@
 ### Test Process modules ###
 context('Testing for Process modules')
 
+if (!capabilities('libcurl')) skip('skipping as libcurl not supported')  
+
 library(zoon, quietly = TRUE)
 
 # Get a list of Process modules
