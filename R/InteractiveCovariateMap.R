@@ -8,6 +8,9 @@
 #'
 #'@param which which covariate to plot.
 #' A single numeric giving the index of the covariate to plot
+#' 
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' 
 #'@name InteractiveCovariateMap
 #'@family output
 InteractiveCovariateMap <-

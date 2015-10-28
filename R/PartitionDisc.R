@@ -10,8 +10,8 @@
 #'
 #'@param buffer Numeric, the size of the buffer zone in degrees 
 #'
-#'@author Tom August'
-#'@author tomaug@@ceh.ac.uk'
+#'@author Tom August' \email{tomaug@@ceh.ac.uk'}
+#'
 #'@name PartitionDisc
 #'@family process
 PartitionDisc <-

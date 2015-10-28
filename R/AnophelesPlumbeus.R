@@ -7,6 +7,7 @@
 #'       rectangular region within which to carry out the analysis, in the 
 #'       order: xmin, xmax, ymin, ymax. By default the extent of the UK.
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
 #'
 #'@name AnophelesPlumbeus
 #'@family occurrence

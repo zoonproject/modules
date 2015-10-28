@@ -7,6 +7,8 @@
 #'
 #'@param k The number of folds you wish to have. Will later implement a leaveoneout opt
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name BackgroundAndCrossvalid
 #'@family process
 BackgroundAndCrossvalid <- function (.data, k=5) {

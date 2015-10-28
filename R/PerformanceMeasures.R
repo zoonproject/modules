@@ -8,6 +8,8 @@
 #'
 #'@param threshold A chosen threshold value for measures that need 0/1 predictions 
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name PerformanceMeasures
 #'@family output
 PerformanceMeasures <-

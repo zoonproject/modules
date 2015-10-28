@@ -23,6 +23,7 @@
 #'
 #'@seealso \code{\link{spocc::occ}}
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
 #'
 #'@name SpOcc
 #'@family occurrence

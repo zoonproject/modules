@@ -8,6 +8,8 @@
 #'
 #'@param dir Where to save figures. Defaults to the working directory. 
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name SurfaceMap
 #'@family output
 SurfaceMap <-

@@ -18,6 +18,8 @@
 #'@param shrinkage a shrinkage parameter applied to each tree in the expansion.
 #' Also known as the learning rate or step-size reduction.
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name GBM
 #'@family model
 GBM <-

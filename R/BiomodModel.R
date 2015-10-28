@@ -16,6 +16,8 @@
 #'@param modelType A character vector to describe models to use. Select from
 #''GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT' 
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name BiomodModel
 #'@family model
 #'@seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}

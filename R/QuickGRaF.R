@@ -10,6 +10,9 @@
 #' a vector of numbers of the same length as the number of covariates,
 #' or \code{NULL} in which case GRaF will calculate a fixed approximation to
 #' a sensible lengthscale.
+#' 
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' 
 #'@name QuickGRaF
 #'@family model
 QuickGRaF <-

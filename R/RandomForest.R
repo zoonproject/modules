@@ -6,6 +6,8 @@
 #'
 #'@return A model object with a valid predict method
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name RandomForest
 #'@family model
 

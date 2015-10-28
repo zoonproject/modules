@@ -16,6 +16,8 @@
 #'
 #'@param tags Character vector of searchable tags. 
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name Figshare
 #'@family output
 Figshare <-

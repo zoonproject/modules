@@ -8,6 +8,8 @@
 #'@return a Raster object (class from the raster package) with the gridded
 #'      covariates used to train and predict from the SDM.
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name NoProcess
 #'@family process
 

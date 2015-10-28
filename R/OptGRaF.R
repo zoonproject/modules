@@ -4,6 +4,8 @@
 #'
 #'@param .df \strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name OptGRaF
 #'@family model
 

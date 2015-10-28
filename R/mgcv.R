@@ -18,6 +18,8 @@
 #'  "cr" for cubic regression spline). See \code{\link{mgcv::smooth.terms}}
 #'  for an overview of what is available.
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name mgcv
 #'@family model
 mgcv <-

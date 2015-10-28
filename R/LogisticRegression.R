@@ -6,6 +6,8 @@
 #'
 #'@seealso \code{\link{glm}}
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name LogisticRegression
 #'@family model
 

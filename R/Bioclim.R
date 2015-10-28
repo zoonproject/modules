@@ -8,6 +8,8 @@
 #'
 #'@param layers which bioclim layers to obtain, a vector of integers between 1 and 19.
 #'
+#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#'
 #'@name Bioclim
 #'@family covariate
 Bioclim <-
