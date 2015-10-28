@@ -1,6 +1,8 @@
 ### Test Output modules ###
 context('Testing for Output modules')
 
+if (!capabilities('libcurl')) skip('skipping as libcurl not supported')  
+
 library(zoon, quietly = TRUE)
 
 # Get a list of Output modules

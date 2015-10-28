@@ -1,8 +1,6 @@
-#'BiasBackground: Generate background data using a bias grid
+#'@title BiasBackground: Generate background data using a bias grid
 #'
-#'This process module genereates a sample of background records according to some spatial model of recording bias,indicated by a raster layer.
-#'
-#'Module type: Process
+#'@description This process module genereates a sample of background records according to some spatial model of recording bias,indicated by a raster layer.
 #'
 #'@param .data \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.data} is a list of a data frame and a raster object returned from 
@@ -15,7 +13,6 @@
 #'@param bias Raster with cells giving the relative probability of a background record being sampled there.
 #'
 #'@param n Positive integer giving the number of background points required.
-#'
 #'
 #'@author Nick Golding \email{nick.golding.research@@gmail.com}
 #'@name BiasBackground
