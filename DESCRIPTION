@@ -14,6 +14,7 @@ Imports:
     assertthat
 Suggests:
     knitr,
-    testthat
+    testthat,
+    roxygen2
 VignetteBuilder: knitr
 LazyData: TRUE
