@@ -22,7 +22,7 @@ smoothing basis to use. (eg "tp" for thin plate regression spline,
  "cr" for cubic regression spline). See \code{\link{mgcv::smooth.terms}}
  for an overview of what is available.}
 }
-\details{
+\description{
 Model module to fit a generalized additive model using generalized
 crossvalidation via the mgcv R package.
 }

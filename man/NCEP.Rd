@@ -4,7 +4,8 @@
 \alias{NCEP}
 \title{Covariate module: NCEP}
 \usage{
-NCEP(extent, variables)
+NCEP(extent = c(-10, 10, 45, 65), variables = c("air", "hgt", "rhum",
+  "shum", "omega", "uwnd", "vwnd"))
 }
 \arguments{
 \item{extent}{A numeric vector of length 4 giving the coordinates of the

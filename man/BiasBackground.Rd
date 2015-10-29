@@ -22,9 +22,6 @@ and should not be passed by the user.}
 \description{
 This process module genereates a sample of background records according to some spatial model of recording bias,indicated by a raster layer.
 }
-\details{
-Module type: Process
-}
 \author{
 Nick Golding \email{nick.golding.research@gmail.com}
 }

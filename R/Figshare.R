@@ -21,7 +21,7 @@
 #'@name Figshare
 #'@family output
 Figshare <-
-function (.model, .ras, title, description='zoon workflow', authors='zoon', categories='SDM', tags='zoon'){
+function (.model, .ras, title='My Zoon Workflow', description='zoon workflow', authors='zoon', categories='SDM', tags='zoon'){
 
   zoon:::GetPackage(rfigshare)
 

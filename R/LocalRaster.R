@@ -10,7 +10,7 @@
 #'@family covariate
 #'@author Tim Lucas \email{timcdlucas@@gmail.com}
 LocalRaster <-
-function(filenames){
+function(filenames='myRaster'){
 
   if(is.string(filenames)){
     raster <- raster(filenames)

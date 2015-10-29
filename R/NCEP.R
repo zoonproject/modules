@@ -21,7 +21,10 @@
 #'@name NCEP
 #'@family covariate
 NCEP <-
-function(extent, variables){
+function(extent = c(-10, 10, 45, 65),
+         variables = c('air', 'hgt','rhum',
+                       'shum','omega','uwnd',
+                       'vwnd')){
   
 
   zoon:::GetPackage(RNCEP)
@@ -46,7 +49,7 @@ function(extent, variables){
   extent(layers[[i]]) <- c(extent)
   }
 
-  ras <- do.call(stack, layers)
+  ras <- do.call(raster::stack, layers)
   
   return (ras)  
 }

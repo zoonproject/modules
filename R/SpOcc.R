@@ -29,7 +29,9 @@
 #'@family occurrence
 
 SpOcc <-
-function(species, extent, databases = 'gbif', type = 'presence', limit = 10000){
+function(species = 'Myotis daubentonii',
+         extent = c(-10, 10, 45, 65),
+         databases = 'gbif', type = 'presence', limit = 10000){
 
   if (!(type %in% c('presence', 'absence', 'background'))) {
     stop(paste('occurrence type', type, 'cannot be used, type must be one of:',

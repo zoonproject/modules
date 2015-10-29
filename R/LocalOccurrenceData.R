@@ -26,7 +26,10 @@
 #'@name LocalOccurrenceData
 #'@family occurrence
 LocalOccurrenceData <-
-function(filename, occurrenceType, columns, externalValidation = FALSE){
+function(filename='myData.csv',
+         occurrenceType='presence',
+         columns=c(long = 'longitude', lat = 'latitude', value = 'responseVals'),
+         externalValidation = FALSE){
 
   zoon:::GetPackage('assertthat')
   

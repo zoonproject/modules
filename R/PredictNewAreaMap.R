@@ -13,9 +13,8 @@
 #'@name PredictNewAreaMap
 #'@family output
 
-PredictNewAreaMap <- function (.model, .ras, extent) {
+PredictNewAreaMap <- function (.model, .ras, extent = as.vector(.ras@extent)) {
   
-
   ras <- crop(.ras, extent)
   vals <- data.frame(getValues(ras))
   colnames(vals) <- names(ras)
@@ -30,4 +29,3 @@ PredictNewAreaMap <- function (.model, .ras, extent) {
   return(pred_ras)
   
 }
-

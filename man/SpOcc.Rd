@@ -4,8 +4,8 @@
 \alias{SpOcc}
 \title{Occurrence module: SpOcc}
 \usage{
-SpOcc(species, extent, databases = "gbif", type = "presence",
-  limit = 10000)
+SpOcc(species = "Myotis daubentonii", extent = c(-10, 10, 45, 65),
+  databases = "gbif", type = "presence", limit = 10000)
 }
 \arguments{
 \item{species}{A character string giving the species name.

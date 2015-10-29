@@ -4,7 +4,7 @@
 \alias{LocalRaster}
 \title{Covariate module: LocalRaster}
 \usage{
-LocalRaster(filenames)
+LocalRaster(filenames = "myRaster")
 }
 \arguments{
 \item{filenames}{Either a string of the filename of the raster layer, or a list of strings of filenames to rasters that will be stacked.}
