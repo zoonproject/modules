@@ -1,36 +1,67 @@
 #' @title Process module: Background
-#'
-#' @description Process module to generate background records at random in
-#'      cells of the covariate raster and return these along with the presence only data.
-#'
-#' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
-#'
+#'   
+#' @description Process module to generate random (optionally biased) background
+#'   records in cells of the covariate raster and return these along with the
+#'   presence only data.
+#'   
+#' @param .data \strong{Internal parameter, do not use in the workflow
+#'   function}. \code{.data} is a list of a data frame and a raster object
+#'   returned from occurrence modules and covariate modules respectively.
+#'   \code{.data} is passed automatically in workflow from the occurrence and
+#'   covariate modules to the process module(s) and should not be passed by the
+#'   user.
+#'   
 #' @param n the number of background points to sample
-#'
+#'   
+#' @param bias optional \code{RasterLayer} with cells giving the relative
+#'   probability of a background record being sampled there. if \code{bias =
+#'   NULL} (the default) then no biasing is applied, and all non-missing cells
+#'   are equally likely to be selected.
+#'   
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#'
+#'   
 #' @name Background
 #' @family process
-Background <- function (.data, n = 100) {
+Background <- function (.data, n = 100, bias = NULL) {
   
   zoon:::GetPackage(dismo)
   
   occurrence <- .data$df
-  ras <- .data$ras
- 
+  
   if (!all(occurrence$type == 'presence')) {
     stop ('"Background" module only works for presence-only data')
   }
   
+  # if no bias grid is provided
+  if (is.null(bias)) {
+    ras <- .data$ras
+    prob <- FALSE
+  } else {
+    # if one is provided, check it
+    if (!inherits(bias, 'RasterLayer')) {
+      stop ('bias must be either NULL or a RasterLayer object from the raster package')
+    }
+    ras <- bias
+    prob <- TRUE
+  }
+  
   # generate pseudo-absence data
   points <- n
-  if(ncell(ras) < n){
-    points <- ncell(ras)
-    warning(paste0('There are fewer than 100 cells in the environmental raster.', 
-      '\nUsing all available cells (', ncell(ras), ') instead'))
-  }
-  pa <- randomPoints(ras, points)
   
+  # check the number
+  if (ncell(ras) < n) {
+    # find the number of non-na cells in ras
+    points <- length(na.omit(getValues(ras)))
+    warning(sprintf('There are fewer than %i cells in the covariate raster.\nUsing all available cells (%i) instead',
+                    n,
+                    points))
+  }
+
+  # generate pseudo-absence data on the grid, possibly biased,
+  # suppressing warnings when the number is restricted
+  suppressWarnings(pa <- dismo::randomPoints(ras,
+                                             n,
+                                             prob = prob))
   
   npres <- nrow(occurrence)
   
