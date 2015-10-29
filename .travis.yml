@@ -13,6 +13,7 @@ install:
   - sudo apt-get install -y libv8-dev curl libcurl4-openssl-dev
   - ./pkg-build.sh install_deps
   - ./pkg-build.sh install_r covr
+  - if [ $VERSION == devel ]; then sleep 5; fi
   - ./pkg-build.sh install_github zoonproject/zoon
 
 script:
