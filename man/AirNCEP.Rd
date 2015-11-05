@@ -4,7 +4,10 @@
 \alias{AirNCEP}
 \title{Covariate module: AirNCEP}
 \usage{
-AirNCEP()
+AirNCEP(status.bar = FALSE)
+}
+\arguments{
+\item{status.bar}{Logical. Should a status bar be shown indicating the percentage of completion?}
 }
 \description{
 Covariate module to grab a coarse resolution mean air temperature raster from

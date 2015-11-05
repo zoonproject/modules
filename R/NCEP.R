@@ -13,7 +13,8 @@
 #'       *‘shum’*   Specific Humidity               kg/kg    
 #'       *‘omega’*  Omega [Vertical Velocity]       Pascal/s 
 #'       *‘uwnd’*   U-Wind Component [East/West]    m/s      
-#'       *‘vwnd’*   V-Wind Component [North/South]  m/s      
+#'       *‘vwnd’*   V-Wind Component [North/South]  m/s    
+#' @param status.bar Logical. Should a status bar be shown indicating the percentage of completion? 
 #'
 #'@author ZOON Developers, \email{zoonproject@@gmail.com}
 #'
@@ -21,10 +22,9 @@
 #'@name NCEP
 #'@family covariate
 NCEP <-
-function(extent = c(-10, 10, 45, 65),
-         variables = c('air', 'hgt','rhum',
-                       'shum','omega','uwnd',
-                       'vwnd')){
+function(extent = c(-5, 5, 50, 60),
+         variables = 'hgt',
+         status.bar = FALSE){
   
 
   zoon:::GetPackage(RNCEP)
@@ -32,24 +32,29 @@ function(extent = c(-10, 10, 45, 65),
   layers <- list()
 
   for(i in 1:length(variables)){
-  data <- NCEP.gather(variable = variables[i],
-                    level = 850,
-                    months.minmax = c(1:2),
-                    years.minmax = c(2000,2001),
-                    lat.southnorth = extent[3:4],
-                    lon.westeast = extent[1:2],
-                    reanalysis2 = FALSE,
-                    return.units = TRUE)
+    
+    suppressWarnings({
+    data <- NCEP.gather(variable = variables[i],
+                      level = 850,
+                      months.minmax = c(1:2),
+                      years.minmax = c(2000,2001),
+                      lat.southnorth = extent[3:4],
+                      lon.westeast = extent[1:2],
+                      reanalysis2 = FALSE,
+                      return.units = TRUE)
+    })
+    
+    avg <- apply(data, c(1, 2), mean)
+    
+    layers[[i]] <- raster(avg)
+    names(layers[[i]]) <- variables[i]  
   
-  avg <- apply(data, c(1, 2), mean)
-  
-  layers[[i]] <- raster(avg)
-  names(layers[[i]]) <- variables[i]  
-
-  extent(layers[[i]]) <- c(extent)
+    extent(layers[[i]]) <- c(extent)
   }
 
   ras <- do.call(raster::stack, layers)
+  
+  projection(ras) <- "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"
   
   return (ras)  
 }

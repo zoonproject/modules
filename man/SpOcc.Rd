@@ -4,7 +4,7 @@
 \alias{SpOcc}
 \title{Occurrence module: SpOcc}
 \usage{
-SpOcc(species = "Myotis daubentonii", extent = c(-10, 10, 45, 65),
+SpOcc(species = "Myotis daubentonii", extent = c(-1, 0, 51, 52),
   databases = "gbif", type = "presence", limit = 10000)
 }
 \arguments{

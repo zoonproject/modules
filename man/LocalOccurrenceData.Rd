@@ -5,7 +5,7 @@
 \title{Occurrence module: LocalOccurrenceData}
 \usage{
 LocalOccurrenceData(filename = "myData.csv", occurrenceType = "presence",
-  columns = c(long = "longitude", lat = "latitude", value = "responseVals"),
+  columns = c(long = "longitude", lat = "latitude", value = "value"),
   externalValidation = FALSE)
 }
 \arguments{
