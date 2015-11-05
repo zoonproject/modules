@@ -3,7 +3,7 @@ library(zoon, quietly = TRUE)
 library(roxygen2)
 source('test_parameters.R')
 source('test_module.R')
-source('test_Outputs.R')
+source('test_outputs.R')
 
 # Get our list of modules
 modulePaths <- list.files('../../R', pattern = '.R$', full.names = TRUE)
