@@ -13,6 +13,17 @@ OneHundredBackground(.data)
 Process module to generate up to 100 background records at random in
      cells of ras and return these along with the presence only data.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
+
+\section{Data type}{
+ presence-only
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

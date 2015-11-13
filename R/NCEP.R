@@ -2,11 +2,11 @@
 #'
 #' @description Covariate module to grab coarse resolution environmental data from NCEP
 #'
-#'@param extent A numeric vector of length 4 giving the coordinates of the 
+#' @param extent A numeric vector of length 4 giving the coordinates of the 
 #'  rectangular region within which to carry out the analysis, in the 
 #'  order: xmin, xmax, ymin, ymax.
-#'@param variables Character vector of which variables to select.
-#'See NCEP.gather for more options but basic options are
+#' @param variables Character vector of which variables to select.
+#' See NCEP.gather for more options but basic options are
 #'       *‘air’*    Air Temperature                 deg K    
 #'       *‘hgt’*    Geopotential Height             m        
 #'       *‘rhum’*   Relative Humidity               %        
@@ -16,11 +16,13 @@
 #'       *‘vwnd’*   V-Wind Component [North/South]  m/s    
 #' @param status.bar Logical. Should a status bar be shown indicating the percentage of completion? 
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@seealso \code{\link{RNCEP::NCEP.gather}}
-#'@name NCEP
-#'@family covariate
+#' @seealso \code{\link{RNCEP::NCEP.gather}}
+#' @name NCEP
+#' @family covariate
 NCEP <-
 function(extent = c(-5, 5, 50, 60),
          variables = 'hgt',

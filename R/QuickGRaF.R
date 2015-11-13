@@ -2,19 +2,21 @@
 #'
 #' @description Model module to fit a quick GRaF model, without parameter optimisation.
 #'
-#'@param .df \strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.
+#' @param .df \strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.
 #'
-#'@param l lengthscale parameter, a positive number controlling the complexity
+#' @param l lengthscale parameter, a positive number controlling the complexity
 #' of the fitted model with respect to each covariate.
 #' Can either be a single number (in which case it is used for all covariates),
 #' a vector of numbers of the same length as the number of covariates,
 #' or \code{NULL} in which case GRaF will calculate a fixed approximation to
 #' a sensible lengthscale.
 #' 
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #' 
-#'@name QuickGRaF
-#'@family model
+#' @name QuickGRaF
+#' @family model
 QuickGRaF <-
 function (.df, l = NULL) {
   

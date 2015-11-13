@@ -12,6 +12,13 @@ OptGRaF(.df)
 \description{
 Model module to fit a (slow) GRaF model, with parameter optimisation.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

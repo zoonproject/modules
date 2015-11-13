@@ -26,6 +26,13 @@ smoothing basis to use. (eg "tp" for thin plate regression spline,
 Model module to fit a generalized additive model using generalized
 crossvalidation via the mgcv R package.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

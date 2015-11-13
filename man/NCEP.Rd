@@ -26,6 +26,13 @@ See NCEP.gather for more options but basic options are
 \description{
 Covariate module to grab coarse resolution environmental data from NCEP
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

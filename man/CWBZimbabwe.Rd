@@ -32,6 +32,13 @@ Dryad data package:
      leuconotus} P.) in Zimbabwe. Dryad Digital Repository.
   \url{http://dx.doi.org/10.1371/journal.pone.0073432}
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

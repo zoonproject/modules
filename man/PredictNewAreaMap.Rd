@@ -16,6 +16,13 @@ PredictNewAreaMap(.model, .ras, extent = as.vector(.ras@extent))
 \description{
 Output module. Predict a model across a new area.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

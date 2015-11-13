@@ -4,27 +4,29 @@
 #'  Must be a .csv file with three columns longitude, latitude and value 
 #'  in that order.
 #'
-#'@param filename The path to the spreadsheet. The spreadsheet should have a 
+#' @param filename The path to the spreadsheet. The spreadsheet should have a 
 #'  header giving column names. .csv, .tab, .tsv handled. The xlsx
 #'  package is used for excel files.
 #'
-#'@param occurrenceType What type data is it? One of 'presence', 
+#' @param occurrenceType What type data is it? One of 'presence', 
 #' 'presence/absence', 'abundance', 'probability' 
 #'
-#'@param externalValidation Logical indicating whether this data is external
+#' @param externalValidation Logical indicating whether this data is external
 #'  validation data. Cross validation is handled elsewhere and this argument 
 #'  should be left as FALSE for data that will be used in cross validation. 
 #'
-#'@param columns Which columns in the spreadsheet relate to longitude, latitude
+#' @param columns Which columns in the spreadsheet relate to longitude, latitude
 #'  and response value? Takes a named character vector e.g.
 #'  c(long = 'longitude', lat = 'latitude', value = 'responseVals'). If an
 #'  unnamed character vector is given, the order is assumed to be 
 #'  long, lat, value.
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name LocalOccurrenceData
-#'@family occurrence
+#' @name LocalOccurrenceData
+#' @family occurrence
 LocalOccurrenceData <-
 function(filename='myData.csv',
          occurrenceType='presence',

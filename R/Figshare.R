@@ -2,24 +2,26 @@
 #'
 #' @description Upload your workflow call, model, occurrance and covariate data to figshare as a RData file. Uploads privately but be aware I cannot assure the privacy of any data. This module is a work in progress, and will obviously want to upload the output from the output modules.
 #'
-#'@param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'
+#' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'
 #'
-#'@param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
+#' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
-#'@param title String giving the title 
+#' @param title String giving the title 
 #'
-#'@param description  String describing the workflow 
+#' @param description  String describing the workflow 
 #'
-#'@param authors Charactor vector of full authors names 
+#' @param authors Charactor vector of full authors names 
 #'
-#'@param categories Character vector of figshare categories e.g. ecology. 
+#' @param categories Character vector of figshare categories e.g. ecology. 
 #'
-#'@param tags Character vector of searchable tags. 
+#' @param tags Character vector of searchable tags. 
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name Figshare
-#'@family output
+#' @name Figshare
+#' @family output
 Figshare <-
 function (.model, .ras, title='My Zoon Workflow', description='zoon workflow', authors='zoon', categories='SDM', tags='zoon'){
 

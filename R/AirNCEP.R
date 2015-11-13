@@ -8,6 +8,8 @@
 #' @seealso \code{\link{RNCEP::NCEP.gather}}
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @name AirNCEP
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #' @family covariate
 AirNCEP <- function(status.bar = FALSE){
   zoon:::GetPackage(RNCEP)
@@ -16,7 +18,7 @@ AirNCEP <- function(status.bar = FALSE){
               xmax = 10,
               ymin = 45,
               ymax = 65)
-
+  
   c1 <- NCEP.gather(variable = 'air',
                     level = 850,
                     months.minmax = c(1:2),

@@ -26,6 +26,13 @@ Figshare(.model, .ras, title = "My Zoon Workflow",
 \description{
 Upload your workflow call, model, occurrance and covariate data to figshare as a RData file. Uploads privately but be aware I cannot assure the privacy of any data. This module is a work in progress, and will obviously want to upload the output from the output modules.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

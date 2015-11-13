@@ -26,6 +26,17 @@ Process module to generate random (optionally biased) background
   records in cells of the covariate raster and return these along with the
   presence only data.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
+
+\section{Data type}{
+ presence-only
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

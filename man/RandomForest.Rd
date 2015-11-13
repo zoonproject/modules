@@ -15,6 +15,13 @@ A model object with a valid predict method
 \description{
 Model module to fit a simple RandomForest classification model
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

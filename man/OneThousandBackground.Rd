@@ -13,6 +13,17 @@ OneThousandBackground(.data)
 Process module to generate up to 1000 background records at random in
      cells of the covariate raster and return these along with the occurrence data.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
+
+\section{Data type}{
+ presence-only
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

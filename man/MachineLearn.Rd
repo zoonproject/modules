@@ -39,6 +39,13 @@ NULL, tuneLength will be used instead.}
 \description{
 Model module to fit a very large number of machine learning models.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 Tim CD Lucas, \email{timcdlucas@gmail.com}
 }

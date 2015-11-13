@@ -31,6 +31,13 @@ Occurrence module to format local occurrence data to be used with zoon.
  Must be a .csv file with three columns longitude, latitude and value 
  in that order.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

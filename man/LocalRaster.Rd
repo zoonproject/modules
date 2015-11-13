@@ -15,6 +15,13 @@ LocalRaster: Read in a single raster or a list of rasters and stack them.
 \details{
 Read in a single raster or a list of rasters and stack them.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 Tim Lucas \email{timcdlucas@gmail.com}
 }

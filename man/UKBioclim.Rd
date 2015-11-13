@@ -17,6 +17,13 @@ The first time this module is used the data are downloaded from the web,
 	see `?getData' for more details of what that function does.
 Use the \code{Bioclim} module for bioclim data with other extents.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

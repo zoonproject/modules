@@ -2,31 +2,33 @@
 #'
 #' @description Occurrence module to collect occurrence data from a number of data bases.
 #'
-#'@param species A character string giving the species name.
+#' @param species A character string giving the species name.
 #'  e.g. 'Anopheles plumbeus'.
 #'  
-#'@param extent A numeric vector of length 4 giving the coordinates of the 
+#' @param extent A numeric vector of length 4 giving the coordinates of the 
 #'  rectangular region within which to carry out the analysis, in the 
 #'  order: xmin, xmax, ymin, ymax.
 #'
-#'@param databases A character vector giving the databases to use.
+#' @param databases A character vector giving the databases to use.
 #'  Choose from "gbif", "bison", "inat", "ebird", "ecoengine", "antweb".
 #'  Defaults to gbif. NB I have had some problems with databases other
 #'  than gbif.
 #'
-#'@param type A string giving the type of occurrence data to treat these records as.
+#' @param type A string giving the type of occurrence data to treat these records as.
 #'  Must be one of \code{'presence'} (the default and most common use case),
 #'  \code{'absence'} or \code{'background'} (which may be used to implement
 #'  a 'target background group' approach for overcoming observation bias).
 #'
-#'@param limit The maximum number of occurrence records to return.
+#' @param limit The maximum number of occurrence records to return.
 #'
-#'@seealso \code{\link{spocc::occ}}
+#' @seealso \code{\link{spocc::occ}}
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name SpOcc
-#'@family occurrence
+#' @name SpOcc
+#' @family occurrence
 
 SpOcc <-
 function(species = 'Myotis daubentonii',

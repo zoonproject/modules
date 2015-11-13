@@ -13,6 +13,13 @@ AirNCEP(status.bar = FALSE)
 Covariate module to grab a coarse resolution mean air temperature raster from
  January-February 2001-2002 for the UK.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

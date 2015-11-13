@@ -15,6 +15,13 @@ InteractiveMap(.model, .ras)
 Plot an zoomable and scrollable map of the predicted distribution
 and training data.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
