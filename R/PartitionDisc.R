@@ -4,16 +4,20 @@
 #'
 #' @details Module type: Process
 #'
-#'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
+#' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'
-#'@param radius Numeric the radius of the disc, in degrees 
+#' @param radius Numeric the radius of the disc, in degrees 
 #'
-#'@param buffer Numeric, the size of the buffer zone in degrees 
+#' @param buffer Numeric, the size of the buffer zone in degrees 
 #'
-#'@author Tom August' \email{tomaug@@ceh.ac.uk'}
+#' @author Tom August' \email{tomaug@@ceh.ac.uk'}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name PartitionDisc
-#'@family process
+#' @section Data type: presence-only, presence/absence
+#'
+#' @name PartitionDisc
+#' @family process
 PartitionDisc <-
   function(.data, radius = 2, buffer = 1){
     

@@ -19,6 +19,13 @@ Else it should be a single numeric identifying the covariate to plot.}
 Plot a detailed conditional response curve from the model
 against one covariate.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

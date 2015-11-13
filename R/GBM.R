@@ -3,25 +3,27 @@
 #' @description Model module to fit a generalized boosted regression (aka boosted regression
 #' trees) model
 #' 
-#'@param .df \strong{Internal parameter, do not use in the workflow function}.
+#' @param .df \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.df} is data frame that combines the occurrence
 #'
-#'@param max.trees The maximum number of trees to fit.
+#' @param max.trees The maximum number of trees to fit.
 #' The number of trees is equivalent to the number of iterations and
 #'  the number of basis functions in the additive expansion. The optimal
 #'  number will be selected by cross-validation, but this sets an upper limit.
 #'
-#'@param interaction.depth The maximum depth of variable interactions.
+#' @param interaction.depth The maximum depth of variable interactions.
 #' 1 implies an additive model, 2 implies a model with up to 2-way interactions,
 #'  etc.
 #'
-#'@param shrinkage a shrinkage parameter applied to each tree in the expansion.
+#' @param shrinkage a shrinkage parameter applied to each tree in the expansion.
 #' Also known as the learning rate or step-size reduction.
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name GBM
-#'@family model
+#' @name GBM
+#' @family model
 GBM <-
   function (.df,
             max.trees = 1000,

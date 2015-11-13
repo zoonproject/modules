@@ -3,25 +3,27 @@
 #' @description  Model module to fit a generalized additive model using generalized
 #' crossvalidation via the mgcv R package.
 #' 
-#'@param .df \strong{Internal parameter, do not use in the workflow function}.
+#' @param .df \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.df} is data frame that combines the occurrence
 #'
-#'@param k the dimension of the basis used to represent the smooth term.
+#' @param k the dimension of the basis used to represent the smooth term.
 #' The default depends on the number of variables that the smooth is a
 #'  function of. k should not be less than the dimension of the null space
 #'   of the penalty for the term (see \code{\link{mgcv::null.space.dimension}}),
 #'   but will be reset if it is. See \code{\link{mgcv::choose.k}} for further
 #'   information
 #'
-#'@param bs a two letter character string indicating the (penalized)
+#' @param bs a two letter character string indicating the (penalized)
 #' smoothing basis to use. (eg "tp" for thin plate regression spline,
 #'  "cr" for cubic regression spline). See \code{\link{mgcv::smooth.terms}}
 #'  for an overview of what is available.
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name mgcv
-#'@family model
+#' @name mgcv
+#' @family model
 mgcv <-
   function (.df,
             k = -1,

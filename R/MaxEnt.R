@@ -21,12 +21,14 @@
 #' (which may or may not be up-to-date) in this forum:
 #' \url{https://groups.google.com/d/msg/maxent/yRBlvZ1_9rQ/Fj8Two0lmHIJ}.
 #'
-#'@seealso \code{\link{dismo::maxent}}
+#' @seealso \code{\link{dismo::maxent}}
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name MaxEnt
-#'@family model
+#' @name MaxEnt
+#' @family model
 MaxEnt <- function(.df, args = ''){
   
   zoon:::GetPackage('dismo')

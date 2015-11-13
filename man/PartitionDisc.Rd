@@ -19,6 +19,17 @@ This process module partitions the sample into training and tests set by selecti
 \details{
 Module type: Process
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
+
+\section{Data type}{
+ presence-only, presence/absence
+}
 \author{
 Tom August' \email{tomaug@ceh.ac.uk'}
 }

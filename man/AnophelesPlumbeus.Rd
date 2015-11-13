@@ -15,6 +15,13 @@ order: xmin, xmax, ymin, ymax. By default the extent of the UK.}
 Occurrence module to grab *Anopheles plumbeus* (a mosquito) presence
       (presence-only) data from GBIF, in the area bounded by extent.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

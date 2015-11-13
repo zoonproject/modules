@@ -3,14 +3,17 @@
 #' @description Process module to generate up to 100 background records at random in
 #'      cells of ras and split all data in k folds for cross validation.
 #'
-#'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
+#' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'
-#'@param k The number of folds you wish to have. Will later implement a leaveoneout opt
+#' @param k The number of folds you wish to have. Will later implement a leaveoneout opt
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
+#' @section Data type: presence-only
 #'
-#'@name BackgroundAndCrossvalid
-#'@family process
+#' @name BackgroundAndCrossvalid
+#' @family process
 BackgroundAndCrossvalid <- function (.data, k=5) {
   
   occurrence <- .data$df

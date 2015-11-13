@@ -2,38 +2,40 @@
 #'
 #' @description Model module to fit a very large number of machine learning models.
 #' 
-#'@param .df \strong{Internal parameter, do not use in the workflow function}.
+#' @param .df \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.df} is data frame that combines the occurrence
 #'
-#'@param method The machine learning method to use. Common examples are "glm", 
+#' @param method The machine learning method to use. Common examples are "glm", 
 #'  "nnet", "gbm", "glmnet", "rf". See 
 #'  http://topepo.github.io/caret/modelList.html for a full list. Only 
 #'  classification or dual use models are useable.
 #'
-#'@param tuneLength How many values of each tuning/hyperparameter should be tried?
+#' @param tuneLength How many values of each tuning/hyperparameter should be tried?
 #'
-#'@param metric a string that specifies what summary metric will be used to
+#' @param metric a string that specifies what summary metric will be used to
 #'          select the optimal model. Options are "ROC", "Accuracy" and
 #'          "Kappa".
 #'
-#'@param number How many folds to use in cross validation.
+#' @param number How many folds to use in cross validation.
 #'
-#'@param repeats How many times should the entire cross validation process be 
+#' @param repeats How many times should the entire cross validation process be 
 #'  repeated. Increasing this will reduce instability in your model performace,
 #'  but will take longer to run.
 #'
-#'@param tuneGrid Explicitely pass a data frame of tuning/hyperparameter combinations. If
+#' @param tuneGrid Explicitely pass a data frame of tuning/hyperparameter combinations. If
 #'  NULL, tuneLength will be used instead.
 #'
-#'@param trControl A named list of further arguments to pass to trainControl. See 
+#' @param trControl A named list of further arguments to pass to trainControl. See 
 #'  \code{\link[caret]{trainControl}} for details.
 #'
-#'@param ... Other arguments passed to \code{\link[caret]{train}}.
+#' @param ... Other arguments passed to \code{\link[caret]{train}}.
 #'
-#'@seealso \code{\link{caret::train}} \code{\link{trainControl}}
-#'@author Tim CD Lucas, \email{timcdlucas@@gmail.com}
-#'@name MachineLearn
-#'@family model
+#' @seealso \code{\link{caret::train}} \code{\link{trainControl}}
+#' @author Tim CD Lucas, \email{timcdlucas@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
+#' @name MachineLearn
+#' @family model
 MachineLearn <-
   function (.df, 
             method = 'glmnet', 

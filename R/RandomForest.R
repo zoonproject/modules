@@ -2,14 +2,16 @@
 #'
 #' @description Model module to fit a simple RandomForest classification model
 #'
-#'@param .df \strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.
+#' @param .df \strong{Internal parameter, do not use in the workflow function}. \code{.df} is data frame that combines the occurrence data and covariate data. \code{.df} is passed automatically in workflow from the process module(s) to the model module(s) and should not be passed by the user.
 #'
-#'@return A model object with a valid predict method
+#' @return A model object with a valid predict method
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name RandomForest
-#'@family model
+#' @name RandomForest
+#' @family model
 
 
 RandomForest <- function (.df) {

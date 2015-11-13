@@ -4,11 +4,21 @@
 \alias{AirNCEP}
 \title{Covariate module: AirNCEP}
 \usage{
-AirNCEP()
+AirNCEP(status.bar = FALSE)
+}
+\arguments{
+\item{status.bar}{Logical. Should a status bar be shown indicating the percentage of completion?}
 }
 \description{
 Covariate module to grab a coarse resolution mean air temperature raster from
  January-February 2001-2002 for the UK.
+}
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

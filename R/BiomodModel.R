@@ -2,28 +2,30 @@
 #'
 #' @description Model module wrapper for the biomod2 function BIOMOD_Modeling()
 #'
-#'@details In order to fit a MaxEnt model, you must first download the
+#' @details In order to fit a MaxEnt model, you must first download the
 #' MaxEnt executable file \code{maxent.jar} and save it in the correct location.
 #' The zoon function \code{GetMaxEnt} can orchestrate this for you.
 #' Running MaxEnt also requires an up-to-date version of java
 #' (which you may already have installed).
 #'
-#'@param .df \strong{Internal parameter, do not use in the workflow function}.
+#' @param .df \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.df} is data frame that combines the occurrence data and covariate
 #'  data. \code{.df} is passed automatically in workflow from the process
 #'  module(s) to the model module(s) and should not be passed by the user.
 #'
-#'@param modelType A character vector to describe models to use. Select from
-#''GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT' 
+#' @param modelType A character vector to describe models to use. Select from
+#' 'GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT' 
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name BiomodModel
-#'@family model
-#'@seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}
+#' @name BiomodModel
+#' @family model
+#' @seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}
 
 
-BiomodModel <- function(.df, modelType){
+BiomodModel <- function(.df, modelType = 'GLM'){
   
   zoon:::GetPackage(biomod2)
   

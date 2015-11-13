@@ -3,12 +3,16 @@
 #' @description Process module to generate up to 1000 background records at random in
 #'      cells of the covariate raster and return these along with the occurrence data.
 #'
-#'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
+#' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name OneThousandBackground
-#'@family process
+#' @section Data type: presence-only
+#'
+#' @name OneThousandBackground
+#' @family process
 
 OneThousandBackground <- function (.data) {
   

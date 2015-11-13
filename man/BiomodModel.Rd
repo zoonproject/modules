@@ -4,7 +4,7 @@
 \alias{BiomodModel}
 \title{Model module: BiomodModel}
 \usage{
-BiomodModel(.df, modelType)
+BiomodModel(.df, modelType = "GLM")
 }
 \arguments{
 \item{.df}{\strong{Internal parameter, do not use in the workflow function}.
@@ -24,6 +24,13 @@ MaxEnt executable file \code{maxent.jar} and save it in the correct location.
 The zoon function \code{GetMaxEnt} can orchestrate this for you.
 Running MaxEnt also requires an up-to-date version of java
 (which you may already have installed).
+}
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

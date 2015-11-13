@@ -17,6 +17,17 @@ a Raster object (class from the raster package) with the gridded
 Process module that does nothing. A place holder for if nothing should be
 done to the data before modelling.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
+
+\section{Data type}{
+ presence-only, presence/absence
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

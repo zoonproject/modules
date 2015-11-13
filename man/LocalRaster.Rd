@@ -4,7 +4,7 @@
 \alias{LocalRaster}
 \title{Covariate module: LocalRaster}
 \usage{
-LocalRaster(filenames)
+LocalRaster(filenames = "myRaster")
 }
 \arguments{
 \item{filenames}{Either a string of the filename of the raster layer, or a list of strings of filenames to rasters that will be stacked.}
@@ -14,6 +14,13 @@ LocalRaster: Read in a single raster or a list of rasters and stack them.
 }
 \details{
 Read in a single raster or a list of rasters and stack them.
+}
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
 }
 \author{
 Tim Lucas \email{timcdlucas@gmail.com}

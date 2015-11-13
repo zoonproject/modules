@@ -4,7 +4,7 @@
 \alias{Bioclim}
 \title{Covariate module: Bioclim}
 \usage{
-Bioclim(extent = c(-180, 180, -90, 90), resolution = 5, layers = 1:19)
+Bioclim(extent = c(-180, 180, -90, 90), resolution = 10, layers = 1:19)
 }
 \arguments{
 \item{extent}{Length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude.}
@@ -15,6 +15,13 @@ Bioclim(extent = c(-180, 180, -90, 90), resolution = 5, layers = 1:19)
 }
 \description{
 Get worldclim environment data. Downloads then stores locally.
+}
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

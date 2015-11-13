@@ -26,6 +26,13 @@ Also known as the learning rate or step-size reduction.}
 Model module to fit a generalized boosted regression (aka boosted regression
 trees) model
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

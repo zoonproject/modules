@@ -16,6 +16,13 @@ PerformanceMeasures(.model, .ras, threshold = 0.5)
 \description{
 Calculate a suite of performance metrics on either crossvalidation, external validation data or (at your own risk) in-sample validation.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

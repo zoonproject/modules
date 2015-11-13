@@ -18,6 +18,13 @@ A Raster object giving the probabilistic model predictions for each
 \description{
 Output module. A function for outputing the raster of the predictions from an analysis
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

@@ -4,8 +4,9 @@
 \alias{Figshare}
 \title{Output module: Figshare}
 \usage{
-Figshare(.model, .ras, title, description = "zoon workflow",
-  authors = "zoon", categories = "SDM", tags = "zoon")
+Figshare(.model, .ras, title = "My Zoon Workflow",
+  description = "zoon workflow", authors = "zoon", categories = "SDM",
+  tags = "zoon")
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'}
@@ -24,6 +25,13 @@ Figshare(.model, .ras, title, description = "zoon workflow",
 }
 \description{
 Upload your workflow call, model, occurrance and covariate data to figshare as a RData file. Uploads privately but be aware I cannot assure the privacy of any data. This module is a work in progress, and will obviously want to upload the output from the output modules.
+}
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

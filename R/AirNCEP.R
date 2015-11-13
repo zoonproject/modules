@@ -2,19 +2,23 @@
 #'
 #' @description Covariate module to grab a coarse resolution mean air temperature raster from
 #'  January-February 2001-2002 for the UK.
+#'  
+#' @param status.bar Logical. Should a status bar be shown indicating the percentage of completion? 
 #'
 #' @seealso \code{\link{RNCEP::NCEP.gather}}
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @name AirNCEP
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #' @family covariate
-AirNCEP <- function(){
+AirNCEP <- function(status.bar = FALSE){
   zoon:::GetPackage(RNCEP)
   
   extent <- uk.extent <- c(xmin = -10,
               xmax = 10,
               ymin = 45,
               ymax = 65)
-
+  
   c1 <- NCEP.gather(variable = 'air',
                     level = 850,
                     months.minmax = c(1:2),
@@ -22,7 +26,8 @@ AirNCEP <- function(){
                     lat.southnorth = extent[3:4],
                     lon.westeast = extent[1:2],
                     reanalysis2 = FALSE,
-                    return.units = TRUE)
+                    return.units = TRUE,
+                    status.bar = status.bar)
   
   avg <- apply(c1, c(1, 2), mean)
   
@@ -30,6 +35,8 @@ AirNCEP <- function(){
   
   extent(ras) <- c(extent)
   
-  return (ras)  
+  projection(ras) <- "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"
+  
+  return(ras)  
   
 }

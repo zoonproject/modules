@@ -17,6 +17,13 @@ A single numeric giving the index of the covariate to plot}
 \description{
 Plot a zoomable and scrollable map of a covariate layer.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

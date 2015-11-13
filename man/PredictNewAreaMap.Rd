@@ -4,7 +4,7 @@
 \alias{PredictNewAreaMap}
 \title{Output module: PredictNewAreaMap}
 \usage{
-PredictNewAreaMap(.model, .ras, extent)
+PredictNewAreaMap(.model, .ras, extent = as.vector(.ras@extent))
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
@@ -15,6 +15,13 @@ PredictNewAreaMap(.model, .ras, extent)
 }
 \description{
 Output module. Predict a model across a new area.
+}
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

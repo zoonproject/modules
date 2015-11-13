@@ -4,8 +4,8 @@
 \alias{SpOcc}
 \title{Occurrence module: SpOcc}
 \usage{
-SpOcc(species, extent, databases = "gbif", type = "presence",
-  limit = 10000)
+SpOcc(species = "Myotis daubentonii", extent = c(-1, 0, 51, 52),
+  databases = "gbif", type = "presence", limit = 10000)
 }
 \arguments{
 \item{species}{A character string giving the species name.
@@ -29,6 +29,13 @@ a 'target background group' approach for overcoming observation bias).}
 }
 \description{
 Occurrence module to collect occurrence data from a number of data bases.
+}
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

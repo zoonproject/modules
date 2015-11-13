@@ -4,7 +4,7 @@
 \alias{NCEP}
 \title{Covariate module: NCEP}
 \usage{
-NCEP(extent, variables)
+NCEP(extent = c(-5, 5, 50, 60), variables = "hgt", status.bar = FALSE)
 }
 \arguments{
 \item{extent}{A numeric vector of length 4 giving the coordinates of the 
@@ -20,9 +20,18 @@ See NCEP.gather for more options but basic options are
       *‘omega’*  Omega [Vertical Velocity]       Pascal/s 
       *‘uwnd’*   U-Wind Component [East/West]    m/s      
       *‘vwnd’*   V-Wind Component [North/South]  m/s}
+
+\item{status.bar}{Logical. Should a status bar be shown indicating the percentage of completion?}
 }
 \description{
 Covariate module to grab coarse resolution environmental data from NCEP
+}
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

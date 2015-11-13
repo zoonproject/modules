@@ -19,6 +19,13 @@ a sensible lengthscale.}
 \description{
 Model module to fit a quick GRaF model, without parameter optimisation.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

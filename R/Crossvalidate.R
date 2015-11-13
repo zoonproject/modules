@@ -2,14 +2,17 @@
 #'
 #' @description Run k fold crossvalidation. If presence absence, split presences and absences separately so folds have equally balanced data. Otherwise just sample.
 #'
-#'@param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
+#' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'
-#'@param k Positive integer number of folds to split the data into. Default is 5. 
+#' @param k Positive integer number of folds to split the data into. Default is 5. 
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
+#' @section Data type: presence-only, presence/absence
 #'
-#'@name Crossvalidate
-#'@family process
+#' @name Crossvalidate
+#' @family process
 Crossvalidate <-
 function (.data, k=5) {
   

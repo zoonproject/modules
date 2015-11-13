@@ -4,7 +4,8 @@
 \alias{LocalOccurrenceData}
 \title{Occurrence module: LocalOccurrenceData}
 \usage{
-LocalOccurrenceData(filename, occurrenceType, columns,
+LocalOccurrenceData(filename = "myData.csv", occurrenceType = "presence",
+  columns = c(long = "longitude", lat = "latitude", value = "value"),
   externalValidation = FALSE)
 }
 \arguments{
@@ -29,6 +30,13 @@ should be left as FALSE for data that will be used in cross validation.}
 Occurrence module to format local occurrence data to be used with zoon. 
  Must be a .csv file with three columns longitude, latitude and value 
  in that order.
+}
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

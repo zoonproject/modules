@@ -3,18 +3,20 @@
 #' @description Plot a detailed conditional response curve from the model
 #' against one covariate.
 #'
-#'@param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
+#' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
 #' 
-#'@param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
+#' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
-#'@param cov which of the covariates to plot the response against.
-#'If \code{NULL}, the function is executed for all covariates, one after another.
-#'Else it should be a single numeric identifying the covariate to plot.
+#' @param cov which of the covariates to plot the response against.
+#' If \code{NULL}, the function is executed for all covariates, one after another.
+#' Else it should be a single numeric identifying the covariate to plot.
 #'
-#'@author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
 #'
-#'@name ResponseCurve
-#'@family output
+#' @name ResponseCurve
+#' @family output
 ResponseCurve <- function (.model, .ras, cov = NULL) {
   
   # by default, plot all covariates

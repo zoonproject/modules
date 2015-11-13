@@ -16,6 +16,13 @@ SurfaceMap(.model, .ras, dir = ".")
 \description{
 Make a png of a map of predicted surface.
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

@@ -12,6 +12,13 @@ LogisticRegression(.df)
 \description{
 Model module to fit a simple logistic regression model
 }
+\section{Version}{
+ 1.0
+}
+
+\section{Date submitted}{
+ 2015-11-13
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
