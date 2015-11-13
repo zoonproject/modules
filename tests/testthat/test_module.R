@@ -20,11 +20,24 @@ test_module <- function(modulePath){
     expect_true('name' %in% names(roxy_parse))
     expect_true('family' %in% names(roxy_parse))
     expect_true('author' %in% names(roxy_parse))
+    expect_true('section' %in% names(roxy_parse))
+    expect_true(any(grepl('^Version: ', roxy_parse[grepl('section', names(roxy_parse))])))
+    expect_true(any(grepl('^Date submitted: ', roxy_parse[grepl('section', names(roxy_parse))])))
     
   })
   
   # If the family tag is present continue (this error will be reported above)
   if('family' %in% names(roxy_parse)){
+    
+    ## Test for module specific tags
+    test_that('Check for module specific tags', {
+      
+      if(roxy_parse$family == 'process'){
+        expect_true('section' %in% names(roxy_parse))
+        expect_true(any(grepl('^Data type: ', roxy_parse[grepl('section', names(roxy_parse))])))
+      }
+      
+    })
     
     ## PARAMETER TESTS
     if(roxy_parse$family == 'occurrence'){

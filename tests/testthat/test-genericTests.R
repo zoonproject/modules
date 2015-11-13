@@ -18,9 +18,9 @@ for(modulePath in modulePaths){
   context(paste('Testing module', basename(gsub('.R$', '', modulePath))))
   
   time <- system.time({
-  test_module(modulePath) 
+    test_module(modulePath) 
   })
   
-  expect_true(time['elapsed'] < 30,
-              info = 'Module tests should not take longer than 30 seconds, please change your defualt values so that test workflow runs do not take too long')
+  expect_true(time['elapsed'] < 60,
+              info = paste('Module tests should not take a long time, yours took', time['elapsed'], 'seconds, please change your defualt values so that test workflow runs do not take too long'))
 }
