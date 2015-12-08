@@ -19,8 +19,8 @@
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @section Version: 1.0
 #' @section Date submitted: 2015-11-13
-#'
-#' @name BiomodModel
+#' @section Data type: presence/absence
+#' @name presence-only, presence/absence, abundance, proportion
 #' @family model
 #' @seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}
 

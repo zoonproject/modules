@@ -17,6 +17,8 @@
 SurfaceMap <-
 function (.model, .ras, dir='.') {
   
+  zoon::GetPackage('raster')
+  
   vals <- data.frame(getValues(.ras))
   colnames(vals) <- names(.ras)
   
