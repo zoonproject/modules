@@ -14,7 +14,7 @@
 #' @section Version: 1.0
 #' @section Date submitted: 2015-11-13
 #'
-#' @section Data type: presence-only, presence/absence
+#' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
 #' @name PartitionDisc
 #' @family process

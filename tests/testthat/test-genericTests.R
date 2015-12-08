@@ -12,15 +12,13 @@ modulePaths <- list.files('../../R', pattern = '.R$', full.names = TRUE)
 ignoreModules <- c('ModulesDocumentation.R')#, 'NCEP.R', 'AirNCEP.R')
 modulePaths <- modulePaths[!basename(modulePaths) %in% ignoreModules]
 
-# loop through each module
-for(modulePath in modulePaths){
-  
-  context(paste('Testing module', basename(gsub('.R$', '', modulePath))))
-  
-  time <- system.time({
+capture.output({
+
+  # loop through each module
+  for(modulePath in modulePaths){
+    
     test_module(modulePath) 
-  })
+
+  }
   
-  expect_true(time['elapsed'] < 60,
-              info = paste('Module tests should not take a long time, yours took', time['elapsed'], 'seconds, please change your defualt values so that test workflow runs do not take too long'))
-}
+}, file = 'tests.txt', split = TRUE)
