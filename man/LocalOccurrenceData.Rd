@@ -38,6 +38,10 @@ Occurrence module to format local occurrence data to be used with zoon.
 \section{Date submitted}{
  2015-11-13
 }
+
+\section{Data type}{
+ presence-only, presence/background, presence/absence, abundance, proportion
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
