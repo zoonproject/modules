@@ -34,7 +34,7 @@ Running MaxEnt also requires an up-to-date version of java
 }
 
 \section{Data type}{
- presence-only, presence/absence, abundance, proportion
+ presence/background, presence/absence, abundance, proportion
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
