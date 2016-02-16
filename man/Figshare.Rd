@@ -41,7 +41,6 @@ Other output: \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewAreaMap}}, \code{\link{PrintMap}},
-  \code{\link{ResponseCurve}},
-  \code{\link{SameTimePlaceMap}}, \code{\link{SurfaceMap}}
+  \code{\link{ResponseCurve}}
 }
 
