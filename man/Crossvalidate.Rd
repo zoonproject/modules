@@ -23,7 +23,7 @@ Run k fold crossvalidation. If presence absence, split presences and absences se
 }
 
 \section{Data type}{
- presence-only, presence/absence
+ presence-only, presence/absence, abundance, proportion
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

@@ -37,6 +37,10 @@ Running MaxEnt also requires an up-to-date version of java
 \section{Date submitted}{
  2015-11-13
 }
+
+\section{Data type}{
+ presence/background
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

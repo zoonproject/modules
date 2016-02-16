@@ -26,7 +26,7 @@ done to the data before modelling.
 }
 
 \section{Data type}{
- presence-only, presence/absence
+ presence-only, presence/absence, abundance, proportion
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

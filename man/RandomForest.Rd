@@ -22,6 +22,10 @@ Model module to fit a simple RandomForest classification model
 \section{Date submitted}{
  2015-11-13
 }
+
+\section{Data type}{
+ presence/absence, abundance
+}
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }

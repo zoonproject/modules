@@ -26,7 +26,7 @@ function (.data, k=5) {
 
   # if presence absence, create folds separately to give well balanced groups
   # if presence only or abundance etc., just split randomly into folds.
-  if (all(c(1,2) %in% occurrence$value) & all(occurrence$value %in% c(1,2) )){
+  if (all(c(0,1) %in% occurrence$value) & all(occurrence$value %in% c(0,1) )){
     fold <- rep(NA, NROW(occurrence))
     fold[occurrence$value == 1] <- sample(1:k, sum(occurrence$value == 1), replace=TRUE)
     fold[occurrence$value == 0] <- sample(1:k, sum(occurrence$value == 0), replace=TRUE)

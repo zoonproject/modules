@@ -46,6 +46,10 @@ Model module to fit a very large number of machine learning models.
 \section{Date submitted}{
  2015-11-13
 }
+
+\section{Data type}{
+ presence/absence
+}
 \author{
 Tim CD Lucas, \email{timcdlucas@gmail.com}
 }

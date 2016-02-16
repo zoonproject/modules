@@ -36,7 +36,7 @@ test_module <- function(modulePath){
       ## Test for module specific tags
       test_that('Check for module specific tags', {
         
-        if(roxy_parse$family == 'process'){
+        if(roxy_parse$family == 'process' | roxy_parse$family == 'model'){
           expect_true('section' %in% names(roxy_parse))
           expect_true(any(grepl('^Data type: ', roxy_parse[grepl('section', names(roxy_parse))])))
         }
