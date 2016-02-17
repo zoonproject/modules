@@ -9,6 +9,8 @@
 #' @param radius Numeric the radius of the disc, in degrees 
 #'
 #' @param buffer Numeric, the size of the buffer zone in degrees 
+#' 
+#' @param seed Numeric used with \code{\link[sperrorest]{partition.disc}}
 #'
 #' @author Tom August' \email{tomaug@@ceh.ac.uk'}
 #' @section Version: 1.0
@@ -19,7 +21,7 @@
 #' @name PartitionDisc
 #' @family process
 PartitionDisc <-
-  function(.data, radius = 2, buffer = 1){
+  function(.data, radius = 2, buffer = 1, seed = NULL){
     
     # Get the package we need
     zoon:::GetPackage('sperrorest')
@@ -33,7 +35,7 @@ PartitionDisc <-
     
     parti <- partition.disc(.data$df, coords = coord_names,
                             radius = radius, buffer = buffer, ndisc = 1,
-                            repetition = 1)
+                            repetition = 1, seed1 = seed)
     
     # Assign classifications back to the data
     .data$df$fold <- NA 

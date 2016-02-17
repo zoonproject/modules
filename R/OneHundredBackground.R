@@ -4,6 +4,7 @@
 #'      cells of ras and return these along with the presence only data.
 #'
 #' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
+#' @param seed Numeric used with \code{\link[base]{set.seed}}
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @section Version: 1.0
@@ -13,7 +14,7 @@
 #'
 #' @name OneHundredBackground
 #' @family process
-OneHundredBackground <- function (.data) {
+OneHundredBackground <- function (.data, seed = NULL) {
   
   zoon:::GetPackage(dismo)
   
@@ -22,6 +23,15 @@ OneHundredBackground <- function (.data) {
  
   if (!all(occurrence$type == 'presence')) {
     stop ('"OneHundredBackground" module only works for presence-only data')
+  }
+  
+  # set seed if specified
+  if(!is.null(seed)){
+    if(inherits(x = seed, what = c('numeric', 'integer'))){
+      set.seed(seed)
+    } else {
+      stop("'seed' must be numeric or NULL")
+    }
   }
   
   # generate pseudo-absence data

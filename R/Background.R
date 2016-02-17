@@ -18,6 +18,8 @@
 #'   NULL} (the default) then no biasing is applied, and all non-missing cells
 #'   are equally likely to be selected.
 #'   
+#' @param seed Numeric used with \code{\link[base]{set.seed}}
+#' 
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @section Version: 1.0
 #' @section Date submitted: 2015-11-13 
@@ -25,7 +27,7 @@
 #'   
 #' @name Background
 #' @family process
-Background <- function (.data, n = 100, bias = NULL) {
+Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   
   zoon:::GetPackage(dismo)
   
@@ -46,6 +48,15 @@ Background <- function (.data, n = 100, bias = NULL) {
     }
     ras <- bias
     prob <- TRUE
+  }
+  
+  # set seed if specified
+  if(!is.null(seed)){
+    if(inherits(x = seed, what = c('numeric', 'integer'))){
+      set.seed(seed)
+    } else {
+      stop("'seed' must be numeric or NULL")
+    }
   }
   
   # generate pseudo-absence data

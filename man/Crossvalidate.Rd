@@ -4,12 +4,14 @@
 \alias{Crossvalidate}
 \title{Process module: Crossvalidate}
 \usage{
-Crossvalidate(.data, k = 5)
+Crossvalidate(.data, k = 5, seed = NULL)
 }
 \arguments{
 \item{.data}{\strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.}
 
 \item{k}{Positive integer number of folds to split the data into. Default is 5.}
+
+\item{seed}{Numeric used with \code{\link[base]{set.seed}}}
 }
 \description{
 Run k fold crossvalidation. If presence absence, split presences and absences separately so folds have equally balanced data. Otherwise just sample.

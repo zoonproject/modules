@@ -21,12 +21,9 @@ NoProcess <-
 function (.data) {
   
 
-  occurrence <- .data$df
+  df <- .data$df
   ras <- .data$ras
 
-  noccurrence <- nrow(occurrence)
-  
-  df <- occurrence
   names(df)[6:ncol(df)] <- names(ras)
   
   return(list(df=df, ras=ras))
