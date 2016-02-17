@@ -30,6 +30,7 @@ Other output: \code{\link{Figshare}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewAreaMap}}, \code{\link{PrintMap}},
-  \code{\link{ResponseCurve}}
+  \code{\link{ResponseCurve}},
+  \code{\link{SameTimePlaceMap}}, \code{\link{SurfaceMap}}
 }
 

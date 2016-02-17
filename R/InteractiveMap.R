@@ -70,28 +70,30 @@ InteractiveMap <- function (.model, .ras) {
     overlay_groups <- 'predicted distribution'
     
     
-    # add legend
+    # add predicted distribution legend
     m <- leaflet::addLegend(map = m,
                             pal = pred_pal,
                             opacity = 0.8, 
                             values = legend_values, 
-                            title = 'predicted distribution')
+                            title = 'Predicted distribution')
 
     # add training data
     df <- .model$data
     
     # color palettes for circles
-    fill_pal <- colorFactor(grey(c(1, 0, 0.2)),
-                            domain = c('presence',
-                                       'absence',
-                                       'background'))
+    fill_pal <- colorFactor(grey(c(1, 0, 0.5)),
+                            domain = c('absence',
+                                       'presence',
+                                       'background'),
+                            ordered = TRUE)
 
     border_pal <- colorFactor(grey(c(0, 1, 1)),
-                            domain = c('presence',
-                                       'absence',
-                                       'background'))
+                            domain = c('absence',
+                                       'presence',
+                                       'background'),
+                            ordered = TRUE)
     
-    for (type in c('background', 'absence', 'presence')) {
+    for (type in c('absence', 'background', 'presence')) {
       if (any(df$type == type)) {
         idx <- df$type == type
         group_name <- paste(type, 'data')
@@ -105,11 +107,25 @@ InteractiveMap <- function (.model, .ras) {
                                  opacity = 1,
                                  fillOpacity = 1,
                                  radius = 5,
-                                 group = group_name)
+                                 group = group_name,
+                                 popup = paste('<b>',
+                                               paste(toupper(substr(type, 1, 1)), substr(type, 2, nchar(type)), sep=""),
+                                               '</b>',
+                                               '<br>Longitude:', df$lon[idx],
+                                               '<br>Latitude:', df$lat[idx]))
         
       }
     }
         
+    # add points legend
+    m <- leaflet::addLegend(map = m,
+                            pal = fill_pal,
+                            opacity = 0.8, 
+                            values = factor(c('presence', 'absence', 'background'),
+                                            levels = c('presence', 'absence', 'background'),
+                                            ordered = TRUE),
+                            title = 'Data points')
+                            
     # add toggle for the layers
     m <- leaflet::addLayersControl(map = m,
                                    position = "topleft",
