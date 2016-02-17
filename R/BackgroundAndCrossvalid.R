@@ -6,6 +6,8 @@
 #' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #'
 #' @param k The number of folds you wish to have. Will later implement a leaveoneout opt
+#' 
+#' @param seed Numeric used with \code{\link[base]{set.seed}}
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @section Version: 1.0
@@ -14,7 +16,7 @@
 #'
 #' @name BackgroundAndCrossvalid
 #' @family process
-BackgroundAndCrossvalid <- function (.data, k=5) {
+BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
   
   occurrence <- .data$df
   ras <- .data$ras
@@ -22,6 +24,15 @@ BackgroundAndCrossvalid <- function (.data, k=5) {
   
   if (!all(occurrence$type == 'presence')) {
     stop ('"BackgroundAndCrossvalid" module only works for presence-only data')
+  }
+  
+  # set seed if specified
+  if(!is.null(seed)){
+    if(inherits(x = seed, what = c('numeric', 'integer'))){
+      set.seed(seed)
+    } else {
+      stop("'seed' must be numeric or NULL")
+    }
   }
   
   # generate pseudo-absence data

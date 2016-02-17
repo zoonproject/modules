@@ -4,7 +4,7 @@
 \alias{Background}
 \title{Process module: Background}
 \usage{
-Background(.data, n = 100, bias = NULL)
+Background(.data, n = 100, bias = NULL, seed = NULL)
 }
 \arguments{
 \item{.data}{\strong{Internal parameter, do not use in the workflow
@@ -20,6 +20,8 @@ user.}
 probability of a background record being sampled there. if \code{bias =
 NULL} (the default) then no biasing is applied, and all non-missing cells
 are equally likely to be selected.}
+
+\item{seed}{Numeric used with \code{\link[base]{set.seed}}}
 }
 \description{
 Process module to generate random (optionally biased) background
