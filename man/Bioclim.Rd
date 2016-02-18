@@ -9,7 +9,7 @@ Bioclim(extent = c(-180, 180, -90, 90), resolution = 10, layers = 1:19)
 \arguments{
 \item{extent}{Length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude.}
 
-\item{resolution}{Resolution in minutes. Must be one of 2.5, 5 or 10. Default is 5.}
+\item{resolution}{Resolution in minutes. Must be one of 2.5, 5 or 10. Default is 10.}
 
 \item{layers}{which bioclim layers to obtain, a vector of integers between 1 and 19.}
 }

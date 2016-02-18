@@ -4,7 +4,7 @@
 #'
 #' @param extent Length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude. 
 #'
-#' @param resolution Resolution in minutes. Must be one of 2.5, 5 or 10. Default is 5. 
+#' @param resolution Resolution in minutes. Must be one of 2.5, 5 or 10. Default is 10. 
 #'
 #' @param layers which bioclim layers to obtain, a vector of integers between 1 and 19.
 #'

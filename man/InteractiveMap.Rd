@@ -13,7 +13,7 @@ InteractiveMap(.model, .ras)
 }
 \description{
 Plot an zoomable and scrollable map of the predicted distribution
-and training data.
+and training data. Clicking on a point reveals additional information.
 }
 \section{Version}{
  1.0
