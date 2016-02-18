@@ -4,14 +4,17 @@
 \alias{PredictNewAreaMap}
 \title{Output module: PredictNewAreaMap}
 \usage{
-PredictNewAreaMap(.model, .ras, extent = as.vector(.ras@extent))
+PredictNewAreaMap(.model, .ras, extent = as.vector(.ras@extent),
+  plot = TRUE)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
 
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
 
-\item{extent}{Length 4 character vector giving the new extent to be predicted over. Must be within the covariate data collected in the covariate module.}
+\item{extent}{Numeric vector of length 4 giving (in this order) the min x, max x, min y, max y, the the new area to be mapped. Must be within the covariate data collected in the covariate module.}
+
+\item{plot}{Logical, if \code{TRUE} (default) the prediction map is plotted.}
 }
 \description{
 Output module. Predict a model across a new area.
