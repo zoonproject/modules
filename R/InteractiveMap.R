@@ -1,8 +1,8 @@
 #' @title Output module: InteractiveMap
 #'
 #' @description Plot an zoomable and scrollable map of the predicted distribution
-#' and training data.
-#'
+#' and training data. Clicking on a point reveals additional information.
+#' 
 #' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'
 #'
 #' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
@@ -112,7 +112,9 @@ InteractiveMap <- function (.model, .ras) {
                                                paste(toupper(substr(type, 1, 1)), substr(type, 2, nchar(type)), sep=""),
                                                '</b>',
                                                '<br>Longitude:', df$lon[idx],
-                                               '<br>Latitude:', df$lat[idx]))
+                                               '<br>Latitude:', df$lat[idx],
+                                               '<br>Fold:', df$fold[idx],
+                                               '<br>Value:', df$value[idx]))
         
       }
     }
