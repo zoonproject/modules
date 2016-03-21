@@ -1,6 +1,6 @@
 #' @title Process module: Clean
 #'
-#' @description Do some data cleaning on occurrence points collected from GBIF
+#' @description Do some data cleaning on occurrence points
 #'
 #' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
 #' @param which A numeric or character vector describing which data cleaning processes to use (see details).
