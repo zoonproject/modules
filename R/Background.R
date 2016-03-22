@@ -50,16 +50,14 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
     if (!inherits(bias, 'numeric') | !length(bias) == 1) {
       stop ('bias must be either NULL or a RasterLayer object from the raster package')
     }
-
-    ras <- .data$ras
+    # Take the points and convert them so we can query the raster with them.
     xypoints <- SpatialPoints(.data$df[, c('longitude', 'latitude')], CRS('+proj=longlat +ellps=WGS84'))
 
-    transpoints <- sp::spTransform(xypoints, ras@crs)
+    # Currently ignores sea mask. Should be union of this new raster and NAs from old.
+    transpoints <- sp::spTransform(xypoints, .data$ras[[1]]@crs)
     r2 <- rasterize(transpoints, ras[[1]], field = 1)
     ras <- raster::buffer(r2, width = bias * 1000)
-
     prob <- TRUE
-    # Set cells whose centre point is further than `bias` from an occurrence point to 0.
   }
 
   
@@ -95,9 +93,9 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   npabs <- nrow(pa)
   
   # extract covariates
-  occ_covs <- as.matrix(extract(ras, occurrence[, c('longitude', 'latitude')]))
+  occ_covs <- as.matrix(extract(.data$ras, occurrence[, c('longitude', 'latitude')]))
   
-  pa_covs <- as.matrix(extract(ras, pa))
+  pa_covs <- as.matrix(extract(.data$ras, pa))
   
   covs <- rbind(occ_covs, pa_covs)
   
@@ -111,14 +109,14 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
                    latitude = c(occurrence$lat, pa[, 2]),
                    covs)
   
-  names(df)[6:ncol(df)] <- names(ras)
+  names(df)[6:ncol(df)] <- names(.data$ras)
   
   # remove missing values
   if(NROW(na.omit(df)) > 0){
     df <- na.omit(df)
   }
 
-  return(list(df=df, ras=ras))
+  return(list(df = df, ras = .data$ras))
   
 }
 
