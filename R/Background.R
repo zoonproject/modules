@@ -14,9 +14,10 @@
 #' @param n the number of background points to sample
 #'   
 #' @param bias optional \code{RasterLayer} with cells giving the relative
-#'   probability of a background record being sampled there. if \code{bias =
-#'   NULL} (the default) then no biasing is applied, and all non-missing cells
-#'   are equally likely to be selected.
+#'   probability of a background record being sampled there. Alternatively,
+#'   a length one numeric giving a radius (in KM) around presence points to take 
+#'   background points from. if \code{bias = NULL} (the default) then no 
+#'   biasing is applied, and all non-missing cells are equally likely to be selected.
 #'   
 #' @param seed Numeric used with \code{\link[base]{set.seed}}
 #' 
@@ -41,14 +42,26 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   if (is.null(bias)) {
     ras <- .data$ras
     prob <- FALSE
-  } else {
-    # if one is provided, check it
-    if (!inherits(bias, 'RasterLayer')) {
-      stop ('bias must be either NULL or a RasterLayer object from the raster package')
-    }
+  } else if(inherits(bias, 'RasterLayer')) {
     ras <- bias
     prob <- TRUE
+  } else {
+    # If it's not a raster, it should be a length one numeric
+    if (!inherits(bias, 'numeric') | !length(bias) == 1) {
+      stop ('bias must be either NULL or a RasterLayer object from the raster package')
+    }
+
+    ras <- .data$ras
+    xypoints <- SpatialPoints(.data$df[, c('longitude', 'latitude')], CRS('+proj=longlat +ellps=WGS84'))
+
+    transpoints <- sp::spTransform(xypoints, ras@crs)
+    r2 <- rasterize(transpoints, ras[[1]], field = 1)
+    ras <- raster::buffer(r2, width = bias * 1000)
+
+    prob <- TRUE
+    # Set cells whose centre point is further than `bias` from an occurrence point to 0.
   }
+
   
   # set seed if specified
   if(!is.null(seed)){
@@ -63,7 +76,7 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   points <- n
   
   # check the number
-  if (ncell(ras) < n) {
+  if (sum(!is.na(getValues(ras))) < n) {
     # find the number of non-na cells in ras
     points <- length(na.omit(getValues(ras)))
     warning(sprintf('There are fewer than %i cells in the covariate raster.\nUsing all available cells (%i) instead',
