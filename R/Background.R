@@ -28,6 +28,7 @@
 #'   
 #' @name Background
 #' @family process
+
 Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   
   zoon:::GetPackage(dismo)
@@ -53,10 +54,16 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
     # Take the points and convert them so we can query the raster with them.
     xypoints <- SpatialPoints(.data$df[, c('longitude', 'latitude')], CRS('+proj=longlat +ellps=WGS84'))
 
-    # Currently ignores sea mask. Should be union of this new raster and NAs from old.
+    # Transform points so they match transformation of .data$ras
     transpoints <- sp::spTransform(xypoints, .data$ras[[1]]@crs)
-    r2 <- rasterize(transpoints, ras[[1]], field = 1)
+
+    # Make a raster the same size as .data$ras. Set points in transpoints to 1. Then make circle of 1s around those points.
+    r2 <- rasterize(transpoints, .data$ras[[1]], field = 1)
     ras <- raster::buffer(r2, width = bias * 1000)
+    
+    # If NA in .data$ras[[1]], make ras NA as well.
+    values(ras)[is.na(values(.data$ras[[1]]))] <- rep(NA, sum(is.na(values(.data$ras[[1]]))))
+  
     prob <- TRUE
   }
 
