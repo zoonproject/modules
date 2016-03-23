@@ -14,19 +14,21 @@
 #' @param n the number of background points to sample
 #'   
 #' @param bias optional \code{RasterLayer} with cells giving the relative
-#'   probability of a background record being sampled there. if \code{bias =
-#'   NULL} (the default) then no biasing is applied, and all non-missing cells
-#'   are equally likely to be selected.
+#'   probability of a background record being sampled there. Alternatively,
+#'   a length one numeric giving a radius (in KM) around presence points to take 
+#'   background points from. If \code{bias = NULL} (the default) then no 
+#'   biasing is applied, and all non-missing cells are equally likely to be selected.
 #'   
 #' @param seed Numeric used with \code{\link[base]{set.seed}}
 #' 
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @section Version: 1.0
-#' @section Date submitted: 2015-11-13 
+#' @section Date submitted: 2016-03-23 
 #' @section Data type: presence-only
 #'   
 #' @name Background
 #' @family process
+
 Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   
   zoon:::GetPackage(dismo)
@@ -41,14 +43,30 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   if (is.null(bias)) {
     ras <- .data$ras
     prob <- FALSE
-  } else {
-    # if one is provided, check it
-    if (!inherits(bias, 'RasterLayer')) {
-      stop ('bias must be either NULL or a RasterLayer object from the raster package')
-    }
+  } else if(inherits(bias, 'RasterLayer')) {
     ras <- bias
     prob <- TRUE
+  } else {
+    # If it's not a raster, it should be a length one numeric
+    if (!inherits(bias, 'numeric') | !length(bias) == 1) {
+      stop ('bias must be either NULL or a RasterLayer object from the raster package')
+    }
+    # Take the points and convert them so we can query the raster with them.
+    xypoints <- SpatialPoints(.data$df[, c('longitude', 'latitude')], CRS('+proj=longlat +ellps=WGS84'))
+
+    # Transform points so they match transformation of .data$ras
+    transpoints <- sp::spTransform(xypoints, .data$ras[[1]]@crs)
+
+    # Make a raster the same size as .data$ras. Set points in transpoints to 1. Then make circle of 1s around those points.
+    r2 <- rasterize(transpoints, .data$ras[[1]], field = 1)
+    ras <- raster::buffer(r2, width = bias * 1000)
+    
+    # If NA in .data$ras[[1]], make ras NA as well.
+    values(ras)[is.na(values(.data$ras[[1]]))] <- rep(NA, sum(is.na(values(.data$ras[[1]]))))
+  
+    prob <- TRUE
   }
+
   
   # set seed if specified
   if(!is.null(seed)){
@@ -63,7 +81,7 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   points <- n
   
   # check the number
-  if (ncell(ras) < n) {
+  if (sum(!is.na(getValues(ras))) < n) {
     # find the number of non-na cells in ras
     points <- length(na.omit(getValues(ras)))
     warning(sprintf('There are fewer than %i cells in the covariate raster.\nUsing all available cells (%i) instead',
@@ -82,9 +100,9 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   npabs <- nrow(pa)
   
   # extract covariates
-  occ_covs <- as.matrix(extract(ras, occurrence[, c('longitude', 'latitude')]))
+  occ_covs <- as.matrix(extract(.data$ras, occurrence[, c('longitude', 'latitude')]))
   
-  pa_covs <- as.matrix(extract(ras, pa))
+  pa_covs <- as.matrix(extract(.data$ras, pa))
   
   covs <- rbind(occ_covs, pa_covs)
   
@@ -98,14 +116,14 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
                    latitude = c(occurrence$lat, pa[, 2]),
                    covs)
   
-  names(df)[6:ncol(df)] <- names(ras)
+  names(df)[6:ncol(df)] <- names(.data$ras)
   
   # remove missing values
   if(NROW(na.omit(df)) > 0){
     df <- na.omit(df)
   }
 
-  return(list(df=df, ras=ras))
+  return(list(df = df, ras = .data$ras))
   
 }
 
