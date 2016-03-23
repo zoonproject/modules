@@ -16,14 +16,14 @@
 #' @param bias optional \code{RasterLayer} with cells giving the relative
 #'   probability of a background record being sampled there. Alternatively,
 #'   a length one numeric giving a radius (in KM) around presence points to take 
-#'   background points from. if \code{bias = NULL} (the default) then no 
+#'   background points from. If \code{bias = NULL} (the default) then no 
 #'   biasing is applied, and all non-missing cells are equally likely to be selected.
 #'   
 #' @param seed Numeric used with \code{\link[base]{set.seed}}
 #' 
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @section Version: 1.0
-#' @section Date submitted: 2015-11-13 
+#' @section Date submitted: 2016-03-23 
 #' @section Data type: presence-only
 #'   
 #' @name Background
