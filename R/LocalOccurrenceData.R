@@ -54,7 +54,7 @@ function(filename='myData.csv',
   }
 
   if(!type %in% c('presence', 'presence/absence', 'abundance', 'probability')){
-    stop("occurrenceType must but one of 'presence', 'presence/absence', 'abundance' or 'probability'.")
+    stop("occurrenceType must be one of 'presence', 'presence/absence', 'abundance' or 'probability'.")
   }
 
   
@@ -68,14 +68,30 @@ function(filename='myData.csv',
   separators <- list('csv' = ',',
                     'tsv' = '\t',
                     'tab' = '\t')
+
+  
+  loadComplete <- FALSE
   if (extension %in% names(separators)){
-    sep <- separators[[extension]]
-    data <- read.table(filename, header = TRUE, stringsAsFactors = FALSE, sep = sep)
+    try({
+      sep <- separators[[extension]]
+      data <- read.table(filename, header = TRUE, stringsAsFactors = FALSE, sep = sep)
+      loadComplete <- TRUE
+    }, silent = TRUE)
+    # If above block didn't work, try csv2
+    if (!loadComplete){
+      data <- read.csv2(filename, header = TRUE, stringsAsFactors = FALSE)
+      loadComplete <- TRUE
+    }
+    # If it still isn't right, load data.table and use fread.
+    if (ncol(data) < 3 | !loadComplete){
+      zoon::GetPackage(data.table)
+      data <- as.data.frame(fread(filename))
+    }
   } else if (extension %in% c('xls', 'xlsx')) {
-    GetPackage(xlsx)
+    zoon::GetPackage(xlsx)
     data <- read.xlsx(filename, header = TRUE, sheetIndex = 1)
   } else if (extension == 'dbf') {
-    GetPackage(foreign)
+    zoon::GetPackage(foreign)
     data <- read.dbf(filename)
   } else {
     stop("Can't open spreadsheet. Is it one of supported formats?")
