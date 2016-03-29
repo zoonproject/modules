@@ -22,7 +22,7 @@
 #' @param seed Numeric used with \code{\link[base]{set.seed}}
 #' 
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.0
+#' @section Version: 1.1
 #' @section Date submitted: 2016-03-23 
 #' @section Data type: presence-only
 #'   
