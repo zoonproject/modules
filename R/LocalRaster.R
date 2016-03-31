@@ -14,8 +14,16 @@
 LocalRaster <-
 function(rasters='myRaster'){
 
+  zoon:::GetPackage('assertthat')
   if(is.string(rasters)){
-    raster <- raster(rasters)
+    ## Check if file exists
+    if(file.exists(rasters)){
+      ## Load raster from file
+      raster <- raster(rasters)
+    }else{
+      ## Load raster from global environment (Reads: raster, rasterstack, or rasterbrick)
+      raster <- eval(parse(text = rasters),envir = globalenv())
+    }
   } else if(is.list(rasters)) {
     rasterList <- lapply(rasters, raster)
     raster <- stack(rasterList)
