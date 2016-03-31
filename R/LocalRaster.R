@@ -12,22 +12,22 @@
 #' @section Version: 1.1
 #' @section Date submitted: 2016-03-04
 LocalRaster <-
-function(rasters='myRaster'){
+function(rasters = 'myRaster'){
 
-  zoon:::GetPackage('assertthat')
-  if(is.string(rasters)){
+  zoon::GetPackage('assertthat')
+  if (is.string(rasters)){
     ## Check if file exists
-    if(file.exists(rasters)){
+    if (file.exists(rasters)){
       ## Load raster from file
       raster <- raster(rasters)
-    }else{
+    } else {
       ## Load raster from global environment (Reads: raster, rasterstack, or rasterbrick)
-      raster <- eval(parse(text = rasters),envir = globalenv())
+      raster <- eval(parse(text = rasters), envir = globalenv())
     }
-  } else if(is.list(rasters)) {
+  } else if (is.list(rasters)) {
     rasterList <- lapply(rasters, raster)
     raster <- stack(rasterList)
-  } else if(is.vector(rasters) & typeof(rasters) == "character") {
+  } else if (is.vector(rasters) & typeof(rasters) == "character") {
     raster <- stack(rasters)
   } else if (is(rasters, "RasterLayer") || is(rasters, "RasterStack")) {
     raster <- rasters
