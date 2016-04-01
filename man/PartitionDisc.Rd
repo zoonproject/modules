@@ -37,7 +37,8 @@ Tom August' \email{tomaug@ceh.ac.uk'}
 }
 \seealso{
 Other process: \code{\link{BackgroundAndCrossvalid}},
-  \code{\link{Background}}, \code{\link{Crossvalidate}},
+  \code{\link{Background}}, \code{\link{Clean}},
+  \code{\link{Crossvalidate}}, \code{\link{MESSMask}},
   \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}}

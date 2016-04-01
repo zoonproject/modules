@@ -33,7 +33,8 @@ ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
 Other process: \code{\link{Background}},
-  \code{\link{Crossvalidate}}, \code{\link{NoProcess}},
+  \code{\link{Clean}}, \code{\link{Crossvalidate}},
+  \code{\link{MESSMask}}, \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
   \code{\link{PartitionDisc}}
