@@ -4,10 +4,10 @@
 \alias{LocalRaster}
 \title{Covariate module: LocalRaster}
 \usage{
-LocalRaster(filenames = "myRaster")
+LocalRaster(rasters = "myRaster")
 }
 \arguments{
-\item{filenames}{Either a string of the filename of the raster layer, or a list of strings of filenames to rasters that will be stacked.}
+\item{rasters}{Either a string of the filename of the raster layer, a list or vector of strings of filenames to rasters that will be stacked, a RasterLayer or a RasterStack object.}
 }
 \description{
 LocalRaster: Read in a single raster or a list of rasters and stack them.
@@ -16,14 +16,14 @@ LocalRaster: Read in a single raster or a list of rasters and stack them.
 Read in a single raster or a list of rasters and stack them.
 }
 \section{Version}{
- 1.0
+ 1.1
 }
 
 \section{Date submitted}{
- 2015-11-13
+ 2016-03-04
 }
 \author{
-Tim Lucas \email{timcdlucas@gmail.com}
+Tim Lucas \email{timcdlucas@gmail.com} and Samuel Bosch \email{mail@samuelbosch.com}
 }
 \seealso{
 Other covariate: \code{\link{AirNCEP}},
