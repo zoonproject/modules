@@ -43,7 +43,7 @@ function(filename='myData.csv',
   assert_that(is.logical(externalValidation))
   type <- tolower(occurrenceType)
 
-  # Fuzzy match to find presnce/absence variations.
+  # Fuzzy match to find presence/absence variations.
   # But also be sure that 'presence' doesn't fuzzy match as presence/absence
   if(agrepl('presence/absence', type,
                   max.distance = list(insertions = 4)) & 
@@ -93,6 +93,8 @@ function(filename='myData.csv',
   } else if (extension == 'dbf') {
     zoon::GetPackage(foreign)
     data <- read.dbf(filename)
+  } else if (exists(filename, envir = globalenv())) {
+    data <- eval(parse(text = filename), envir = globalenv())
   } else {
     stop("Can't open spreadsheet. Is it one of supported formats?")
   }
