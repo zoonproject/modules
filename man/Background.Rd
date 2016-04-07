@@ -17,9 +17,10 @@ user.}
 \item{n}{the number of background points to sample}
 
 \item{bias}{optional \code{RasterLayer} with cells giving the relative
-probability of a background record being sampled there. if \code{bias =
-NULL} (the default) then no biasing is applied, and all non-missing cells
-are equally likely to be selected.}
+probability of a background record being sampled there. Alternatively,
+a length one numeric giving a radius (in KM) around presence points to take 
+background points from. If \code{bias = NULL} (the default) then no 
+biasing is applied, and all non-missing cells are equally likely to be selected.}
 
 \item{seed}{Numeric used with \code{\link[base]{set.seed}}}
 }
@@ -29,11 +30,11 @@ Process module to generate random (optionally biased) background
   presence only data.
 }
 \section{Version}{
- 1.0
+ 1.1
 }
 
 \section{Date submitted}{
- 2015-11-13
+ 2016-03-23
 }
 
 \section{Data type}{
@@ -44,7 +45,8 @@ ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
 Other process: \code{\link{BackgroundAndCrossvalid}},
-  \code{\link{Crossvalidate}}, \code{\link{NoProcess}},
+  \code{\link{Clean}}, \code{\link{Crossvalidate}},
+  \code{\link{MESSMask}}, \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
   \code{\link{PartitionDisc}}
