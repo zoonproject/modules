@@ -44,7 +44,7 @@ test_outputs <- function(roxy_parse, modulePath){
       
       # Run the module with defaults
       suppressWarnings({
-      cov_return <- do.call(roxy_parse$name, args = list())
+        cov_return <- do.call(roxy_parse$name, args = list())
       })
       
       # Check projection
@@ -75,7 +75,7 @@ test_outputs <- function(roxy_parse, modulePath){
          if(data_type == "presence-only") load('.data_PO.rdata')
           
           suppressWarnings({
-          pro_return <- do.call(roxy_parse$name, args = list(.data = .data))
+           pro_return <- do.call(roxy_parse$name, args = list(.data = .data))
           })
 
           ## Check pro_return structure
@@ -126,6 +126,10 @@ test_outputs <- function(roxy_parse, modulePath){
           
           if(data_type == "presence/absence") load('.data_PA.rdata')
           if(data_type == "presence/background") load('.data_PB.rdata') # basically the same as above but type == 'background'
+          
+          # Add a second column of data as some models do not
+          # run with only one
+          .data$df$rand <- rnorm(n = nrow(.data$df), mean = 10)
           
           suppressWarnings({
             mod_return <- do.call(roxy_parse$name, args = list(.df = .data$df))
