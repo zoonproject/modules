@@ -10,3 +10,6 @@
 # Annoying temp files.
 *~
 .Rproj.user
+
+# R project files
+*.Rproj

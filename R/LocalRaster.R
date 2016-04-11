@@ -17,7 +17,7 @@ function(rasters = 'myRaster'){
   zoon::GetPackage('assertthat')
   if (is.string(rasters)){
     ## Check if file exists
-    if (file.exists(rasters)){
+    if (length(list.files(dirname(rasters), paste('^', basename(rasters), '\\.', sep = ''))) > 0){
       ## Load raster from file
       raster <- raster(rasters)
     } else {
