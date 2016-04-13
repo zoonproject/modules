@@ -46,8 +46,8 @@ PrintMap <-
     ST <- format(Sys.time(), "%Y_%m_%d-%H%M")
     
     ## Create plot object
-  
-    if(any(.model$data$value != 0)){
+    
+    if(any(.model$data$value != 0 & .model$data$value != 1)){
       ## Define abundance colors and key
       
       cls.abundance <- colorRampPalette(c('#ff0000', '#ffff00', '#00ff00'))(10)
@@ -58,7 +58,7 @@ PrintMap <-
                            fill=cls.abundance, 
                            col = '#00000055', 
                            alpha = 0.5)
-      
+      # Color from red to green for o to max abundance values
       key <- list(corner = c(0,0),
                   space = 'inside',
                   text = list(as.character(c(max(.model$data$value), max(.model$data$value)/2,min(.model$data$value)))), 
@@ -83,10 +83,10 @@ PrintMap <-
         pl.presence <- list()
       }
       points.list <- list(pl.absence,pl.presence)
-      list(corner = c(0,0),
-           space = 'inside',
-           text = list(c('Presence', 'Absence')),
-           points.list = list(pch = 21,fill = c('#000000','#e41a1c')))
+      key <- list(corner = c(0,0),
+                  space = 'inside',
+                  text = list(c('Presence', 'Absence')),
+                  points = list(pch = 21,fill = c('#e41a1c','#000000')))
     }
     
     ## Create plotting object
