@@ -18,7 +18,7 @@
 #' @return A Raster object giving the probabilistic model predictions for each
 #' cell of covariate raster layer
 #'
-#' @author ZOON Developers, \email{zoonproject@@gmail.com}; James Campbell, \email{jamesadamcampbell@@gmail.com}
+#' @author ZOON Developers, James Campbell, \email{zoonproject@@gmail.com}
 #' @section Version: 1.1
 #' @section Date submitted: 2016-04-02
 #'
