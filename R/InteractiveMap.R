@@ -35,7 +35,10 @@ InteractiveMap <- function (.model, .ras) {
 
     pred_ras <- .ras[[1]]
     
-    pred_ras <- setValues(pred_ras, pred)
+    # pred is rounded so that very slight minus values become 0
+    # this is matched by the legend
+    pred_ras <- setValues(pred_ras, 
+                          round(pred, 2))
     
     # set up a map with background layers
     m <- leaflet::leaflet()
@@ -45,7 +48,7 @@ InteractiveMap <- function (.model, .ras) {
                                    group = 'Esri.WorldImagery')
     
     # get legend values
-    legend_values <- round(seq(0, 1, length.out = 10), 3)
+    legend_values <- round(seq(0, 1, length.out = 10), 2)
     
     # get prediction colour palette
     pred_pal <- leaflet::colorNumeric(viridis(10), 
