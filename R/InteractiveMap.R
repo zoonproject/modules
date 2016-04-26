@@ -79,11 +79,11 @@ InteractiveMap <- function (.model, .ras) {
 
     # add training data
     df <- .model$data
-    
+
     # color palettes for circles
     fill_pal <- colorFactor(grey(c(1, 0, 0.5)),
-                            domain = c('absence',
-                                       'presence',
+                            domain = c('presence',
+                                       'absence',
                                        'background'),
                             ordered = TRUE)
 
