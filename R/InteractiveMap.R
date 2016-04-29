@@ -22,9 +22,9 @@ InteractiveMap <- function (.model, .ras) {
     
     # load required packages
     zoon:::GetPackage('leaflet')
-    zoon:::GetPackage('htmlwidgets')
-    zoon:::GetPackage('viridis')
     zoon:::GetPackage('rgdal')
+    zoon:::GetPackage('viridis')
+    zoon:::GetPackage('htmlwidgets')
     
     # Make the prediction
     vals <- data.frame(getValues(.ras))

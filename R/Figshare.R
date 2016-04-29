@@ -25,7 +25,7 @@
 Figshare <-
 function (.model, .ras, title='My Zoon Workflow', description='zoon workflow', authors='zoon', categories='SDM', tags='zoon'){
 
-  zoon:::GetPackage(rfigshare)
+  zoon:::GetPackage('rfigshare')
 
   bits <- sys.call(1)
 

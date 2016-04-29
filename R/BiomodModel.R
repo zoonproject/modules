@@ -27,7 +27,7 @@
 
 BiomodModel <- function(.df, modelType = 'GLM'){
   
-  zoon:::GetPackage(biomod2)
+  zoon:::GetPackage('biomod2')
   
   # If our response in an integer, convert to numeric
   if(class(.df$value) == 'integer') {

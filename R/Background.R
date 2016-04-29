@@ -31,7 +31,7 @@
 
 Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   
-  zoon:::GetPackage(dismo)
+  zoon:::GetPackage('dismo')
   
   occurrence <- .data$df
   

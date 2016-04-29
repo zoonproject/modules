@@ -12,7 +12,7 @@
 #' @section Date submitted: 2015-11-13
 #' @family covariate
 AirNCEP <- function(status.bar = FALSE){
-  zoon:::GetPackage(RNCEP)
+  zoon:::GetPackage('RNCEP')
   
   extent <- uk.extent <- c(xmin = -10,
               xmax = 10,

@@ -49,8 +49,8 @@ MachineLearn <-
     
     # pbkrtest is not noted on caret's CRAN page but I get errors if it 
     # is not installed prior to caret. Could be a missing dependency...
-    zoon:::GetPackage('pbkrtest')
-    zoon:::GetPackage('caret')
+    zoon::GetPackage('pbkrtest')
+    zoon::GetPackage('caret')
     
     # so that it runs automatically on testing with defaults I specify
     # to install the required package for the default

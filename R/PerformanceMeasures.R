@@ -27,7 +27,7 @@
 PerformanceMeasures <-
 function(.model, .ras, threshold = 0.5){
 
-  zoon:::GetPackage(SDMTools)
+  zoon:::GetPackage('SDMTools')
 
   if (all(.model$data$predictions %in% c(0,1))){
     warning('The model has predicted presence/absence rather than probabilities. Some measures may not work')

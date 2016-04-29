@@ -27,7 +27,7 @@
 PrintMap <-
   function (.model, .ras, plot = TRUE, dir = NULL, size = c(480,480), res = 72) {
     
-    zoon::GetPackage(raster)
+    zoon::GetPackage('raster')
     
     vals <- data.frame(getValues(.ras))
     colnames(vals) <- names(.ras)
