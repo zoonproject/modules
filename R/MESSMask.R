@@ -23,7 +23,7 @@
 
 MESSMask <- function (.data) {
   
-  zoon:::GetPackage(dismo)
+  zoon:::GetPackage('dismo')
  
   # Ignore warnings because they're just a bunch of NA issues
   suppressWarnings(

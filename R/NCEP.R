@@ -29,7 +29,7 @@ function(extent = c(-5, 5, 50, 60),
          status.bar = FALSE){
   
 
-  zoon:::GetPackage(RNCEP)
+  zoon:::GetPackage('RNCEP')
 
   layers <- list()
 

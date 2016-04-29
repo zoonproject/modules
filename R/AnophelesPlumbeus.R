@@ -18,7 +18,7 @@
 
 AnophelesPlumbeus <- function(extent = c(-10, 10, 45, 65)){
 
-  zoon:::GetPackage(dismo)
+  zoon:::GetPackage('dismo')
    
   raw <- gbif(genus = 'Anopheles',
               species = 'plumbeus',

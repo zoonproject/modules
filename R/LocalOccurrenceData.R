@@ -84,14 +84,14 @@ function(filename='myData.csv',
     }
     # If it still isn't right, load data.table and use fread.
     if (ncol(data) < 3 | !loadComplete){
-      zoon::GetPackage(data.table)
+      zoon::GetPackage('data.table')
       data <- as.data.frame(fread(filename))
     }
   } else if (extension %in% c('xls', 'xlsx')) {
-    zoon::GetPackage(xlsx)
+    zoon::GetPackage('xlsx')
     data <- read.xlsx(filename, header = TRUE, sheetIndex = 1)
   } else if (extension == 'dbf') {
-    zoon::GetPackage(foreign)
+    zoon::GetPackage('foreign')
     data <- read.dbf(filename)
   } else if (exists(filename, envir = globalenv())) {
     data <- eval(parse(text = filename), envir = globalenv())

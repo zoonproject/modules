@@ -16,7 +16,7 @@
 #' @family process
 OneHundredBackground <- function (.data, seed = NULL) {
   
-  zoon:::GetPackage(dismo)
+  zoon:::GetPackage('dismo')
   
   occurrence <- .data$df
   ras <- .data$ras
