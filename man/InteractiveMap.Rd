@@ -26,7 +26,7 @@ and training data. Clicking on a point reveals additional information.
 ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
-Other output: \code{\link{Figshare}},
+Other output: \code{\link{Appify}}, \code{\link{Figshare}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewAreaMap}}, \code{\link{PrintMap}},

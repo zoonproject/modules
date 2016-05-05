@@ -28,7 +28,7 @@ Plot a zoomable and scrollable map of a covariate layer.
 ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
-Other output: \code{\link{Figshare}},
+Other output: \code{\link{Appify}}, \code{\link{Figshare}},
   \code{\link{InteractiveMap}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewAreaMap}}, \code{\link{PrintMap}},

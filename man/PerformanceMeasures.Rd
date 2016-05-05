@@ -38,7 +38,7 @@ This model prints to console a number of metrics of the model fitted:
 ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
-Other output: \code{\link{Figshare}},
+Other output: \code{\link{Appify}}, \code{\link{Figshare}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
   \code{\link{PredictNewAreaMap}}, \code{\link{PrintMap}},
