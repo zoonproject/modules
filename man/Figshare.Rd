@@ -37,7 +37,8 @@ Upload your workflow call, model, occurrance and covariate data to figshare as a
 ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
-Other output: \code{\link{InteractiveCovariateMap}},
+Other output: \code{\link{Appify}},
+  \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewAreaMap}}, \code{\link{PrintMap}},
