@@ -5,8 +5,9 @@
 #'  in that order.
 #'
 #' @param filename The path to the spreadsheet. The spreadsheet should have a 
-#'  header giving column names. .csv, .tab, .tsv handled. The xlsx
-#'  package is used for excel files.
+#'  header giving column names. The column names should be 'longitude', 'latitude',
+#'  and 'value'. 'value' is a numeric such as a proportion, count or presence/absence
+#'  (1/0). The file can be .csv, .tab, .tsv, or .xlsx
 #'
 #' @param occurrenceType What type data is it? One of 'presence', 
 #' 'presence/absence', 'abundance', 'probability' 
