@@ -7,13 +7,13 @@
 #'  order: xmin, xmax, ymin, ymax.
 #' @param variables Character vector of which variables to select.
 #' See NCEP.gather for more options but basic options are
-#'       *‘air’*    Air Temperature                 deg K    
-#'       *‘hgt’*    Geopotential Height             m        
-#'       *‘rhum’*   Relative Humidity               %        
-#'       *‘shum’*   Specific Humidity               kg/kg    
-#'       *‘omega’*  Omega [Vertical Velocity]       Pascal/s 
-#'       *‘uwnd’*   U-Wind Component [East/West]    m/s      
-#'       *‘vwnd’*   V-Wind Component [North/South]  m/s    
+#'       *'air'*    Air Temperature                 deg K    
+#'       *'hgt'*    Geopotential Height             m        
+#'       *'rhum'*   Relative Humidity               %        
+#'       *'shum'*   Specific Humidity               kg/kg    
+#'       *'omega'*  Omega [Vertical Velocity]       Pascal/s 
+#'       *'uwnd'*   U-Wind Component [East/West]    m/s      
+#'       *'vwnd'*   V-Wind Component [North/South]  m/s    
 #' @param status.bar Logical. Should a status bar be shown indicating the percentage of completion? 
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
