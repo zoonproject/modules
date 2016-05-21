@@ -48,7 +48,8 @@ ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
-  \code{\link{CWBZimbabwe}}, \code{\link{SpOcc}},
+  \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
+  \code{\link{CarolinaWrenPO}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}}
 }
 
