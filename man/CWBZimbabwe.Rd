@@ -48,6 +48,8 @@ ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
+  \code{\link{CarolinaWrenPA}},
+  \code{\link{CarolinaWrenPO}},
   \code{\link{LocalOccurrenceData}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}}
 }

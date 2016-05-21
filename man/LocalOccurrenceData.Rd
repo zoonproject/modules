@@ -10,8 +10,9 @@ LocalOccurrenceData(filename = "myData.csv", occurrenceType = "presence",
 }
 \arguments{
 \item{filename}{The path to the spreadsheet. The spreadsheet should have a 
-header giving column names. .csv, .tab, .tsv handled. The xlsx
-package is used for excel files.}
+header giving column names. The column names should be 'longitude', 'latitude',
+and 'value'. 'value' is a numeric such as a proportion, count or presence/absence
+(1/0). The file can be .csv, .tab, .tsv, or .xlsx}
 
 \item{occurrenceType}{What type data is it? One of 'presence', 
 'presence/absence', 'abundance', 'probability'}
@@ -47,7 +48,8 @@ ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
-  \code{\link{CWBZimbabwe}}, \code{\link{SpOcc}},
+  \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
+  \code{\link{CarolinaWrenPO}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}}
 }
 
