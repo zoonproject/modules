@@ -7,6 +7,8 @@
 #' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user. 
 #'
 #' @param plot If \code{TRUE} the plot will be displayed in the device
+#' 
+#' @param points If \code{TRUE} the training points will be plotted over the prediction surface
 #'
 #' @param dir Directory where plots are saved. If \code{NULL} (default) then plots are
 #' not saved. 
@@ -25,9 +27,7 @@
 #' @name PrintMap
 #' @family output
 PrintMap <-
-  function (.model, .ras, plot = TRUE, dir = NULL, size = c(480,480), res = 72) {
-    
-    zoon::GetPackage('raster')
+  function (.model, .ras, plot = TRUE, points = TRUE, dir = NULL, size = c(480, 480), res = 72) {
     
     vals <- data.frame(getValues(.ras))
     colnames(vals) <- names(.ras)
@@ -35,11 +35,9 @@ PrintMap <-
     pred <- ZoonPredict(.model$model,
                         newdata = vals)
     
-    pred_ras <- .ras[[1]]
+    pred_ras <- setValues(.ras[[1]], pred)
     
-    pred_ras <- setValues(pred_ras, pred)
-    
-    ## Define color pallete
+    ## Define color palette
     cls <- colorRampPalette(c('#e0f3db', '#a8ddb5', '#4eb3d3', '#08589e'))(10)
     
     par(mar = c(4, 4, 0, 2) + 0.1)
@@ -91,11 +89,19 @@ PrintMap <-
     
     ## Create plotting object
     # corner: between 0 and 1 for x and y, defines which corner to place the legend in. 
-    plot.object <- spplot(pred_ras,
-                          sp.layout=points.list,
-                          col.regions=cls,cuts=length(cls)-1,
-                          scales = list(draw = TRUE),
-                          key = key)
+    
+    if (points) {
+      plot.object <- spplot(pred_ras,
+                            sp.layout=points.list,
+                            col.regions=cls,cuts=length(cls)-1,
+                            scales = list(draw = TRUE),
+                            key = key)
+    } else {
+      plot.object <- spplot(pred_ras,
+                            col.regions=cls,cuts=length(cls)-1,
+                            scales = list(draw = TRUE))
+      
+    }
     
     ## Plot the model on graphics device
     if(plot){
@@ -123,12 +129,13 @@ PrintMap <-
           res = res,
           width = size[1],
           height = size[2])
+      
       ## Push plot object to graphics device
       print(plot.object)
       ## Close graphics device (write image to file)
       dev.off()
     }
     
-    return(pred_ras)
+    return (pred_ras)
     
   }

@@ -4,8 +4,8 @@
 \alias{PrintMap}
 \title{Output module: PrintMap}
 \usage{
-PrintMap(.model, .ras, plot = TRUE, dir = NULL, size = c(480, 480),
-  res = 72)
+PrintMap(.model, .ras, plot = TRUE, points = TRUE, dir = NULL,
+  size = c(480, 480), res = 72)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
@@ -13,6 +13,8 @@ PrintMap(.model, .ras, plot = TRUE, dir = NULL, size = c(480, 480),
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
 
 \item{plot}{If \code{TRUE} the plot will be displayed in the device}
+
+\item{points}{If \code{TRUE} the training points will be plotted over the prediction surface}
 
 \item{dir}{Directory where plots are saved. If \code{NULL} (default) then plots are
 not saved.}
