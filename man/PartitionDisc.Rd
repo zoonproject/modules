@@ -41,6 +41,7 @@ Other process: \code{\link{BackgroundAndCrossvalid}},
   \code{\link{Crossvalidate}}, \code{\link{MESSMask}},
   \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
-  \code{\link{OneThousandBackground}}
+  \code{\link{OneThousandBackground}},
+  \code{\link{Transform}}
 }
 
