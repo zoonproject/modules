@@ -58,7 +58,8 @@ Tim CD Lucas, \email{timcdlucas@gmail.com}
 
 Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}}, \code{\link{MaxEnt}},
-  \code{\link{OptGRaF}}, \code{\link{QuickGRaF}},
-  \code{\link{RandomForest}}, \code{\link{mgcv}}
+  \code{\link{MaxLike}}, \code{\link{OptGRaF}},
+  \code{\link{QuickGRaF}}, \code{\link{RandomForest}},
+  \code{\link{mgcv}}
 }
 

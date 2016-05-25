@@ -36,6 +36,6 @@ Other process: \code{\link{BackgroundAndCrossvalid}},
   \code{\link{MESSMask}}, \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
-  \code{\link{PartitionDisc}}
+  \code{\link{PartitionDisc}}, \code{\link{Transform}}
 }
 

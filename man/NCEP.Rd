@@ -13,13 +13,13 @@ order: xmin, xmax, ymin, ymax.}
 
 \item{variables}{Character vector of which variables to select.
 See NCEP.gather for more options but basic options are
-      *‘air’*    Air Temperature                 deg K    
-      *‘hgt’*    Geopotential Height             m        
-      *‘rhum’*   Relative Humidity               %        
-      *‘shum’*   Specific Humidity               kg/kg    
-      *‘omega’*  Omega [Vertical Velocity]       Pascal/s 
-      *‘uwnd’*   U-Wind Component [East/West]    m/s      
-      *‘vwnd’*   V-Wind Component [North/South]  m/s}
+      *'air'*    Air Temperature                 deg K    
+      *'hgt'*    Geopotential Height             m        
+      *'rhum'*   Relative Humidity               %        
+      *'shum'*   Specific Humidity               kg/kg    
+      *'omega'*  Omega [Vertical Velocity]       Pascal/s 
+      *'uwnd'*   U-Wind Component [East/West]    m/s      
+      *'vwnd'*   V-Wind Component [North/South]  m/s}
 
 \item{status.bar}{Logical. Should a status bar be shown indicating the percentage of completion?}
 }
@@ -40,7 +40,8 @@ ZOON Developers, \email{zoonproject@gmail.com}
 \code{\link{RNCEP::NCEP.gather}}
 
 Other covariate: \code{\link{AirNCEP}},
-  \code{\link{Bioclim}}, \code{\link{LocalRaster}},
-  \code{\link{UKAir}}, \code{\link{UKBioclim}}
+  \code{\link{Bioclim}}, \code{\link{CarolinaWrenRasters}},
+  \code{\link{LocalRaster}}, \code{\link{UKAir}},
+  \code{\link{UKBioclim}}
 }
 
