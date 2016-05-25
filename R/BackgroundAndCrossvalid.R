@@ -68,8 +68,6 @@ BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
   
   names(df)[6:ncol(df)] <- names(ras)
   
-  attr(df, 'covCols') <- names(ras)
-  
   df <- na.omit(df)
 
   return(list(df=df, ras=ras))

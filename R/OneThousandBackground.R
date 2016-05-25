@@ -60,8 +60,6 @@ OneThousandBackground <- function (.data, seed = NULL) {
   
   names(df)[6:ncol(df)] <- names(ras)
   
-  attr(df, 'covCols') <- names(ras)
-  
   # remove missing values
   if(NROW(na.omit(df)) > 0){
     df <- na.omit(df)
