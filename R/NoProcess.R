@@ -26,6 +26,8 @@ function (.data) {
 
   names(df)[6:ncol(df)] <- names(ras)
   
+  attr(df, 'covCols') <- names(ras)
+  
   return(list(df=df, ras=ras))
   
 }
