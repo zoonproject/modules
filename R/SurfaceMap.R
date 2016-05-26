@@ -6,7 +6,7 @@
 #'
 #' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
-#' @param dir Where to save figures. Defaults to the working directory. 
+#' @param dir Directory where plots are saved. If NULL (default) then plots are not saved. 
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @section Version: 1.0
@@ -15,7 +15,7 @@
 #' @name SurfaceMap
 #' @family output
 SurfaceMap <-
-function (.model, .ras, dir='.') {
+function (.model, .ras, dir=NULL) {
   
   zoon::GetPackage('raster')
   
@@ -29,10 +29,14 @@ function (.model, .ras, dir='.') {
   
   pred_ras <- setValues(pred_ras, pred)
 
-  png(paste0(dir,"/ZoonMap", 
-    format(Sys.time(), "%Y_%m_%d-%H%M"), ".png"))
-  plot(pred_ras) 
-  dev.off()
+  if(!is.null(dir)){
+    png(paste0(dir,"/ZoonMap", 
+      format(Sys.time(), "%Y_%m_%d-%H%M"), ".png"))
+    plot(pred_ras) 
+    dev.off()
+  } else {
+    plot(pred_ras)
+  }
   
   return(NULL)
   
