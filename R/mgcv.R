@@ -1,4 +1,4 @@
-#' @title Model module:mgcv
+#' @title Model module: mgcv
 #'
 #' @description  Model module to fit a generalized additive model using generalized
 #' crossvalidation via the mgcv R package.

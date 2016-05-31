@@ -6,8 +6,6 @@
 #'
 #' @details 
 #'
-
-#'
 #' @family occurrence
 #'
 #' @author Nick Golding, \email{nick.golding.research@@gmail.com}

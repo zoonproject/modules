@@ -12,7 +12,7 @@
 #' 
 #' @param seed Numeric used with \code{\link[sperrorest]{partition.disc}}
 #'
-#' @author Tom August' \email{tomaug@@ceh.ac.uk'}
+#' @author Tom August, \email{tomaug@@ceh.ac.uk}
 #' @section Version: 1.0
 #' @section Date submitted: 2015-11-13
 #'

@@ -29,7 +29,8 @@ Nick Golding, \email{nick.golding.research@gmail.com}
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
-  \code{\link{LocalOccurrenceData}}, \code{\link{SpOcc}},
+  \code{\link{LocalOccurrenceData}},
+  \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}}
 }
 

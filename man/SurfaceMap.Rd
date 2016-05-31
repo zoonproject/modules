@@ -4,14 +4,14 @@
 \alias{SurfaceMap}
 \title{Output module: SurfaceMap}
 \usage{
-SurfaceMap(.model, .ras, dir = ".")
+SurfaceMap(.model, .ras, dir = NULL)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
 
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
 
-\item{dir}{Where to save figures. Defaults to the working directory.}
+\item{dir}{Directory where plots are saved. If NULL (default) then plots are not saved.}
 }
 \description{
 Make a png of a map of predicted surface.
