@@ -20,9 +20,12 @@ AnophelesPlumbeus <- function(extent = c(-10, 10, 45, 65)){
 
   zoon:::GetPackage('dismo')
    
+  # create extent object
+  extentObj <- extent(matrix(data = extent, nrow = 2, byrow = TRUE))
+  
   raw <- gbif(genus = 'Anopheles',
               species = 'plumbeus',
-              ext = extent)
+              ext = extentObj)
   
   occurrence <- raw[, c('lon', 'lat')]
   colnames(occurrence) <-  c('longitude', 'latitude')

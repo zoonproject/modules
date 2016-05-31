@@ -50,7 +50,8 @@ ZOON Developers, \email{zoonproject@gmail.com}
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
-  \code{\link{LocalOccurrenceData}}, \code{\link{SpOcc}},
+  \code{\link{LocalOccurrenceData}},
+  \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}}
 }
 

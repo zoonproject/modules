@@ -2,7 +2,7 @@
 % Please edit documentation in R/mgcv.R
 \name{mgcv}
 \alias{mgcv}
-\title{Model module:mgcv}
+\title{Model module: mgcv}
 \usage{
 mgcv(.df, k = -1, bs = "tp")
 }
