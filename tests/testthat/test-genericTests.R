@@ -1,7 +1,6 @@
 ### General module tests ###
 library(zoon, quietly = TRUE)
 library(roxygen2)
-formals(download.file)$quiet <- TRUE
 
 # Get our list of modules
 modulePaths <- list.files('../../R', pattern = '.R$', full.names = TRUE)
