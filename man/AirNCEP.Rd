@@ -4,10 +4,10 @@
 \alias{AirNCEP}
 \title{Covariate module: AirNCEP}
 \usage{
-AirNCEP(status.bar = FALSE)
+AirNCEP(quiet = TRUE)
 }
 \arguments{
-\item{status.bar}{Logical. Should a status bar be shown indicating the percentage of completion?}
+\item{quiet}{Logical. If TRUE (default) the progress of downloads is not shown}
 }
 \description{
 Covariate module to grab a coarse resolution mean air temperature raster from
@@ -29,6 +29,7 @@ ZOON Developers, \email{zoonproject@gmail.com}
 Other covariate: \code{\link{Bioclim}},
   \code{\link{CarolinaWrenRasters}},
   \code{\link{LocalRaster}}, \code{\link{NCEP}},
-  \code{\link{UKAir}}, \code{\link{UKBioclim}}
+  \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}},
+  \code{\link{UKBioclim}}
 }
 

@@ -22,7 +22,7 @@ CarolinaWrenPA <- function ()
     zoon::GetPackage("maxlike")
     data(carw, envir = environment())
     occ <- na.omit(carw.data$pa.data)
-    coords_raw <- SpatialPoints(occ[, c("X", "Y")], proj4string = CRS("+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=23 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs"))
+    coords_raw <- sp::SpatialPoints(occ[, c("X", "Y")], proj4string = CRS("+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=23 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs"))
     coords <- sp::spTransform(coords_raw, "+init=epsg:4326")
     data.frame(longitude = coords@coords[, "X"], latitude = coords@coords[, 
         "Y"], value = occ$y, type = ifelse(occ$y, "presence", 
