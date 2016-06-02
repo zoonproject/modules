@@ -41,7 +41,8 @@ ZOON Developers, \email{zoonproject@gmail.com}
 
 Other covariate: \code{\link{AirNCEP}},
   \code{\link{Bioclim}}, \code{\link{CarolinaWrenRasters}},
-  \code{\link{LocalRaster}}, \code{\link{UKAir}},
+  \code{\link{LocalRaster}},
+  \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}},
   \code{\link{UKBioclim}}
 }
 
