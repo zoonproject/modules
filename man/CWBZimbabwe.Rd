@@ -51,6 +51,7 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
   \code{\link{LocalOccurrenceData}},
+  \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}}
 }
