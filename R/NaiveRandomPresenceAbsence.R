@@ -6,9 +6,12 @@
 #'
 #' @details Points are created entirely at random using runif
 #'
-#' @param extent A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the random points. order: xmin, xmax, ymin, ymax. By default the extent of the UK.#'
-#' @param pAbs The proportion of records that should be absences (default: 0.5)#'
-#' @param n Numeric - the number of points to create#'
+#' @param extent A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the random points. order: xmin, xmax, ymin, ymax. By default the extent of the UK.
+#'
+#' @param pAbs The proportion of records that should be absences (default: 0.5)
+#'
+#' @param n Numeric - the number of points to create
+#'
 #' @param seed Used with set.seed to set a seed. Default NULL, no seed is used
 #'
 #' @family occurrence
@@ -19,7 +22,7 @@
 #'
 #' @section Version: 0
 #'
-#' @section Date submitted:  2016-06-02
+#' @section Date submitted:  2016-06-03
 NaiveRandomPresenceAbsence <- function (extent = c(-10, 10, 45, 65), pAbs = 0.5, n = 100, seed = NULL) 
 {
     if (!is.null(seed)) 

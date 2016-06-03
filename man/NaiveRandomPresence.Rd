@@ -7,9 +7,9 @@
 NaiveRandomPresence(extent = c(-10, 10, 45, 65), n = 100, seed = NULL)
 }
 \arguments{
-\item{extent}{A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the random points. order: xmin, xmax, ymin, ymax. By default the extent of the UK.#'}
+\item{extent}{A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the random points. order: xmin, xmax, ymin, ymax. By default the extent of the UK.}
 
-\item{n}{Numeric - the number of points to create#'}
+\item{n}{Numeric - the number of points to create}
 
 \item{seed}{Used with set.seed to set a seed. Default NULL, no seed is used}
 }

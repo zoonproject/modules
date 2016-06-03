@@ -8,11 +8,11 @@ NaiveRandomPresenceAbsence(extent = c(-10, 10, 45, 65), pAbs = 0.5,
   n = 100, seed = NULL)
 }
 \arguments{
-\item{extent}{A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the random points. order: xmin, xmax, ymin, ymax. By default the extent of the UK.#'}
+\item{extent}{A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the random points. order: xmin, xmax, ymin, ymax. By default the extent of the UK.}
 
-\item{pAbs}{The proportion of records that should be absences (default: 0.5)#'}
+\item{pAbs}{The proportion of records that should be absences (default: 0.5)}
 
-\item{n}{Numeric - the number of points to create#'}
+\item{n}{Numeric - the number of points to create}
 
 \item{seed}{Used with set.seed to set a seed. Default NULL, no seed is used}
 }
@@ -31,7 +31,7 @@ Points are created entirely at random using runif
 }
 
 \section{Date submitted}{
-  2016-06-02
+  2016-06-03
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
