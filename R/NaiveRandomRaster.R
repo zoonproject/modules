@@ -6,8 +6,10 @@
 #'
 #' @details 
 #'
-#' @param extent A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the raaster. order: xmin, xmax, ymin, ymax. By default the extent of the UK#'
-#' @param res Numeric giving the resolution of the raster to produce. 1 is one cell per degree, 0.5 means one cell per half degree.#'
+#' @param extent A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the raaster. order: xmin, xmax, ymin, ymax. By default the extent of the UK
+#' 
+#' @param res Numeric giving the resolution of the raster to produce. 1 is one cell per degree, 0.5 means one cell per half degree.
+#' 
 #' @param seed Used with set.seed to set a seed. Default NULL, no seed is used
 #'
 #' @family covariate

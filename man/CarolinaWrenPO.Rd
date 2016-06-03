@@ -30,6 +30,7 @@ Nick Golding, \email{nick.golding.research@gmail.com}
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
   \code{\link{LocalOccurrenceData}},
+  \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}}
 }
