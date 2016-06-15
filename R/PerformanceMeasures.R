@@ -46,45 +46,47 @@ function(.model, .ras, threshold = NULL){
 
     # make predictions for the model
     covs <- .model$data[, 7:NCOL(.model$data), drop = FALSE]
+
     p <- ZoonPredict(zoonModel = .model$model,
                      newdata = covs)
+
     confusion <- SDMTools::confusion.matrix(.model$data$value,
                                             p,
                                             threshold)
     
     performance <- list(
-      auc = SDMTools::auc(.model$data$value, p),
-      kappa = Kappa(confusion),
-      omissions = omission(confusion),
-      sensitivity = sensitivity(confusion),
-      specificity = specificity(confusion),
-      proportionCorrect = prop.correct(confusion)
+      auc = SDMTools::auc(.model$data$value, .model$data$predictions),
+      kappa = SDMTools::Kappa(confusion),
+      omissions = SDMTools::omission(confusion),
+      sensitivity = SDMTools::sensitivity(confusion),
+      specificity = SDMTools::specificity(confusion),
+      proportionCorrect = SDMTools::prop.correct(confusion)
     )
   } else if (all(.model$data$fold >= 1)){
-    
+
     confusion <- SDMTools::confusion.matrix(.model$data$value, .model$data$predictions)
 
     performance <- list(
       auc = SDMTools::auc(.model$data$value, .model$data$predictions),
-      kappa = Kappa(confusion),
-      omissions = omission(confusion),
-      sensitivity = sensitivity(confusion),
-      specificity = specificity(confusion),
-      proportionCorrect = prop.correct(confusion)
+      kappa = SDMTools::Kappa(confusion),
+      omissions = SDMTools::omission(confusion),
+      sensitivity = SDMTools::sensitivity(confusion),
+      specificity = SDMTools::specificity(confusion),
+      proportionCorrect = SDMTools::prop.correct(confusion)
     )
-    
+
   } else if (all(.model$data$fold %in% c(0,1))){
 
     data <- .model$data[.model$data$fold == 0,]
     confusion <- SDMTools::confusion.matrix(data$value, data$predictions, threshold)
 
     performance <- list(
-      auc = SDMTools::auc(data$value, data$predictions),
-      kappa = Kappa(confusion),
-      omissions = omission(confusion),
-      sensitivity = sensitivity(confusion),
-      specificity = specificity(confusion),
-      proportionCorrect = prop.correct(confusion)
+      auc = SDMTools::auc(.model$data$value, .model$data$predictions),
+      kappa = SDMTools::Kappa(confusion),
+      omissions = SDMTools::omission(confusion),
+      sensitivity = SDMTools::sensitivity(confusion),
+      specificity = SDMTools::specificity(confusion),
+      proportionCorrect = SDMTools::prop.correct(confusion)
     )
   }
   
