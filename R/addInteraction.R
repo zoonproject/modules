@@ -25,8 +25,8 @@ addInteraction <- function (.data, which_covs = "pairs", exclude = NULL)
 {
     df <- .data$df
     ras <- .data$ras
-    if (is.null(which_covs) | length(names(names(ras)[!(names(ras) %in% 
-        exclude)])) < 2) {
+    if (is.null(which_covs) | length(names(ras)[!(names(ras) %in% 
+        exclude)]) < 2) {
         return(list(df = df, ras = ras))
     }
     if (!is.null(exclude) & which_covs[1] != "pairs") {
