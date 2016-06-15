@@ -12,7 +12,7 @@ InteractiveMap(.model, .ras)
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
 }
 \description{
-Plot an zoomable and scrollable map of the predicted distribution
+Plot a zoomable and scrollable map of the predicted distribution
 and training data. Clicking on a point reveals additional information.
 }
 \section{Version}{

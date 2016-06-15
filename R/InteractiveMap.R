@@ -1,6 +1,6 @@
 #' @title Output module: InteractiveMap
 #'
-#' @description Plot an zoomable and scrollable map of the predicted distribution
+#' @description Plot a zoomable and scrollable map of the predicted distribution
 #' and training data. Clicking on a point reveals additional information.
 #' 
 #' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'
