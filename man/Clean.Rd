@@ -40,11 +40,15 @@ ZOON Developers, \email{zoonproject@gmail.com}
 \seealso{
 \code{\link{scrubr::coord_incomplete}}
 
-Other process: \code{\link{BackgroundAndCrossvalid}},
-  \code{\link{Background}}, \code{\link{Crossvalidate}},
-  \code{\link{MESSMask}}, \code{\link{NoProcess}},
+Other process: \code{\link{AddRandomUniformPredictors}},
+  \code{\link{BackgroundAndCrossvalid}},
+  \code{\link{Background}}, \code{\link{Bootstrap}},
+  \code{\link{Crossvalidate}}, \code{\link{MESSMask}},
+  \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
-  \code{\link{PartitionDisc}}, \code{\link{Transform}}
+  \code{\link{PartitionDisc}},
+  \code{\link{StandardiseCov}}, \code{\link{Transform}},
+  \code{\link{addInteraction}}
 }
 

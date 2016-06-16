@@ -51,8 +51,10 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
   \code{\link{LocalOccurrenceData}},
+  \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}},
+  \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
 
