@@ -12,7 +12,7 @@
 #'
 #' @section Data type: presence/absence
 #'
-#' @section Version: 0.1
+#' @section Version: 0.2
 #'
 #' @section Date submitted:  2016-06-15
 SugarMaple <- function () 
