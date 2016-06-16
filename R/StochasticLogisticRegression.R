@@ -14,17 +14,17 @@
 #'
 #' @section Data type: presence/absence
 #'
-#' @section Version: 0
+#' @section Version: 0.1
 #'
 #' @section Date submitted:  2016-06-16
 StochasticLogisticRegression <- function (.df) 
 {
+    GetPackage("MASS")
     covs <- as.data.frame(.df[, 6:ncol(.df)])
     names(covs) <- names(.df)[6:ncol(.df)]
     m <- glm(.df$value ~ ., data = covs, family = "binomial")
     coef <- m$coefficients
-    U <- chol(vcov(m))
-    draw <- (na.omit(coef) + U %*% rnorm(NROW(U)))[, 1]
+    draw <- MASS::mvrnorm(1, na.omit(coef), vcov(m))
     coef_draw <- coef * NA
     coef_draw[match(names(draw), names(coef))] <- draw
     m$coefficients <- coef_draw
