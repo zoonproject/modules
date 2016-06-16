@@ -28,9 +28,12 @@ ZOON Developers, \email{zoonproject@gmail.com}
 \seealso{
 Other output: \code{\link{Appify}}, \code{\link{Figshare}},
   \code{\link{InteractiveCovariateMap}},
+  \code{\link{NoOutput}},
   \code{\link{PerformanceMeasures}},
-  \code{\link{PredictNewAreaMap}}, \code{\link{PrintMap}},
+  \code{\link{PredictNewRasterMap}},
+  \code{\link{PrintMap}}, \code{\link{ResponseCurveViz}},
   \code{\link{ResponseCurve}},
-  \code{\link{SameTimePlaceMap}}, \code{\link{SurfaceMap}}
+  \code{\link{SameTimePlaceMap}}, \code{\link{SurfaceMap}},
+  \code{\link{VariableImportance}}
 }
 

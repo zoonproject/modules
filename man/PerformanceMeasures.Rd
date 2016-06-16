@@ -4,14 +4,15 @@
 \alias{PerformanceMeasures}
 \title{Output module: PerformanceMeasures}
 \usage{
-PerformanceMeasures(.model, .ras, threshold = 0.5)
+PerformanceMeasures(.model, .ras, threshold = NULL)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
 
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
 
-\item{threshold}{A chosen threshold value for measures that need 0/1 predictions}
+\item{threshold}{A chosen threshold value for measures that need 0/1 predictions 
+If NULL, the proportion of occurrences in the occurrence data is used.}
 }
 \description{
 Calculate a suite of performance metrics on either crossvalidation, external validation data or (at your own risk) in-sample validation.
@@ -32,7 +33,11 @@ This model prints to console a number of metrics of the model fitted:
 }
 
 \section{Date submitted}{
- 2015-11-13
+ 2016-06-15
+}
+
+\section{Data type}{
+ presence/absence, presence/background
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
@@ -40,9 +45,11 @@ ZOON Developers, \email{zoonproject@gmail.com}
 \seealso{
 Other output: \code{\link{Appify}}, \code{\link{Figshare}},
   \code{\link{InteractiveCovariateMap}},
-  \code{\link{InteractiveMap}},
-  \code{\link{PredictNewAreaMap}}, \code{\link{PrintMap}},
+  \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+  \code{\link{PredictNewRasterMap}},
+  \code{\link{PrintMap}}, \code{\link{ResponseCurveViz}},
   \code{\link{ResponseCurve}},
-  \code{\link{SameTimePlaceMap}}, \code{\link{SurfaceMap}}
+  \code{\link{SameTimePlaceMap}}, \code{\link{SurfaceMap}},
+  \code{\link{VariableImportance}}
 }
 
