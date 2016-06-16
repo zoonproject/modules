@@ -17,9 +17,9 @@
 #'
 #' @section Data type: presence-only, presence/absence, presence/background, abundance, proportion
 #'
-#' @section Version: 0
+#' @section Version: 0.1
 #'
-#' @section Date submitted:  2016-05-25
+#' @section Date submitted:  2016-06-15
 Transform <- function (.data, trans = function(x) {
     x
 }, which_cov = NULL, replace = TRUE) 
@@ -30,9 +30,15 @@ Transform <- function (.data, trans = function(x) {
         which_cov <- names(ras)
     stopifnot(all(which_cov %in% names(ras)))
     if (!replace) {
-        new_idx <- seq_along(which_cov) + nlayers(ras)
-        ras <- stack(ras, ras[[which_cov]])
-        which_cov <- names(ras)[new_idx]
+      # which will be the new ones
+      new_idx <- seq_along(which_cov) + nlayers(ras)
+      # get good new names
+      new_names <- c(names(ras), which_cov)
+      new_names <- make.names(new_names, unique = TRUE)
+      # extend the raster & give it the good names
+      ras <- stack(ras, ras[[which_cov]])
+      names(ras) <- new_names
+      which_cov <- names(ras)[new_idx]
     }
     if (nlayers(ras) == 1) {
         ras <- calc(ras, trans)
