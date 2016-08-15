@@ -27,22 +27,25 @@ This module is essentially a wrapper around the \code{raster} function \code{\li
 }
 
 \section{Version}{
- 0
+ 0.1
 }
 
 \section{Date submitted}{
-  2016-05-25
+  2016-06-15
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
-Other process: \code{\link{BackgroundAndCrossvalid}},
-  \code{\link{Background}}, \code{\link{Clean}},
-  \code{\link{Crossvalidate}}, \code{\link{MESSMask}},
-  \code{\link{NoProcess}},
+Other process: \code{\link{AddRandomUniformPredictors}},
+  \code{\link{BackgroundAndCrossvalid}},
+  \code{\link{Background}}, \code{\link{Bootstrap}},
+  \code{\link{Clean}}, \code{\link{Crossvalidate}},
+  \code{\link{MESSMask}}, \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
-  \code{\link{PartitionDisc}}
+  \code{\link{PartitionDisc}},
+  \code{\link{StandardiseCov}},
+  \code{\link{addInteraction}}
 }
 

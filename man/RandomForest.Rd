@@ -33,7 +33,9 @@ ZOON Developers, \email{zoonproject@gmail.com}
 Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxEnt}},
-  \code{\link{MaxLike}}, \code{\link{OptGRaF}},
-  \code{\link{QuickGRaF}}, \code{\link{mgcv}}
+  \code{\link{MaxLike}}, \code{\link{MyMaxLike}},
+  \code{\link{OptGRaF}}, \code{\link{QuickGRaF}},
+  \code{\link{StochasticLogisticRegression}},
+  \code{\link{mgcv}}
 }
 

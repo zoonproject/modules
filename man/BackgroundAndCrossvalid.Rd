@@ -32,11 +32,14 @@ Process module to generate up to 100 background records at random in
 ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
-Other process: \code{\link{Background}},
+Other process: \code{\link{AddRandomUniformPredictors}},
+  \code{\link{Background}}, \code{\link{Bootstrap}},
   \code{\link{Clean}}, \code{\link{Crossvalidate}},
   \code{\link{MESSMask}}, \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
-  \code{\link{PartitionDisc}}, \code{\link{Transform}}
+  \code{\link{PartitionDisc}},
+  \code{\link{StandardiseCov}}, \code{\link{Transform}},
+  \code{\link{addInteraction}}
 }
 
