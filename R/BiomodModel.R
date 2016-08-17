@@ -25,7 +25,7 @@
 #' @seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}
 
 
-BiomodModel <- function(.df, modelType = 'GLM'){
+BiomodModel <- function(.df, modelType = c('GLM', 'FDA')){
   
   zoon:::GetPackage('biomod2')
   
