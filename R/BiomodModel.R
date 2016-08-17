@@ -30,7 +30,7 @@ BiomodModel <- function(.df, modelType = 'GLM'){
   zoon:::GetPackage('biomod2')
   
   # Only one model type allowed
-  if(length(modelType > 1)){
+  if(length(modelType) > 1){
     stop(paste('In BiomodModel: Only one model type can be run at once. If you want to run more than one model type use "list()",',
                "for example list(BiomodModel(modelType = 'GLM'), BiomodModel(modelType = 'FDA'))"))
   }
