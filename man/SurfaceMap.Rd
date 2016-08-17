@@ -27,14 +27,15 @@ Make a png of a map of predicted surface.
 ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
-Other output: \code{\link{Appify}}, \code{\link{Figshare}},
+Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
-  \code{\link{PrintMap}}, \code{\link{ResponseCurveViz}},
+  \code{\link{PrintMap}}, \code{\link{ROCcurve}},
+  \code{\link{ResponseCurveViz}},
   \code{\link{ResponseCurve}},
-  \code{\link{SameTimePlaceMap}},
+  \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
   \code{\link{VariableImportance}}
 }
 

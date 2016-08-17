@@ -5,7 +5,7 @@
 \title{Naive Random Presence/Absence}
 \usage{
 NaiveRandomPresenceAbsence(extent = c(-10, 10, 45, 65), pAbs = 0.5,
-  n = 100, seed = NULL)
+  n = 1000, seed = NULL)
 }
 \arguments{
 \item{extent}{A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the random points. order: xmin, xmax, ymin, ymax. By default the extent of the UK.}
@@ -42,6 +42,7 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CarolinaWrenPO}},
   \code{\link{LocalOccurrenceData}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
+  \code{\link{NBNdataByName}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}

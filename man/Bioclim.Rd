@@ -4,7 +4,7 @@
 \alias{Bioclim}
 \title{Covariate module: Bioclim}
 \usage{
-Bioclim(extent = c(-180, 180, -90, 90), resolution = 10, layers = 1:19)
+Bioclim(extent = c(-180, 180, -90, 90), resolution = 10, layers = 1:5)
 }
 \arguments{
 \item{extent}{Length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude.}

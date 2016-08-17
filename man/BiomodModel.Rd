@@ -4,7 +4,7 @@
 \alias{BiomodModel}
 \title{Model module: BiomodModel}
 \usage{
-BiomodModel(.df, modelType = "GLM")
+BiomodModel(.df, modelType = c("FDA"))
 }
 \arguments{
 \item{.df}{\strong{Internal parameter, do not use in the workflow function}.
