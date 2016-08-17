@@ -26,10 +26,14 @@ ROCcurve <- function (.model, .ras, newwin = TRUE)
     if (newwin) {
         dev.new()
     }
-    presidx <- mod$model$model$.df == 1
-    absidx <- mod$model$model$.df == 0
-    presprob <- mod$model$fitted.values[presidx]
-    absprob <- mod$model$fitted.values[absidx]
+  
+    # Extract model
+    mod <- .model$model$model
+  
+    presidx <- mod$model$.df == 1
+    absidx <- mod$model$.df == 0
+    presprob <- mod$fitted.values[presidx]
+    absprob <- mod$fitted.values[absidx]
     e <- dismo::evaluate(p = presprob, a = absprob)
     plot(e, "ROC")
 }
