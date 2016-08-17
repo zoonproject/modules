@@ -38,6 +38,15 @@ MaxEnt <- function(.df, args = ''){
   covs <- as.data.frame(.df[, 6:ncol(.df)])
   names(covs) <- names(.df)[6:ncol(.df)]
   
+  # fail is .jar abscent
+  jar <- paste(system.file(package = "dismo"),
+               "/java/maxent.jar", 
+               sep = "")
+  
+  if (!file.exists(jar)) {
+    stop("file missing:\n", jar, ".\nPlease download it here: http://www.cs.princeton.edu/~schapire/maxent/")
+  }
+  
   m <- maxent(x = covs,
               p = .df$value,
               args = args)
