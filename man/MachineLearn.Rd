@@ -4,7 +4,7 @@
 \alias{MachineLearn}
 \title{Model module: MachineLearn}
 \usage{
-MachineLearn(.df, method = "glmnet", tuneLength = 8, metric = "ROC",
+MachineLearn(.df, method = "glm", tuneLength = 8, metric = "ROC",
   number = 5, repeats = 1, tuneGrid = NULL, trControl = NULL, ...)
 }
 \arguments{
