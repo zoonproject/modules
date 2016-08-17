@@ -8,7 +8,7 @@
 #'
 #' @param dateRange Optional 2-item numeric vector giving the years to use; default is the full range of the data (1960-2013)
 #'
-#' @param species Which species should be extracted, with format genus_species (all lowercase); allowable values are:\nabies_balsamea\nacer_rubrum\nacer_saccharum\nbetula_alleghaniensis\nbetula_papyrifera\nfagus_grandifolia\nfraxinus_americana\nfraxinus_nigra\nlarix_laricina\npicea_glauca\npicea_mariana\npicea_rubens\npinus_banksiana\npinus_resinosa\npinus_strobus\npopulus_grandidentata\npopulous_tremuloides\nquercus_macrocarpa\nquercus_rubra\nthuja_occidentalis\ntsuga_canadensis
+#' @param species Which species should be extracted, with format genus_species (all lowercase); allowable values are: abies_balsamea acer_rubrum acer_saccharum betula_alleghaniensis betula_papyrifera fagus_grandifolia fraxinus_americana fraxinus_nigra larix_laricina picea_glauca picea_mariana picea_rubens pinus_banksiana pinus_resinosa pinus_strobus populus_grandidentata populous_tremuloides quercus_macrocarpa quercus_rubra thuja_occidentalis tsuga_canadensis
 #'
 #' @family occurrence
 #'
