@@ -45,7 +45,7 @@ For more detials see the rnbn package
 }
 
 \section{Version}{
- 0
+ 0.1
 }
 
 \section{Date submitted}{

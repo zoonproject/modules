@@ -36,11 +36,11 @@
 #'
 #' @section Data type: presence-only
 #'
-#' @section Version: 0
+#' @section Version: 0.1
 #'
 #' @section Date submitted:  2016-06-16
-NBNdataByName <- function (species = "Myotis daubentonii", username = "tom_test", 
-    password = "HelloWorld", datasets = NULL, startYear = 2000, 
+NBNdataByName <- function (species = "Myotis daubentonii", username = "ZOON", 
+    password = "zoonproject", datasets = NULL, startYear = 2000, 
     endYear = 2000, VC = NULL, group = NULL, gridRef = NULL, 
     acceptTandC = FALSE, silent = FALSE, attributes = FALSE) 
 {
