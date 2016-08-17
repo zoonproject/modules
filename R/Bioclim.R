@@ -15,7 +15,7 @@
 #' @name Bioclim
 #' @family covariate
 Bioclim <-
-function(extent = c(-180, 180, -90, 90), resolution = 10, layers = 1:19) {
+function(extent = c(-180, 180, -90, 90), resolution = 10, layers = 1:5) {
     
     if(!(resolution %in% c(2.5, 5, 10))){
       stop('only 2.5, 5 and 10 degree resolutions are supported currently')
