@@ -42,8 +42,7 @@ Transform <- function (.data, trans = function(x) {
     }
     if (nlayers(ras) == 1) {
         ras <- calc(ras, trans)
-    }
-    else {
+    } else {
         for (cov in which_cov) {
             ras[[cov]] <- calc(ras[[cov]], trans)
         }
