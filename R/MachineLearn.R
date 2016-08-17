@@ -39,7 +39,7 @@
 #' @family model
 MachineLearn <-
   function (.df, 
-            method = 'glmnet', 
+            method = 'glm', 
             tuneLength = 8, 
             metric = 'ROC', 
             number = 5, 
