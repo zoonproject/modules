@@ -13,7 +13,7 @@
 #'  data. \code{.df} is passed automatically in workflow from the process
 #'  module(s) to the model module(s) and should not be passed by the user.
 #'
-#' @param modelType A character vector to describe models to use. Select from
+#' @param modelType A character to describe models to use. Select from
 #' 'GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT' 
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
@@ -25,9 +25,15 @@
 #' @seealso \code{\link{biomod2::BIOMOD_ModelingOptions}}
 
 
-BiomodModel <- function(.df, modelType = c('GLM', 'FDA')){
+BiomodModel <- function(.df, modelType = 'GLM'){
   
   zoon:::GetPackage('biomod2')
+  
+  # Only one model type allowed
+  if(length(modelType > 1)){
+    stop(paste('In BiomodModel: Only one model type can be run at once. If you want to run more than one model type use "list()",',
+               "for example list(BiomodModel(modelType = 'GLM'), BiomodModel(modelType = 'FDA'))"))
+  }
   
   # If our response in an integer, convert to numeric
   if(class(.df$value) == 'integer') {
@@ -41,7 +47,7 @@ BiomodModel <- function(.df, modelType = c('GLM', 'FDA')){
                                      resp.xy = coords, 
                                      resp.name = 'Species')
   
-  myBiomodOptions <- BIOMOD_ModelingOptions()
+  myBiomodOptions <- BIOMOD_ModelingOptions(GLM = list(test = 'none'))
   
   id <- as.character(format(Sys.time(), '%s'))
   
