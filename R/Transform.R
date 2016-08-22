@@ -26,8 +26,9 @@ Transform <- function (.data, trans = function(x) {
 {
     df <- .data$df
     ras <- .data$ras
-    if (is.null(which_cov)) 
+    if (is.null(which_cov)){ 
         which_cov <- names(ras)
+    }
     stopifnot(all(which_cov %in% names(ras)))
     if (!replace) {
       # which will be the new ones
@@ -48,6 +49,12 @@ Transform <- function (.data, trans = function(x) {
         }
     }
     vals <- extract(ras, df[, c("longitude", "latitude")])
-    df <- cbind(df[, 1:5], vals)
+    if(is.null(ncol(vals))){
+      vals <- data.frame(vals)
+      names(vals) <- which_cov
+      df <- cbind(df[, 1:5], vals)
+    } else {
+      df <- cbind(df[, 1:5], vals)
+    }
     return(list(df = df, ras = ras))
 }
