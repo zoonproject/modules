@@ -63,7 +63,8 @@ Other process: \code{\link{BackgroundAndCrossvalid}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
   \code{\link{PartitionDisc}},
-  \code{\link{StandardiseCov}}, \code{\link{Transform}},
-  \code{\link{addInteraction}}
+  \code{\link{StandardiseCov}},
+  \code{\link{TargetGroupBackground}},
+  \code{\link{Transform}}, \code{\link{addInteraction}}
 }
 

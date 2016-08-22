@@ -44,7 +44,8 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
-  \code{\link{StandardiseCov}}, \code{\link{Transform}},
-  \code{\link{addInteraction}}
+  \code{\link{StandardiseCov}},
+  \code{\link{TargetGroupBackground}},
+  \code{\link{Transform}}, \code{\link{addInteraction}}
 }
 
