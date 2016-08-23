@@ -13,9 +13,9 @@
 #' @family covariate
 AirNCEP <- function(quiet = TRUE){
   
-  zoon:::GetPackage('foreign')
-  zoon:::GetPackage('shapefiles')
-  zoon:::GetPackage('maptree')
+  # zoon:::GetPackage('foreign')
+  # zoon:::GetPackage('shapefiles')
+  # zoon:::GetPackage('maptree')
   zoon:::GetPackage('RNCEP')
   
   extent <- uk.extent <- c(xmin = -10,
