@@ -13,6 +13,7 @@
 #' @family covariate
 AirNCEP <- function(quiet = TRUE){
   
+  zoon:::GetPackage('foreign')
   zoon:::GetPackage('shapefiles')
   zoon:::GetPackage('maptree')
   zoon:::GetPackage('RNCEP')
