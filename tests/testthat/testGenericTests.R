@@ -17,7 +17,15 @@ if(length(modulePaths) == 0) stop(paste('No modules found for testing\n',
                                         '\n\nDir 2 above:', paste(dir('../..'), collapse = ', ')))
 
 # A vector of R scripts to ignore
-ignoreModules <- c('ModulesDocumentation.R')#, 'NCEP.R', 'AirNCEP.R', 'Bioclim.R', 'UKBioclim.R')
+# Modules should only be ignored here if:
+# 1) They take a LONG time (>1min)
+# 2) They require 3rd party software
+# 3) They fail due to 3rd party server issues
+# They should ofcourse be tested locally by commenting the
+# line below
+ignoreModules <- c('ModulesDocumentation.R')
+ignoreModules <- c(ignoreModules, 'Bioclim.R', 'UKBioclim.R', 'NBNdataByName.R',
+                   'OptGRaF.R', 'BiomodModel.R', 'NATrees.R')
 modulePaths <- modulePaths[!basename(modulePaths) %in% ignoreModules]
 
 capture.output({
