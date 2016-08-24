@@ -6,7 +6,7 @@ sudo: required
 apt_packages:
  - libv8-dev
  - gdal-bin
- - libgdal-dev
+ - libgdal1-dev
  
 r_binary_packages:
  - rgdal
