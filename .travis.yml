@@ -5,6 +5,7 @@ sudo: required
 # Add libv8 needed for running rgbif (in spocc)
 apt_packages:
  - libv8-dev
+ - gdal-bin
  - libgdal-dev
  
 r_binary_packages:
