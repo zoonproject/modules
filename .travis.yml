@@ -3,10 +3,12 @@ cache: packages
 sudo: required
 
 # Add libv8 needed for running rgbif (in spocc)
-apt_packages:
- - libv8-dev
- - libproj-dev
- - libgdal-dev
+addons:
+  apt:
+    packages:
+      - libv8-dev
+      - libgdal-dev
+      - libproj-dev
  
 r_binary_packages:
  - rgdal
