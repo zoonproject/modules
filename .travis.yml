@@ -7,6 +7,7 @@ addons:
   apt:
     packages:
       - libv8-dev
+      - libhdf5-serial-dev
       - libgdal-dev
       - libproj-dev
  
