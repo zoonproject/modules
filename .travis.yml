@@ -2,19 +2,16 @@ language: r
 cache: packages
 sudo: required
 
-# Install the suggested packages which
-# are needed for the vignette builds
-r_packages:
- - covr
- 
 # Add libv8 needed for running rgbif (in spocc)
 apt_packages:
- - libv8-dev 
+ - libv8-dev
+ - libgdal-dev
  
 r_binary_packages:
  - rgdal
  
 r_packages:
+ - covr
  - RNCEP
  - Matrix
  - scrubr
