@@ -23,10 +23,10 @@ if(length(modulePaths) == 0) stop(paste('No modules found for testing\n',
 # 3) They fail due to 3rd party server issues
 # They should ofcourse be tested locally by commenting the
 # line below
-ignoreModules <- c('ModulesDocumentation.R')
+ignoreModules <- 'ModulesDocumentation.R'
 ignoreModules <- c(ignoreModules, 'Bioclim.R', 'UKBioclim.R', 'NBNdataByName.R',
                    'OptGRaF.R', 'BiomodModel.R', 'NATrees.R', 'MaxEnt.R', 'Bioclim_future.R',
-                   modulePaths)
+                   basename(modulePaths))
 modulePaths <- modulePaths[!basename(modulePaths) %in% ignoreModules]
 
 capture.output({
