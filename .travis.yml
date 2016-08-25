@@ -11,17 +11,6 @@ addons:
 
 r_binary_packages:
  - rgdal
- 
-r_packages:
- - covr
- - RNCEP
- - Matrix
- - scrubr
- - gbm
- - pbkrtest
- - mgcv
- - nlme
- - sperrorest
 
 # Install zoon from Github
 r_github_packages:
@@ -46,8 +35,8 @@ email:
 env:
   matrix:
     - r: release
-      not_cran: false
-      r_check_args: "--no-manual --as--cran"
+      not_cran: true
+      r_check_args: "--no-manual"
     - r: devel
-      not_cran: false
-      r_check_args: "--no-manual --as--cran"
+      not_cran: true
+      r_check_args: "--no-manual"
