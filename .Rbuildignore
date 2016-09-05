@@ -6,3 +6,4 @@ Species/
 tests/testthat/tests.txt
 tests/testthat/zoonTMPfigshare.RData
 wc10/
+addDepends.R
