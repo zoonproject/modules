@@ -11,36 +11,36 @@ Description: A dummy package containing SDM code modules for use in SDM
 License: BSD_3_clause + file LICENSE
 URL: www.github.com/zoonproject/modules
 Depends:
-    zoon
-    RNCEP
-    dismo
-    shiny
-    DT
-    leaflet
-    htmlwidgets
-    viridis
-    rgdal
-    googleVis
-    biomod2
-    maxlike
-    scrubr
-    gbm
-    assertthat
-    data.table
-    xlsx
-    foreign
-    pbkrtest
-    caret
-    glmnet
-    rJava
-    mgcv
-    rnbn
-    GRaF
-    sperrorest
-    SDMTools
-    randomForest
-    MASS
-    spocc
+    zoon,
+    RNCEP,
+    dismo,
+    shiny,
+    DT,
+    leaflet,
+    htmlwidgets,
+    viridis,
+    rgdal,
+    googleVis,
+    biomod2,
+    maxlike,
+    scrubr,
+    gbm,
+    assertthat,
+    data.table,
+    xlsx,
+    foreign,
+    pbkrtest,
+    caret,
+    glmnet,
+    rJava,
+    mgcv,
+    rnbn,
+    GRaF,
+    sperrorest,
+    SDMTools,
+    randomForest,
+    MASS,
+    spocc,
     raster
 Imports:
     assertthat

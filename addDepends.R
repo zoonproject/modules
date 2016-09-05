@@ -36,11 +36,14 @@ DESCRIPTION <- readLines('DESCRIPTION')
 
 st <- grep('^Depends:', DESCRIPTION) + 1
 end <- grep('^Imports:', DESCRIPTION) - 1
-current_deps <- unlist(trimws(DESCRIPTION[st:end]))
+current_deps <- gsub(',$', '', unlist(trimws(DESCRIPTION[st:end])))
 
-new_deps <- paste('   ', new_deps[!new_deps %in% current_deps])
-deps_add <- c(paste('   ', current_deps), new_deps)
-new_DESCRIPTION <- c(DESCRIPTION[1:(st-1)], deps_add, DESCRIPTION[(end+1):length(DESCRIPTION)])
+if(length(new_deps[!new_deps %in% current_deps]) > 0){
+  new_deps <- paste('    ', new_deps[!new_deps %in% current_deps], ',', sep = '')
+  deps_add <- c(paste('    ', current_deps, ',', sep = ''), new_deps)
+  deps_add[length(deps_add)] <- gsub(',$', '', deps_add[length(deps_add)])
+  new_DESCRIPTION <- c(DESCRIPTION[1:(st-1)], deps_add, DESCRIPTION[(end+1):length(DESCRIPTION)])
+}
 
 # Write this new file
 writeLines(new_DESCRIPTION, con = 'DESCRIPTION', sep = '\n')
