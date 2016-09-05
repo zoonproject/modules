@@ -39,7 +39,7 @@ Bioclim_future <-
     stopifnot(length(extent) == 4)
     stopifnot(all(is.numeric(extent)))
 
-    world <- getData('CMIP5', var = 'bio', res = resolution, rcp = rcp, model = model, year = year)
+    world <- raster::getData('CMIP5', var = 'bio', res = resolution, rcp = rcp, model = model, year = year)
     world <- world[[layers]]
     cropped <- crop(world, extent(extent))
 
