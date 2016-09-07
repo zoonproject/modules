@@ -21,7 +21,7 @@ if(length(modulePaths) == 0) stop(paste('No modules found for testing\n',
 # 1) They take a LONG time (>1min)
 # 2) They require 3rd party software
 # 3) They fail due to 3rd party server issues
-# They should ofcourse be tested locally by commenting the
+# They should of course be tested locally by commenting in the
 # line below
 ignoreModules <- 'ModulesDocumentation.R'
 ignoreModules <- c(ignoreModules, 'Bioclim.R', 'UKBioclim.R', 'NBNdataByName.R',
