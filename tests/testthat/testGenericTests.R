@@ -25,7 +25,8 @@ if(length(modulePaths) == 0) stop(paste('No modules found for testing\n',
 # line below
 ignoreModules <- 'ModulesDocumentation.R'
 ignoreModules <- c(ignoreModules, 'Bioclim.R', 'UKBioclim.R', 'NBNdataByName.R',
-                   'OptGRaF.R', 'BiomodModel.R', 'NATrees.R', 'MaxEnt.R', 'Bioclim_future.R')
+                   'OptGRaF.R', 'BiomodModel.R', 'NATrees.R', 'MaxEnt.R', 'Bioclim_future.R',
+                   'AirNCEP', 'NCEP')
 modulePaths <- modulePaths[!basename(modulePaths) %in% ignoreModules]
 
 capture.output({
