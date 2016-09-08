@@ -21,7 +21,7 @@
 #' @section Version: 0
 #'
 #' @section Date submitted:  2016-05-31
-NaiveRandomPresence <- function (extent = c(-10, 10, 45, 65), n = 100, seed = NULL) 
+NaiveRandomPresence <- function (extent = c(-10, 10, 45, 65), n = 1000, seed = NULL) 
 {
     if (!is.null(seed)) 
         set.seed(seed)

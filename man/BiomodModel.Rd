@@ -12,7 +12,7 @@ BiomodModel(.df, modelType = "GLM")
  data. \code{.df} is passed automatically in workflow from the process
  module(s) to the model module(s) and should not be passed by the user.}
 
-\item{modelType}{A character vector to describe models to use. Select from
+\item{modelType}{A character to describe models to use. Select from
 'GLM','GBM','GAM','CTA','ANN','SRE','FDA','MARS','RF','MAXENT'}
 }
 \description{

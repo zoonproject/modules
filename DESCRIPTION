@@ -1,7 +1,7 @@
 Package: ZoonModules
 Type: Package
 Title: Species Distribution Modelling Code Modules for the ZOON Package
-Version: 0.1
+Version: 0.2
 Author: Tim Lucas, Tom August, Nick Golding, Greg McInerny, Emiel van Loon
 Maintainer: Tom August <tomaug@ceh.ac.uk>
 Description: A dummy package containing SDM code modules for use in SDM
@@ -10,8 +10,38 @@ Description: A dummy package containing SDM code modules for use in SDM
     intended to be installed and used in an R session.
 License: BSD_3_clause + file LICENSE
 URL: www.github.com/zoonproject/modules
-Depends: 
-    zoon
+Depends:
+    zoon,
+    RNCEP,
+    dismo,
+    shiny,
+    DT,
+    leaflet,
+    htmlwidgets,
+    viridis,
+    rgdal,
+    googleVis,
+    biomod2,
+    maxlike,
+    scrubr,
+    gbm,
+    assertthat,
+    data.table,
+    xlsx,
+    foreign,
+    pbkrtest,
+    caret,
+    glmnet,
+    rJava,
+    mgcv,
+    rnbn,
+    GRaF,
+    sperrorest,
+    SDMTools,
+    randomForest,
+    MASS,
+    spocc,
+    raster
 Imports:
     assertthat
 Suggests:

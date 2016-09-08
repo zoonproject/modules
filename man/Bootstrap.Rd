@@ -40,12 +40,14 @@ ZOON Developers, \email{zoonproject@gmail.com}
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
   \code{\link{Background}}, \code{\link{Clean}},
-  \code{\link{Crossvalidate}}, \code{\link{MESSMask}},
+  \code{\link{Crossvalidate}},
+  \code{\link{JitterOccurrence}}, \code{\link{MESSMask}},
   \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
   \code{\link{PartitionDisc}},
-  \code{\link{StandardiseCov}}, \code{\link{Transform}},
-  \code{\link{addInteraction}}
+  \code{\link{StandardiseCov}},
+  \code{\link{TargetGroupBackground}},
+  \code{\link{Transform}}, \code{\link{addInteraction}}
 }
 

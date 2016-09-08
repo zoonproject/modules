@@ -13,3 +13,10 @@
 
 # R project files
 *.Rproj
+
+# Files produced in testing
+tests/testthat/*.pdf
+Species/
+tests/testthat/tests.txt
+tests/testthat/zoonTMPfigshare.RData
+wc10/

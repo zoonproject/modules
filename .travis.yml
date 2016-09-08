@@ -1,15 +1,18 @@
 language: r
+dist: trusty
 cache: packages
 sudo: required
 
-# Install the suggested packages which
-# are needed for the vignette builds
-r_packages:
- - covr
- 
-# Add libv8 needed for running rgbif (in spocc)
-apt_packages:
- - libv8-dev 
+addons:
+  apt:
+    packages:
+      - libgdal-dev
+      - libproj-dev
+      - r-cran-rjava
+      - libv8-dev 
+
+r_binary_packages:
+ - rgdal
 
 # Install zoon from Github
 r_github_packages:
@@ -34,8 +37,8 @@ email:
 env:
   matrix:
     - r: release
-      not_cran: false
-      r_check_args: "--no-manual --as--cran"
+      not_cran: true
+      r_check_args: "--no-manual"
     - r: devel
-      not_cran: false
-      r_check_args: "--no-manual --as--cran"
+      not_cran: true
+      r_check_args: "--no-manual"

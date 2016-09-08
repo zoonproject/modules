@@ -23,7 +23,7 @@
 #' @section Version: 0
 #'
 #' @section Date submitted:  2016-06-03
-NaiveRandomPresenceAbsence <- function (extent = c(-10, 10, 45, 65), pAbs = 0.5, n = 100, seed = NULL) 
+NaiveRandomPresenceAbsence <- function (extent = c(-10, 10, 45, 65), pAbs = 0.5, n = 1000, seed = NULL) 
 {
     if (!is.null(seed)) 
         set.seed(seed)

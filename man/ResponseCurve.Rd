@@ -30,13 +30,15 @@ against one covariate.
 ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
-Other output: \code{\link{Appify}}, \code{\link{Figshare}},
+Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
-  \code{\link{PrintMap}}, \code{\link{ResponseCurveViz}},
-  \code{\link{SameTimePlaceMap}}, \code{\link{SurfaceMap}},
+  \code{\link{PrintMap}}, \code{\link{ROCcurve}},
+  \code{\link{ResponseCurveViz}},
+  \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
+  \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
 

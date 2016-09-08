@@ -21,10 +21,14 @@
 #' @section Date submitted:  2016-06-15
 SeparatePA <- function (.model, .ras) 
 {
-  presidx <- mod$model$model$.df == 1
-  absidx <- mod$model$model$.df == 0
-  presprob <- mod$model$fitted.values[presidx]
-  absprob <- mod$model$fitted.values[absidx]
+  
+  # Extract model
+  mod <- .model$model$model
+  
+  presidx <- mod$model$.df == 1
+  absidx <- mod$model$.df == 0
+  presprob <- mod$fitted.values[presidx]
+  absprob <- mod$fitted.values[absidx]
   e <- dismo::evaluate(p = presprob, a = absprob)
   par(mfrow = c(1, 2))
   density(e)

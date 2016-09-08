@@ -43,13 +43,15 @@ This model prints to console a number of metrics of the model fitted:
 ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
-Other output: \code{\link{Appify}}, \code{\link{Figshare}},
+Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
   \code{\link{PredictNewRasterMap}},
-  \code{\link{PrintMap}}, \code{\link{ResponseCurveViz}},
+  \code{\link{PrintMap}}, \code{\link{ROCcurve}},
+  \code{\link{ResponseCurveViz}},
   \code{\link{ResponseCurve}},
-  \code{\link{SameTimePlaceMap}}, \code{\link{SurfaceMap}},
+  \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
+  \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
 
