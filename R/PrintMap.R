@@ -10,12 +10,17 @@
 #' 
 #' @param points If \code{TRUE} the training points will be plotted over the prediction surface
 #'
-#' @param dir Directory where plots are saved. If \code{NULL} (default) then plots are
+#' @param dir Directory where plots are saved. If both \code{dir} and \code{filename} are \code{NULL} (default) then plots are
+#' not saved. 
+#' 
+#' @param filename The name to be given to the output as a character, don't include a file extension. If both \code{dir} and \code{filename} are \code{NULL} (default) then plots are
 #' not saved. 
 #' 
 #' @param size A vector containing the width and height of the output figure when writing to a png file. Example: c(800,600).
 #' 
 #' @param res The output resolution in ppi when writing to a png file.
+#' 
+#' @param ... Parameters passed to sp::spplot, useful for setting title and axis labels e.g. \code{xlab = 'Axis Label', main = 'My Plot Title'}
 #'
 #' @return A Raster object giving the probabilistic model predictions for each
 #' cell of covariate raster layer
@@ -27,7 +32,10 @@
 #' @name PrintMap
 #' @family output
 PrintMap <-
-  function (.model, .ras, plot = TRUE, points = TRUE, dir = NULL, size = c(480, 480), res = 72) {
+  function (.model, .ras, plot = TRUE,
+            points = TRUE, dir = NULL,
+            filename = NULL,
+            size = c(480, 480), res = 72, ...) {
     
     vals <- data.frame(getValues(.ras))
     colnames(vals) <- names(.ras)
@@ -41,8 +49,7 @@ PrintMap <-
     cls <- colorRampPalette(c('#e0f3db', '#a8ddb5', '#4eb3d3', '#08589e'))(10)
     
     par(mar = c(4, 4, 0, 2) + 0.1)
-    ST <- format(Sys.time(), "%Y_%m_%d-%H%M")
-    
+
     ## Create plot object
     
     if(any(.model$data$value != 0 & .model$data$value != 1)){
@@ -95,11 +102,13 @@ PrintMap <-
                             sp.layout=points.list,
                             col.regions=cls,cuts=length(cls)-1,
                             scales = list(draw = TRUE),
-                            key = key)
+                            key = key,
+                            ... = ...)
     } else {
       plot.object <- spplot(pred_ras,
                             col.regions=cls,cuts=length(cls)-1,
-                            scales = list(draw = TRUE))
+                            scales = list(draw = TRUE),
+                            ... = ...)
       
     }
     
@@ -109,17 +118,21 @@ PrintMap <-
     }
     
     ## Save to .png if output directory is specified
-    if(!is.null(dir)){
+    if(!is.null(dir) | !is.null(filename)){
+    
+      if(is.null(dir)) dir <- getwd()
+      if(is.null(filename)) filename <- format(Sys.time(), "%Y_%m_%d-%H%M")
+
       # Create the filename
-      preferred_name <- paste(ST, ".png", sep = '')
+      preferred_name <- paste(filename, ".png", sep = '')
       
       ## Check for prexisting file with same name as preferred_name
       if(!file.exists(file.path(dir, preferred_name))){
         plotname <- preferred_name
       } else {
         ## Create new file name with enumerated suffix (to aviod overwriting prexisting files)
-        ex_files <- list.files(path = dir, pattern = paste('^', ST, sep = ''))
-        plotname <- paste(ST, '_',as.character(length(ex_files)),'.png', sep = '')
+        ex_files <- list.files(path = dir, pattern = paste('^', filename, sep = ''))
+        plotname <- paste(filename, '_',as.character(length(ex_files)),'.png', sep = '')
       }
       
       ## Initiate png graphics device
