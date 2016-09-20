@@ -8,7 +8,7 @@
 #'
 #' @name LocalRaster
 #' @family covariate
-#' @author Tim Lucas \email{timcdlucas@@gmail.com} and Samuel Bosch \email{mail@@samuelbosch.com}
+#' @author Tim Lucas, Samuel Bosch, \email{timcdlucas@@gmail.com}
 #' @section Version: 1.1
 #' @section Date submitted: 2016-03-04
 LocalRaster <-
