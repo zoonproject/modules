@@ -23,7 +23,7 @@ Read in a single raster or a list of rasters and stack them.
  2016-03-04
 }
 \author{
-Tim Lucas \email{timcdlucas@gmail.com} and Samuel Bosch \email{mail@samuelbosch.com}
+Tim Lucas, Samuel Bosch, \email{timcdlucas@gmail.com}
 }
 \seealso{
 Other covariate: \code{\link{AirNCEP}},
