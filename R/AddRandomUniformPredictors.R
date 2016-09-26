@@ -16,10 +16,10 @@
 #'
 #' @examples 
 #' work1 <- workflow(occurrence = UKAnophelesPlumbeus,
-#'    covariate  = UKBioclim,
+#'    covariate  = UKAir,
 #'    process    = Chain(OneHundredBackground,
-#'                    AddRandomUniformPredictors(scaleTo = 'bio1',name = 'Random.bio1'),
-#'                    AddRandomUniformPredictors(scaleTo = 'bio2'),
+#'                    AddRandomUniformPredictors(scaleTo = 'layer', name = 'Random.layer'),
+#'                    AddRandomUniformPredictors(scaleTo = 'layer'),
 #'                    AddRandomUniformPredictors),
 #'    model      = LogisticRegression,
 #'    output     = PerformanceMeasures)
