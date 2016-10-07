@@ -2,7 +2,11 @@
 #'
 #' @description Occurrence module to format local occurrence data to be used with zoon. 
 #'  Must be a .csv file with three columns longitude, latitude and value 
-#'  in that order.
+#'  in that order. Other columns will be kept. A column named CRS can be supplied
+#'  if the coordinates are not lat/long. CRS should contain the proj4string for
+#'  the coordinate system of the data (for example "+init=epsg:27700" for easting/northing
+#'  data). If a CRS column is supplied longitude is taken to be the X coordinate and 
+#'  latitude the Y coordinate.
 #'
 #' @param filename The path to the spreadsheet. The spreadsheet should have a 
 #'  header giving column names. The column names should be 'longitude', 'latitude',
@@ -14,7 +18,8 @@
 #'
 #' @param externalValidation Logical indicating whether this data is external
 #'  validation data. Cross validation is handled elsewhere and this argument 
-#'  should be left as FALSE for data that will be used in cross validation. 
+#'  should be left as FALSE for data that will be used in cross validation.
+#'  This is ignored if the user supplies a 'fold' column. 
 #'
 #' @param columns Which columns in the spreadsheet relate to longitude, latitude
 #'  and response value? Takes a named character vector e.g.
@@ -111,32 +116,27 @@ function(filename='myData.csv',
     latName <- columns['lat']
     valName <- columns['value']
   }
-
-  df <- data.frame(longitude = data[,longName],
-                   latitude = data[,latName],
-                   value = data[,valName])
+  
+  names(data)[names(data) == longName] <- 'longitude'
+  names(data)[names(data) == latName] <- 'latitude'
+  names(data)[names(data) == valName] <- 'value'
 
   # If presence absence, give correct type name
   # Otherwise type is just type.
   if(type == 'presence/absence') {
-    df$type <- ifelse(df[,3] == 1, 'presence', 'absence')
+    data$type <- ifelse(data[,'value'] == 1, 'presence', 'absence')
   } else {
-    df$type <- type
+    data$type <- type
   }
 
   # Fold gets 1 unless this is external validation data.
-  if(externalValidation){
-    df$fold <- 0
-  } else {
-    df$fold <- 1
-  }
-
-  return(df)
-
+  if(!'fold' %in% tolower(names(data))){
+    if(externalValidation){
+      data$fold <- 0
+    } else {
+      data$fold <- 1
+    }
   }
   
-
-
-
-
-  
+  return(data)
+}
