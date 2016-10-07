@@ -33,6 +33,7 @@ PredictNewRasterMap <- function (.model, .ras, newraster = .ras, extent = as.vec
     colnames(vals) <- names(newraster)
     pred <- ZoonPredict(.model$model, newdata = vals)
     pred_ras <- newraster[[1]]
+    names(pred_ras) <- 'prediction'
     pred_ras <- setValues(pred_ras, pred)
     if (plot)
         plot(pred_ras, ...)
