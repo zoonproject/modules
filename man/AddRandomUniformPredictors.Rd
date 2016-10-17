@@ -32,18 +32,17 @@ Process module which adds a random uniform covariate to the dataset.  This new c
 }
 \examples{
 work1 <- workflow(occurrence = UKAnophelesPlumbeus,
-   covariate  = UKBioclim,
+   covariate  = UKAir,
    process    = Chain(OneHundredBackground,
-                   AddRandomUniformPredictors(scaleTo = 'bio1',name = 'Random.bio1'),
-                   AddRandomUniformPredictors(scaleTo = 'bio2'),
+                   AddRandomUniformPredictors(scaleTo = 'layer', name = 'Random.layer'),
+                   AddRandomUniformPredictors(scaleTo = 'layer'),
                    AddRandomUniformPredictors),
    model      = LogisticRegression,
    output     = PerformanceMeasures)
    
-### Dsiplay resulting covariate maps from each workflow
-spplot(work1$process.output[[1]]$ras$bio1)
-spplot(work1$process.output[[1]]$ras$bio2)
-spplot(work1$process.output[[1]]$ras$Random.bio1.1)
+### Display resulting covariate maps from each workflow
+spplot(work1$process.output[[1]]$ras$layer)
+spplot(work1$process.output[[1]]$ras$Random.layer.1)
 spplot(work1$process.output[[1]]$ras$RandUnif.1)
 spplot(work1$process.output[[1]]$ras$RandUnif.2)
 

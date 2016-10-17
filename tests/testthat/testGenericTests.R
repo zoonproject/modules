@@ -39,3 +39,7 @@ capture.output({
   }
   
 }, file = 'tests.txt', split = TRUE)
+
+# remove any plots created
+unlink(list.files(pattern = '.pdf',
+                  full.names = TRUE))
