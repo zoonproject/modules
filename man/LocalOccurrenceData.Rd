@@ -25,12 +25,17 @@ long, lat, value.}
 
 \item{externalValidation}{Logical indicating whether this data is external
 validation data. Cross validation is handled elsewhere and this argument 
-should be left as FALSE for data that will be used in cross validation.}
+should be left as FALSE for data that will be used in cross validation.
+This is ignored if the user supplies a 'fold' column.}
 }
 \description{
 Occurrence module to format local occurrence data to be used with zoon. 
  Must be a .csv file with three columns longitude, latitude and value 
- in that order.
+ in that order. Other columns will be kept. A column named CRS can be supplied
+ if the coordinates are not lat/long. CRS should contain the proj4string for
+ the coordinate system of the data (for example "+init=epsg:27700" for easting/northing
+ data). If a CRS column is supplied longitude is taken to be the X coordinate and 
+ latitude the Y coordinate.
 }
 \section{Version}{
  1.0
