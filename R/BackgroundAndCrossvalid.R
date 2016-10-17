@@ -39,7 +39,7 @@ BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
   points <- 100
   if(ncell(ras) < 100){
     points <- ncell(ras)
-    warning(paste0('There are fewer than 100 cells in the environmental raster.', 
+    message(paste0('There are fewer than 100 cells in the environmental raster.', 
       '\nUsing all available cells (', ncell(ras), ') instead'))
   }
   pa <- randomPoints(ras, points)

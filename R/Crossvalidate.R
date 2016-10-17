@@ -23,7 +23,7 @@ function (.data, k = 5, seed = NULL) {
 
   
   if (all(occurrence$value == 1)) {
-    warning ('You currently only have presence points. Unless you are using presence only modelling, create some pseudoabsence points before this module.')
+    message('You currently only have presence points. Unless you are using presence only modelling, create some pseudoabsence points before this module.')
   }
   
   # set seed if specified

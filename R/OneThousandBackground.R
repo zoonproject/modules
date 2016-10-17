@@ -35,6 +35,13 @@ OneThousandBackground <- function (.data, seed = NULL) {
   
   # generate pseudo-absence data
   # suppressing warnings when the number is restricted
+  # generate pseudo-absence data
+  points <- 1000
+  if(ncell(ras) < 1000){
+    points <- ncell(ras)
+    message(paste0('There are fewer than 1000 cells in the environmental raster.', 
+                   '\nUsing all available cells (', ncell(ras), ') instead'))
+  }
   suppressWarnings(pa <- randomPoints(ras, 1000))
   
   npres <- nrow(occurrence)
