@@ -84,7 +84,7 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   if (sum(!is.na(getValues(ras))) < n) {
     # find the number of non-na cells in ras
     points <- length(na.omit(getValues(ras)))
-    warning(sprintf('There are fewer than %i cells in the covariate raster.\nUsing all available cells (%i) instead',
+    message(sprintf('There are fewer than %i cells in the covariate raster.\nUsing all available cells (%i) instead',
                     n,
                     points))
   }
