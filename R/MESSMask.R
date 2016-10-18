@@ -27,7 +27,7 @@ MESSMask <- function (.data) {
  
   # Ignore warnings because they're just a bunch of NA issues
   suppressWarnings(
-    mess <- dismo::mess(.data$ras, v = .data$df[, 6:ncol(.data$df)], full = FALSE)
+    mess <- dismo::mess(.data$ras, v = .data$df[, attr(.data$df, 'covCols')], full = FALSE)
   )
 
   # Extreme values become NA

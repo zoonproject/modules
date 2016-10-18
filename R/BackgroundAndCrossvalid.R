@@ -21,6 +21,8 @@ BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
   occurrence <- .data$df
   ras <- .data$ras
 
+  # Keep attributes
+  Atts <- attributes(occurrence)[!names(attributes(occurrence)) %in% c('names', 'class', 'row.names')]
   
   if (!all(occurrence$type == 'presence')) {
     stop ('"BackgroundAndCrossvalid" module only works for presence-only data')
@@ -44,7 +46,6 @@ BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
   }
   pa <- randomPoints(ras, points)
   
-  
   npres <- nrow(occurrence)
   
   npabs <- nrow(pa)
@@ -67,7 +68,7 @@ BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
                    covs)
   
   names(df)[6:ncol(df)] <- names(ras)
-  
+  attributes(df) <- c(attributes(df), Atts)
   attr(df, 'covCols') <- names(ras)
   
   df <- na.omit(df)

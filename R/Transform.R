@@ -26,6 +26,9 @@ Transform <- function (.data, trans = function(x) {
 {
     df <- .data$df
     ras <- .data$ras
+    # Keep attributes
+    Atts <- attributes(df)[!names(attributes(df)) %in% c('names', 'class', 'row.names')]
+    
     if (is.null(which_cov)){ 
         which_cov <- names(ras)
     }
@@ -52,9 +55,12 @@ Transform <- function (.data, trans = function(x) {
     if(is.null(ncol(vals))){
       vals <- data.frame(vals)
       names(vals) <- which_cov
-      df <- cbind(df[, 1:5], vals)
+      df <- cbind(df[, !(names(df) %in% attr(df, 'covCols'))], vals)
     } else {
-      df <- cbind(df[, 1:5], vals)
+      df <- cbind(df[, !(names(df) %in% attr(df, 'covCols'))], vals)
     }
+    
+    attributes(df) <- c(attributes(df), Atts)
+    attr(df, 'covCols') <- names(vals)
     return(list(df = df, ras = ras))
 }

@@ -20,8 +20,9 @@
 StochasticLogisticRegression <- function (.df) 
 {
     GetPackage("MASS")
-    covs <- as.data.frame(.df[, 6:ncol(.df)])
-    names(covs) <- names(.df)[6:ncol(.df)]
+    covs <- as.data.frame(.df[, attr(.df, 'covCols')])
+    names(covs) <- attr(.df, 'covCols')
+    
     m <- glm(.df$value ~ ., data = covs, family = "binomial")
     coef <- m$coefficients
     draw <- MASS::mvrnorm(1, na.omit(coef), vcov(m))
