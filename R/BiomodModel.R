@@ -43,7 +43,7 @@ BiomodModel <- function(.df, modelType = 'GLM'){
   coords <- data.frame(.df$lon, .df$lat)
   
   biomodData <- BIOMOD_FormatingData(resp.var = .df$value, 
-                                     expl.var = .df[,attr(df, 'covCols'), drop = FALSE],
+                                     expl.var = .df[,attr(.df, 'covCols'), drop = FALSE],
                                      resp.xy = coords, 
                                      resp.name = 'Species')
   

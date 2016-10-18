@@ -63,8 +63,9 @@ MaxLike <- function (.df) {
   
   # extract the required elements
   response <- as.numeric(.df$value)
-  covs <- as.data.frame(.df[, attr(df, 'covCols')])
-
+  covs <- as.data.frame(.df[, attr(.df, 'covCols')])
+  names(covs) <- attr(.df, 'covCols')
+  
   # add an intercept
   covs <- cbind(intercept = 1,
                 covs)
