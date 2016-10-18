@@ -25,6 +25,8 @@ StandardiseCov <- function (.data, Gelman = FALSE, exclude = NULL)
 {
     df <- .data$df
     ras <- .data$ras
+    # Keep attributes
+    Atts <- attributes(df)[!names(attributes(df)) %in% c('names', 'class', 'row.names')]
     numericLayer <- NA
     for (i in 1:nlayers(ras)) numericLayer[i] <- is.numeric(ras[i]) & 
         !names(ras)[i] %in% exclude
@@ -43,6 +45,9 @@ StandardiseCov <- function (.data, Gelman = FALSE, exclude = NULL)
         }
     }
     layer <- extract(ras, df[, c("longitude", "latitude")])
-    df <- cbind(df[, 1:5], layer)
+    names(layer) <- names(ras)
+    df <- cbind(df[, !(names(df) %in% attr(df, 'covCols'))], layer)
+    attributes(df) <- c(attributes(df), Atts)
+    attr(df, which = 'covCols') <- names(ras)
     return(list(df = df, ras = ras))
 }

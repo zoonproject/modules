@@ -65,6 +65,6 @@ addInteraction <- function (.data, which_covs = "pairs", exclude = NULL)
         ras <- stack(ras, newint)
     }
     vals <- extract(ras, df[, c("longitude", "latitude")])
-    df <- cbind(df[, 1:5], vals)
+    df <- cbindZoon(df[, !(names(df) %in% attr(df, 'covCols'))], vals)
     return(list(df = df, ras = ras))
 }

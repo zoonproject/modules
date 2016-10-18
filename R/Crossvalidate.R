@@ -21,6 +21,8 @@ function (.data, k = 5, seed = NULL) {
   occurrence <- .data$df
   ras <- .data$ras
 
+  # Keep attributes
+  Atts <- attributes(occurrence)[!names(attributes(occurrence)) %in% c('names', 'class', 'row.names')]
   
   if (all(occurrence$value == 1)) {
     message('You currently only have presence points. Unless you are using presence only modelling, create some pseudoabsence points before this module.')
@@ -61,6 +63,7 @@ function (.data, k = 5, seed = NULL) {
   
   names(df)[6:ncol(df)] <- names(ras)
   
+  attributes(df) <- c(attributes(df), Atts)
   attr(df, 'covCols') <- names(ras)
   
   df <- na.omit(df)

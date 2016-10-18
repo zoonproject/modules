@@ -37,8 +37,8 @@ GBM <-
     }
     
     # get the covariates
-    covs <- as.data.frame(.df[, 6:ncol(.df)])
-    names(covs) <- names(.df)[6:ncol(.df)]
+    covs <- as.data.frame(.df[, attr(.df, 'covCols')])
+    names(covs) <- attr(.df, 'covCols')
     
     # fit the model with the maximum number of trees
     m <- gbm::gbm(.df$value ~ .,
