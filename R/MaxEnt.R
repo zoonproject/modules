@@ -36,7 +36,8 @@ MaxEnt <- function(.df, args = ''){
   zoon::GetPackage('rJava')
   
   covs <- as.data.frame(.df[, attr(.df, 'covCols')])
-
+  names(covs) <- attr(.df, 'covCols')
+  
   # fail is .jar abscent
   jar <- paste(system.file(package = "dismo"),
                "/java/maxent.jar", 
