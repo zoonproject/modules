@@ -12,7 +12,7 @@
 #' 
 #' @param seed Used with set.seed to set a seed. Default NULL, no seed is used
 #' 
-#' @param projection The projection for your points (as a proj4string), defaults to lat/long.
+#' @param projection The projection for your points (as a proj4string)
 #'
 #' @family occurrence
 #'
@@ -24,7 +24,7 @@
 #'
 #' @section Date submitted:  2016-05-31
 NaiveRandomPresence <- function (extent = c(-10, 10, 45, 65), n = 1000,
-                                 seed = NULL, projection = "+proj=longlat +datum=WGS84") 
+                                 seed = NULL, projection = NULL) 
 {
     if (!is.null(seed)) 
         set.seed(seed)

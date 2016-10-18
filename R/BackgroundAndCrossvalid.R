@@ -44,7 +44,6 @@ BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
   }
   pa <- randomPoints(ras, points)
   
-  
   npres <- nrow(occurrence)
   
   npabs <- nrow(pa)
