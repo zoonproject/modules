@@ -20,7 +20,7 @@ OptGRaF <-
       stop ('only for presence/absence or presence/background data')
     }
     
-    covs <- as.data.frame(.df[, attr(df, 'covCols')])
+    covs <- as.data.frame(.df[, attr(.df, 'covCols')])
     m <- graf(.df$value,
               covs,
               opt.l = TRUE)
