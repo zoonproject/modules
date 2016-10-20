@@ -29,17 +29,9 @@ ignoreModules <- c(ignoreModules, 'Bioclim.R', 'UKBioclim.R', 'NBNdataByName.R',
                    'AirNCEP.R', 'NCEP.R')
 modulePaths <- modulePaths[!basename(modulePaths) %in% ignoreModules]
 
-capture.output({
-
-  # loop through each module
-  for(modulePath in modulePaths){
-    
-    zoon:::test_module(modulePath) 
-
-  }
+# loop through each module
+for(modulePath in modulePaths){
   
-}, file = 'tests.txt', split = TRUE)
+  zoon:::test_module(modulePath) 
 
-# remove any plots created
-unlink(list.files(pattern = '.pdf',
-                  full.names = TRUE))
+}
