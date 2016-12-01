@@ -19,6 +19,8 @@
 #' @param size A vector containing the width and height of the output figure when writing to a png file. Example: c(800,600).
 #' 
 #' @param res The output resolution in ppi when writing to a png file.
+#'
+#' @param threshold The threshold percentile to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.
 #' 
 #' @param ... Parameters passed to sp::spplot, useful for setting title and axis labels e.g. \code{xlab = 'Axis Label', main = 'My Plot Title'}
 #'
@@ -35,13 +37,20 @@ PrintMap <-
   function (.model, .ras, plot = TRUE,
             points = TRUE, dir = NULL,
             filename = NULL,
-            size = c(480, 480), res = 72, ...) {
+            size = c(480, 480), res = 72,
+            threshold = NULL, ...) {
     
     vals <- data.frame(getValues(.ras))
     colnames(vals) <- names(.ras)
     
     pred <- ZoonPredict(.model$model,
                         newdata = vals)
+    
+    # use threshold if needed
+    if(!is.null(threshold)){
+      pred[pred >= threshold] <- 1
+      pred[pred < threshold] <- 0
+    }
     
     pred_ras <- setValues(.ras[[1]], pred)
     
@@ -103,11 +112,13 @@ PrintMap <-
                             col.regions=cls,cuts=length(cls)-1,
                             scales = list(draw = TRUE),
                             key = key,
+                            maxpixels = Inf,
                             ... = ...)
     } else {
       plot.object <- spplot(pred_ras,
                             col.regions=cls,cuts=length(cls)-1,
                             scales = list(draw = TRUE),
+                            maxpixels = Inf,
                             ... = ...)
       
     }

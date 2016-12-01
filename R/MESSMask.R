@@ -25,6 +25,9 @@ MESSMask <- function (.data) {
   
   zoon:::GetPackage('dismo')
  
+  # Dont allow attributes to be dropped
+  org_attrs <- attributes(.data$ras)
+  
   # Ignore warnings because they're just a bunch of NA issues
   suppressWarnings(
     mess <- dismo::mess(.data$ras, v = .data$df[, attr(.data$df, 'covCols')], full = FALSE)
@@ -34,6 +37,9 @@ MESSMask <- function (.data) {
   values(mess)[values(mess) < 0] <- NA
 
   .data$ras <- mask(.data$ras, mess)
+  
+  # Add original attributes
+  attributes(.data$ras) <- c(attributes(.data$ras), org_attrs)
 
   return(.data)
   
