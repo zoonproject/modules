@@ -112,11 +112,13 @@ PrintMap <-
                             col.regions=cls,cuts=length(cls)-1,
                             scales = list(draw = TRUE),
                             key = key,
+                            maxpixels = Inf,
                             ... = ...)
     } else {
       plot.object <- spplot(pred_ras,
                             col.regions=cls,cuts=length(cls)-1,
                             scales = list(draw = TRUE),
+                            maxpixels = Inf,
                             ... = ...)
       
     }
