@@ -52,8 +52,12 @@ MaxNet <- function (.df,
                     regmult = 1,
                     clamp_predictions = TRUE,
                     prediction_type = 'logistic') {
-  
-  zoon::GetPackage('maxnet')
+
+  # temporary hack until my bugfix PR is accepted and pushed to CRAN
+  if (!require('maxnet')) {
+    source('https://install-github.me/goldingn/maxnet')
+    library(maxnet)
+  }
   
   # get teh covariate values
   covs <- as.data.frame(.df[, attr(.df, 'covCols')])
