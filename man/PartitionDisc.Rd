@@ -46,6 +46,7 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
   \code{\link{StandardiseCov}},
+  \code{\link{SubsampleOccurrence}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
