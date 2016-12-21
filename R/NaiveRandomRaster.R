@@ -12,6 +12,8 @@
 #' 
 #' @param seed Used with set.seed to set a seed. Default NULL, no seed is used
 #'
+#' @param projection The projecdtion for your raster (as a proj4string), defaults to lat/long
+#'
 #' @family covariate
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
@@ -19,7 +21,8 @@
 #' @section Version: 0
 #'
 #' @section Date submitted:  2016-06-02
-NaiveRandomRaster <- function (extent = c(-10, 10, 45, 65), res = 0.5, seed = NULL) 
+NaiveRandomRaster <- function (extent = c(-10, 10, 45, 65), res = 0.5,
+                               seed = NULL, projection = "+proj=longlat +datum=WGS84") 
 {
     if (length(extent) != 4 | !inherits(extent, "numeric")) 
         stop("extent must be a numeric vector of length 4")
@@ -34,6 +37,6 @@ NaiveRandomRaster <- function (extent = c(-10, 10, 45, 65), res = 0.5, seed = NU
     rasMat <- matrix(data = runif(n = nrow * ncol, min = 0, max = 100), 
         nrow = nrow, ncol = ncol)
     ras <- raster::raster(x = rasMat, xmn = extent[1], xmx = extent[2], 
-        ymn = extent[3], ymx = extent[4], crs = "+proj=longlat +datum=WGS84")
+        ymn = extent[3], ymx = extent[4], crs = projection)
     return(ras)
 }

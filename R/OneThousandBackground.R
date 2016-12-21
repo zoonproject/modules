@@ -20,6 +20,9 @@ OneThousandBackground <- function (.data, seed = NULL) {
   occurrence <- .data$df
   ras <- .data$ras
  
+  # Keep attributes
+  Atts <- attributes(occurrence)[!names(attributes(occurrence)) %in% c('names', 'class', 'row.names')]
+  
   if (!all(occurrence$type == 'presence')) {
     stop ('this function only works for presence-only data')
   }
@@ -35,6 +38,13 @@ OneThousandBackground <- function (.data, seed = NULL) {
   
   # generate pseudo-absence data
   # suppressing warnings when the number is restricted
+  # generate pseudo-absence data
+  points <- 1000
+  if(ncell(ras) < 1000){
+    points <- ncell(ras)
+    message(paste0('There are fewer than 1000 cells in the environmental raster.', 
+                   '\nUsing all available cells (', ncell(ras), ') instead'))
+  }
   suppressWarnings(pa <- randomPoints(ras, 1000))
   
   npres <- nrow(occurrence)
@@ -60,6 +70,7 @@ OneThousandBackground <- function (.data, seed = NULL) {
   
   names(df)[6:ncol(df)] <- names(ras)
   
+  attributes(df) <- c(attributes(df), Atts)
   attr(df, 'covCols') <- names(ras)
   
   # remove missing values

@@ -384,6 +384,10 @@ Appify <- function (.model, .ras, directory = tempdir(), run_App = FALSE)
                     colnames(vals) <- names(.ras)
                     pred <- zoon::ZoonPredict(input_data$model[[my_j]]$model, 
                       newdata = vals)
+                    if(input$useThreshold){
+                      pred[pred >= input$threshold] <- 1
+                      pred[pred < input$threshold] <- 0
+                    }
                     pred_ras <- .ras[[1]]
                     pred_ras <- raster::setValues(pred_ras, round(pred, 
                       2))
@@ -458,7 +462,10 @@ Appify <- function (.model, .ras, directory = tempdir(), run_App = FALSE)
                   br(), downloadButton("downloadModelData", "Download")), 
                   mainPanel(uiOutput("model_tabs"), br()))), 
             tabPanel("Predictions", sidebarLayout(sidebarPanel(h2("Predictions"), 
-                uiOutput("pred_text")), mainPanel(uiOutput("pred_tabs"), 
+                uiOutput("pred_text"),
+                sliderInput(inputId = 'threshold', value = 0.5, label = 'Threshold value', min = 0, max = 1, step = 0.01),
+                checkboxInput(inputId = 'useThreshold', label = 'Use Threshold?')),
+                mainPanel(uiOutput("pred_tabs"), 
                 br())))))
     }))
     ui[[1]] <- ""

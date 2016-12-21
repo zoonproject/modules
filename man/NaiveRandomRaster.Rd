@@ -4,7 +4,8 @@
 \alias{NaiveRandomRaster}
 \title{Naive Random Raster}
 \usage{
-NaiveRandomRaster(extent = c(-10, 10, 45, 65), res = 0.5, seed = NULL)
+NaiveRandomRaster(extent = c(-10, 10, 45, 65), res = 0.5, seed = NULL,
+  projection = "+proj=longlat +datum=WGS84")
 }
 \arguments{
 \item{extent}{A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the raaster. order: xmin, xmax, ymin, ymax. By default the extent of the UK}
@@ -12,6 +13,8 @@ NaiveRandomRaster(extent = c(-10, 10, 45, 65), res = 0.5, seed = NULL)
 \item{res}{Numeric giving the resolution of the raster to produce. 1 is one cell per degree, 0.5 means one cell per half degree.}
 
 \item{seed}{Used with set.seed to set a seed. Default NULL, no seed is used}
+
+\item{projection}{The projecdtion for your raster (as a proj4string), defaults to lat/long}
 }
 \description{
 Creates a random raster layer within the extent given

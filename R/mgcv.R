@@ -36,8 +36,8 @@ mgcv <-
     }
     
     # get the covariates
-    covs <- as.data.frame(.df[, 6:ncol(.df)])
-    names(covs) <- names(.df)[6:ncol(.df)]
+    covs <- as.data.frame(.df[, attr(.df, 'covCols')])
+    names(covs) <- attr(.df, 'covCols')
     
     # build the formula
     param_string <- sprintf(', k = %s, bs = "%s")',

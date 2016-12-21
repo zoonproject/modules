@@ -21,6 +21,8 @@ BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
   occurrence <- .data$df
   ras <- .data$ras
 
+  # Keep attributes
+  Atts <- attributes(occurrence)[!names(attributes(occurrence)) %in% c('names', 'class', 'row.names')]
   
   if (!all(occurrence$type == 'presence')) {
     stop ('"BackgroundAndCrossvalid" module only works for presence-only data')
@@ -39,11 +41,10 @@ BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
   points <- 100
   if(ncell(ras) < 100){
     points <- ncell(ras)
-    warning(paste0('There are fewer than 100 cells in the environmental raster.', 
+    message(paste0('There are fewer than 100 cells in the environmental raster.', 
       '\nUsing all available cells (', ncell(ras), ') instead'))
   }
   pa <- randomPoints(ras, points)
-  
   
   npres <- nrow(occurrence)
   
@@ -67,7 +68,7 @@ BackgroundAndCrossvalid <- function (.data, k=5, seed = NULL) {
                    covs)
   
   names(df)[6:ncol(df)] <- names(ras)
-  
+  attributes(df) <- c(attributes(df), Atts)
   attr(df, 'covCols') <- names(ras)
   
   df <- na.omit(df)

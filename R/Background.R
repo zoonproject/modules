@@ -35,6 +35,9 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   
   occurrence <- .data$df
   
+  # Keep attributes
+  Atts <- attributes(occurrence)[!names(attributes(occurrence)) %in% c('names', 'class', 'row.names')]
+  
   if (!all(occurrence$type == 'presence')) {
     stop ('"Background" module only works for presence-only data')
   }
@@ -84,7 +87,7 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   if (sum(!is.na(getValues(ras))) < n) {
     # find the number of non-na cells in ras
     points <- length(na.omit(getValues(ras)))
-    warning(sprintf('There are fewer than %i cells in the covariate raster.\nUsing all available cells (%i) instead',
+    message(sprintf('There are fewer than %i cells in the covariate raster.\nUsing all available cells (%i) instead',
                     n,
                     points))
   }
@@ -117,7 +120,7 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
                    covs)
   
   names(df)[6:ncol(df)] <- names(.data$ras)
-  
+  attributes(df) <- c(attributes(df), Atts)
   attr(df, 'covCols') <- names(ras)
   
   # remove missing values
