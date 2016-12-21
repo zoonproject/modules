@@ -8,20 +8,24 @@
 #'   \code{\link[maxlike]{carw.data}} for more details. This module loads the 
 #'   data, transforms the coordinates to lat/longs and formats the data for use 
 #'   in a zoon workflow. This module is identical to \code{CarolinaWrenPO}, 
-#'   except that the data are added as external validation data (fold = 0),
+#'   except that the data are added as external validation data (fold = 0), 
 #'   rather than training data (fold = 1).
-#'
-#' @details 
-#'
-#'
+#'   
+#' @param .data \strong{Internal parameter, do not use in the workflow
+#'   function}. \code{.data} is a list of a data frame and a raster object
+#'   returned from occurrence modules and covariate modules respectively.
+#'   \code{.data} is passed automatically in workflow from the occurrence and
+#'   covariate modules to the process module(s) and should not be passed by the
+#'   user.
+#' 
 #' @family process
-#'
+#'   
 #' @author Nick Golding, \email{nick.golding.research@@gmail.com}
-#'
+#'   
 #' @section Data type: presence/absence
-#'
+#'   
 #' @section Version: 0.1
-#'
+#'   
 #' @section Date submitted:  2016-12-21
 CarolinaWrenValidation <- function (.data) {
   
@@ -45,6 +49,7 @@ CarolinaWrenValidation <- function (.data) {
   
   # extract and append covariate values
   eval_covs <- as.matrix(extract(.data$ras, eval_data[, c('longitude', 'latitude')]))
+  colnames(eval_covs) <- attr(.data$df, 'covCols')
   eval_data <- cbind(eval_data, eval_covs)
   
   # combine the evaluation data with the training data and return

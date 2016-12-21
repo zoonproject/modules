@@ -6,6 +6,14 @@
 \usage{
 CarolinaWrenValidation(.data)
 }
+\arguments{
+\item{.data}{\strong{Internal parameter, do not use in the workflow
+function}. \code{.data} is a list of a data frame and a raster object
+returned from occurrence modules and covariate modules respectively.
+\code{.data} is passed automatically in workflow from the occurrence and
+covariate modules to the process module(s) and should not be passed by the
+user.}
+}
 \description{
 Presence/absence of the Carolina Wren \emph{Thryothorus 
   ludovicianus} at Breeding Bird Survey transects in 2006. These data are 
@@ -13,11 +21,8 @@ Presence/absence of the Carolina Wren \emph{Thryothorus
   \code{\link[maxlike]{carw.data}} for more details. This module loads the 
   data, transforms the coordinates to lat/longs and formats the data for use 
   in a zoon workflow. This module is identical to \code{CarolinaWrenPO}, 
-  except that the data are added as external validation data (fold = 0),
+  except that the data are added as external validation data (fold = 0), 
   rather than training data (fold = 1).
-}
-\details{
-
 }
 \section{Data type}{
  presence/absence

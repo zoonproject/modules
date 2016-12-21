@@ -12,6 +12,8 @@
 #' @param n the number of points to sample. Defaults to the same number as the
 #'   dataset
 #'   
+#' @param replace whether to sample with replacement
+#'   
 #' @author Nick Golding, \email{nick.golding.research@@gmail.com}
 #' @section Version: 1.0
 #' @section Date submitted: 2016-12-21
@@ -19,9 +21,9 @@
 #'   
 #' @name SubsampleOccurrence
 #' @family process
-SubsampleOccurrence <- function (.data, n = 100) {
+SubsampleOccurrence <- function (.data, n = 100, replace = TRUE) {
   # randomly retain a subsample of occurrence records
-  choose <- sample(seq_len(nrow(.data$df)), n)
+  choose <- sample(seq_len(nrow(.data$df)), n, replace = replace)
   .data$df <- .data$df[choose, ]
   .data
 }

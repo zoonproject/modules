@@ -4,7 +4,7 @@
 \alias{SubsampleOccurrence}
 \title{Process module: SubsampleOccurrence}
 \usage{
-SubsampleOccurrence(.data, n = 100)
+SubsampleOccurrence(.data, n = 100, replace = TRUE)
 }
 \arguments{
 \item{.data}{\strong{Internal parameter, do not use in the workflow 
@@ -16,6 +16,8 @@ user.}
 
 \item{n}{the number of points to sample. Defaults to the same number as the
 dataset}
+
+\item{replace}{whether to sample with replacement}
 }
 \description{
 Process module to sample a random subset of the occurrence data.
