@@ -5,7 +5,7 @@
 \title{Output module: PrintMap}
 \usage{
 PrintMap(.model, .ras, plot = TRUE, points = TRUE, dir = NULL,
-  filename = NULL, size = c(480, 480), res = 72, ...)
+  filename = NULL, size = c(480, 480), res = 72, threshold = NULL, ...)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
@@ -25,6 +25,8 @@ not saved.}
 \item{size}{A vector containing the width and height of the output figure when writing to a png file. Example: c(800,600).}
 
 \item{res}{The output resolution in ppi when writing to a png file.}
+
+\item{threshold}{The threshold percentile to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.}
 
 \item{...}{Parameters passed to sp::spplot, useful for setting title and axis labels e.g. \code{xlab = 'Axis Label', main = 'My Plot Title'}}
 }

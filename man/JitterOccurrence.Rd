@@ -35,6 +35,7 @@ Nick Golding, \email{nick.golding.research@gmail.com}
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
   \code{\link{Background}}, \code{\link{Bootstrap}},
+  \code{\link{CarolinaWrenValidation}},
   \code{\link{Clean}}, \code{\link{Crossvalidate}},
   \code{\link{MESSMask}}, \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},

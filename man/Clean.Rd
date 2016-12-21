@@ -43,6 +43,7 @@ ZOON Developers, \email{zoonproject@gmail.com}
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
   \code{\link{Background}}, \code{\link{Bootstrap}},
+  \code{\link{CarolinaWrenValidation}},
   \code{\link{Crossvalidate}},
   \code{\link{JitterOccurrence}}, \code{\link{MESSMask}},
   \code{\link{NoProcess}},

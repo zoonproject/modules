@@ -39,8 +39,9 @@ ZOON Developers, \email{zoonproject@gmail.com}
 \seealso{
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
-  \code{\link{Background}}, \code{\link{Clean}},
-  \code{\link{Crossvalidate}},
+  \code{\link{Background}},
+  \code{\link{CarolinaWrenValidation}},
+  \code{\link{Clean}}, \code{\link{Crossvalidate}},
   \code{\link{JitterOccurrence}}, \code{\link{MESSMask}},
   \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
