@@ -39,12 +39,14 @@ Tom August, \email{tomaug@ceh.ac.uk}
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
   \code{\link{Background}}, \code{\link{Bootstrap}},
+  \code{\link{CarolinaWrenValidation}},
   \code{\link{Clean}}, \code{\link{Crossvalidate}},
   \code{\link{JitterOccurrence}}, \code{\link{MESSMask}},
   \code{\link{NoProcess}},
   \code{\link{OneHundredBackground}},
   \code{\link{OneThousandBackground}},
   \code{\link{StandardiseCov}},
+  \code{\link{SubsampleOccurrence}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }

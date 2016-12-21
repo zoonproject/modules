@@ -63,8 +63,9 @@ J.A. Royle, R.B. Chandler, C. Yackulic, and J.D. Nichols (2012).
 Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxEnt}},
-  \code{\link{MyMaxLike}}, \code{\link{OptGRaF}},
-  \code{\link{QuickGRaF}}, \code{\link{RandomForest}},
+  \code{\link{MaxNet}}, \code{\link{MyMaxLike}},
+  \code{\link{OptGRaF}}, \code{\link{QuickGRaF}},
+  \code{\link{RandomForest}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
