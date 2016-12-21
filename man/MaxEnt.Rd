@@ -50,8 +50,9 @@ ZOON Developers, \email{zoonproject@gmail.com}
 Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxLike}},
-  \code{\link{MyMaxLike}}, \code{\link{OptGRaF}},
-  \code{\link{QuickGRaF}}, \code{\link{RandomForest}},
+  \code{\link{MaxNet}}, \code{\link{MyMaxLike}},
+  \code{\link{OptGRaF}}, \code{\link{QuickGRaF}},
+  \code{\link{RandomForest}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
