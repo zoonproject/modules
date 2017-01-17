@@ -46,7 +46,7 @@ Plot a map of predicted surface.
 For creating maps with only presence absence values, there are a number of options for setting a threshold.
 The \code{threshold} argument sets the value for the threshold while \code{thresholdmethod} selects the methods used to set the threshold.
 \enumerate{
-  \item `probability' (default) Any pixels with predicted probability (or relative probability, depending on the model) greater than the threshold are set to occurrence.
+  \item `probability' (default) Any pixels with predicted probability (or relative probability, depending on the model) greater than the threshold are set to presence
   \item `quantile' \code{threshold} gives the proportion of pixels that should be absense. The threshold value is selected so that this is true.
   \item `falsepositive' \code{threshold} sets the proportion of absense data points (not pixels) that should be misclassified as presence.
   \item `falsenegative' \code{threshold} sets the proportion of presence data points (not pixels) that should be misclassified as absense
