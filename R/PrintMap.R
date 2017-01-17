@@ -22,7 +22,7 @@
 #'
 #' @param threshold The threshold value to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.
 #' 
-#' @param thresholdmethod The method used to calculate probability threshold. One of 'probability', 'quantile', 'ommission'. 
+#' @param thresholdmethod The method used to calculate probability threshold. One of 'probability', 'quantile', 'falsepositive', 'falsenegative'.
 #'   See Details for specifics.
 #' 
 #' @param ... Parameters passed to sp::spplot, useful for setting title and axis labels e.g. \code{xlab = 'Axis Label', main = 'My Plot Title'}
@@ -46,7 +46,7 @@ PrintMap <-
             size = c(480, 480), 
             res = 72,
             threshold = NULL, 
-            thresholdmethod = c('probability', 'omission'),
+            thresholdmethod = c('probability', 'quantile', 'falsepositive', 'falsenegative'),
             ...) {
     
     vals <- data.frame(getValues(.ras))
@@ -67,10 +67,16 @@ PrintMap <-
           stopifnot(threshold <= 1 & threshold >= 0)
           probthreshold <- quantile(pred, probs = threshold)
         
-      } else if(thresholdmethod == 'ommission'){
+      } else if(thresholdmethod %in% c('falsepositive', 'falsenegative')){
           stopifnot(threshold <= 1 & threshold >= 0)
           if(!all(.model$data$value %in% c(0, 1))){
             stop('omission threshold method requires presence, absence or background points only.')
+          }
+        
+          if(thresholdmethod == 'falsepositive'){
+            target <- 0
+          } else {
+            target <- 1
           }
           
           # Predict known points using full model.
@@ -78,15 +84,15 @@ PrintMap <-
           
           p <- ZoonPredict(zoonModel = .model$model,
                            newdata = covs)
-          combdf <- cbind(.model$data, p)
+          combdf <- cbind(.model$data[.model$data$fold != 0, ], p)
           
           # For candidates thresholds, try mid point between each presence point.
           # For the presence points, what proportion are predicted as absence given t
           # Chose t for which proportion - threshold is closest to zero
-          sortedp <- sort(combdf$p[combdf$value == 1])
+          sortedp <- sort(combdf$p[combdf$value == target])
           candidates <- (sortedp[1:(length(sortedp) - 1)] + sortedp[2:(length(sortedp))]) / 2
-          nommitted <- sapply(candidates, function(t) sum(combdf$p[combdf$value == 1] < t))
-          propommitted <- nommitted / sum(combdf$value == 1)
+          nommitted <- sapply(candidates, function(t) sum(combdf$p[combdf$value == target] < t))
+          propommitted <- nommitted / sum(combdf$value == target)
           error <- abs(propommitted - threshold)
           probthreshold <- candidates[floor(median(which(error == min(error))))]
      }
