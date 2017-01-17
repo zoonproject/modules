@@ -65,20 +65,14 @@ PrintMap <-
         probthreshold <- threshold
       } else if(thresholdmethod == 'quantile'){
           stopifnot(threshold <= 1 & threshold >= 0)
-          probthreshold <- quantile(pred, probs = threshold)
+          probthreshold <- quantile(pred, probs = threshold, na.rm = TRUE)
         
       } else if(thresholdmethod %in% c('falsepositive', 'falsenegative')){
           stopifnot(threshold <= 1 & threshold >= 0)
           if(!all(.model$data$value %in% c(0, 1))){
-            stop('omission threshold method requires presence, absence or background points only.')
+            stop('false positive and false negative methods require presence, absence or background points only.')
           }
         
-          if(thresholdmethod == 'falsepositive'){
-            target <- 0
-          } else {
-            target <- 1
-          }
-          
           # Predict known points using full model.
           covs <- .model$data[.model$data$fold != 0, 7:NCOL(.model$data), drop = FALSE]
           
@@ -86,16 +80,22 @@ PrintMap <-
                            newdata = covs)
           combdf <- cbind(.model$data[.model$data$fold != 0, ], p)
           
-          # For candidates thresholds, try mid point between each presence point.
-          # For the presence points, what proportion are predicted as absence given t
-          # Chose t for which proportion - threshold is closest to zero
-          sortedp <- sort(combdf$p[combdf$value == target])
-          candidates <- (sortedp[1:(length(sortedp) - 1)] + sortedp[2:(length(sortedp))]) / 2
-          nommitted <- sapply(candidates, function(t) sum(combdf$p[combdf$value == target] < t))
-          propommitted <- nommitted / sum(combdf$value == target)
-          error <- abs(propommitted - threshold)
-          probthreshold <- candidates[floor(median(which(error == min(error))))]
-     }
+          target <- ifelse(thresholdmethod == 'falsepositive', 0, 1)
+
+          # If we want "threshold" proportion of positives to be misclassified as negative,
+          #   Find "threshold" proportion through sorted vector of probabilities 
+          
+          midpoint <- threshold * sum(.model$data$value == target)
+          whichindices <- c(floor(midpoint), ceiling(midpoint))
+          
+          # Actually want mean of probabilities either side.
+          sortedp <- sort(p[.model$data$value == target], decreasing = as.logical(!target))
+          probthreshold <- sum(sortedp[whichindices]) / 2
+      } else {
+        stop("thresholdmethod not recognised. Should be one of 'probability', 'quantile', 'falsepositive', 'falsenegative'.")
+      }
+          
+          
       
       # Now binarise predictions. 
       pred[pred >= probthreshold] <- 1
