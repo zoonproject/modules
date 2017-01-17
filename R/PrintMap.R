@@ -20,7 +20,10 @@
 #' 
 #' @param res The output resolution in ppi when writing to a png file.
 #'
-#' @param threshold The threshold percentile to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.
+#' @param threshold The threshold value to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.
+#' 
+#' @param thresholdmethod The method used to calculate probability threshold. One of 'probability', 'quantile', 'ommission'. 
+#'   See Details for specifics.
 #' 
 #' @param ... Parameters passed to sp::spplot, useful for setting title and axis labels e.g. \code{xlab = 'Axis Label', main = 'My Plot Title'}
 #'
@@ -34,11 +37,17 @@
 #' @name PrintMap
 #' @family output
 PrintMap <-
-  function (.model, .ras, plot = TRUE,
-            points = TRUE, dir = NULL,
+  function (.model, 
+            .ras, 
+            plot = TRUE,
+            points = TRUE, 
+            dir = NULL,
             filename = NULL,
-            size = c(480, 480), res = 72,
-            threshold = NULL, ...) {
+            size = c(480, 480), 
+            res = 72,
+            threshold = NULL, 
+            thresholdmethod = c('probability', 'omission'),
+            ...) {
     
     vals <- data.frame(getValues(.ras))
     colnames(vals) <- names(.ras)
@@ -48,8 +57,43 @@ PrintMap <-
     
     # use threshold if needed
     if(!is.null(threshold)){
-      pred[pred >= threshold] <- 1
-      pred[pred < threshold] <- 0
+      
+      # Use correct thresholdmethod
+      #   In each case, 
+      if(thresholdmethod == 'probability'){
+        stopifnot(threshold <= 1 & threshold >= 0)
+        probthreshold <- threshold
+      } else if(thresholdmethod == 'quantile'){
+          stopifnot(threshold <= 1 & threshold >= 0)
+          probthreshold <- quantile(pred, probs = threshold)
+        
+      } else if(thresholdmethod == 'ommission'){
+          stopifnot(threshold <= 1 & threshold >= 0)
+          if(!all(.model$data$value %in% c(0, 1))){
+            stop('omission threshold method requires presence, absence or background points only.')
+          }
+          
+          # Predict known points using full model.
+          covs <- .model$data[.model$data$fold != 0, 7:NCOL(.model$data), drop = FALSE]
+          
+          p <- ZoonPredict(zoonModel = .model$model,
+                           newdata = covs)
+          combdf <- cbind(.model$data, p)
+          
+          # For candidates thresholds, try mid point between each presence point.
+          # For the presence points, what proportion are predicted as absence given t
+          # Chose t for which proportion - threshold is closest to zero
+          sortedp <- sort(combdf$p[combdf$value == 1])
+          candidates <- (sortedp[1:(length(sortedp) - 1)] + sortedp[2:(length(sortedp))]) / 2
+          nommitted <- sapply(candidates, function(t) sum(combdf$p[combdf$value == 1] < t))
+          propommitted <- nommitted / sum(combdf$value == 1)
+          error <- abs(propommitted - threshold)
+          probthreshold <- candidates[floor(median(which(error == min(error))))]
+     }
+      
+      # Now binarise predictions. 
+      pred[pred >= probthreshold] <- 1
+      pred[pred < probthreshold] <- 0
     }
     
     pred_ras <- setValues(.ras[[1]], pred)
