@@ -5,7 +5,9 @@
 \title{Output module: PrintMap}
 \usage{
 PrintMap(.model, .ras, plot = TRUE, points = TRUE, dir = NULL,
-  filename = NULL, size = c(480, 480), res = 72, threshold = NULL, ...)
+  filename = NULL, size = c(480, 480), res = 72, threshold = NULL,
+  thresholdmethod = c("probability", "quantile", "falsepositive",
+  "falsenegative"), ...)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
@@ -26,7 +28,10 @@ not saved.}
 
 \item{res}{The output resolution in ppi when writing to a png file.}
 
-\item{threshold}{The threshold percentile to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.}
+\item{threshold}{The threshold value to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.}
+
+\item{thresholdmethod}{The method used to calculate probability threshold. One of 'probability', 'quantile', 'falsepositive', 'falsenegative'.
+See Details for specifics.}
 
 \item{...}{Parameters passed to sp::spplot, useful for setting title and axis labels e.g. \code{xlab = 'Axis Label', main = 'My Plot Title'}}
 }
@@ -36,6 +41,16 @@ cell of covariate raster layer
 }
 \description{
 Plot a map of predicted surface.
+}
+\details{
+For creating maps with only presence absence values, there are a number of options for setting a threshold.
+The \code{threshold} argument sets the value for the threshold while \code{thresholdmethod} selects the methods used to set the threshold.
+\enumerate{
+  \item `probability' (default) Any pixels with predicted probability (or relative probability, depending on the model) greater than the threshold are set to presence
+  \item `quantile' \code{threshold} gives the proportion of pixels that should be absense. The threshold value is selected so that this is true.
+  \item `falsepositive' \code{threshold} sets the proportion of absense data points (not pixels) that should be misclassified as presence.
+  \item `falsenegative' \code{threshold} sets the proportion of presence data points (not pixels) that should be misclassified as absense
+}
 }
 \section{Version}{
  1.1

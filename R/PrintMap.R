@@ -20,10 +20,21 @@
 #' 
 #' @param res The output resolution in ppi when writing to a png file.
 #'
-#' @param threshold The threshold percentile to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.
+#' @param threshold The threshold value to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.
+#' 
+#' @param thresholdmethod The method used to calculate probability threshold. One of 'probability', 'quantile', 'falsepositive', 'falsenegative'.
+#'   See Details for specifics.
 #' 
 #' @param ... Parameters passed to sp::spplot, useful for setting title and axis labels e.g. \code{xlab = 'Axis Label', main = 'My Plot Title'}
 #'
+#' @details For creating maps with only presence absence values, there are a number of options for setting a threshold.
+#' The \code{threshold} argument sets the value for the threshold while \code{thresholdmethod} selects the methods used to set the threshold.
+#' \enumerate{
+#'   \item `probability' (default) Any pixels with predicted probability (or relative probability, depending on the model) greater than the threshold are set to presence
+#'   \item `quantile' \code{threshold} gives the proportion of pixels that should be absense. The threshold value is selected so that this is true.
+#'   \item `falsepositive' \code{threshold} sets the proportion of absense data points (not pixels) that should be misclassified as presence.
+#'   \item `falsenegative' \code{threshold} sets the proportion of presence data points (not pixels) that should be misclassified as absense
+#' }
 #' @return A Raster object giving the probabilistic model predictions for each
 #' cell of covariate raster layer
 #'
@@ -34,11 +45,17 @@
 #' @name PrintMap
 #' @family output
 PrintMap <-
-  function (.model, .ras, plot = TRUE,
-            points = TRUE, dir = NULL,
+  function (.model, 
+            .ras, 
+            plot = TRUE,
+            points = TRUE, 
+            dir = NULL,
             filename = NULL,
-            size = c(480, 480), res = 72,
-            threshold = NULL, ...) {
+            size = c(480, 480), 
+            res = 72,
+            threshold = NULL, 
+            thresholdmethod = c('probability', 'quantile', 'falsepositive', 'falsenegative'),
+            ...) {
     
     vals <- data.frame(getValues(.ras))
     colnames(vals) <- names(.ras)
@@ -48,8 +65,49 @@ PrintMap <-
     
     # use threshold if needed
     if(!is.null(threshold)){
-      pred[pred >= threshold] <- 1
-      pred[pred < threshold] <- 0
+      
+      # Use correct thresholdmethod
+      #   In each case, 
+      if(thresholdmethod == 'probability'){
+        stopifnot(threshold <= 1 & threshold >= 0)
+        probthreshold <- threshold
+      } else if(thresholdmethod == 'quantile'){
+          stopifnot(threshold <= 1 & threshold >= 0)
+          probthreshold <- quantile(pred, probs = threshold, na.rm = TRUE)
+        
+      } else if(thresholdmethod %in% c('falsepositive', 'falsenegative')){
+          stopifnot(threshold <= 1 & threshold >= 0)
+          if(!all(.model$data$value %in% c(0, 1))){
+            stop('false positive and false negative methods require presence, absence or background points only.')
+          }
+        
+          # Predict known points using full model.
+          covs <- .model$data[.model$data$fold != 0, 7:NCOL(.model$data), drop = FALSE]
+          
+          p <- ZoonPredict(zoonModel = .model$model,
+                           newdata = covs)
+          combdf <- cbind(.model$data[.model$data$fold != 0, ], p)
+          
+          target <- ifelse(thresholdmethod == 'falsepositive', 0, 1)
+
+          # If we want "threshold" proportion of positives to be misclassified as negative,
+          #   Find "threshold" proportion through sorted vector of probabilities 
+          
+          midpoint <- threshold * sum(.model$data$value == target)
+          whichindices <- c(floor(midpoint), ceiling(midpoint))
+          
+          # Actually want mean of probabilities either side.
+          sortedp <- sort(p[.model$data$value == target], decreasing = as.logical(!target))
+          probthreshold <- sum(sortedp[whichindices]) / 2
+      } else {
+        stop("thresholdmethod not recognised. Should be one of 'probability', 'quantile', 'falsepositive', 'falsenegative'.")
+      }
+          
+          
+      
+      # Now binarise predictions. 
+      pred[pred >= probthreshold] <- 1
+      pred[pred < probthreshold] <- 0
     }
     
     pred_ras <- setValues(.ras[[1]], pred)
