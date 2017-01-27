@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/zoonproject/modules.svg)](https://travis-ci.org/zoonproject/modules)
-[![codecov.io](https://codecov.io/github/zoonproject/modules/coverage.svg?branch=master)](https://codecov.io/github/zoonproject/modules?branch=master)
 
 Modules
 =======
