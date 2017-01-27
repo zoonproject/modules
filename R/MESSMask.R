@@ -37,9 +37,11 @@ MESSMask <- function (.data) {
   values(mess)[values(mess) < 0] <- NA
 
   .data$ras <- mask(.data$ras, mess)
-  
-  # Add original attributes
-  attributes(.data$ras) <- c(attributes(.data$ras), org_attrs)
+
+  # replace any attributes lost during processing
+  end_attrs <- attributes(.data$ras)
+  which_missing <- which(!names(org_attrs) %in% names(end_attrs))
+  attributes(.data$ras) <- c(end_attrs, org_attrs[which_missing])  
 
   return(.data)
   
