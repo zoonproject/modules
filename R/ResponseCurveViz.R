@@ -21,8 +21,7 @@
 #' @section Version: 0
 #'
 #' @section Date submitted:  2016-06-15
-ResponseCurveViz <- function (.model, .ras, cov = NULL) 
-{
+ResponseCurveViz <- function (.model, .ras, cov = NULL) {
     def.par <- par(no.readonly = TRUE)
     params <- colnames(.model$data)[-(1:6)]
     nparams <- length(params)
