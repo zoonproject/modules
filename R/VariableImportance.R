@@ -18,7 +18,7 @@
 #'
 #' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
-#' @section Version: 0
+#' @section Version: 0.1
 #'
 #' @section Date submitted:  2016-06-15
 VariableImportance <- function (.model, .ras, print = TRUE) 
