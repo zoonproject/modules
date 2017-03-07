@@ -24,7 +24,7 @@ Just starting out, much more to do
 }
 
 \section{Version}{
- 0
+ 0.1
 }
 
 \section{Date submitted}{
@@ -39,8 +39,8 @@ Other output: \code{\link{Appify}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
-  \code{\link{PrintMap}}, \code{\link{ROCcurve}},
-  \code{\link{ResponseCurve}},
+  \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
+  \code{\link{ROCcurve}}, \code{\link{ResponseCurve}},
   \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
