@@ -30,7 +30,7 @@
 #'
 #' @name PrintOccurrenceMap
 #' @family output
-PrintMap <-
+PrintOccurrenceMap <-
   function (.model,
             .ras,
             plot = TRUE,

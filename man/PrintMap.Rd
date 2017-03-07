@@ -4,8 +4,10 @@
 \alias{PrintMap}
 \title{Output module: PrintMap}
 \usage{
-PrintMap(.model, .ras, plot = TRUE, dir = NULL, filename = NULL,
-  size = c(480, 480), res = 72, ...)
+PrintMap(.model, .ras, plot = TRUE, points = TRUE, dir = NULL,
+  filename = NULL, size = c(480, 480), res = 72, threshold = NULL,
+  thresholdmethod = c("probability", "quantile", "falsepositive",
+  "falsenegative"), ...)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
@@ -13,6 +15,8 @@ PrintMap(.model, .ras, plot = TRUE, dir = NULL, filename = NULL,
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
 
 \item{plot}{If \code{TRUE} the plot will be displayed in the device}
+
+\item{points}{If \code{TRUE} the training points will be plotted over the prediction surface}
 
 \item{dir}{Directory where plots are saved. If both \code{dir} and \code{filename} are \code{NULL} (default) then plots are
 not saved.}
@@ -24,14 +28,12 @@ not saved.}
 
 \item{res}{The output resolution in ppi when writing to a png file.}
 
-\item{...}{Parameters passed to sp::spplot, useful for setting title and axis labels e.g. \code{xlab = 'Axis Label', main = 'My Plot Title'}}
-
-\item{points}{If \code{TRUE} the training points will be plotted over the prediction surface}
-
 \item{threshold}{The threshold value to use to convert probabilities to binary 1's and 0's. Default is NULL ie not used.}
 
 \item{thresholdmethod}{The method used to calculate probability threshold. One of 'probability', 'quantile', 'falsepositive', 'falsenegative'.
 See Details for specifics.}
+
+\item{...}{Parameters passed to sp::spplot, useful for setting title and axis labels e.g. \code{xlab = 'Axis Label', main = 'My Plot Title'}}
 }
 \value{
 A Raster object giving the probabilistic model predictions for each
