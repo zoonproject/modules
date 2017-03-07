@@ -15,7 +15,7 @@ TargetGroupBackground(.data, OccurrenceCall = NaiveRandomPresence,
 \item{naOmit}{Should NA containing rows be removed from the dataset (occurrence and background points combine). Defaults to TRUE}
 }
 \description{
-This module takes as one of its arguements a call to an occurrence module, these occurrence points are then used as background points. This follows the methods outlined by Phillips et al (Phillips, S. J., Dudík, M., Elith, J., Graham, C. H., Lehmann, A., Leathwick, J. and Ferrier, S. (2009), Sample selection bias and presence-only distribution models: implications for background and pseudo-absence data. Ecological Applications, 19: 181–197. doi:10.1890/07-2153.1) as a method to choose background points with similar bias to the target species presence points.
+This module takes as one of its arguements a call to an occurrence module, these occurrence points are then used as background points. This follows the methods outlined by Phillips et al (Phillips, S. J., Dudik, M., Elith, J., Graham, C. H., Lehmann, A., Leathwick, J. and Ferrier, S. (2009), Sample selection bias and presence-only distribution models: implications for background and pseudo-absence data. Ecological Applications, 19: 181-197. doi:10.1890/07-2153.1) as a method to choose background points with similar bias to the target species presence points.
 }
 \details{
 
