@@ -11,9 +11,6 @@
 *~
 .Rproj.user
 
-# R project files
-*.Rproj
-
 # Files produced in testing
 tests/testthat/*.pdf
 Species/
