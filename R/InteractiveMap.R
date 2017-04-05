@@ -8,8 +8,8 @@
 #' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.0
-#' @section Date submitted: 2015-11-13
+#' @section Version: 1.1
+#' @section Date submitted: 2017-04-05
 #'
 #' @name InteractiveMap
 #' @family output
@@ -140,6 +140,6 @@ InteractiveMap <- function (.model, .ras) {
     
     htmlwidgets:::print.htmlwidget(x = m)
     
-    return (NULL)
+    return (invisible(m))
     
   }
