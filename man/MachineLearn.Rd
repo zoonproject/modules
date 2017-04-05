@@ -56,7 +56,8 @@ Tim CD Lucas, \email{timcdlucas@gmail.com}
 \seealso{
 \code{\link{caret::train}} \code{\link{trainControl}}
 
-Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
+Other model: \code{\link{BiomodModel}},
+  \code{\link{Domain}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}}, \code{\link{MaxEnt}},
   \code{\link{MaxLike}}, \code{\link{MaxNet}},
   \code{\link{MyMaxLike}}, \code{\link{OptGRaF}},
