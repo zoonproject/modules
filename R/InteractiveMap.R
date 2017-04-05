@@ -140,6 +140,6 @@ InteractiveMap <- function (.model, .ras) {
     
     htmlwidgets:::print.htmlwidget(x = m)
     
-    return (NULL)
+    return (invisible(m))
     
   }
