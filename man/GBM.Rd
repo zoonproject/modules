@@ -42,7 +42,7 @@ ZOON Developers, \email{zoonproject@gmail.com}
 }
 \seealso{
 Other model: \code{\link{BiomodModel}},
-  \code{\link{LogisticRegression}},
+  \code{\link{Domain}}, \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxEnt}},
   \code{\link{MaxLike}}, \code{\link{MaxNet}},
   \code{\link{MyMaxLike}}, \code{\link{OptGRaF}},

@@ -47,7 +47,8 @@ ZOON Developers, \email{zoonproject@gmail.com}
 \seealso{
 \code{\link{dismo::maxent}}
 
-Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
+Other model: \code{\link{BiomodModel}},
+  \code{\link{Domain}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxLike}},
   \code{\link{MaxNet}}, \code{\link{MyMaxLike}},
