@@ -23,11 +23,14 @@ Domain <- function (.df) {
   if (!any(.df$type %in% c('presence')))
     stop ('presence data must be provided')
 
-  
+  # covariates
   covs <- as.data.frame(.df[, attr(.df, 'covCols')])
   names(covs) <- attr(.df, 'covCols')
+
+  # at presence points only  
+  covs_pres <- covs[.df$type == 'presence', , drop = FALSE]
   
-  m <- domain(covs[.df$type == 'presence', ])
+  m <- domain(covs_pres)
   
   ZoonModel(model = m,
             code = {predict(model, newdata)},
