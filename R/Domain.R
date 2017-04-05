@@ -20,14 +20,14 @@ Domain <- function (.df) {
   
   zoon:::GetPackage('dismo')
   
-  if (!all(.df$type %in% c('presence'))) {
-   stop ('only for presence-only data')
-  }
+  if (!any(.df$type %in% c('presence')))
+    stop ('presence data must be provided')
+
   
   covs <- as.data.frame(.df[, attr(.df, 'covCols')])
   names(covs) <- attr(.df, 'covCols')
   
-  m <- domain(covs)
+  m <- domain(covs[.df$type == 'presence', ])
   
   ZoonModel(model = m,
             code = {predict(model, newdata)},
