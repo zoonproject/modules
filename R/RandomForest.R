@@ -25,7 +25,7 @@ RandomForest <- function (.df) {
   covs <- as.data.frame(.df[, attr(.df, 'covCols')])
   names(covs) <- attr(.df, 'covCols')
 
-  m <- randomForest(.df$value ~ .,
+  m <- randomForest(factor(.df$value) ~ .,
                     data = covs,
                     weights = rep(1, nrow(covs)),
                     size = 1)
@@ -34,7 +34,7 @@ RandomForest <- function (.df) {
             code = {
               randomForest:::predict.randomForest(model,
                                 newdata,
-                                type = 'response')
+                                type = 'prob')[, 2]
             },
             packages = 'randomForest')
 }
