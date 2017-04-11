@@ -23,9 +23,7 @@ Occurrence locations for the Carolina Wren \emph{Thryothorus ludovicianus} at Br
 \section{Date submitted}{
   2016-05-21
 }
-\author{
-Nick Golding, \email{nick.golding.research@gmail.com}
-}
+
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
@@ -37,4 +35,6 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+Nick Golding, \email{nick.golding.research@gmail.com}
+}

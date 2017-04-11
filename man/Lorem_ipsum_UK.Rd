@@ -23,9 +23,7 @@ This dataset is fake, Lorem ipsum does not exist
 \section{Date submitted}{
   2016-06-13
 }
-\author{
-A.B. Ceidi, \email{ABCD@anemail.com}
-}
+
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
@@ -37,4 +35,6 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+A.B. Ceidi, \email{ABCD@anemail.com}
+}

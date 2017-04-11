@@ -30,6 +30,7 @@ Process module which adds a random uniform covariate to the dataset.  This new c
 \section{Data type}{
  presence-only, presence/absence, abundance, proportion
 }
+
 \examples{
 work1 <- workflow(occurrence = UKAnophelesPlumbeus,
    covariate  = UKAir,
@@ -50,9 +51,6 @@ spplot(work1$process.output[[1]]$ras$RandUnif.2)
 work1$model.output[[1]]$model$model
 
 }
-\author{
-James Campbell, \email{jamesadamcampbell@gmail.com}
-}
 \seealso{
 Other process: \code{\link{BackgroundAndCrossvalid}},
   \code{\link{Background}}, \code{\link{Bootstrap}},
@@ -68,4 +66,6 @@ Other process: \code{\link{BackgroundAndCrossvalid}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
-
+\author{
+James Campbell, \email{jamesadamcampbell@gmail.com}
+}

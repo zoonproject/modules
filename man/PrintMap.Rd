@@ -59,9 +59,7 @@ The \code{threshold} argument sets the value for the threshold while \code{thres
 \section{Date submitted}{
  2016-04-02
 }
-\author{
-ZOON Developers, James Campbell, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -75,4 +73,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+ZOON Developers, James Campbell, \email{zoonproject@gmail.com}
+}

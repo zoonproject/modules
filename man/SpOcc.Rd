@@ -41,9 +41,7 @@ Occurrence module to collect occurrence data from a number of data bases.
 \section{Data type}{
  presence-only, presence/absence, abundance, proportion
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 \code{\link{spocc::occ}}
 
@@ -58,4 +56,6 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

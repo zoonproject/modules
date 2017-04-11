@@ -30,9 +30,7 @@ Statistical interactions are (mathematically) the product of covariates. This mo
 \section{Date submitted}{
   2016-06-15
 }
-\author{
-Alison Johnston & Carsten F. Dormann, \email{alison.johnston@bto.org}
-}
+
 \seealso{
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
@@ -49,4 +47,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}
 }
-
+\author{
+Alison Johnston & Carsten F. Dormann, \email{alison.johnston@bto.org}
+}

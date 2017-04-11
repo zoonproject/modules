@@ -28,9 +28,7 @@ done to the data before modelling.
 \section{Data type}{
  presence-only, presence/absence, abundance, proportion
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
@@ -46,4 +44,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

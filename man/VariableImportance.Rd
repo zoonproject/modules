@@ -30,9 +30,7 @@ This module identifies the class of the model object and if it has a known retur
 \section{Date submitted}{
   2016-06-15
 }
-\author{
-Tom August, \email{tomaug@ceh.ac.uk}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -45,4 +43,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
   \code{\link{SurfaceMap}}
 }
-
+\author{
+Tom August, \email{tomaug@ceh.ac.uk}
+}

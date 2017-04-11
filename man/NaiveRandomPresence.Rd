@@ -33,9 +33,7 @@ Points are created entirely at random using runif
 \section{Date submitted}{
   2016-05-31
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
@@ -47,4 +45,6 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{SpOcc}}, \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

@@ -36,9 +36,7 @@ Running MaxEnt also requires an up-to-date version of java
 \section{Data type}{
  presence/background, presence/absence, abundance, proportion
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 \code{\link{biomod2::BIOMOD_ModelingOptions}}
 
@@ -51,4 +49,6 @@ Other model: \code{\link{Domain}}, \code{\link{GBM}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

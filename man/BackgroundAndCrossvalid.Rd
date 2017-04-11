@@ -28,9 +28,7 @@ Process module to generate up to 100 background records at random in
 \section{Data type}{
  presence-only
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{Background}}, \code{\link{Bootstrap}},
@@ -46,4 +44,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

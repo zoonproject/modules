@@ -16,9 +16,7 @@ Return some UK air temperature data from NCEP. Data is bundled with package and 
 \section{Date submitted}{
  2015-11-13
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other covariate: \code{\link{AirNCEP}},
   \code{\link{Bioclim_future}}, \code{\link{Bioclim}},
@@ -26,4 +24,6 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{LocalRaster}}, \code{\link{NCEP}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKBioclim}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

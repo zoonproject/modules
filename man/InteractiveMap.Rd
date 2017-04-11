@@ -22,9 +22,7 @@ and training data. Clicking on a point reveals additional information.
 \section{Date submitted}{
  2017-04-05
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -38,4 +36,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

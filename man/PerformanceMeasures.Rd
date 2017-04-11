@@ -39,9 +39,7 @@ This model prints to console a number of metrics of the model fitted:
 \section{Data type}{
  presence/absence, presence/background
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -54,4 +52,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

@@ -32,9 +32,7 @@ Appify will return the path to the shiny application. For details on how to shar
 \section{Data type}{
  presence-only, presence/absence, presence/background, abundance, proportion
 }
-\author{
-ZOON Developers, Tom August, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
@@ -47,4 +45,6 @@ Other output: \code{\link{InteractiveCovariateMap}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+ZOON Developers, Tom August, \email{zoonproject@gmail.com}
+}
