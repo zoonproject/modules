@@ -29,9 +29,7 @@ Creates a random raster layer within the extent given
 \section{Date submitted}{
   2016-06-02
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other covariate: \code{\link{AirNCEP}},
   \code{\link{Bioclim_future}}, \code{\link{Bioclim}},
@@ -39,4 +37,6 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{LocalRaster}}, \code{\link{NCEP}},
   \code{\link{UKAir}}, \code{\link{UKBioclim}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

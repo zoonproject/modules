@@ -20,9 +20,7 @@ Covariate module to grab a coarse resolution mean air temperature raster from
 \section{Date submitted}{
  2015-11-13
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 \code{\link{RNCEP::NCEP.gather}}
 
@@ -32,4 +30,6 @@ Other covariate: \code{\link{Bioclim_future}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}},
   \code{\link{UKBioclim}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

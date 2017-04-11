@@ -19,9 +19,7 @@ The six covariates are: Percentage cover of mixed forest, deciduous forest, coni
 \section{Date submitted}{
   2016-05-21
 }
-\author{
-Nick Golding, \email{nick.golding.research@gmail.com}
-}
+
 \seealso{
 Other covariate: \code{\link{AirNCEP}},
   \code{\link{Bioclim_future}}, \code{\link{Bioclim}},
@@ -29,4 +27,6 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}},
   \code{\link{UKBioclim}}
 }
-
+\author{
+Nick Golding, \email{nick.golding.research@gmail.com}
+}

@@ -30,9 +30,7 @@ Just starting out, much more to do
 \section{Date submitted}{
   2016-06-15
 }
-\author{
-G. McInerny, \email{gmcinerny@hotmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -45,4 +43,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+G. McInerny, \email{gmcinerny@hotmail.com}
+}

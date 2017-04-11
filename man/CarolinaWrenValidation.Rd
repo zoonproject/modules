@@ -35,9 +35,7 @@ Presence/absence of the Carolina Wren \emph{Thryothorus
 \section{Date submitted}{
   2016-12-21
 }
-\author{
-Nick Golding, \email{nick.golding.research@gmail.com}
-}
+
 \seealso{
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
@@ -53,4 +51,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
-
+\author{
+Nick Golding, \email{nick.golding.research@gmail.com}
+}

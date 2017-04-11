@@ -31,9 +31,7 @@ This module takes as one of its arguements a call to an occurrence module, these
 \section{Date submitted}{
   2016-08-22
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
@@ -49,4 +47,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{SubsampleOccurrence}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

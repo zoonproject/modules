@@ -30,9 +30,7 @@ The module by default scales all numeric covariates. By default conducts a regul
 \section{Date submitted}{
   2016-06-16
 }
-\author{
-Alison Johnston & Carsten F. Dormann, \email{alison.johnston@bto.org}
-}
+
 \seealso{
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
@@ -48,4 +46,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
-
+\author{
+Alison Johnston & Carsten F. Dormann, \email{alison.johnston@bto.org}
+}

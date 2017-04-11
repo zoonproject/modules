@@ -22,9 +22,7 @@ Read in a single raster or a list of rasters and stack them.
 \section{Date submitted}{
  2016-03-04
 }
-\author{
-Tim Lucas, Samuel Bosch, \email{timcdlucas@gmail.com}
-}
+
 \seealso{
 Other covariate: \code{\link{AirNCEP}},
   \code{\link{Bioclim_future}}, \code{\link{Bioclim}},
@@ -32,4 +30,6 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}},
   \code{\link{UKBioclim}}
 }
-
+\author{
+Tim Lucas, Samuel Bosch, \email{timcdlucas@gmail.com}
+}

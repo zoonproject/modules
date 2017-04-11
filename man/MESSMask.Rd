@@ -30,9 +30,7 @@ Calculate the multivariate environmental similarity surface
 \section{Data type}{
  presence-only, presence/absence, abundance, proportion
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 \code{\link{dismo::mess}}
 
@@ -50,4 +48,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

@@ -32,9 +32,7 @@ Module type: Process
 \section{Data type}{
  presence-only, presence/absence, abundance, proportion
 }
-\author{
-Tom August, \email{tomaug@ceh.ac.uk}
-}
+
 \seealso{
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
@@ -50,4 +48,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
-
+\author{
+Tom August, \email{tomaug@ceh.ac.uk}
+}

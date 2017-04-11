@@ -51,9 +51,7 @@ For more detials see the rnbn package
 \section{Date submitted}{
   2016-06-16
 }
-\author{
-Tom August, \email{tomaug@ceh.ac.uk}
-}
+
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
@@ -65,4 +63,6 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+Tom August, \email{tomaug@ceh.ac.uk}
+}

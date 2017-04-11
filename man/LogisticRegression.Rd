@@ -23,9 +23,7 @@ Model module to fit a simple logistic regression model
 \section{Data type}{
  presence/absence
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 \code{\link{glm}}
 
@@ -38,4 +36,6 @@ Other model: \code{\link{BiomodModel}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

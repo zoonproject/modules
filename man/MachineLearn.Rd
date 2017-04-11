@@ -50,9 +50,7 @@ Model module to fit a very large number of machine learning models.
 \section{Data type}{
  presence/absence
 }
-\author{
-Tim CD Lucas, \email{timcdlucas@gmail.com}
-}
+
 \seealso{
 \code{\link{caret::train}} \code{\link{trainControl}}
 
@@ -65,4 +63,6 @@ Other model: \code{\link{BiomodModel}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+Tim CD Lucas, \email{timcdlucas@gmail.com}
+}

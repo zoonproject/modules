@@ -23,9 +23,7 @@ Get worldclim environment data. Downloads then stores locally.
 \section{Date submitted}{
  2015-11-13
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other covariate: \code{\link{AirNCEP}},
   \code{\link{Bioclim_future}},
@@ -34,4 +32,6 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}},
   \code{\link{UKBioclim}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

@@ -38,9 +38,7 @@ The mymaxlike method aims to infer the parameters of a
 \section{Data type}{
  presence/background
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \references{
 J.A. Royle, R.B. Chandler, C. Yackulic, and J.D. Nichols (2012). 
   Likelihood analysis of species occurrence probability from presence-only 
@@ -70,4 +68,6 @@ Other model: \code{\link{BiomodModel}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

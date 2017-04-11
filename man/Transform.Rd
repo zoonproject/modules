@@ -33,9 +33,7 @@ This module is essentially a wrapper around the \code{raster} function \code{\li
 \section{Date submitted}{
   2016-06-15
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{BackgroundAndCrossvalid}},
@@ -52,4 +50,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{TargetGroupBackground}},
   \code{\link{addInteraction}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

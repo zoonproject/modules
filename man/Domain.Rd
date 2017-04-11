@@ -26,9 +26,7 @@ Model module to fit the Domain algorithm.
 \section{Data type}{
  presence-only
 }
-\author{
-Nick Golding, \email{nick.golding.research@gmail.com}
-}
+
 \seealso{
 \code{\link{dismo::domain}}
 
@@ -41,4 +39,6 @@ Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+Nick Golding, \email{nick.golding.research@gmail.com}
+}

@@ -42,9 +42,7 @@ Based on the PrintMap module
 \section{Date submitted}{
  2017-03-07
 }
-\author{
-Nick Golding, \email{nick.golding.research@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -58,4 +56,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+Nick Golding, \email{nick.golding.research@gmail.com}
+}

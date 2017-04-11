@@ -37,9 +37,7 @@ trees) model
 \section{Data type}{
  presence/absence
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other model: \code{\link{BiomodModel}},
   \code{\link{Domain}}, \code{\link{LogisticRegression}},
@@ -50,4 +48,6 @@ Other model: \code{\link{BiomodModel}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

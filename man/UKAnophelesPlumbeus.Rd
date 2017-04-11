@@ -21,9 +21,7 @@ Return some Anopheles plumbeus data that is bundled with package.
 \section{Data type}{
  presence-only
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
@@ -35,4 +33,6 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{SugarMaple}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

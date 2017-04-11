@@ -43,9 +43,7 @@ Dryad data package:
 \section{Data type}{
  presence/absence
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CarolinaWrenPA}},
@@ -58,4 +56,6 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

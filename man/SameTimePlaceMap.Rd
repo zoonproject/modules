@@ -25,9 +25,7 @@ Output module. A function for outputing the raster of the predictions from an an
 \section{Date submitted}{
  2015-11-13
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -40,4 +38,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}
