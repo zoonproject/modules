@@ -31,6 +31,7 @@ Based on code in the dismo vignette
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
   \code{\link{PerformanceMeasures}},

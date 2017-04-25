@@ -62,6 +62,7 @@ The \code{threshold} argument sets the value for the threshold while \code{thres
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
   \code{\link{PerformanceMeasures}},

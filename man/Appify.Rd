@@ -34,7 +34,8 @@ Appify will return the path to the shiny application. For details on how to shar
 }
 
 \seealso{
-Other output: \code{\link{InteractiveCovariateMap}},
+Other output: \code{\link{GenerateCovariateReport}},
+  \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
