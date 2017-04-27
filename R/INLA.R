@@ -9,7 +9,7 @@
 #' @author Tim Lucas, \email{timcdlucas@@gmail.com}
 #' @section Version: 1.0
 #' @section Date submitted: 
-#' @section Data type: presence/absence
+#' @section Data type: presence/absence, presence/background
 #' @name INLA
 #' @family model
 
