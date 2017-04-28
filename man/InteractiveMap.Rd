@@ -27,6 +27,7 @@ and training data. Clicking on a point reveals additional information.
 Other output: \code{\link{Appify}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
+  \code{\link{InteractiveOccurrenceMap}},
   \code{\link{NoOutput}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
