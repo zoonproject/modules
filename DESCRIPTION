@@ -34,7 +34,6 @@ Depends:
     glmnet,
     rJava,
     mgcv,
-    rnbn,
     GRaF,
     sperrorest,
     SDMTools,
