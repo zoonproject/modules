@@ -34,8 +34,8 @@ Other output: \code{\link{Appify}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
   \code{\link{ROCcurve}}, \code{\link{ResponseCurveViz}},
-  \code{\link{ResponseCurve}}, \code{\link{SeparatePA}},
-  \code{\link{SurfaceMap}},
+  \code{\link{ResponseCurve}}, \code{\link{ResponsePlot}},
+  \code{\link{SeparatePA}}, \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
 \author{
