@@ -26,11 +26,10 @@ Coefficients are simulated from the likelihood density using the approximate hes
 \section{Date submitted}{
   2016-06-16
 }
-\author{
-Nick Golding, \email{nick.golding.research@gmail.com}
-}
+
 \seealso{
-Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
+Other model: \code{\link{BiomodModel}},
+  \code{\link{Domain}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxEnt}},
   \code{\link{MaxLike}}, \code{\link{MaxNet}},
@@ -38,4 +37,6 @@ Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{QuickGRaF}}, \code{\link{RandomForest}},
   \code{\link{mgcv}}
 }
-
+\author{
+Nick Golding, \email{nick.golding.research@gmail.com}
+}

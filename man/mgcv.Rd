@@ -37,11 +37,10 @@ crossvalidation via the mgcv R package.
 \section{Data type}{
  presence/absence
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
-Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
+Other model: \code{\link{BiomodModel}},
+  \code{\link{Domain}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxEnt}},
   \code{\link{MaxLike}}, \code{\link{MaxNet}},
@@ -49,4 +48,6 @@ Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{QuickGRaF}}, \code{\link{RandomForest}},
   \code{\link{StochasticLogisticRegression}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

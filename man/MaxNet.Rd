@@ -59,13 +59,12 @@ The maxnet R package fits MaxEnt models using the glmnet package,
 \section{Data type}{
  presence/background
 }
-\author{
-Nick Golding, \email{nick.golding.research@gmail.com}
-}
+
 \seealso{
 \code{\link{maxnet::maxnet}}
 
-Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
+Other model: \code{\link{BiomodModel}},
+  \code{\link{Domain}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxEnt}},
   \code{\link{MaxLike}}, \code{\link{MyMaxLike}},
@@ -74,4 +73,6 @@ Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+Nick Golding, \email{nick.golding.research@gmail.com}
+}

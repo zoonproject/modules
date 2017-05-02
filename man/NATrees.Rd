@@ -28,19 +28,18 @@ Retrieves occurrences for 21 trees from eastern North America. Data originally s
 \section{Date submitted}{
   2016-06-16
 }
-\author{
-Matt Talluto, \email{mtalluto@gmail.com}
-}
+
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
   \code{\link{LocalOccurrenceData}},
   \code{\link{Lorem_ipsum_UK}},
-  \code{\link{NBNdataByName}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+Matt Talluto, \email{mtalluto@gmail.com}
+}

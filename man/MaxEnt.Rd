@@ -41,13 +41,12 @@ Running MaxEnt also requires an up-to-date version of java
 \section{Data type}{
  presence/background
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 \code{\link{dismo::maxent}}
 
-Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
+Other model: \code{\link{BiomodModel}},
+  \code{\link{Domain}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxLike}},
   \code{\link{MaxNet}}, \code{\link{MyMaxLike}},
@@ -56,4 +55,6 @@ Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

@@ -16,7 +16,7 @@ A model object with a valid predict method
 Model module to fit a simple RandomForest classification model
 }
 \section{Version}{
- 1.0
+ 1.1
 }
 
 \section{Date submitted}{
@@ -24,13 +24,12 @@ Model module to fit a simple RandomForest classification model
 }
 
 \section{Data type}{
- presence/absence, abundance
+ presence/absence, presence/background
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
-Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
+Other model: \code{\link{BiomodModel}},
+  \code{\link{Domain}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxEnt}},
   \code{\link{MaxLike}}, \code{\link{MaxNet}},
@@ -39,4 +38,6 @@ Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

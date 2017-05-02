@@ -24,9 +24,7 @@ Plot a zoomable and scrollable map of a covariate layer.
 \section{Date submitted}{
  2015-11-13
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
@@ -39,4 +37,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

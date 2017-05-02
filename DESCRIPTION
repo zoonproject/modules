@@ -34,7 +34,6 @@ Depends:
     glmnet,
     rJava,
     mgcv,
-    rnbn,
     GRaF,
     sperrorest,
     SDMTools,
@@ -50,4 +49,4 @@ Suggests:
     roxygen2
 VignetteBuilder: knitr
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

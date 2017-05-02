@@ -48,18 +48,17 @@ Occurrence module to format local occurrence data to be used with zoon.
 \section{Data type}{
  presence-only, presence/background, presence/absence, abundance, proportion
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
-  \code{\link{NBNdataByName}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

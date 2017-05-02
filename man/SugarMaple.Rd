@@ -23,18 +23,17 @@ The extent of the occurrence data is \code{c(-170, -20, 10, 80)}. These data wer
 \section{Date submitted}{
   2016-06-15
 }
-\author{
-Matt Talluto & Nick Golding, \email{mtalluto@gmail.com}
-}
+
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
   \code{\link{LocalOccurrenceData}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
-  \code{\link{NBNdataByName}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+Matt Talluto & Nick Golding, \email{mtalluto@gmail.com}
+}

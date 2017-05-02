@@ -30,9 +30,7 @@ Get worldclim data for the future (CMIP5). Downloads then stores locally.
 \section{Date submitted}{
  2016-06-15
 }
-\author{
-F. Rodriguez-Sanchez & E. Van Loon, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 \url{http://www.worldclim.org} and \code{\link[raster]{getData}}.
 
@@ -42,4 +40,6 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}},
   \code{\link{UKBioclim}}
 }
-
+\author{
+F. Rodriguez-Sanchez & E. Van Loon, \email{zoonproject@gmail.com}
+}

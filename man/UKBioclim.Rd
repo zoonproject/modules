@@ -24,9 +24,7 @@ Use the \code{Bioclim} module for bioclim data with other extents.
 \section{Date submitted}{
  2015-11-13
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other covariate: \code{\link{AirNCEP}},
   \code{\link{Bioclim_future}}, \code{\link{Bioclim}},
@@ -34,4 +32,6 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{LocalRaster}}, \code{\link{NCEP}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

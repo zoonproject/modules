@@ -28,9 +28,7 @@ Based on code in the dismo vignette
 \section{Date submitted}{
   2016-06-15
 }
-\author{
-E.E. van Loon, \email{e.e.vanloonD@uva.nl}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -43,4 +41,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SameTimePlaceMap}}, \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+E.E. van Loon, \email{e.e.vanloonD@uva.nl}
+}

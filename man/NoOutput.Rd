@@ -28,9 +28,7 @@ No output is created
 \section{Date submitted}{
   2016-06-15
 }
-\author{
-Tim Lucas, \email{timcdlucas@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -44,4 +42,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+Tim Lucas, \email{timcdlucas@gmail.com}
+}

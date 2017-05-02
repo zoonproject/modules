@@ -34,9 +34,7 @@ A number of data cleaning steps are implemented. \code{which} takes a (case inse
 \section{Data type}{
  presence-only, presence/absence, abundance, proportion
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 \code{\link{scrubr::coord_incomplete}}
 
@@ -55,4 +53,6 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{TargetGroupBackground}},
   \code{\link{Transform}}, \code{\link{addInteraction}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

@@ -34,9 +34,7 @@ Output module. Predict a model across a new area or time period.
 \section{Date submitted}{
   2016-06-15
 }
-\author{
-Zoon developers (modified by F. Rodriguez-Sanchez), \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -49,4 +47,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+Zoon developers (modified by F. Rodriguez-Sanchez), \email{zoonproject@gmail.com}
+}

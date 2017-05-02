@@ -26,19 +26,18 @@ Occurrence module to grab *Anopheles plumbeus* (a mosquito) presence
 \section{Data type}{
  presence-only
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other occurrence: \code{\link{CWBZimbabwe}},
   \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
   \code{\link{LocalOccurrenceData}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
-  \code{\link{NBNdataByName}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

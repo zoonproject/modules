@@ -23,9 +23,7 @@ Make a png of a map of predicted surface.
 \section{Date submitted}{
  2015-11-13
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -38,4 +36,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

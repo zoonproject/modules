@@ -16,15 +16,13 @@ Plot a zoomable and scrollable map of the predicted distribution
 and training data. Clicking on a point reveals additional information.
 }
 \section{Version}{
- 1.0
+ 1.1
 }
 
 \section{Date submitted}{
- 2015-11-13
+ 2017-04-05
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
@@ -38,4 +36,6 @@ Other output: \code{\link{Appify}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}

@@ -7,9 +7,9 @@
 #' @return A model object with a valid predict method
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.0
+#' @section Version: 1.1
 #' @section Date submitted: 2015-11-13
-#' @section Data type: presence/absence, abundance 
+#' @section Data type: presence/absence, presence/background 
 #' @name RandomForest
 #' @family model
 
@@ -18,14 +18,14 @@ RandomForest <- function (.df) {
   
   zoon:::GetPackage('randomForest')
   
-  #if (!all(.df$type %in% c('presence', 'absence', 'background'))) {
-  #  stop ('only for presence/absence or presence/background data')
-  #}
+  if (!all(.df$type %in% c('presence', 'absence', 'background'))) {
+   stop ('only for presence/absence or presence/background data')
+  }
   
   covs <- as.data.frame(.df[, attr(.df, 'covCols')])
   names(covs) <- attr(.df, 'covCols')
 
-  m <- randomForest(.df$value ~ .,
+  m <- randomForest(factor(.df$value) ~ .,
                     data = covs,
                     weights = rep(1, nrow(covs)),
                     size = 1)
@@ -34,7 +34,7 @@ RandomForest <- function (.df) {
             code = {
               randomForest:::predict.randomForest(model,
                                 newdata,
-                                type = 'response')
+                                type = 'prob')[, 2]
             },
             packages = 'randomForest')
 }

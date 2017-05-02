@@ -38,9 +38,7 @@ The mymaxlike method aims to infer the parameters of a
 \section{Data type}{
  presence/background
 }
-\author{
-ZOON Developers, \email{zoonproject@gmail.com}
-}
+
 \references{
 J.A. Royle, R.B. Chandler, C. Yackulic, and J.D. Nichols (2012). 
   Likelihood analysis of species occurrence probability from presence-only 
@@ -60,7 +58,8 @@ J.A. Royle, R.B. Chandler, C. Yackulic, and J.D. Nichols (2012).
 \seealso{
 \code{\link{mymaxlike::mymaxlike}}
 
-Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
+Other model: \code{\link{BiomodModel}},
+  \code{\link{Domain}}, \code{\link{GBM}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxEnt}},
   \code{\link{MaxLike}}, \code{\link{MaxNet}},
@@ -69,4 +68,6 @@ Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
-
+\author{
+ZOON Developers, \email{zoonproject@gmail.com}
+}
