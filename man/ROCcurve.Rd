@@ -39,7 +39,7 @@ Other output: \code{\link{Appify}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
   \code{\link{ResponseCurveViz}},
-  \code{\link{ResponseCurve}},
+  \code{\link{ResponseCurve}}, \code{\link{ResponsePlot}},
   \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
