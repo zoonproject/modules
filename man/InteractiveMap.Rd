@@ -26,7 +26,7 @@ and training data. Clicking on a point reveals additional information.
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
-  \code{\link{NoOutput}},
+  \code{\link{NoOutput}}, \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},

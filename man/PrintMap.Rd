@@ -64,6 +64,7 @@ The \code{threshold} argument sets the value for the threshold while \code{thres
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+  \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintOccurrenceMap}}, \code{\link{ROCcurve}},
