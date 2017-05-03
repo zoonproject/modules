@@ -37,8 +37,8 @@ Other model: \code{\link{BiomodModel}},
   \code{\link{LogisticRegression}},
   \code{\link{MachineLearn}}, \code{\link{MaxEnt}},
   \code{\link{MaxLike}}, \code{\link{MaxNet}},
-  \code{\link{MyMaxLike}}, \code{\link{OptGRaF}},
-  \code{\link{RandomForest}},
+  \code{\link{MyMaxLike}}, \code{\link{NullModel}},
+  \code{\link{OptGRaF}}, \code{\link{RandomForest}},
   \code{\link{StochasticLogisticRegression}},
   \code{\link{mgcv}}
 }
