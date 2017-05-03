@@ -25,6 +25,7 @@ and training data. Clicking on a point reveals additional information.
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{CoefficientPlot}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{NoOutput}},
   \code{\link{PerformanceMeasures}},
