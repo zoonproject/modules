@@ -2,9 +2,9 @@
 #'
 #' @title Plot estimated coeffcients from LogisticRegression
 #'
-#' @description This module plots the estimated coefficients from the LogisticRegression module and returns the summarised model object
+#' @description This module plots the estimated coefficients from the LogisticRegression module
 #'
-#' @details The module outputs a point plot of coefficient estimates from the LogisticRegression module. Coefficients with a p-value <= 0.05 are identified on the graph. The summary glm object is returned in the console. This module is only implemented for the LogisticRegression model module.
+#' @details The module outputs a point plot of coefficient estimates from the LogisticRegression module. Coefficients with a p-value <= 0.05 are identified on the graph. This module is only implemented for the LogisticRegression model module.
 #'
 #' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
 #'

@@ -12,10 +12,10 @@ CoefficientPlot(.model, .ras)
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
 }
 \description{
-This module plots the estimated coefficients from the LogisticRegression module and returns the summarised model object
+This module plots the estimated coefficients from the LogisticRegression module
 }
 \details{
-The module outputs a point plot of coefficient estimates from the LogisticRegression module. Coefficients with a p-value <= 0.05 are identified on the graph. The summary glm object is returned in the console. This module is only implemented for the LogisticRegression model module.
+The module outputs a point plot of coefficient estimates from the LogisticRegression module. Coefficients with a p-value <= 0.05 are identified on the graph. This module is only implemented for the LogisticRegression model module.
 }
 \section{Data type}{
  presence/absence
