@@ -18,11 +18,10 @@
 #'
 #' @section Version: 0.1
 #'
-#' @section Date submitted:  2017-04-24
+#' @section Date submitted:  2017-05-03
 GenerateCovariateReport <- function(.model, .ras){
   
   zoon::GetPackage("DataExplorer")
-  zoon::GetPackage("raster")
   zoon::GetPackage("data.table")
   
   GenerateReport(data.table(as.data.frame(.ras)))
