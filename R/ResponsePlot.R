@@ -16,7 +16,7 @@
 #'
 #' @author Liz Martin, \email{emartin@@student.unimelb.edu.au}
 #'
-#' @section Data type: presence-only, presence/absence
+#' @section Data type: presence-only, presence/absence, presence/background
 #'
 #' @section Version: 0.2
 #'

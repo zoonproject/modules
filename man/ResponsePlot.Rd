@@ -20,7 +20,7 @@ This module plots predicted response curves along covariate gradients for all or
 The module outputs a line graph of probability of occupancy (relative for presence-only and presence background data, absolute for presence-absence data). cov accepts a numeric and character strings. When cov = NULL, the module plots line graphs for each covariate in the zoon workflow iteratively. Currently only implemented for presence-only, presence-background, and presence-absence data.
 }
 \section{Data type}{
- presence-only, presence/absence
+ presence-only, presence/absence, presence/background
 }
 
 \section{Version}{
