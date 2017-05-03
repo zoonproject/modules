@@ -35,6 +35,7 @@ Just starting out, much more to do
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+  \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},

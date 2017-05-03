@@ -35,6 +35,7 @@ The module outputs a simple line graph of probability of occupancy (relative for
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+  \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},

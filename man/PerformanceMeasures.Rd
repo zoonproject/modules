@@ -44,6 +44,7 @@ This model prints to console a number of metrics of the model fitted:
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+  \code{\link{PairPlot}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
   \code{\link{ROCcurve}}, \code{\link{ResponseCurveViz}},

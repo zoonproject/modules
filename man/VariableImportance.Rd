@@ -35,6 +35,7 @@ This module identifies the class of the model object and if it has a known retur
 Other output: \code{\link{Appify}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+  \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
