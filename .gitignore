@@ -17,3 +17,5 @@ Species/
 tests/testthat/tests.txt
 tests/testthat/zoonTMPfigshare.RData
 wc10/
+.DS_Store
+.Rprofile
