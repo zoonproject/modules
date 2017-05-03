@@ -20,7 +20,7 @@
 #'
 #' @section Version: 0.1
 #'
-#' @section Date submitted:  2017-04-28
+#' @section Date submitted:  2017-05-03
 ResponsePlot <- function (.model, .ras, cov = NULL) {
   
   cov_names <- attr(.model$data, 'covCols')
@@ -32,6 +32,23 @@ ResponsePlot <- function (.model, .ras, cov = NULL) {
     }
     return (invisible())
   }
+  
+  if (length(cov) > 1 ) {
+    if(class(cov) == "character"){
+      for (i in which(cov_names %in% cov)) {
+        ResponsePlot(.model, .ras, cov = i)
+      }
+    }
+    
+    if(is.numeric(cov)){
+      for (i in which(cov_names %in% cov_names[cov])) {
+        ResponsePlot(.model, .ras, cov = i)
+      }
+    }
+    
+    return (invisible())
+  }
+  
   
   rescale <- function (x) {
     # scale to 0/1 for colour schemes
