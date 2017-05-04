@@ -14,18 +14,6 @@ addons:
 r_binary_packages:
  - rgdal
 
-r_packages:
- - knitr
- - gam
- - spocc
- - zoon
- - gridExtra
- - lattice
- - DataExplorer
- - data.table
- - mapr
- - htmlwidgets
- 
 # Install zoon from Github
 r_github_packages:
  - zoonproject/zoon
