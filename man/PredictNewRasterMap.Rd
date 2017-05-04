@@ -37,9 +37,11 @@ Output module. Predict a model across a new area or time period.
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
-  \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
-  \code{\link{PairPlot}},
+  \code{\link{InteractiveMap}},
+  \code{\link{InteractiveOccurrenceMap}},
+  \code{\link{NoOutput}}, \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
   \code{\link{ROCcurve}}, \code{\link{ResponseCurveViz}},
