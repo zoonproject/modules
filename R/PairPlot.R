@@ -4,7 +4,7 @@
 #'
 #' @description This output module provides a pair plot of covariate data that includes correlation statistics.
 #'
-#' @details The data are plotted in the bottom left-hand panel and on the top-right are displayed the correlation statistics. Covariate names run diagonally down from top left to bottom right.
+#' @details The data are plotted in the bottom left-hand panel and on the top-right are displayed the correlation statistics. Covariate names run diagonally down from top left to bottom right. For original code, see: https://gist.github.com/arsalvacion/1ba2373bbe89b2d3c023#file-pairscor-r
 #'
 #' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
 #'
@@ -16,9 +16,9 @@
 #'
 #' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
-#' @section Version: 0.1
+#' @section Version: 0.2
 #'
-#' @section Date submitted:  2017-05-03
+#' @section Date submitted:  2017-05-05
 PairPlot <- function (.model, .ras) {
 
   panel.cor <- function(x, y, digits = 2, cex.cor, ...) {
@@ -46,6 +46,6 @@ PairPlot <- function (.model, .ras) {
     print('Pair plot not possible, only one covariate')
   } else {
     return(pairs(CovariateData, upper.panel = panel.cor))
-  }
+  } 
 
 }
