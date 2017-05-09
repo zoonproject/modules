@@ -40,7 +40,9 @@ Depends:
     randomForest,
     MASS,
     spocc,
-    raster
+    raster,
+    mapr,
+    DataExplorer
 Imports:
     assertthat
 Suggests:

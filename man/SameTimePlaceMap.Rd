@@ -28,9 +28,15 @@ Output module. A function for outputing the raster of the predictions from an an
 
 \seealso{
 Other output: \code{\link{Appify}},
+<<<<<<< HEAD
   \code{\link{CoefficientPlot}},
+=======
+  \code{\link{GenerateCovariateReport}},
+>>>>>>> upstream/master
   \code{\link{InteractiveCovariateMap}},
-  \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+  \code{\link{InteractiveMap}},
+  \code{\link{InteractiveOccurrenceMap}},
+  \code{\link{NoOutput}}, \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
