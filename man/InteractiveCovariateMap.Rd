@@ -27,6 +27,7 @@ Plot a zoomable and scrollable map of a covariate layer.
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{CoefficientPlot}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveMap}},
   \code{\link{InteractiveOccurrenceMap}},
