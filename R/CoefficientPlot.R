@@ -1,10 +1,10 @@
 #' @name CoefficientPlot
 #'
-#' @title Plot estimated coeffcients from LogisticRegression
+#' @title Plot estimated coefficients from LogisticRegression
 #'
-#' @description This module plots the estimated coefficients from the LogisticRegression module
+#' @description This module plots the estimated coefficients from the LogisticRegression module and returns the summarised model object
 #'
-#' @details The module outputs a point plot of coefficient estimates from the LogisticRegression module. Coefficients with a p-value <= 0.05 are identified on the graph. This module is only implemented for the LogisticRegression model module.
+#' @details The module outputs a point plot of coefficient estimates from the LogisticRegression module. Coefficients with a p-value <= 0.05 are identified on the graph. The summary glm object is returned in the console. This module is only implemented for the LogisticRegression model module.
 #'
 #' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
 #'
@@ -18,7 +18,7 @@
 #'
 #' @section Version: 0.1
 #'
-#' @section Date submitted:  2017-05-03
+#' @section Date submitted:  2017-05-09
 CoefficientPlot <- function (.model, .ras) {
   # this module was modifed from Tom August's VariableImportance module
   
@@ -26,18 +26,18 @@ CoefficientPlot <- function (.model, .ras) {
   colaxes <- "grey20"
   cov_names <- attr(.model$data, 'covCols')
   dev.par <- par(no.readonly = TRUE)
+  on.exit(par(dev.par))
   
   model_obj <- .model$model$model
-  class_model_obj <- class(model_obj)
+  classes <- c('glm') # can expand to include other parametric model class
   
-  if (length(class_model_obj) > 1) {
-    message("Class of model object (from model module) has length > 1, using first value")
-    class_model_obj <- class_model_obj[1]
+  if (!inherits(model_obj, classes)) {
+    stop ('CoefficientPlots only works with model objects of class',
+          paste(classes, sep = ', '),
+          ', but this model object had class(es): ',
+          paste(class(model_obj)[1], sep = ', ')
+    )
   }
-  
-  if (!inherits(class_modelObj, "character")) 
-    stop("CoefficientPlot: model class is not a character")
-  
   if ( class_model_obj == "glm" ){
     sum_model_obj <- model_obj$coefficients
     
@@ -52,10 +52,9 @@ CoefficientPlot <- function (.model, .ras) {
     box(bty="l",col=colaxes)
     abline(v=0, col=colaxes, lty="dashed")
     legend(x= "topleft", legend = "p-value <= 0.05", col ="darkorange", pch=19, border = NULL, text.col = "grey20", bty="n")
-  
-    } else{
-      stop("CoefficientPlot output module only implemented for LogisticRegression model module")
-    }
+    
+  } else{
+    stop("CoefficientPlot output module only implemented for LogisticRegression model module")
+  }
   return(summary(model_obj))
-  par(dev.par)    
 }
