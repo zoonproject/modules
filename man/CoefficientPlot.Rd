@@ -22,7 +22,7 @@ The module outputs a point plot of coefficient estimates from the LogisticRegres
 }
 
 \section{Version}{
- 0.2
+ 0.3
 }
 
 \section{Date submitted}{

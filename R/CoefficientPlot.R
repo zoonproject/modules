@@ -16,7 +16,7 @@
 #'
 #' @section Data type: presence/absence
 #'
-#' @section Version: 0.2
+#' @section Version: 0.3
 #'
 #' @section Date submitted:  2017-05-09
 CoefficientPlot <- function (.model, .ras) {
@@ -38,7 +38,7 @@ CoefficientPlot <- function (.model, .ras) {
           paste(class(model_obj)[1], sep = ', ')
     )
   }
-  if ( class_model_obj == "glm" ){
+  if ( class(model_obj)[1] == "glm" ){
     sum_model_obj <- model_obj$coefficients
     
     signif_0.05_index <- which(coef(summary(model_obj))[,4]<=0.05)
