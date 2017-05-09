@@ -42,11 +42,8 @@ This model prints to console a number of metrics of the model fitted:
 
 \seealso{
 Other output: \code{\link{Appify}},
-<<<<<<< HEAD
   \code{\link{CoefficientPlot}},
-=======
   \code{\link{GenerateCovariateReport}},
->>>>>>> upstream/master
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
   \code{\link{InteractiveOccurrenceMap}},

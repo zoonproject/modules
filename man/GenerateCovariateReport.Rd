@@ -26,11 +26,12 @@ The results are presented as an html output generated using Rmarkdown that opens
 }
 
 \section{Date submitted}{
-  2017-04-24
+  2017-05-03
 }
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{CoefficientPlot}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
   \code{\link{InteractiveOccurrenceMap}},

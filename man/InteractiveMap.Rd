@@ -25,11 +25,8 @@ and training data. Clicking on a point reveals additional information.
 
 \seealso{
 Other output: \code{\link{Appify}},
-<<<<<<< HEAD
   \code{\link{CoefficientPlot}},
-=======
   \code{\link{GenerateCovariateReport}},
->>>>>>> upstream/master
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveOccurrenceMap}},
   \code{\link{NoOutput}}, \code{\link{PairPlot}},

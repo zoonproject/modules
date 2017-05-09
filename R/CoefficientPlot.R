@@ -16,7 +16,7 @@
 #'
 #' @section Data type: presence/absence
 #'
-#' @section Version: 0.1
+#' @section Version: 0.2
 #'
 #' @section Date submitted:  2017-05-09
 CoefficientPlot <- function (.model, .ras) {

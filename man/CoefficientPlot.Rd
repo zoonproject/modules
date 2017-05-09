@@ -22,7 +22,7 @@ The module outputs a point plot of coefficient estimates from the LogisticRegres
 }
 
 \section{Version}{
- 0.1
+ 0.2
 }
 
 \section{Date submitted}{
@@ -31,8 +31,11 @@ The module outputs a point plot of coefficient estimates from the LogisticRegres
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
-  \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+  \code{\link{InteractiveMap}},
+  \code{\link{InteractiveOccurrenceMap}},
+  \code{\link{NoOutput}}, \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
