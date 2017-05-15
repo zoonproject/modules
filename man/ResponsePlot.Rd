@@ -17,14 +17,14 @@ ResponsePlot(.model, .ras, cov = NULL)
 This module plots predicted response curves along covariate gradients for all or specified covariates
 }
 \details{
-The module outputs a simple line graph of probability of occupancy (relative for presence-only and presence background data, absolute for presence-absence data). When the covariate is specified, a single line graph is returned. When cov = NULL, the module plots line graphs for each covariate in the zoon workflow iteratively. Currently only implemented for presence-only, presence-background, and presence-absence data.
+The module outputs a line graph of probability of occupancy (relative for presence-only and presence background data, absolute for presence-absence data). cov accepts a numeric and character strings. When cov = NULL, the module plots line graphs for each covariate in the zoon workflow iteratively. Currently only implemented for presence-only, presence-background, and presence-absence data.
 }
 \section{Data type}{
- presence-only, presence/absence
+ presence-only, presence/absence, presence/background
 }
 
 \section{Version}{
- 0.1
+ 0.2
 }
 
 \section{Date submitted}{
@@ -33,6 +33,7 @@ The module outputs a simple line graph of probability of occupancy (relative for
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{CoefficientPlot}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

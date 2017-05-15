@@ -37,6 +37,7 @@ Output module. Predict a model across a new area or time period.
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{CoefficientPlot}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

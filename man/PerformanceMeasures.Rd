@@ -42,6 +42,7 @@ This model prints to console a number of metrics of the model fitted:
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{CoefficientPlot}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

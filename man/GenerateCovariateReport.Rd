@@ -24,15 +24,16 @@ The results are presented as an html output generated using Rmarkdown that opens
 }
 
 \section{Version}{
- 0.1
+ 0.2
 }
 
 \section{Date submitted}{
-  2017-05-15
+2017-05-03
 }
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{CoefficientPlot}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
   \code{\link{InteractiveOccurrenceMap}},
