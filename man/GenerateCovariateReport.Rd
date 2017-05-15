@@ -24,7 +24,7 @@ The results are presented as an html output generated using Rmarkdown that opens
 }
 
 \section{Version}{
- 0.2
+ 0.4
 }
 
 \section{Date submitted}{

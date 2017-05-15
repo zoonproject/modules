@@ -18,7 +18,7 @@
 #'
 #' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
-#' @section Version: 0.2
+#' @section Version: 0.4
 #'
 #' @section Date submitted:  2017-05-15
 GenerateCovariateReport <- function(.model, .ras, type = "DR"){
@@ -216,7 +216,7 @@ GenerateCovariateReport <- function(.model, .ras, type = "DR"){
   ### Functions to generate reports ###
   #####################################
   
-  GenerateDataReport <- function(input_data, output_file = "data_report.html", output_dir = "Reports", ...) {
+  GenerateDataReport <- function(input_data, output_file = "data_report.html", output_dir = report_dir, ...) {
     ## Get argument list
     args <- as.list(match.call())
     ## Get directory of report markdown template
@@ -238,7 +238,7 @@ GenerateCovariateReport <- function(.model, .ras, type = "DR"){
     if (ifelse(is.null(args[["quiet"]]), TRUE, !args[["quiet"]])) message(paste0("\n\nReport is generated at \"", report_path, "\"."))
   }
   
-  GenerateRasterReport <- function(input_data, output_file = "raster_report.html", output_dir = "Reports", ...) {
+  GenerateRasterReport <- function(input_data, output_file = "raster_report.html", output_dir = report_dir, ...) {
     ## Get argument list
     args <- as.list(match.call())
     ## Get directory of report markdown template
@@ -270,7 +270,7 @@ GenerateCovariateReport <- function(.model, .ras, type = "DR"){
   
   cov_names <- attr(.model$data, 'covCols')   # extract attribute of .model$data saying which colums are covariates
   
-  dir.create("Reports")
+  report_dir <- tempdir()
   
   if(type == "D"){   # generate data report only
     print(paste0("Generate data report"))
@@ -287,5 +287,12 @@ GenerateCovariateReport <- function(.model, .ras, type = "DR"){
       }
     }
   }
-  unlink(Sys.glob("Reports/file*"), force = TRUE, recursive = TRUE)
+  
+  oldwd <- getwd()
+  setwd(report_dir)
+  
+  unlink(Sys.glob("file*"), force = TRUE, recursive = TRUE)
+  unlink(Sys.glob("rmarkdown-*"), force = TRUE, recursive = TRUE)
+  
+  setwd(oldwd)
 }
