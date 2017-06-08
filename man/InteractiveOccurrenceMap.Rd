@@ -18,15 +18,15 @@ This output module creates an interactive occurrence map of the species data.
 The module creates an html widget that displays in  the Viewer panel
 }
 \section{Data type}{
- presence-only, presence/absence, abundance, proportion
+ presence-only, presence/absence
 }
 
 \section{Version}{
- 0.1
+ 0.2
 }
 
 \section{Date submitted}{
-  2017-04-28
+  2017-06-08
 }
 
 \seealso{
