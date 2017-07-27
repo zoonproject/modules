@@ -127,6 +127,18 @@ LocalOccurrenceData <-
     names(data)[names(data) == valName] <- 'value'
     names(data)[names(data) == speciesName] <- 'speciesnames'
     
+    #test if targetspecies was provided
+    if(!is.null(targetspecies)){
+      ts <- TRUE
+      # If targetspecies is not a string, turn it into one.
+      if(!is.string(targetspecies)){
+        targetspecies <- deparse(substitute(targetspecies))
+      }
+      #test if target species exists in data
+      if(!targetspecies%in%unique(data$speciesnames)){
+        stop('defined species not found in provided dataset')
+      }
+    }
     
     # If presence absence, give correct type name
     # Otherwise type is just type.
@@ -146,17 +158,9 @@ LocalOccurrenceData <-
     }
     
     #Subset data by target species
-    if(!is.null(targetspecies)){
-      
-      # If target species is not a string, turn it into one.
-      if(!is.string(targetspecies)){
-        targetspecies <- deparse(substitute(targetspecies))
-      }
-      if(targetspecies%in%unique(data$speciesnames)){
-        data <- data[data$speciesnames == targetspecies,]
-      } else {
-        stop('defined species not found in provided dataset')
-      }
+    
+    if(ts == TRUE){
+      data <- data[data$speciesnames == targetspecies,]
     } else {
       warning('no target species provided, whole dataset used')
     }
