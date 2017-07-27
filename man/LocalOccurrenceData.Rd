@@ -5,7 +5,8 @@
 \title{Occurrence module: LocalOccurrenceData}
 \usage{
 LocalOccurrenceData(filename = "myData.csv", occurrenceType = "presence",
-  columns = c(long = "longitude", lat = "latitude", value = "value"),
+  columns = c(long = "longitude", lat = "latitude", value = "value",
+  speciesnames = "speciesnames"), targetspecies = NULL,
   externalValidation = FALSE)
 }
 \arguments{
@@ -19,9 +20,11 @@ and 'value'. 'value' is a numeric such as a proportion, count or presence/absenc
 
 \item{columns}{Which columns in the spreadsheet relate to longitude, latitude
 and response value? Takes a named character vector e.g.
-c(long = 'longitude', lat = 'latitude', value = 'responseVals'). If an
+c(long = 'longitude', lat = 'latitude', value = 'responseVals',speciesnames = 'names'). If an
 unnamed character vector is given, the order is assumed to be 
-long, lat, value.}
+long, lat, value, speciesnames.}
+
+\item{targetspecies}{Which occurrence points from the supplied dataset should be used? Should be a string from the speciesname column. When targetspecies = NULL, all occurrence points of the dataset are used.}
 
 \item{externalValidation}{Logical indicating whether this data is external
 validation data. Cross validation is handled elsewhere and this argument 
@@ -30,7 +33,7 @@ This is ignored if the user supplies a 'fold' column.}
 }
 \description{
 Occurrence module to format local occurrence data to be used with zoon. 
- Must be a .csv file with three columns longitude, latitude and value 
+ Must be a .csv file with four columns longitude, latitude, value and species name
  in that order. Other columns will be kept. A column named CRS can be supplied
  if the coordinates are not lat/long. CRS should contain the proj4string for
  the coordinate system of the data (for example "+init=epsg:27700" for easting/northing
@@ -38,7 +41,7 @@ Occurrence module to format local occurrence data to be used with zoon.
  latitude the Y coordinate.
 }
 \section{Version}{
- 1.0
+ 1.1
 }
 
 \section{Date submitted}{
@@ -60,5 +63,5 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{UKAnophelesPlumbeus}}
 }
 \author{
-ZOON Developers, \email{zoonproject@gmail.com}
+ZOON Developers, Simon Kapitza \email{zoonproject@gmail.com}
 }
