@@ -6,47 +6,35 @@
 \usage{
 LocalOccurrenceData(filename = "myData.csv", occurrenceType = "presence",
   columns = c(long = "longitude", lat = "latitude", value = "value"),
-  externalValidation = FALSE)
+  subsetSpecies = NULL, externalValidation = FALSE)
 }
 \arguments{
-\item{filename}{The path to the spreadsheet. The spreadsheet should have a 
-header giving column names. The column names should be 'longitude', 'latitude',
-and 'value'. 'value' is a numeric such as a proportion, count or presence/absence
-(1/0). The file can be .csv, .tab, .tsv, or .xlsx}
+\item{filename}{The path to the spreadsheet. The spreadsheet should have a header giving column names. The column names should be "longitude", latitude, and "value". "value" is a numeric such as a proportion, count or presence/absence (1/0). The file can be .csv, .tab, .tsv, or .xlsx}
 
-\item{occurrenceType}{What type data is it? One of 'presence', 
-'presence/absence', 'abundance', 'probability'}
+\item{occurrenceType}{What type data is it? One of "presence", "presence/absence", "abundance", "probability"}
 
-\item{columns}{Which columns in the spreadsheet relate to longitude, latitude
-and response value? Takes a named character vector e.g.
-c(long = 'longitude', lat = 'latitude', value = 'responseVals'). If an
-unnamed character vector is given, the order is assumed to be 
-long, lat, value.}
+\item{columns}{Which columns in the spreadsheet relate to longitude, latitude and response value? Takes a named character vector e.g. c(long = "longitude", lat = "latitude" value = "responseVals"). If an unnamed character vector is given, the order is assumed to be long, lat, value.}
 
-\item{externalValidation}{Logical indicating whether this data is external
-validation data. Cross validation is handled elsewhere and this argument 
-should be left as FALSE for data that will be used in cross validation.
-This is ignored if the user supplies a 'fold' column.}
+\item{subsetSpecies}{Do you need to subset your spreadsheet by species? Supply a character vector of species name and the column name it is specified in (in that order)}
+
+\item{externalValidation}{Logical indicating whether this data is external validation data. Cross validation is handled elsewhere and this argument should be left as FALSE for data that will be used in cross validation. This is ignored if the user supplies a "fold" column.}
 }
 \description{
-Occurrence module to format local occurrence data to be used with zoon. 
- Must be a .csv file with three columns longitude, latitude and value 
- in that order. Other columns will be kept. A column named CRS can be supplied
- if the coordinates are not lat/long. CRS should contain the proj4string for
- the coordinate system of the data (for example "+init=epsg:27700" for easting/northing
- data). If a CRS column is supplied longitude is taken to be the X coordinate and 
- latitude the Y coordinate.
+Occurrence module to format local occurrence data to be used with zoon. Must be a .csv file with three columns longitude, latitude and value in that order. Other columns will be kept. A column named CRS can be supplied if the coordinates are not lat/long. CRS should contain the proj4string for the coordinate system of the data (for example "+init=epsg:27700" for easting/northing data). If a CRS column is supplied longitude is taken to be the X coordinate and latitude the Y coordinate.
 }
+\details{
+
+}
+\section{Data type}{
+ presence-only, presence/absence, abundance, proportion
+}
+
 \section{Version}{
- 1.0
+ 1.2
 }
 
 \section{Date submitted}{
- 2015-11-13
-}
-
-\section{Data type}{
- presence-only, presence/background, presence/absence, abundance, proportion
+  2017-07-31
 }
 
 \seealso{
@@ -60,5 +48,5 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{UKAnophelesPlumbeus}}
 }
 \author{
-ZOON Developers, \email{zoonproject@gmail.com}
+ZOON Developers, David Wilkinson, \email{zoonproject@@gmail.com}
 }
