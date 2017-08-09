@@ -48,9 +48,9 @@ Clean <- function (.data, which = c(1, 2, 3, 4)) {
   # Number of data points pre-Clean
   
   numPoints_start <- nrow(occurrence)
-  numPointsPres_start <- nrow(occurrence[type == "presence", ])
-  numPointsAbs_start <- nrow(occurrence[type == "absence", ])
-  numPointsBack_start <- nrow(occurrence[type == "background", ])
+  numPointsPres_start <- nrow(occurrence[occurrence$type == "presence", ])
+  numPointsAbs_start <- nrow(occurrence[occurrence$type == "absence", ])
+  numPointsBack_start <- nrow(occurrence[occurrence$type == "background", ])
   
   # Load the scrubr package for data cleaning
   zoon::GetPackage('scrubr')  
