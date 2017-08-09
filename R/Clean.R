@@ -1,3 +1,4 @@
+
 #' @title Process module: Clean
 #'
 #' @description Do some data cleaning on occurrence points
@@ -77,9 +78,9 @@ Clean <- function (.data, which = c(1, 2, 3, 4)) {
   # Number of data points post-Clean
   
   numPoints_end <- nrow(occurrence)
-  numPointsPres_end <- nrow(occurrence[type == "presence", ])
-  numPointsAbs_end <- nrow(occurrence[type == "absence", ])
-  numPointsBack_end <- nrow(occurrence[type == "background", ]) 
+  numPointsPres_end <- nrow(occurrence[occurrence$type == "presence", ])
+  numPointsAbs_end <- nrow(occurrence[occurrence$type == "absence", ])
+  numPointsBack_end <- nrow(occurrence[occurrence$type == "background", ]) 
   
   # Number of data points removed
   
