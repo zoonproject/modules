@@ -4,7 +4,7 @@
 #'
 #' @description This output module provides a pair plot of covariate data that includes correlation statistics.
 #'
-#' @details The data are plotted in the bottom left-hand panel and on the top-right are displayed the correlation statistics. Covariate names run diagonally down from top left to bottom right. For original code, see: https://gist.github.com/arsalvacion/1ba2373bbe89b2d3c023#file-pairscor-r
+#' @details The data are plotted in the upper panel and the lower panel displays correlation statistics. Covariate names run diagonally. Modified from: http://wresch.github.io/2012/11/30/modified-splom.html
 #'
 #' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
 #'
@@ -18,34 +18,54 @@
 #'
 #' @section Version: 0.2
 #'
-#' @section Date submitted:  2017-05-05
+#' @section Date submitted:  2017-09-07
 PairPlot <- function (.model, .ras) {
 
-  panel.cor <- function(x, y, digits = 2, cex.cor, ...) {
+  zoon::GetPackage(c('lattice', 'latticeExtra', 'hexbin'))
+  
+  pairsFunction <- function(covData) {
 
-    usr <- par("usr"); on.exit(par(usr))
-    par(usr = c(0, 1, 0, 1))
+    ct <- custom.theme(
+      symbol = c("black", brewer.pal(n = 8, name = "Dark2")),
+      fill = brewer.pal(n = 12, name = "Set3"),
+      region = brewer.pal(n = 11, name = "Spectral"),
+      reference = "#e8e8e8",
+      bg = "transparent", fg = "black",
+      lwd=2, pch=16
+    )
+    ct$axis.text$cex = 1.4
+    ct$par.xlab.text$cex = 1.4
+    ct$par.ylab.text$cex = 1.4
 
-    # correlation coefficient
-    r <- cor(x, y)
-    txt <- format(c(r, 0.123456789), digits = digits)[1]
-    txt <- paste("r= ", txt, sep = "")
-    text(0.5, 0.6, txt)
-
-    # p-value calculation
-    p <- cor.test(x, y)$p.value
-    txt2 <- format(c(p, 0.123456789), digits = digits)[1]
-    txt2 <- paste("p= ", txt2, sep = "")
-    if(p<0.01) txt2 <- paste("p= ", "<0.01", sep = "")
-    text(0.5, 0.4, txt2)
-
+    cr <- colorRampPalette(c('grey80', 'grey0'))
+    splom(~df,
+          pscales = 0, #don't show axes,
+          par.settings = ct,
+          upper.panel = panel.hexbinplot,  # use hexbinplot
+          xbins = 15,                     # number of bins
+          trans = log10, inv=function(x) 10^x, # density color scale transformation
+          colramp = cr,
+          # show correlation coefficient in lower panel
+          diag.panel = function(x, ...){
+            yrng <- current.panel.limits()$ylim
+            d <- density(x, na.rm=TRUE)
+            d$y <- with(d, yrng[1] + 0.95 * diff(yrng) * y / max(y) )
+            panel.lines(d)
+            diag.panel.splom(x, ...)
+          },
+          lower.panel = function(x,  y, ...) {
+            panel.fill(col = brewer.pal(10, "RdBu")[round(cor(x, y) *  4 + 5)])
+            panel.text(sum(range(x))/2, sum(range(y))/2, round(cor(x, y), 2), font = 2)
+          },
+          varname.cex = 0.9
+    )
   }
 
   CovariateData <- as.data.frame(.model$data[,attributes(.model$data)$covCols])
   if (ncol(CovariateData) == 1) {
     print('Pair plot not possible, only one covariate')
   } else {
-    return(pairs(CovariateData, upper.panel = panel.cor))
-  } 
+    return(pairsFunction(CovariateData))
+  }
 
 }
