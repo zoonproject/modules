@@ -12,7 +12,7 @@
 #'
 #' @family output
 #'
-#' @author Saras Windecker, \email{saras.windecker@@gmail.com}
+#' @author Saras Windecker, \email{saras.windecker@gmail.com}
 #'
 #' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
