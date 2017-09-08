@@ -2,6 +2,7 @@ language: r
 dist: trusty
 cache: packages
 sudo: required
+group: deprecated-2017Q2
 
 addons:
   apt:

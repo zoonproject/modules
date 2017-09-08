@@ -26,9 +26,12 @@ Make a png of a map of predicted surface.
 
 \seealso{
 Other output: \code{\link{Appify}},
+  \code{\link{CoefficientPlot}}, \code{\link{DataSummary}},
+  \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
-  \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
-  \code{\link{PairPlot}},
+  \code{\link{InteractiveMap}},
+  \code{\link{InteractiveOccurrenceMap}},
+  \code{\link{NoOutput}}, \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},

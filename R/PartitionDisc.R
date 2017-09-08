@@ -33,7 +33,13 @@ PartitionDisc <-
     coord_names <- c(grep('^lon', colnames(.data$df), value = TRUE),
                      grep('^lat', colnames(.data$df), value = TRUE))
     
-    parti <- partition.disc(.data$df, coords = coord_names,
+    # switch function names depending on version of sperrorest
+    if (exists("partition.disc"))
+      fun <- partition.disc
+    else
+      fun <- partition_disc
+    
+    parti <- fun(.data$df, coords = coord_names,
                             radius = radius, buffer = buffer, ndisc = 1,
                             repetition = 1, seed1 = seed)
     

@@ -21,8 +21,8 @@
 #'   
 #' @param seed Numeric used with \code{\link[base]{set.seed}}
 #' 
-#' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.1
+#' @author ZOON Developers, Simon Kapitza \email{zoonproject@@gmail.com}
+#' @section Version: 1.2
 #' @section Date submitted: 2016-03-23 
 #' @section Data type: presence-only
 #'   
@@ -121,7 +121,7 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   
   names(df)[6:ncol(df)] <- names(.data$ras)
   attributes(df) <- c(attributes(df), Atts)
-  attr(df, 'covCols') <- names(ras)
+  attr(df, 'covCols') <- names(.data$ras)
   
   # remove missing values
   if(NROW(na.omit(df)) > 0){
