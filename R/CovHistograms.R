@@ -29,7 +29,7 @@ CovHistograms <- function (.model, .ras) {
 
   CovariateData <- as.data.frame(.model$data[,attributes(.model$data)$covCols])
   if (ncol(CovariateData) == 1) {
-    print('Pair plot not possible, only one covariate')
+    print('Histograms not possible, only one covariate')
   } else {
     return(relPlot(CovariateData))
   }
