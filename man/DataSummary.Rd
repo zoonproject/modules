@@ -32,6 +32,7 @@ The DataSummary module generates summaries of both the point data and the raster
 \seealso{
 Other output: \code{\link{Appify}},
   \code{\link{CoefficientPlot}},
+  \code{\link{CovHistograms}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

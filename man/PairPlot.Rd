@@ -15,23 +15,24 @@ PairPlot(.model, .ras)
 This output module provides a pair plot of covariate data that includes correlation statistics.
 }
 \details{
-The data are plotted in the bottom left-hand panel and on the top-right are displayed the correlation statistics. Covariate names run diagonally down from top left to bottom right.
+The data are plotted in the upper panel and the lower panel displays correlation statistics. Covariate names run diagonally. Modified from: http://wresch.github.io/2012/11/30/modified-splom.html
 }
 \section{Data type}{
  presence-only, presence/absence, abundance, proportion
 }
 
 \section{Version}{
- 0.1
+ 0.2
 }
 
 \section{Date submitted}{
-  2017-05-03
+  2017-09-07
 }
 
 \seealso{
 Other output: \code{\link{Appify}},
-  \code{\link{CoefficientPlot}}, \code{\link{DataSummary}},
+  \code{\link{CoefficientPlot}},
+  \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
