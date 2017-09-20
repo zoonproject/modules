@@ -31,7 +31,7 @@ The data are plotted in the bottom left-hand panel and on the top-right are disp
 
 \seealso{
 Other output: \code{\link{Appify}},
-  \code{\link{CoefficientPlot}},
+  \code{\link{CoefficientPlot}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
