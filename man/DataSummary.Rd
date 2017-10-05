@@ -12,7 +12,7 @@ DataSummary(.model, .ras)
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
 }
 \description{
-The DataSummary module generates summaries of both the point data and the raster data for the purposes of data exploration. The module outputs a list of two summaries to the console.
+The DataSummary module generates summaries of both the point data (non-background) and the raster data for the purposes of data exploration. The module outputs a list of two summaries to the console.
 }
 \details{
 
@@ -22,11 +22,11 @@ The DataSummary module generates summaries of both the point data and the raster
 }
 
 \section{Version}{
- 1
+ 1.1
 }
 
 \section{Date submitted}{
-  2017-08-11
+  2017-10-05
 }
 
 \seealso{
