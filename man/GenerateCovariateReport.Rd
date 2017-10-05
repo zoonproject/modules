@@ -33,7 +33,8 @@ The results are presented as an html output generated using Rmarkdown that opens
 
 \seealso{
 Other output: \code{\link{Appify}},
-  \code{\link{CoefficientPlot}}, \code{\link{DataSummary}},
+  \code{\link{CoefficientPlot}},
+  \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
   \code{\link{InteractiveOccurrenceMap}},

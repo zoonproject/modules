@@ -31,7 +31,8 @@ Based on code in the dismo vignette
 
 \seealso{
 Other output: \code{\link{Appify}},
-  \code{\link{CoefficientPlot}}, \code{\link{DataSummary}},
+  \code{\link{CoefficientPlot}},
+  \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

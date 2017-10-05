@@ -33,7 +33,8 @@ This module identifies the class of the model object and if it has a known retur
 
 \seealso{
 Other output: \code{\link{Appify}},
-  \code{\link{CoefficientPlot}}, \code{\link{DataSummary}},
+  \code{\link{CoefficientPlot}},
+  \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
