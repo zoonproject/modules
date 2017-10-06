@@ -2,7 +2,7 @@
 #'
 #' @title Output module: DataSummary
 #'
-#' @description The DataSummary module generates summaries of both the point data and the raster data for the purposes of data exploration. The module outputs a list of two summaries to the console.
+#' @description The DataSummary module generates summaries of both the point data (non-background) and the raster data for the purposes of data exploration. The module outputs a list of two summaries to the console.
 #'
 #' @details 
 #'
@@ -16,14 +16,15 @@
 #'
 #' @section Data type: presence-only, presence/background, presence/absence
 #'
-#' @section Version: 1
+#' @section Version: 1.1
 #'
-#' @section Date submitted:  2017-08-11
+#' @section Date submitted:  2017-10-05
 DataSummary <- function(.model, .ras){
   
   # Extract data frames
   
   data_df <- .model$data
+  data_df <- data_df[data_df$type != "background", ]
   
   ras_df <- as.data.frame(.ras)
   
@@ -35,7 +36,7 @@ DataSummary <- function(.model, .ras){
   
     ## Data
   
-    data_df_sum <- summary(data_df[, !names(data_df) %in% c("value", "fold", "predictions")])
+    data_df_sum <- summary(data_df[, !names(data_df) %in% c("type", "value", "fold", "predictions")])
   
     ## Raster
     
