@@ -22,8 +22,8 @@
 #' @param seed Numeric used with \code{\link[base]{set.seed}}
 #' 
 #' @author ZOON Developers, Simon Kapitza \email{zoonproject@@gmail.com}
-#' @section Version: 1.2
-#' @section Date submitted: 2016-03-23 
+#' @section Version: 1.3
+#' @section Date submitted: 2017-10-17 
 #' @section Data type: presence-only
 #'   
 #' @name Background
@@ -37,8 +37,9 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   
   # Keep attributes
   Atts <- attributes(occurrence)[!names(attributes(occurrence)) %in% c('names', 'class', 'row.names')]
-  
-  if (!all(occurrence$type == 'presence')) {
+ 
+  training_types <- occurrence$type[occurrence$fold != 0]
+  if (!all(training_types == 'presence')) {
     stop ('"Background" module only works for presence-only data')
   }
   
