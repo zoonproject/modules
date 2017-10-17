@@ -16,14 +16,14 @@
 #'
 #' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
-#' @section Version: 0.2
+#' @section Version: 0.3
 #'
 #' @section Date submitted:  2017-09-07
 PairPlot <- function (.model, .ras) {
 
   zoon::GetPackage(c('lattice', 'latticeExtra', 'hexbin'))
   
-  pairsFunction <- function(covData) {
+  pairsFunction <- function (df) {
 
     ct <- custom.theme(
       symbol = c("black", brewer.pal(n = 8, name = "Dark2")),
