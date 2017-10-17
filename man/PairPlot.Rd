@@ -22,7 +22,7 @@ The data are plotted in the upper panel and the lower panel displays correlation
 }
 
 \section{Version}{
- 0.2
+ 0.3
 }
 
 \section{Date submitted}{
