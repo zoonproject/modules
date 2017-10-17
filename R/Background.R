@@ -22,8 +22,8 @@
 #' @param seed Numeric used with \code{\link[base]{set.seed}}
 #' 
 #' @author ZOON Developers, Simon Kapitza \email{zoonproject@@gmail.com}
-#' @section Version: 1.2
-#' @section Date submitted: 2016-03-23 
+#' @section Version: 1.3
+#' @section Date submitted: 2017-10-17 
 #' @section Data type: presence-only
 #'   
 #' @name Background
@@ -37,9 +37,11 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   
   # Keep attributes
   Atts <- attributes(occurrence)[!names(attributes(occurrence)) %in% c('names', 'class', 'row.names')]
-  
-  if (!all(occurrence$type == 'presence')) {
-    stop ('"Background" module only works for presence-only data')
+ 
+  # check training data
+  training_types <- occurrence$type[occurrence$fold != 0]
+  if (!all(training_types == 'presence')) {
+    stop ('"Background" module only works for presence-only training data')
   }
   
   # if no bias grid is provided
@@ -98,37 +100,28 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
                                              n,
                                              prob = prob))
   
-  npres <- nrow(occurrence)
-  
-  npabs <- nrow(pa)
-  
-  # extract covariates
-  occ_covs <- as.matrix(extract(.data$ras, occurrence[, c('longitude', 'latitude')]))
-  
   pa_covs <- as.matrix(extract(.data$ras, pa))
+  colnames(pa_covs) <- names(.data$ras)
+  df_bg <- data.frame(value = 0,
+                      type = "background",
+                      fold = 1,
+                      longitude = pa[, 1],
+                      latitude = pa[, 2],
+                      pa_covs)
   
-  covs <- rbind(occ_covs, pa_covs)
-  
-  # combine with the occurrence data
-  df <- data.frame(value = rep(c(1, 0),
-                               c(npres, npabs)),
-                   type = rep(c('presence', 'background'),
-                              c(npres, npabs)),
-                   fold = rep(1, npres + npabs),
-                   longitude = c(occurrence$lon, pa[, 1]),
-                   latitude = c(occurrence$lat, pa[, 2]),
-                   covs)
+  # combine with the previous data
+  df <- rbind(occurrence, df_bg)
   
   names(df)[6:ncol(df)] <- names(.data$ras)
   attributes(df) <- c(attributes(df), Atts)
   attr(df, 'covCols') <- names(.data$ras)
   
   # remove missing values
-  if(NROW(na.omit(df)) > 0){
+  if (NROW(na.omit(df)) > 0){
     df <- na.omit(df)
   }
 
-  return(list(df = df, ras = .data$ras))
+  return (list(df = df, ras = .data$ras))
   
 }
 
