@@ -4,7 +4,7 @@
 \alias{PrintMap}
 \title{Output module: PrintMap}
 \usage{
-PrintMap(.model, .ras, plot = TRUE, points = TRUE, dir = NULL,
+PrintMap(.model, .ras, plot = TRUE, points = FALSE, dir = NULL,
   filename = NULL, size = c(480, 480), res = 72, threshold = NULL,
   thresholdmethod = c("probability", "quantile", "falsepositive",
   "falsenegative"), ...)
@@ -53,7 +53,7 @@ The \code{threshold} argument sets the value for the threshold while \code{thres
 }
 }
 \section{Version}{
- 1.1
+ 1.2
 }
 
 \section{Date submitted}{
@@ -79,5 +79,5 @@ Other output: \code{\link{Appify}},
   \code{\link{VariableImportance}}
 }
 \author{
-ZOON Developers, James Campbell, \email{zoonproject@gmail.com}
+ZOON Developers, James Campbell, David Wilkinson \email{zoonproject@gmail.com}
 }
