@@ -48,6 +48,7 @@ Occurrence module to collect occurrence data from a number of data bases.
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
+  \code{\link{LocalOccurrenceDataFrame}},
   \code{\link{LocalOccurrenceData}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
   \code{\link{NaiveRandomPresenceAbsence}},
