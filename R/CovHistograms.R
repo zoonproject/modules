@@ -21,9 +21,10 @@
 #' @section Date submitted:  2017-09-08
 CovHistograms <- function (.model, .ras) {
   relPlot <- function (cov) {
-    par  <- par(mfrow = c(ncol(cov)/2, 2))
+    par  <- par(mfrow = c(round(ncol(cov)/2), 2),
+                mar = c(4, 2, 1, 1))
     for (i in names(cov)) {
-      hist(x = cov[,i], xlab = i, main = '')
+      hist(x = cov[,i], xlab = i, ylab = '', main = '')
     }
   }
 
