@@ -65,7 +65,7 @@ PairPlot <- function (.model, .ras) {
   if (ncol(CovariateData) == 1) {
     print('Pair plot not possible, only one covariate')
   } else {
-    return(pairsFunction(CovariateData))
+    print(pairsFunction(CovariateData))
   }
 
 }
