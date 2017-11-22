@@ -36,6 +36,8 @@ Appify will return the path to the shiny application. For details on how to shar
 \seealso{
 Other output: \code{\link{AUC}},
   \code{\link{CoefficientPlot}},
+  \code{\link{CovHistograms}},
+  \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

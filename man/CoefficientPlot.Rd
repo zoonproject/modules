@@ -30,7 +30,9 @@ The module outputs a point plot of coefficient estimates from the LogisticRegres
 }
 
 \seealso{
-Other output: \code{\link{AUC}}, \code{\link{Appify}},
+Other output: \code{\link{AUC}},\code{\link{Appify}},
+  \code{\link{CovHistograms}},
+  \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
