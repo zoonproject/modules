@@ -4,7 +4,7 @@
 \alias{PerformanceMeasures}
 \title{Output module: PerformanceMeasures}
 \usage{
-PerformanceMeasures(.model, .ras, threshold = NULL)
+PerformanceMeasures(.model, .ras, threshold = NULL, print = TRUE)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
@@ -13,6 +13,8 @@ PerformanceMeasures(.model, .ras, threshold = NULL)
 
 \item{threshold}{A chosen threshold value for measures that need 0/1 predictions 
 If NULL, the proportion of occurrences in the occurrence data is used.}
+
+\item{print}{If true then the data are returned to console as well as outputted}
 }
 \description{
 Calculate a suite of performance metrics on either crossvalidation, external validation data or (at your own risk) in-sample validation.
