@@ -20,7 +20,7 @@
 #'   If NULL, the proportion of occurrences in the occurrence data is used.
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.0
+#' @section Version: 1.1
 #' @section Date submitted: 2016-06-15
 #' @section Data type: presence/absence, presence/background
 #'
