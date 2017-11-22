@@ -16,6 +16,8 @@
 #'
 #' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
+#' @param print If true then the data are returned to console as well as outputted
+#'
 #' @param threshold A chosen threshold value for measures that need 0/1 predictions 
 #'   If NULL, the proportion of occurrences in the occurrence data is used.
 #'
