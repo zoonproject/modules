@@ -45,7 +45,7 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{StandardiseCov}},
   \code{\link{SubsampleOccurrence}},
   \code{\link{TargetGroupBackground}},
-  \code{\link{Transform}}
+  \code{\link{Transform}}, \code{\link{spThin}}
 }
 \author{
 Alison Johnston & Carsten F. Dormann, \email{alison.johnston@bto.org}

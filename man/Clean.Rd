@@ -55,7 +55,8 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{StandardiseCov}},
   \code{\link{SubsampleOccurrence}},
   \code{\link{TargetGroupBackground}},
-  \code{\link{Transform}}, \code{\link{addInteraction}}
+  \code{\link{Transform}}, \code{\link{addInteraction}},
+  \code{\link{spThin}}
 }
 \author{
 ZOON Developers, David Wilkinson \email{zoonproject@gmail.com}
