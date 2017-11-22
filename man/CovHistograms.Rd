@@ -30,7 +30,7 @@ The frequency of each value is plotted for each covariate.
 }
 
 \seealso{
-Other output: \code{\link{Appify}},
+Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{CoefficientPlot}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
