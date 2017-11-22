@@ -32,7 +32,7 @@ The module writes the ROC-plot to whatever is opened by dev.new() this can be ch
 }
 
 \seealso{
-Other output: \code{\link{Appify}},
+Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{CoefficientPlot}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},

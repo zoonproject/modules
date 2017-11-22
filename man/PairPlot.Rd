@@ -30,7 +30,7 @@ The data are plotted in the bottom left-hand panel and on the top-right are disp
 }
 
 \seealso{
-Other output: \code{\link{Appify}},
+Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{CoefficientPlot}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
