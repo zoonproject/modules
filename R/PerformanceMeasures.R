@@ -55,7 +55,7 @@ function(.model, .ras, threshold = NULL){
                                             threshold)
     
     performance <- list(
-      auc = SDMTools::auc(.model$data$value, .model$data$predictions),
+      auc = SDMTools::auc(.model$data$value, p),
       kappa = SDMTools::Kappa(confusion),
       omissions = SDMTools::omission(confusion),
       sensitivity = SDMTools::sensitivity(confusion),
