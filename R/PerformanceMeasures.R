@@ -27,7 +27,7 @@
 #' @name PerformanceMeasures
 #' @family output
 PerformanceMeasures <-
-function(.model, .ras, threshold = NULL){
+function(.model, .ras, threshold = NULL, print = TRUE){
 
   zoon:::GetPackage('SDMTools')
 
@@ -41,7 +41,7 @@ function(.model, .ras, threshold = NULL){
   }
 
   if (all(.model$data$fold == 1)){
-
+    
     warning('You have no cross-validation folds, validation statistics may be misleading')
 
     # make predictions for the model
@@ -98,7 +98,7 @@ function(.model, .ras, threshold = NULL){
 #    message(line)
 #  }
 #  message(' ')
-
-  return (performance)
+  if (print == TRUE) print(performance)
+  return(performance)
 
 }
