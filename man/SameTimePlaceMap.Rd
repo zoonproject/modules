@@ -29,6 +29,7 @@ Output module. A function for outputing the raster of the predictions from an an
 \seealso{
 Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{CoefficientPlot}},
+  \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

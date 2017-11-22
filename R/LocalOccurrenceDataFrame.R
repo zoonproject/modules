@@ -1,16 +1,16 @@
-#' @name LocalOccurrenceData
+#' @name LocalOccurrenceDataFrame
 #'
-#' @title Occurrence module: LocalOccurrenceData
+#' @title Occurrence module: LocalOccurrenceDataFrame
 #'
-#' @description Occurrence module to format local occurrence data to be used with zoon. Must be a .csv file with three columns longitude, latitude and value in that order. Other columns will be kept. A column named CRS can be supplied if the coordinates are not lat/long. CRS should contain the proj4string for the coordinate system of the data (for example "+init=epsg:27700" for easting/northing data). If a CRS column is supplied longitude is taken to be the X coordinate and latitude the Y coordinate.
+#' @description Occurrence module to format local occurrence data to be used with zoon. Must be a data.frame with three columns containing values for longitude, latitude and value. A column named CRS can be supplied if the coordinates are not lat/long. CRS should contain the proj4string for the coordinate system of the data (for example "+init=epsg:27700" for easting/northing data). If a CRS column is supplied longitude is taken to be the X coordinate and latitude the Y coordinate.
 #'
 #' @details 
 #'
-#' @param filename The path to the spreadsheet. The spreadsheet should have a header giving column names. The column names should be "longitude", latitude, and "value". "value" is a numeric such as a proportion, count or presence/absence (1/0). The file can be .csv, .tab, .tsv, or .xlsx
+#' @param dataFrame A data.frame in your environment. Must have columns recording values for "longitude", "latitude", and "value". "value" is a numeric such as a proportion, count or presence/absence (1/0).
 #'
 #' @param occurrenceType What type data is it? One of "presence", "presence/absence", "abundance", "probability"
 #'
-#' @param columns Which columns in the spreadsheet relate to longitude, latitude and response value? Takes a named character vector e.g. c(long = "longitude", lat = "latitude" value = "responseVals"). If an unnamed character vector is given, the order is assumed to be long, lat, value.
+#' @param columns Which columns in the data.frame relate to longitude, latitude and response value? Takes a named character vector e.g. c(long = "longitude", lat = "latitude" value = "responseVals"). If an unnamed character vector is given, the order is assumed to be long, lat, value.
 #'
 #' @param subsetSpecies Do you need to subset your spreadsheet by species? Supply a character vector of species name and the column name it is specified in (in that order)
 #'
@@ -18,14 +18,14 @@
 #'
 #' @family occurrence
 #'
-#' @author ZOON Developers, David Wilkinson, \email{zoonproject@@@@gmail.com}
+#' @author David Wilkinson, ZOON Developers, \email{davidpw@@student.unimelb.edu.au}
 #'
 #' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
-#' @section Version: 1.2
+#' @section Version: 1
 #'
-#' @section Date submitted:  2017-07-31
-LocalOccurrenceData <- function(filename='myData.csv',
+#' @section Date submitted:  2017-10-20
+LocalOccurrenceDataFrame <- function(dataFrame=read.csv("myData.csv"),
            occurrenceType='presence',
            columns=c(long = 'longitude', lat = 'latitude', value = 'value'),
            subsetSpecies = NULL,
@@ -61,49 +61,12 @@ LocalOccurrenceData <- function(filename='myData.csv',
       }
     }
     
-    # Read in the data  
-    # Try and do a vaguley thorough job of checking format.
-    # Cheers @klmr
-    # https://gist.github.com/klmr/4f093bb49dcf1aa72b7a
+    # Read in the data.frame
     
-    extension <- gsub(pattern = "(.*\\.)(.*)($)", replacement = "\\2", x = filename)
-    
-    separators <- list('csv' = ',',
-                       'tsv' = '\t',
-                       'tab' = '\t')
-    
-    
-    loadComplete <- FALSE
-    if (extension %in% names(separators)){
-      try({
-        sep <- separators[[extension]]
-        data <- read.table(filename, header = TRUE, stringsAsFactors = FALSE, sep = sep)
-        loadComplete <- TRUE
-      }, silent = TRUE)
-      # If above block didn't work, try csv2
-      if (!loadComplete){
-        data <- read.csv2(filename, header = TRUE, stringsAsFactors = FALSE)
-        loadComplete <- TRUE
-      }
-      # If it still isn't right, load data.table and use fread.
-      if (ncol(data) < 3 | !loadComplete){
-        zoon::GetPackage('data.table')
-        data <- as.data.frame(fread(filename))
-      }
-    } else if (extension %in% c('xls', 'xlsx')) {
-      zoon::GetPackage('xlsx')
-      data <- read.xlsx(filename, header = TRUE, sheetIndex = 1)
-    } else if (extension == 'dbf') {
-      zoon::GetPackage('foreign')
-      data <- read.dbf(filename)
-    } else if (exists(filename, envir = globalenv())) {
-      data <- eval(parse(text = filename), envir = globalenv())
-    } else {
-      stop("Can't open spreadsheet. Is it one of supported formats?")
-    }
-    
+    data <- dataFrame
     
     # Get column names from args
+    
     if(is.null(names(columns))){
       longName <- columns[1]
       latName <- columns[2]

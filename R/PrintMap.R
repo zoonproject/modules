@@ -38,8 +38,8 @@
 #' @return A Raster object giving the probabilistic model predictions for each
 #' cell of covariate raster layer
 #'
-#' @author ZOON Developers, James Campbell, \email{zoonproject@@gmail.com}
-#' @section Version: 1.1
+#' @author ZOON Developers, James Campbell, David Wilkinson \email{zoonproject@@gmail.com}
+#' @section Version: 1.2
 #' @section Date submitted: 2016-04-02
 #'
 #' @name PrintMap
@@ -48,7 +48,7 @@ PrintMap <-
   function (.model, 
             .ras, 
             plot = TRUE,
-            points = TRUE, 
+            points = FALSE, 
             dir = NULL,
             filename = NULL,
             size = c(480, 480), 

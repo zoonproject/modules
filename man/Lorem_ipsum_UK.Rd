@@ -28,6 +28,7 @@ This dataset is fake, Lorem ipsum does not exist
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
+  \code{\link{LocalOccurrenceDataFrame}},
   \code{\link{LocalOccurrenceData}}, \code{\link{NATrees}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},

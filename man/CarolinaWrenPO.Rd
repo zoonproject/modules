@@ -27,6 +27,7 @@ Occurrence locations for the Carolina Wren \emph{Thryothorus ludovicianus} at Br
 \seealso{
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
+  \code{\link{LocalOccurrenceDataFrame}},
   \code{\link{LocalOccurrenceData}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
   \code{\link{NaiveRandomPresenceAbsence}},
