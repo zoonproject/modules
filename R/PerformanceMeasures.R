@@ -20,7 +20,7 @@
 #'   If NULL, the proportion of occurrences in the occurrence data is used.
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.0
+#' @section Version: 1.1
 #' @section Date submitted: 2016-06-15
 #' @section Data type: presence/absence, presence/background
 #'
@@ -55,7 +55,7 @@ function(.model, .ras, threshold = NULL){
                                             threshold)
     
     performance <- list(
-      auc = SDMTools::auc(.model$data$value, .model$data$predictions),
+      auc = SDMTools::auc(.model$data$value, p),
       kappa = SDMTools::Kappa(confusion),
       omissions = SDMTools::omission(confusion),
       sensitivity = SDMTools::sensitivity(confusion),
