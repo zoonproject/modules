@@ -22,8 +22,8 @@
 #' @param seed Numeric used with \code{\link[base]{set.seed}}
 #' 
 #' @author ZOON Developers, Simon Kapitza \email{zoonproject@@gmail.com}
-#' @section Version: 1.4
-#' @section Date submitted: 2017-11-27 
+#' @section Version: 1.5
+#' @section Date submitted: 2017-11-28 
 #' @section Data type: presence-only
 #'   
 #' @name Background
@@ -123,7 +123,6 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
   df_bg <- df_bg[, colnames(occurrence)]
   df <- rbind(occurrence, df_bg)
   
-  names(df)[6:ncol(df)] <- names(.data$ras)
   attributes(df) <- c(attributes(df), Atts)
   attr(df, 'covCols') <- names(.data$ras)
   
