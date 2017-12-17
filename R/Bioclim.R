@@ -18,7 +18,7 @@
 #'
 #' @section Version: 1.1
 #'
-#' @section Date submitted:  2017-07-11
+#' @section Date submitted:  2017-10-17
 Bioclim <- function(extent = c(-180, 180, -90, 90), resolution = 10, layers = 1:5) {
     
     if(!(resolution %in% c(2.5, 5, 10))){

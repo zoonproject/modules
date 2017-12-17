@@ -4,7 +4,7 @@
 \alias{ROCcurve}
 \title{an ROC-curve with the AUC value plotted in the title}
 \usage{
-ROCcurve(.model, .ras, newwin = TRUE)
+ROCcurve(.model, .ras, newwin = FALSE)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
@@ -24,7 +24,7 @@ The module writes the ROC-plot to whatever is opened by dev.new() this can be ch
 }
 
 \section{Version}{
- 0
+ 0.1
 }
 
 \section{Date submitted}{
@@ -32,7 +32,7 @@ The module writes the ROC-plot to whatever is opened by dev.new() this can be ch
 }
 
 \seealso{
-Other output: \code{\link{Appify}},
+Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},

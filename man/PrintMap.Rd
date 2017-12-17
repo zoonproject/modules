@@ -61,7 +61,7 @@ The \code{threshold} argument sets the value for the threshold while \code{thres
 }
 
 \seealso{
-Other output: \code{\link{Appify}},
+Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},

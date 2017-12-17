@@ -32,7 +32,7 @@ The module outputs a line graph of probability of occupancy (relative for presen
 }
 
 \seealso{
-Other output: \code{\link{Appify}},
+Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},

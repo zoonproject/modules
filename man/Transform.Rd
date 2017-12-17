@@ -48,7 +48,7 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{StandardiseCov}},
   \code{\link{SubsampleOccurrence}},
   \code{\link{TargetGroupBackground}},
-  \code{\link{addInteraction}}
+  \code{\link{addInteraction}}, \code{\link{spThin}}
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

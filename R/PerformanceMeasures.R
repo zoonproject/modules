@@ -16,18 +16,20 @@
 #'
 #' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
+#' @param print If true then the data are returned to console as well as outputted
+#'
 #' @param threshold A chosen threshold value for measures that need 0/1 predictions 
 #'   If NULL, the proportion of occurrences in the occurrence data is used.
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.0
+#' @section Version: 1.1
 #' @section Date submitted: 2016-06-15
 #' @section Data type: presence/absence, presence/background
 #'
 #' @name PerformanceMeasures
 #' @family output
 PerformanceMeasures <-
-function(.model, .ras, threshold = NULL){
+function(.model, .ras, threshold = NULL, print = TRUE){
 
   zoon:::GetPackage('SDMTools')
 
@@ -41,7 +43,7 @@ function(.model, .ras, threshold = NULL){
   }
 
   if (all(.model$data$fold == 1)){
-
+    
     warning('You have no cross-validation folds, validation statistics may be misleading')
 
     # make predictions for the model
@@ -55,7 +57,7 @@ function(.model, .ras, threshold = NULL){
                                             threshold)
     
     performance <- list(
-      auc = SDMTools::auc(.model$data$value, .model$data$predictions),
+      auc = SDMTools::auc(.model$data$value, p),
       kappa = SDMTools::Kappa(confusion),
       omissions = SDMTools::omission(confusion),
       sensitivity = SDMTools::sensitivity(confusion),
@@ -98,7 +100,7 @@ function(.model, .ras, threshold = NULL){
 #    message(line)
 #  }
 #  message(' ')
-
-  return (performance)
+  if (print == TRUE) print(performance)
+  return(performance)
 
 }

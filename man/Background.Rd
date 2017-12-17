@@ -30,11 +30,11 @@ Process module to generate random (optionally biased) background
   presence only data.
 }
 \section{Version}{
- 1.3
+ 1.5
 }
 
 \section{Date submitted}{
- 2017-10-17
+ 2017-11-28
 }
 
 \section{Data type}{
@@ -55,7 +55,8 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{StandardiseCov}},
   \code{\link{SubsampleOccurrence}},
   \code{\link{TargetGroupBackground}},
-  \code{\link{Transform}}, \code{\link{addInteraction}}
+  \code{\link{Transform}}, \code{\link{addInteraction}},
+  \code{\link{spThin}}
 }
 \author{
 ZOON Developers, Simon Kapitza \email{zoonproject@gmail.com}

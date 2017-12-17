@@ -22,8 +22,8 @@
 #' @param seed Numeric used with \code{\link[base]{set.seed}}
 #' 
 #' @author ZOON Developers, Simon Kapitza \email{zoonproject@@gmail.com}
-#' @section Version: 1.3
-#' @section Date submitted: 2017-10-17 
+#' @section Version: 1.5
+#' @section Date submitted: 2017-11-28 
 #' @section Data type: presence-only
 #'   
 #' @name Background
@@ -109,10 +109,20 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
                       latitude = pa[, 2],
                       pa_covs)
   
+  # add empty columns for any additional fields (like crs)
+  extra_columns <- setdiff(colnames(occurrence), colnames(df_bg))
+  if (length(extra_columns) > 0) {
+    for (col in extra_columns) {
+      new_col <- data.frame(NA)
+      names(new_col) <- col
+      df_bg <- cbind(df_bg, new_col)
+    }
+  }
+  
   # combine with the previous data
+  df_bg <- df_bg[, colnames(occurrence)]
   df <- rbind(occurrence, df_bg)
   
-  names(df)[6:ncol(df)] <- names(.data$ras)
   attributes(df) <- c(attributes(df), Atts)
   attr(df, 'covCols') <- names(.data$ras)
   
