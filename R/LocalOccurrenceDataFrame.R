@@ -22,10 +22,10 @@
 #'
 #' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
-#' @section Version: 1
+#' @section Version: 1.1
 #'
-#' @section Date submitted:  2017-10-20
-LocalOccurrenceDataFrame <- function(dataFrame=read.csv("myData.csv"),
+#' @section Date submitted:  2017-12-17
+LocalOccurrenceDataFrame <- function(dataFrame=read.csv("myData.csv"),  # is there a data.frame in zoon's namespace that could go here?
            occurrenceType='presence',
            columns=c(long = 'longitude', lat = 'latitude', value = 'value'),
            subsetSpecies = NULL,
@@ -87,8 +87,8 @@ LocalOccurrenceDataFrame <- function(dataFrame=read.csv("myData.csv"),
       data <- eval(parse(text = command))
     }
     
-    command <- sprintf('data[ , c("%s", "%s", "%s")]', longName, latName, valName)
-    data <- eval(parse(text = command)) 
+    # command <- sprintf('data[ , c("%s", "%s", "%s")]', longName, latName, valName)
+    # data <- eval(parse(text = command)) 
     
     names(data)[names(data) == longName] <- 'longitude'
     names(data)[names(data) == latName] <- 'latitude'

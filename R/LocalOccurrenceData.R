@@ -22,9 +22,9 @@
 #'
 #' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
-#' @section Version: 1.2
+#' @section Version: 1.3
 #'
-#' @section Date submitted:  2017-07-31
+#' @section Date submitted:  2017-12-17
 LocalOccurrenceData <- function(filename='myData.csv',
            occurrenceType='presence',
            columns=c(long = 'longitude', lat = 'latitude', value = 'value'),
@@ -124,8 +124,8 @@ LocalOccurrenceData <- function(filename='myData.csv',
       data <- eval(parse(text = command))
     }
     
-    command <- sprintf('data[ , c("%s", "%s", "%s")]', longName, latName, valName)
-    data <- eval(parse(text = command)) 
+    # command <- sprintf('data[ , c("%s", "%s", "%s")]', longName, latName, valName)
+    # data <- eval(parse(text = command))
     
     names(data)[names(data) == longName] <- 'longitude'
     names(data)[names(data) == latName] <- 'latitude'

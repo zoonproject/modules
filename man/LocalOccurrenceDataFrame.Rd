@@ -31,11 +31,11 @@ Occurrence module to format local occurrence data to be used with zoon. Must be 
 }
 
 \section{Version}{
- 1
+ 1.1
 }
 
 \section{Date submitted}{
-  2017-10-20
+  2017-12-17
 }
 
 \seealso{
