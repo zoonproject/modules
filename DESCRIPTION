@@ -42,7 +42,8 @@ Depends:
     spocc,
     raster,
     mapr,
-    DataExplorer
+    DataExplorer,
+    spThin
 Imports:
     assertthat
 Suggests:
