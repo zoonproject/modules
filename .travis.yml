@@ -36,6 +36,8 @@ email:
   
 ## Set up the matrix of different runs
 env:
+  global:
+    - R_MAX_NUM_DLLS=1000
   matrix:
     - r: release
       not_cran: true
