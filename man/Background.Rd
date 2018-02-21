@@ -30,11 +30,11 @@ Process module to generate random (optionally biased) background
   presence only data.
 }
 \section{Version}{
- 1.5
+ 1.6
 }
 
 \section{Date submitted}{
- 2017-11-28
+ 2018-02-21
 }
 
 \section{Data type}{

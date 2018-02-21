@@ -100,7 +100,7 @@ Background <- function (.data, n = 100, bias = NULL, seed = NULL) {
                                              n,
                                              prob = prob))
   
-  pa_covs <- as.matrix(extract(.data$ras, pa))
+  pa_covs <- as.matrix(raster::extract(.data$ras, pa))
   colnames(pa_covs) <- names(.data$ras)
   df_bg <- data.frame(value = 0,
                       type = "background",
