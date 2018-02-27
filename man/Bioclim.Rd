@@ -7,21 +7,24 @@
 Bioclim(extent = c(-180, 180, -90, 90), resolution = 10, layers = 1:5)
 }
 \arguments{
-\item{extent}{Length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude.}
+\item{extent}{Either a length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude; or an object of class Extent}
 
 \item{resolution}{Resolution in minutes. Must be one of 2.5, 5 or 10. Default is 10.}
 
-\item{layers}{which bioclim layers to obtain, a vector of integers between 1 and 19.}
+\item{layers}{Which bioclim layers to obtain, a vector of integers between 1 and 19.}
 }
 \description{
 Get worldclim environment data. Downloads then stores locally.
 }
+\details{
+
+}
 \section{Version}{
- 1.0
+ 1.1
 }
 
 \section{Date submitted}{
- 2015-11-13
+  2017-10-17
 }
 
 \seealso{
@@ -33,5 +36,5 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{UKBioclim}}
 }
 \author{
-ZOON Developers, \email{zoonproject@gmail.com}
+ZOON Developers, \email{zoonproject@@gmail.com}
 }

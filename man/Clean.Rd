@@ -24,11 +24,15 @@ A number of data cleaning steps are implemented. \code{which} takes a (case inse
 }
 }
 \section{Version}{
- 1.0
+ 1.1
 }
 
 \section{Date submitted}{
  2015-03-21
+}
+
+\section{Date updated}{
+ 2017-08-09
 }
 
 \section{Data type}{
@@ -51,8 +55,9 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{StandardiseCov}},
   \code{\link{SubsampleOccurrence}},
   \code{\link{TargetGroupBackground}},
-  \code{\link{Transform}}, \code{\link{addInteraction}}
+  \code{\link{Transform}}, \code{\link{addInteraction}},
+  \code{\link{spThin}}
 }
 \author{
-ZOON Developers, \email{zoonproject@gmail.com}
+ZOON Developers, David Wilkinson \email{zoonproject@gmail.com}
 }

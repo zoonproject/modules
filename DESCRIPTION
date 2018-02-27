@@ -34,14 +34,16 @@ Depends:
     glmnet,
     rJava,
     mgcv,
-    rnbn,
     GRaF,
     sperrorest,
     SDMTools,
     randomForest,
     MASS,
     spocc,
-    raster
+    raster,
+    mapr,
+    DataExplorer,
+    spThin
 Imports:
     assertthat
 Suggests:

@@ -18,10 +18,10 @@
 #'
 #' @section Data type: presence-only, presence/absence, presence/background
 #'
-#' @section Version: 0
+#' @section Version: 0.1
 #'
 #' @section Date submitted:  2016-06-15
-ROCcurve <- function (.model, .ras, newwin = TRUE) 
+ROCcurve <- function (.model, .ras, newwin = FALSE) 
 {
     if (newwin) {
         dev.new()

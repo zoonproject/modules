@@ -44,7 +44,8 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{PartitionDisc}},
   \code{\link{SubsampleOccurrence}},
   \code{\link{TargetGroupBackground}},
-  \code{\link{Transform}}, \code{\link{addInteraction}}
+  \code{\link{Transform}}, \code{\link{addInteraction}},
+  \code{\link{spThin}}
 }
 \author{
 Alison Johnston & Carsten F. Dormann, \email{alison.johnston@bto.org}

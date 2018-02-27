@@ -64,7 +64,8 @@ Other process: \code{\link{BackgroundAndCrossvalid}},
   \code{\link{StandardiseCov}},
   \code{\link{SubsampleOccurrence}},
   \code{\link{TargetGroupBackground}},
-  \code{\link{Transform}}, \code{\link{addInteraction}}
+  \code{\link{Transform}}, \code{\link{addInteraction}},
+  \code{\link{spThin}}
 }
 \author{
 James Campbell, \email{jamesadamcampbell@gmail.com}

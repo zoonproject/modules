@@ -4,7 +4,7 @@
 \alias{PrintMap}
 \title{Output module: PrintMap}
 \usage{
-PrintMap(.model, .ras, plot = TRUE, points = TRUE, dir = NULL,
+PrintMap(.model, .ras, plot = TRUE, points = FALSE, dir = NULL,
   filename = NULL, size = c(480, 480), res = 72, threshold = NULL,
   thresholdmethod = c("probability", "quantile", "falsepositive",
   "falsenegative"), ...)
@@ -53,7 +53,7 @@ The \code{threshold} argument sets the value for the threshold while \code{thres
 }
 }
 \section{Version}{
- 1.1
+ 1.2
 }
 
 \section{Date submitted}{
@@ -61,18 +61,24 @@ The \code{threshold} argument sets the value for the threshold while \code{thres
 }
 
 \seealso{
-Other output: \code{\link{Appify}},
+Other output: \code{\link{AUC}}, \code{\link{Appify}},
+  \code{\link{CoefficientPlot}},
+  \code{\link{CovHistograms}}, \code{\link{DataSummary}},
+  \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
-  \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+  \code{\link{InteractiveMap}},
+  \code{\link{InteractiveOccurrenceMap}},
+  \code{\link{NoOutput}}, \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintOccurrenceMap}}, \code{\link{ROCcurve}},
+  \code{\link{ReliabilityPlot}},
   \code{\link{ResponseCurveViz}},
-  \code{\link{ResponseCurve}},
+  \code{\link{ResponseCurve}}, \code{\link{ResponsePlot}},
   \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
 }
 \author{
-ZOON Developers, James Campbell, \email{zoonproject@gmail.com}
+ZOON Developers, James Campbell, David Wilkinson \email{zoonproject@gmail.com}
 }

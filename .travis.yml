@@ -2,6 +2,7 @@ language: r
 dist: trusty
 cache: packages
 sudo: required
+group: deprecated-2017Q2
 
 addons:
   apt:
@@ -35,6 +36,8 @@ email:
   
 ## Set up the matrix of different runs
 env:
+  global:
+    - R_MAX_NUM_DLLS=1000
   matrix:
     - r: release
       not_cran: true

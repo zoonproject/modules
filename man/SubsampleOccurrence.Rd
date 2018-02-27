@@ -47,7 +47,8 @@ Other process: \code{\link{AddRandomUniformPredictors}},
   \code{\link{PartitionDisc}},
   \code{\link{StandardiseCov}},
   \code{\link{TargetGroupBackground}},
-  \code{\link{Transform}}, \code{\link{addInteraction}}
+  \code{\link{Transform}}, \code{\link{addInteraction}},
+  \code{\link{spThin}}
 }
 \author{
 Nick Golding, \email{nick.golding.research@gmail.com}

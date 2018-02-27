@@ -34,13 +34,20 @@ Appify will return the path to the shiny application. For details on how to shar
 }
 
 \seealso{
-Other output: \code{\link{InteractiveCovariateMap}},
-  \code{\link{InteractiveMap}}, \code{\link{NoOutput}},
+Other output: \code{\link{AUC}},
+  \code{\link{CoefficientPlot}},
+  \code{\link{CovHistograms}}, \code{\link{DataSummary}},
+  \code{\link{GenerateCovariateReport}},
+  \code{\link{InteractiveCovariateMap}},
+  \code{\link{InteractiveMap}},
+  \code{\link{InteractiveOccurrenceMap}},
+  \code{\link{NoOutput}}, \code{\link{PairPlot}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
-  \code{\link{ROCcurve}}, \code{\link{ResponseCurveViz}},
-  \code{\link{ResponseCurve}},
+  \code{\link{ROCcurve}}, \code{\link{ReliabilityPlot}},
+  \code{\link{ResponseCurveViz}},
+  \code{\link{ResponseCurve}}, \code{\link{ResponsePlot}},
   \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}

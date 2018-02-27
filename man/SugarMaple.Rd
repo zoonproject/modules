@@ -28,9 +28,9 @@ The extent of the occurrence data is \code{c(-170, -20, 10, 80)}. These data wer
 Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{CWBZimbabwe}}, \code{\link{CarolinaWrenPA}},
   \code{\link{CarolinaWrenPO}},
+  \code{\link{LocalOccurrenceDataFrame}},
   \code{\link{LocalOccurrenceData}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
-  \code{\link{NBNdataByName}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}}
