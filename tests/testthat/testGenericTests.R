@@ -1,7 +1,8 @@
 ### General module tests ###
 library(zoon, quietly = TRUE)
 library(roxygen2)
-if(grepl("ZoonModules.Rcheck", getwd())) setwd('../../00_pkg_src/ZoonModules/tests/testthat')
+if(grepl("zoon.modules.Rcheck", getwd()))
+  setwd('../../00_pkg_src/zoon.modules/tests/testthat')
 # Get our list of modules
 if(basename(getwd()) == 'tests'){
   modulePaths <- list.files('../R', pattern = '.R$', full.names = TRUE)
@@ -11,10 +12,14 @@ if(basename(getwd()) == 'tests'){
   stop(paste('executing tests from', getwd()))
 }
 
-if(length(modulePaths) == 0) stop(paste('No modules found for testing\n',
-                                        'Current path:', getwd(), '\n\n',
-                                        'Dir above:', paste(dir('..'), collapse = ', '),
-                                        '\n\nDir 2 above:', paste(dir('../..'), collapse = ', ')))
+if(length(modulePaths) == 0) {
+  msg <- paste('No modules found for testing\n',
+               'Current path:', getwd(), '\n\n',
+               'Dir above:', paste(dir('..'), collapse = ', '),
+               '\n\nDir 2 above:',
+               paste(dir('../..'), collapse = ', '))
+  stop(msg)
+}
 
 # A vector of R scripts to ignore
 # Modules should only be ignored here if:

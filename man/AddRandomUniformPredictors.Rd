@@ -32,6 +32,7 @@ Process module which adds a random uniform covariate to the dataset.  This new c
 }
 
 \examples{
+\dontrun{
 work1 <- workflow(occurrence = UKAnophelesPlumbeus,
    covariate  = UKAir,
    process    = Chain(OneHundredBackground,
@@ -49,7 +50,7 @@ spplot(work1$process.output[[1]]$ras$RandUnif.2)
 
 ### Show resulting model
 work1$model.output[[1]]$model$model
-
+}
 }
 \seealso{
 Other process: \code{\link{BackgroundAndCrossvalid}},
