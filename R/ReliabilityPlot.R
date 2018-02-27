@@ -35,8 +35,7 @@ ReliabilityPlot <- function(.model, .ras, n_bins = 20){
   
   colaxes <- "grey20"
   colabs <- "grey20"
-  colfunc <- colorRampPalette(c("dodgerblue1", "darkblue"))
-  coldots <- colfunc(n_bins)
+  coldots <- "darkblue"
   
   if (all(.model$data$predictions %in% c(0,1))){
     warning('The model has predicted presence/absence rather than probabilities. This module will not work')
@@ -88,9 +87,8 @@ ReliabilityPlot <- function(.model, .ras, n_bins = 20){
   max_bins_p<-max(bins_p, na.rm = TRUE)
   
   axis_max <- ifelse(round(max(max_bins_o, max_bins_p),1) < max(max_bins_o, max_bins_p), round(max(max_bins_o, max_bins_p),1)+.1, round(max(max_bins_o, max_bins_p),1))
-
-  layout(matrix(1:2,nrow=1),widths=c(0.9,0.1))
-  par(mar=c(5.1,4.1,2.1,2.1))
+  
+  par(mar=c(4,4,0.5,0.5))
   plot(x=bins_p, y=bins_o, xlim=c(0,axis_max), ylim=c(0,axis_max), pch=19,
        ylab="Observed occurrence (proportion of sites)",
        xlab="Predicted probability of presence",
@@ -99,25 +97,11 @@ ReliabilityPlot <- function(.model, .ras, n_bins = 20){
   axis(2, col = colaxes, las = 2, lwd = 0, lwd.tick = 1, col.axis = colabs)
   abline(a=0, b=1, col=colaxes, lty="dashed")
   box(bty="l", col=colaxes)
-  calib <- lm(bins_p ~ bins_o)
+  calib <- lm(bins_o ~ bins_p)
   calib_output <- c(coefficients(calib), summary(calib)$r.squared)
   names(calib_output) <- c("intercept", "gradient", "r-squared")
   text(x=0, y=axis_max-0.05, paste("y =", round(calib_output[2],2), "x +", round(calib_output[1],2)), pos=4)
   text(x=0, y=axis_max-0.15, paste("r-sq =", round(calib_output[which(names(calib_output) == "r-squared")],2)), pos=4)
-  
-  par(mar=c(5.1,0.5,4.1,0.5))
-  plot(NA,type="n",ann=FALSE,xlim=c(1,2),ylim=c(1,2),xaxt="n",yaxt="n",bty="n", col.axis=colaxes)
-  rect(
-    xl,
-    head(seq(yb,yt,(yt-yb)/n_bins),-1),
-    xr,
-    tail(seq(yb,yt,(yt-yb)/n_bins),-1),
-    col=colfunc(n_bins)
-  )
-  
-  mtext(c(round(seq(0,1, length.out=n_breaks),2), "Bins"), side=2,
-        at = c(1, tail(seq(yb,yt,(yt-yb)/n_bins),-1), 2.05),
-        las = 2,cex=0.7, col=colabs)
 
   
   return(calib_output)
