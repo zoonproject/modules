@@ -15,6 +15,7 @@
 #' @section Data type: presence-only, presence/absence, abundance, proportion
 #'
 #' @examples 
+#' \dontrun{
 #' work1 <- workflow(occurrence = UKAnophelesPlumbeus,
 #'    covariate  = UKAir,
 #'    process    = Chain(OneHundredBackground,
@@ -24,15 +25,15 @@
 #'    model      = LogisticRegression,
 #'    output     = PerformanceMeasures)
 #'    
-#'### Display resulting covariate maps from each workflow
-#'spplot(work1$process.output[[1]]$ras$layer)
-#'spplot(work1$process.output[[1]]$ras$Random.layer.1)
-#'spplot(work1$process.output[[1]]$ras$RandUnif.1)
-#'spplot(work1$process.output[[1]]$ras$RandUnif.2)
+#' ### Display resulting covariate maps from each workflow
+#' spplot(work1$process.output[[1]]$ras$layer)
+#' spplot(work1$process.output[[1]]$ras$Random.layer.1)
+#' spplot(work1$process.output[[1]]$ras$RandUnif.1)
+#' spplot(work1$process.output[[1]]$ras$RandUnif.2)
 #'
-#'### Show resulting model
-#'work1$model.output[[1]]$model$model
-#'
+#' ### Show resulting model
+#' work1$model.output[[1]]$model$model
+#' }
 #' @name AddRandomUniformPredictors
 #' @family process
 
