@@ -10,8 +10,6 @@ Description: A package containing SDM code modules for use in SDM
     separately.
 License: BSD_3_clause + file LICENSE
 URL: www.github.com/zoonproject/modules
-Depends:
-    zoon
 Suggests:
     RNCEP,
     dismo,
@@ -49,6 +47,7 @@ Suggests:
     testthat,
     roxygen2
 Imports:
+    zoon,
     assertthat
 VignetteBuilder: knitr
 LazyData: TRUE
