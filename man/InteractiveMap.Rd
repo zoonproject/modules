@@ -24,8 +24,8 @@ and training data. Clicking on a point reveals additional information.
 }
 
 \seealso{
-Other output: \code{\link{AUC}}, \code{\link{Appify}},
-  \code{\link{CoefficientPlot}},
+Other output: \code{\link{AIC}}, \code{\link{AUC}},
+  \code{\link{Appify}}, \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},

@@ -26,8 +26,8 @@ Plot a zoomable and scrollable map of a covariate layer.
 }
 
 \seealso{
-Other output: \code{\link{AUC}}, \code{\link{Appify}},
-  \code{\link{CoefficientPlot}},
+Other output: \code{\link{AIC}}, \code{\link{AUC}},
+  \code{\link{Appify}}, \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveMap}},
