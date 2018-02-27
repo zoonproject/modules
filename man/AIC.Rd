@@ -35,6 +35,7 @@ Returns the AIC value for LogisticRegession models. Cannot work with other model
 Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
+  \code{\link{Deviance}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

@@ -32,7 +32,7 @@ The frequency of each value is plotted for each covariate.
 \seealso{
 Other output: \code{\link{AIC}}, \code{\link{AUC}},
   \code{\link{Appify}}, \code{\link{CoefficientPlot}},
-  \code{\link{DataSummary}},
+  \code{\link{DataSummary}}, \code{\link{Deviance}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

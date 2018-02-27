@@ -33,6 +33,7 @@ The module creates an html widget that displays in  the Viewer panel
 Other output: \code{\link{AIC}}, \code{\link{AUC}},
   \code{\link{Appify}}, \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
+  \code{\link{Deviance}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}}, \code{\link{NoOutput}},

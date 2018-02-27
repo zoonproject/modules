@@ -46,6 +46,7 @@ This model prints to console a number of metrics of the model fitted:
 Other output: \code{\link{AIC}}, \code{\link{AUC}},
   \code{\link{Appify}}, \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
+  \code{\link{Deviance}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},

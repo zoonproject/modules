@@ -35,6 +35,7 @@ The results are presented as an html output generated using Rmarkdown that opens
 Other output: \code{\link{AIC}}, \code{\link{AUC}},
   \code{\link{Appify}}, \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
+  \code{\link{Deviance}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
   \code{\link{InteractiveOccurrenceMap}},
