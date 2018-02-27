@@ -1,17 +1,18 @@
-Package: ZoonModules
+Package: zoon.modules
 Type: Package
-Title: Species Distribution Modelling Code Modules for the ZOON Package
+Title: Species Distribution Modelling Code Modules for the zoon Package
 Version: 0.2
 Author: Tim Lucas, Tom August, Nick Golding, Greg McInerny, Emiel van Loon
 Maintainer: Tom August <tomaug@ceh.ac.uk>
-Description: A dummy package containing SDM code modules for use in SDM
-    workflows via the zoon R package. Note that this repository is only set up as an
-    R package to facilitate compiling documentation and testing modules. It is NOT
-    intended to be installed and used in an R session.
+Description: A package containing SDM code modules for use in SDM
+    workflows via the zoon R package. Note that this repository is intended to
+    be automatically installed and loaded by zoon, rather than being installed
+    separately.
 License: BSD_3_clause + file LICENSE
 URL: www.github.com/zoonproject/modules
 Depends:
-    zoon,
+    zoon
+Suggests:
     RNCEP,
     dismo,
     shiny,
@@ -43,13 +44,12 @@ Depends:
     raster,
     mapr,
     DataExplorer,
-    spThin
-Imports:
-    assertthat
-Suggests:
+    spThin,
     knitr,
     testthat,
     roxygen2
+Imports:
+    assertthat
 VignetteBuilder: knitr
 LazyData: TRUE
 RoxygenNote: 6.0.1
