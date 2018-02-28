@@ -30,9 +30,10 @@ Returns the the Area Under the Curve of the Receiver operating characteristic us
 }
 
 \seealso{
-Other output: \code{\link{Appify}},
+Other output: \code{\link{AIC}}, \code{\link{Appify}},
   \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
+  \code{\link{Deviance}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
