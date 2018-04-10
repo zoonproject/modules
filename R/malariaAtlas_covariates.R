@@ -26,6 +26,8 @@ malariaAtlas_covariates <- function(surface = 'ACTs',
                                     extent = c(32, 48, 3, 14),
                                     year = rep(NA, length(surface))) {
   
+  zoon::getPackage('malariaAtlas')
+
   stopifnot(length(surface) == length(year))
   stopifnot(is.numeric(year) | is.na(year))
   
