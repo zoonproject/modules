@@ -1,0 +1,42 @@
+#' @title Process module: RemoveNAs
+#'
+#' @description Process module that removes data containing NAs. 
+#' Remove either data with NAs in any column or only data with NAs
+#' in the response. As a number of model modules cannot handle NAs, this
+#' may be necessary.
+#'
+#' @param .data \strong{Internal parameter, do not use in the workflow function}. \code{.data} is a list of a data frame and a raster object returned from occurrence modules and covariate modules respectively. \code{.data} is passed automatically in workflow from the occurrence and covariate modules to the process module(s) and should not be passed by the user.
+#'
+#' @param ignore Character vector of columns to ignore i.e. columns that can have NAs without being removed. 
+#'
+#' @return a Raster object (class from the raster package) with the gridded
+#'      covariates used to train and predict from the SDM.
+#'
+#' @author ZOON Developers, \email{zoonproject@@gmail.com}
+#' @section Version: 1.0
+#' @section Date submitted: 2018-02-25
+#'
+#' @section Data type: presence-only, presence/absence, abundance, proportion
+#'
+#' @name NoProcess
+#' @family process
+
+RemoveNAs <-
+  function (.data, responseOnly = FALSE, ignore = NULL) {
+    
+    df <- .data$df
+    
+    if(responseOnly){
+      df <- df[!is.na(df$value), ]
+    } else {
+      df <- df[complete.cases(df), ]
+    }
+    
+    
+    ras <- .data$ras
+    
+    return(list(df=df, ras=ras))
+    
+  }
+
+
