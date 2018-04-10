@@ -9,8 +9,6 @@
 #'
 #' @param ignore Character vector of columns to ignore i.e. columns that can have NAs without being removed. 
 #'
-#' @return a Raster object (class from the raster package) with the gridded
-#'      covariates used to train and predict from the SDM.
 #'
 #' @author ZOON Developers, \email{zoonproject@@gmail.com}
 #' @section Version: 1.0
