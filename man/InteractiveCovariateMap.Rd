@@ -4,7 +4,7 @@
 \alias{InteractiveCovariateMap}
 \title{Output module: InteractiveCovariateMap}
 \usage{
-InteractiveCovariateMap(.model, .ras, which = 1)
+InteractiveCovariateMap(.model, .ras, which = 1, maxBytes = 4200000)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'}
@@ -13,22 +13,25 @@ InteractiveCovariateMap(.model, .ras, which = 1)
 
 \item{which}{which covariate to plot.
 A single numeric giving the index of the covariate to plot}
+
+\item{maxBytes}{The maximum number of bytes to allow for the projected image (before base64 encoding); defaults to 4MB.}
 }
 \description{
 Plot a zoomable and scrollable map of a covariate layer.
 }
 \section{Version}{
- 1.0
+ 1.1
 }
 
 \section{Date submitted}{
- 2015-11-13
+ 2018-04-10
 }
 
 \seealso{
-Other output: \code{\link{AUC}}, \code{\link{Appify}},
-  \code{\link{CoefficientPlot}},
+Other output: \code{\link{AIC}}, \code{\link{AUC}},
+  \code{\link{Appify}}, \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
+  \code{\link{Deviance}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveMap}},
   \code{\link{InteractiveOccurrenceMap}},
@@ -44,5 +47,5 @@ Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{VariableImportance}}
 }
 \author{
-ZOON Developers, \email{zoonproject@gmail.com}
+ZOON Developers, David Wilkinson, \email{zoonproject@gmail.com}
 }

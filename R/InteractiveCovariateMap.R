@@ -9,14 +9,16 @@
 #' @param which which covariate to plot.
 #' A single numeric giving the index of the covariate to plot
 #' 
-#' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.0
-#' @section Date submitted: 2015-11-13
+#' @param maxBytes The maximum number of bytes to allow for the projected image (before base64 encoding); defaults to 4MB.
+#' 
+#' @author ZOON Developers, David Wilkinson, \email{zoonproject@@gmail.com}
+#' @section Version: 1.1
+#' @section Date submitted: 2018-04-10
 #' 
 #' @name InteractiveCovariateMap
 #' @family output
 InteractiveCovariateMap <-
-  function (.model, .ras, which = 1) {
+  function (.model, .ras, which = 1, maxBytes = 4.2e6) {
     
     # This function draws inspiration from a previous version of
     # the Rsenal package: https://github.com/environmentalinformatics-marburg/Rsenal
@@ -56,7 +58,8 @@ InteractiveCovariateMap <-
                                  colors = cov_pal,
                                  project = FALSE,
                                  opacity = 0.8,
-                                 group = names(.ras))
+                                 group = names(.ras),
+                                 maxBytes = maxBytes)
     
     # add to list of overlay layers
     overlay_groups <- names(.ras)
