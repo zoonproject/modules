@@ -32,9 +32,10 @@ Just starting out, much more to do
 }
 
 \seealso{
-Other output: \code{\link{AUC}}, \code{\link{Appify}},
-  \code{\link{CoefficientPlot}},
+Other output: \code{\link{AIC}}, \code{\link{AUC}},
+  \code{\link{Appify}}, \code{\link{CoefficientPlot}},
   \code{\link{CovHistograms}}, \code{\link{DataSummary}},
+  \code{\link{Deviance}},
   \code{\link{GenerateCovariateReport}},
   \code{\link{InteractiveCovariateMap}},
   \code{\link{InteractiveMap}},
@@ -43,8 +44,8 @@ Other output: \code{\link{AUC}}, \code{\link{Appify}},
   \code{\link{PerformanceMeasures}},
   \code{\link{PredictNewRasterMap}},
   \code{\link{PrintMap}}, \code{\link{PrintOccurrenceMap}},
-  \code{\link{ROCcurve}}, \code{\link{ResponseCurve}},
-  \code{\link{ResponsePlot}},
+  \code{\link{ROCcurve}}, \code{\link{ReliabilityPlot}},
+  \code{\link{ResponseCurve}}, \code{\link{ResponsePlot}},
   \code{\link{SameTimePlaceMap}}, \code{\link{SeparatePA}},
   \code{\link{SurfaceMap}},
   \code{\link{VariableImportance}}
