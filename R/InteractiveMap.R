@@ -7,13 +7,15 @@
 #'
 #' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
 #'
-#' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.1
-#' @section Date submitted: 2017-04-05
+#' @param maxBytes The maximum number of bytes to allow for the projected image (before base64 encoding); defaults to 4MB.
+#'
+#' @author ZOON Developers, David Wilkinson \email{zoonproject@@gmail.com}
+#' @section Version: 1.2
+#' @section Date submitted: 2018-04-10
 #'
 #' @name InteractiveMap
 #' @family output
-InteractiveMap <- function (.model, .ras) {
+InteractiveMap <- function (.model, .ras, maxBytes = 4.2e6) {
     
     # This function draws inspiration from a previous version of
     # the Rsenal package: https://github.com/environmentalinformatics-marburg/Rsenal
@@ -67,7 +69,8 @@ InteractiveMap <- function (.model, .ras) {
                                  colors = pred_pal,
                                  project = FALSE,
                                  opacity = 0.8,
-                                 group = 'predicted distribution')
+                                 group = 'predicted distribution',
+                                 maxBytes = maxBytes)
     
     # add to the overlay groups list
     overlay_groups <- 'predicted distribution'
