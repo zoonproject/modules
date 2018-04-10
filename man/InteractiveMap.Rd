@@ -4,23 +4,25 @@
 \alias{InteractiveMap}
 \title{Output module: InteractiveMap}
 \usage{
-InteractiveMap(.model, .ras)
+InteractiveMap(.model, .ras, maxBytes = 4200000)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.#'}
 
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
+
+\item{maxBytes}{The maximum number of bytes to allow for the projected image (before base64 encoding); defaults to 4MB.}
 }
 \description{
 Plot a zoomable and scrollable map of the predicted distribution
 and training data. Clicking on a point reveals additional information.
 }
 \section{Version}{
- 1.1
+ 1.2
 }
 
 \section{Date submitted}{
- 2017-04-05
+ 2018-04-10
 }
 
 \seealso{
@@ -43,5 +45,5 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
   \code{\link{VariableImportance}}
 }
 \author{
-ZOON Developers, \email{zoonproject@gmail.com}
+ZOON Developers, David Wilkinson \email{zoonproject@gmail.com}
 }

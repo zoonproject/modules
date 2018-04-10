@@ -10,7 +10,7 @@
 #' @param maxBytes The maximum number of bytes to allow for the projected image (before base64 encoding); defaults to 4MB.
 #'
 #' @author ZOON Developers, David Wilkinson \email{zoonproject@@gmail.com}
-#' @section Version: 1.1
+#' @section Version: 1.2
 #' @section Date submitted: 2018-04-10
 #'
 #' @name InteractiveMap

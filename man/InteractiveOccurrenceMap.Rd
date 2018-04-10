@@ -4,12 +4,14 @@
 \alias{InteractiveOccurrenceMap}
 \title{Interactive Occurrence Map}
 \usage{
-InteractiveOccurrenceMap(.model, .ras)
+InteractiveOccurrenceMap(.model, .ras, maxBytes = 4200000)
 }
 \arguments{
-\item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
+\item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s) to the output module(s) and should not be passed by the user.}
 
 \item{.ras}{\strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.}
+
+\item{maxBytes}{The maximum number of bytes to allow for the projected image (before base64 encoding); defaults to 4MB.}
 }
 \description{
 This output module creates an interactive occurrence map of the species data.
@@ -22,11 +24,11 @@ The module creates an html widget that displays in  the Viewer panel
 }
 
 \section{Version}{
- 0.2
+ 0.3
 }
 
 \section{Date submitted}{
-  2017-06-08
+  2018-04-10
 }
 
 \seealso{
