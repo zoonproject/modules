@@ -6,9 +6,11 @@
 #'
 #' @details The module creates an html widget that displays in  the Viewer panel
 #'
-#' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.
+#' @param .model \strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s) to the output module(s) and should not be passed by the user.
 #'
 #' @param .ras \strong{Internal parameter, do not use in the workflow function}. \code{.ras} is a raster layer, brick or stack object. \code{.ras} is passed automatically in workflow from the covariate module(s) to the output module(s) and should not be passed by the user.
+#'
+#' @param maxBytes The maximum number of bytes to allow for the projected image (before base64 encoding); defaults to 4MB.
 #'
 #' @family output
 #'
@@ -16,10 +18,10 @@
 #'
 #' @section Data type: presence-only, presence/absence
 #'
-#' @section Version: 0.2
+#' @section Version: 0.3
 #'
-#' @section Date submitted:  2017-06-08
-InteractiveOccurrenceMap <- function(.model, .ras){
+#' @section Date submitted:  2018-04-10
+InteractiveOccurrenceMap <- function(.model, .ras, maxBytes = 4.2e6){
   
   ## required packages
   
@@ -124,7 +126,8 @@ InteractiveOccurrenceMap <- function(.model, .ras){
                           colors = ras_pal,
                           project = FALSE,
                           opacity = 0.8,
-                          group = layer_name)
+                          group = layer_name,
+                          maxBytes = maxBytes)
     
     ## add all bar first raster layer to hide group so default display is one raster
     
