@@ -11,9 +11,13 @@
 #'   available rasters.
 #' 
 #' @param surface The surface name. See the title column in 
-#'  \link{\code{malariaAtlas::listRaster}} for options.
+#'  \code{\link{malariaAtlas::listRaster}} for available raster names.
 #' @param extent Either a length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude; or an object of class Extent
-#' @param year Numeric vector of same lengthh as \code{surface}. Which year to use for time varying rasters.
+#' @param year Numeric vector of same lengthh as \code{surface}. Which year to use for time varying rasters. NA for the latest year or for static rasters.
+#'
+#'
+#' Unlike \link{\code{malariaAtlas::getRaster}} you cannot get multiple years at once. To get multiple years of the same surface you would have to do
+#'   \code{surface = c('Plasmodium falciparum PR2-10', 'Plasmodium falciparum PR2-10'), year = c(2010, 2011)}.
 #'
 #' @seealso \code{\link{malariaAtlas::getraster}} \code{\link{malariaAtlas::listRaster}}
 #' @family covariate
@@ -42,5 +46,7 @@ malariaAtlas_covariates <- function(surface = 'Plasmodium falciparum PR2-10',
   
   layers <- zoon::CombineRasters(layer)
 
-  return (layer)
+  cov_stack <- stack(layers)
+
+  return (cov_stack)
 }
