@@ -22,7 +22,7 @@
 #'
 
 
-malariaAtlas_covariates <- function(surface = 'ACTs', 
+malariaAtlas_covariates <- function(surface = 'Plasmodium falciparum PR2-10', 
                                     extent = c(32, 48, 3, 14),
                                     year = rep(NA, length(surface))) {
   
@@ -37,6 +37,10 @@ malariaAtlas_covariates <- function(surface = 'ACTs',
   layer <- malariaAtlas::getRaster(surface = surface, 
                                    extent = extent, 
                                    year = year)
+
+  if(!is.list(layer)) layer <- list(layer)
   
+  layers <- zoon::CombineRasters(layer)
+
   return (layer)
 }
