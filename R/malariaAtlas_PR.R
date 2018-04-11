@@ -76,12 +76,6 @@ malariaAtlas_PR <- function(country = NULL,
                            ISO = ISO, 
                            species = species)
   
-  if(species == 'pf'){
-    d$positive <- d$pf_pos
-  } else if(species == 'pv'){
-    d$positive <- d$pv_pos
-  }  
-  
   d <- d[!is.na(d$examined) & !is.na(d$positive), ]
       
   
