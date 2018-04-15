@@ -4,11 +4,11 @@
 #'   from the Malaria Atlas Project database. 
 #'
 #' @param country	Character vector containing names of desired countries, 
-#'   e.g. c("Country1", "Country2", ...) OR = "ALL" (use either country 
-#'   OR ISO, not both)
+#'   e.g. c("Country1", "Country2", ...) OR = "ALL" (use exactly one of 
+#'   country, ISO and extent)
 #' @param ISO	Character vector containing ISO3 code for desired country, 
-#'  e.g. c("XXX", "YYY", ...) OR = "ALL" (use either country OR ISO, not both)
-#'
+#'  e.g. c("XXX", "YYY", ...) OR = "ALL" (use exactly one of 
+#'   country, ISO and extent)
 #' @param species 'Pf' or 'Pv' for P. falciparum or P. vivax respectively.
 #'
 #' @param standardise Length two integer vector giving the age range to
@@ -50,6 +50,7 @@
 
 malariaAtlas_PR <- function(country = NULL, 
                             ISO = 'IDN', 
+                            extent = NULL,
                             species = 'Pf', 
                             standardise = c(2, 10),
                             PA = TRUE, 
