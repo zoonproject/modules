@@ -33,7 +33,8 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{SugarMaple}},
-  \code{\link{UKAnophelesPlumbeus}}
+  \code{\link{UKAnophelesPlumbeus}},
+  \code{\link{malariaAtlas_PR}}
 }
 \author{
 A.B. Ceidi, \email{ABCD@anemail.com}

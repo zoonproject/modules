@@ -33,7 +33,8 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
-  \code{\link{UKAnophelesPlumbeus}}
+  \code{\link{UKAnophelesPlumbeus}},
+  \code{\link{malariaAtlas_PR}}
 }
 \author{
 Matt Talluto & Nick Golding, \email{mtalluto@gmail.com}

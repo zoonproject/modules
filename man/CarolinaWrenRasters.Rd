@@ -25,7 +25,8 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{Bioclim_future}}, \code{\link{Bioclim}},
   \code{\link{LocalRaster}}, \code{\link{NCEP}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}},
-  \code{\link{UKBioclim}}
+  \code{\link{UKBioclim}},
+  \code{\link{malariaAtlas_covariate}}
 }
 \author{
 Nick Golding, \email{nick.golding.research@gmail.com}
