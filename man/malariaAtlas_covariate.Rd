@@ -17,7 +17,7 @@ malariaAtlas_covariates(surface = "Plasmodium falciparum PR2-10",
 \item{year}{Numeric vector of same lengthh as \code{surface}. Which year to use for time varying rasters. NA for the latest year or for static rasters.
 
 
-Unlike \link{\code{malariaAtlas::getRaster}} you cannot get multiple years at once. To get multiple years of the same surface you would have to do
+Unlike \code{\link{malariaAtlas::getRaster}} you cannot get multiple years at once. To get multiple years of the same surface you would have to do
   \code{surface = c('Plasmodium falciparum PR2-10', 'Plasmodium falciparum PR2-10'), year = c(2010, 2011)}.}
 }
 \description{

@@ -11,11 +11,15 @@ malariaAtlas_PR(country = NULL, ISO = "IDN", extent = NULL,
 \arguments{
 \item{country}{Character vector containing names of desired countries, 
 e.g. c("Country1", "Country2", ...) OR = "ALL" (use exactly one of 
-country, ISO and extent)}
+country, ISO and extent).}
 
 \item{ISO}{Character vector containing ISO3 code for desired country, 
 e.g. c("XXX", "YYY", ...) OR = "ALL" (use exactly one of 
- country, ISO and extent)}
+ country, ISO and extent).}
+
+\item{extent}{Numeric vector containing bounding box values for desired
+area. In the order xmin, xman, ymin, ymax. (use exactly one of 
+ country, ISO and extent).}
 
 \item{species}{'Pf' or 'Pv' for P. falciparum or P. vivax respectively.}
 

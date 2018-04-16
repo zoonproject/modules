@@ -5,10 +5,13 @@
 #'
 #' @param country	Character vector containing names of desired countries, 
 #'   e.g. c("Country1", "Country2", ...) OR = "ALL" (use exactly one of 
-#'   country, ISO and extent)
+#'   country, ISO and extent).
 #' @param ISO	Character vector containing ISO3 code for desired country, 
 #'  e.g. c("XXX", "YYY", ...) OR = "ALL" (use exactly one of 
-#'   country, ISO and extent)
+#'   country, ISO and extent).
+#' @param extent	Numeric vector containing bounding box values for desired
+#'  area. In the order xmin, xman, ymin, ymax. (use exactly one of 
+#'   country, ISO and extent).
 #' @param species 'Pf' or 'Pv' for P. falciparum or P. vivax respectively.
 #'
 #' @param standardise Length two integer vector giving the age range to
@@ -34,14 +37,16 @@
 #'
 #' @author Tim Lucas, \email{timcdlucas@@gmail.com}
 #' @section Version: 1.0
-#' @references Smith, D. L. et al. Standardizing estimates of the
+#' @references 
+#' 
+#'   Smith, D. L. et al. Standardizing estimates of the
 #'   Plasmodium falciparum parasite rate. Malaria Journal 6, 131 (2007).
 #'
 #'   Gething, Peter W., et al. "A long neglected world malaria map:
 #'   Plasmodium vivax endemicity in 2010." PLoS neglected tropical
 #'   diseases 6.9 (2012): e1814.
 #' @section Data type: presence-only, presence/absence, abundance, proportion
-#' @name SpOcc
+#' @name malariaAtlas_PR
 #' @family occurrence
 
 
@@ -148,7 +153,7 @@ malariaAtlas_PR <- function(country = NULL,
   
   if(!PA) occ$weight <- d$examined
   
-  occ <- occ[complete.cases(occ), ]
+  occ <- occ[stats::complete.cases(occ), ]
   return(occ)
 }
 
