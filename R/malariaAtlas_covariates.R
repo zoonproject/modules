@@ -32,7 +32,8 @@ malariaAtlas_covariates <- function(surface = 'Plasmodium falciparum PR2-10',
                                     extent = c(32, 48, 3, 14),
                                     year = rep(NA, length(surface))) {
   
-  zoon::GetPackage('malariaAtlas')
+  install.packages('malariaAtlas')
+  library('malariaAtlas')
 
   stopifnot(length(surface) == length(year))
   stopifnot(is.numeric(year) | is.na(year))
