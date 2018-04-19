@@ -50,8 +50,12 @@ Occurrence module to collect malaria parasite rate data
  1.0
 }
 
+\section{Date submitted}{
+ 2018-04-19
+}
+
 \section{Data type}{
- presence-only, presence/absence, abundance, proportion
+ presence/absence, proportion
 }
 
 \references{

@@ -23,7 +23,7 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{CarolinaWrenRasters}},
   \code{\link{LocalRaster}}, \code{\link{NCEP}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKBioclim}},
-  \code{\link{malariaAtlas_covariate}}
+  \code{\link{malariaAtlas_covariates}}
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
