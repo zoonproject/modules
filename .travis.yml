@@ -19,6 +19,11 @@ r_binary_packages:
 r_github_packages:
  - zoonproject/zoon
 
+# Hack to get travis to test tims new modules.
+#   This should be removed once we've got issue 76 on zoon repo.
+r_packages:
+ - malariaAtlas
+
 ## After success update the code coverage
 after_success:
  - Rscript -e 'library(covr);codecov()'
