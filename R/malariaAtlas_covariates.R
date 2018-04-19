@@ -1,4 +1,4 @@
-#' @name malariaAtlas_covariate
+#' @name malariaAtlas_covariates
 #'
 #' @title Covariate module: malariaAtlas_covariates
 #'
@@ -20,6 +20,8 @@
 #'   \code{surface = c('Plasmodium falciparum PR2-10', 'Plasmodium falciparum PR2-10'), year = c(2010, 2011)}.
 #'
 #' @seealso \code{\link{malariaAtlas::getraster}} \code{\link{malariaAtlas::listRaster}}
+#' @section Version: 1.0
+#' @section Date submitted: 2018-04-19
 #' @family covariate
 #'
 #' @author Tim Lucas, \email{timcdlucas@@gmail.com}

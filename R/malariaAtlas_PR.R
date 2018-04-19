@@ -37,7 +37,7 @@
 #'
 #' @author Tim Lucas, \email{timcdlucas@@gmail.com}
 #' @section Version: 1.0
-#' @section Date submitted: 2015-11-13
+#' @section Date submitted: 2018-04-19
 #' @section Data type: presence/absence, proportion
 #' @references 
 #' 
