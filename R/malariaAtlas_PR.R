@@ -37,6 +37,8 @@
 #'
 #' @author Tim Lucas, \email{timcdlucas@@gmail.com}
 #' @section Version: 1.0
+#' @section Date submitted: 2015-11-13
+#' @section Data type: presence/absence, proportion
 #' @references 
 #' 
 #'   Smith, D. L. et al. Standardizing estimates of the
@@ -45,7 +47,6 @@
 #'   Gething, Peter W., et al. "A long neglected world malaria map:
 #'   Plasmodium vivax endemicity in 2010." PLoS neglected tropical
 #'   diseases 6.9 (2012): e1814.
-#' @section Data type: presence-only, presence/absence, abundance, proportion
 #' @name malariaAtlas_PR
 #' @family occurrence
 
