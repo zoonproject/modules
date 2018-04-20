@@ -43,7 +43,8 @@ Depends:
     raster,
     mapr,
     DataExplorer,
-    spThin
+    spThin,
+    malariaAtlas
 Imports:
     assertthat
 Suggests:
