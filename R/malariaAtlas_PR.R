@@ -64,8 +64,7 @@ malariaAtlas_PR <- function(country = NULL,
                             fold = 1) 
 {
   
-  install.packages('malariaAtlas')
-  library('malariaAtlas')
+  zoon::GetPackage('malariaAtlas')
   
   # Makes things simpler by always going to lower case.
   species <- tolower(species)
