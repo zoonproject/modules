@@ -4,7 +4,7 @@
 \alias{malariaAtlas_PR}
 \title{Occurrence module: malariaAtlas_PR}
 \usage{
-malariaAtlas_PR(country = NULL, ISO = "IDN", extent = NULL,
+malariaAtlas_PR(country = NULL, ISO = "HND", extent = NULL,
   species = "Pf", standardise = c(2, 10), PA = TRUE, year = NULL,
   fold = 1)
 }
