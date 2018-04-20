@@ -43,7 +43,8 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{SpOcc}}, \code{\link{SugarMaple}},
-  \code{\link{UKAnophelesPlumbeus}}
+  \code{\link{UKAnophelesPlumbeus}},
+  \code{\link{malariaAtlas_PR}}
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
