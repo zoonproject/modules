@@ -55,7 +55,7 @@
 
 
 malariaAtlas_PR <- function(country = NULL, 
-                            ISO = 'IDN', 
+                            ISO = 'HND', 
                             extent = NULL,
                             species = 'Pf', 
                             standardise = c(2, 10),
