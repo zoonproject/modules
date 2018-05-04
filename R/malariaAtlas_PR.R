@@ -77,10 +77,15 @@ malariaAtlas_PR <- function(country = NULL,
   if(species == 'both'){
     stop('Cannot select P. falciparum and P. vivax together because the data does not distinguish coinfections.')
   }
+
+  if(!is.null(extent)){
+    extent <- matrix(extent, nrow = 2, byrow = TRUE)
+  }
   
   # Get the data
   d <- malariaAtlas::getPR(country = country,
                            ISO = ISO, 
+                           extent = extent,
                            species = species)
   
   d <- d[!is.na(d$examined) & !is.na(d$positive), ]
