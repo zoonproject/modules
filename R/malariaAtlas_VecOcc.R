@@ -1,9 +1,9 @@
 #' @title Occurrence module: malariaAtlas_VecOcc
-#' #
+#' 
 #' @description Occurrence module to collect malaria vector occurrence data
 #'  from the Malaria Atlas Project database. 
 #'  
-#'  @param country	Character vector containing names of desired countries, 
+#' @param country	Character vector containing names of desired countries, 
 #'   e.g. c("Country1", "Country2", ...) OR = "ALL" (use exactly one of 
 #'   country, ISO and extent).
 #' @param ISO	Character vector containing ISO3 code for desired country, 
@@ -12,17 +12,16 @@
 #' @param extent	Numeric vector containing bounding box values for desired
 #'  area. In the order xmin, xman, ymin, ymax. (use exactly one of 
 #'   country, ISO and extent).
-#' @param species character string containing name of desired species,
-#'  e.g. "Species1". 
+#' @param species String containing name of desired species
 #'  
 #' @param year Vector of years for which to keep data. NULL keeps all years.
 #'  
-#'  @param fold Control the validation. If 0, all data is validation data.
+#' @param fold Control the validation. If 0, all data is validation data.
 #'   If 1, all data is training data.
 #'   
 #' @seealso \code{\link{malariaAtlas::getVecOcc}}
 #' 
-#' @author Suzanne Keddie, \email{suzanne.keddie@@bdi.ox.ac.uk}
+#' @author Suzanne H Keddie, \email{suzanne.keddie@@bdi.ox.ac.uk}
 #' @section Version: 1.0
 #' @section Date submitted: 2018-09-26
 #' @section Data type: presence-only   
@@ -37,7 +36,7 @@
 malariaAtlas_VecOcc <- function(country = NULL,
                                 ISO = "MMR",
                                 extent = NULL,
-                                species,       
+                                species = "Anopheles dirus",       
                                 year = NULL,
                                 fold = 1)
 {
@@ -72,13 +71,18 @@ malariaAtlas_VecOcc <- function(country = NULL,
   }
   
   
+  d$value <- 1
+  d$type <- 'presence'
+  
+  
   occ <- data.frame(longitude = d$longitude, 
                     latitude = d$latitude,
                     fold = fold,
+                    value = d$value,
+                    type = d$type,
                     stringsAsFactors = FALSE)
   
-  occ$value <- 1
-  occ$type <- 'presence'
+
   
   occ <- occ[stats::complete.cases(occ), ]
   return(occ)
