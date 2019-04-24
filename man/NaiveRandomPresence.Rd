@@ -44,7 +44,8 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{SpOcc}}, \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}},
-  \code{\link{malariaAtlas_PR}}
+  \code{\link{malariaAtlas_PR}},
+  \code{\link{malariaAtlas_VecOcc}}
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

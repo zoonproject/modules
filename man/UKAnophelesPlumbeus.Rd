@@ -31,7 +31,8 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{Lorem_ipsum_UK}}, \code{\link{NATrees}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
-  \code{\link{SugarMaple}}, \code{\link{malariaAtlas_PR}}
+  \code{\link{SugarMaple}}, \code{\link{malariaAtlas_PR}},
+  \code{\link{malariaAtlas_VecOcc}}
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
