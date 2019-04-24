@@ -53,3 +53,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 G. McInerny, \email{gmcinerny@hotmail.com}
 }
+\concept{output}

@@ -4,8 +4,8 @@
 \alias{PrintOccurrenceMap}
 \title{Output module: PrintOccurrenceMap}
 \usage{
-PrintOccurrenceMap(.model, .ras, plot = TRUE, dir = NULL, filename = NULL,
-  size = c(480, 480), res = 72, ...)
+PrintOccurrenceMap(.model, .ras, plot = TRUE, dir = NULL,
+  filename = NULL, size = c(480, 480), res = 72, ...)
 }
 \arguments{
 \item{.model}{\strong{Internal parameter, do not use in the workflow function}. \code{.model} is list of a data frame (\code{data}) and a model object (\code{model}). \code{.model} is passed automatically in workflow, combining data from the model module(s) and process module(s), to the output module(s) and should not be passed by the user.}
@@ -66,3 +66,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 Nick Golding, \email{nick.golding.research@gmail.com}
 }
+\concept{output}

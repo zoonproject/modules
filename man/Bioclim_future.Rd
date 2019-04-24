@@ -43,3 +43,4 @@ Other covariate: \code{\link{AirNCEP}},
 \author{
 F. Rodriguez-Sanchez & E. Van Loon, \email{zoonproject@gmail.com}
 }
+\concept{covariate}

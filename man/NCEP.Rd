@@ -4,7 +4,8 @@
 \alias{NCEP}
 \title{Covariate module: NCEP}
 \usage{
-NCEP(extent = c(-5, 5, 50, 60), variables = "hgt", status.bar = FALSE)
+NCEP(extent = c(-5, 5, 50, 60), variables = "hgt",
+  status.bar = FALSE)
 }
 \arguments{
 \item{extent}{A numeric vector of length 4 giving the coordinates of the 
@@ -47,3 +48,4 @@ Other covariate: \code{\link{AirNCEP}},
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
+\concept{covariate}

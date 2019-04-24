@@ -52,3 +52,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 Saras Windecker, \email{saras.windecker@gmail.com}
 }
+\concept{output}

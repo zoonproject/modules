@@ -30,3 +30,4 @@ Other covariate: \code{\link{AirNCEP}},
 \author{
 Nick Golding, \email{nick.golding.research@gmail.com}
 }
+\concept{covariate}

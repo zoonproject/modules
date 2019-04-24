@@ -27,3 +27,4 @@ Other covariate: \code{\link{AirNCEP}},
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
+\concept{covariate}

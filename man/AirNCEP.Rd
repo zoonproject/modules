@@ -33,3 +33,4 @@ Other covariate: \code{\link{Bioclim_future}},
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
+\concept{covariate}

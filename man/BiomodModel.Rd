@@ -53,3 +53,4 @@ Other model: \code{\link{Domain}}, \code{\link{GBM}},
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
+\concept{model}

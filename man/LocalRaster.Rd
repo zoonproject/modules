@@ -33,3 +33,4 @@ Other covariate: \code{\link{AirNCEP}},
 \author{
 Tim Lucas, Samuel Bosch, \email{timcdlucas@gmail.com}
 }
+\concept{covariate}

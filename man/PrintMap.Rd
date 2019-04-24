@@ -83,3 +83,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 ZOON Developers, James Campbell, David Wilkinson \email{zoonproject@gmail.com}
 }
+\concept{output}

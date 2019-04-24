@@ -43,3 +43,4 @@ Other model: \code{\link{BiomodModel}}, \code{\link{GBM}},
 \author{
 Nick Golding, \email{nick.golding.research@gmail.com}
 }
+\concept{model}

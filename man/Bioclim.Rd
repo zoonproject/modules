@@ -4,7 +4,8 @@
 \alias{Bioclim}
 \title{Covariate module: Bioclim}
 \usage{
-Bioclim(extent = c(-180, 180, -90, 90), resolution = 10, layers = 1:5)
+Bioclim(extent = c(-180, 180, -90, 90), resolution = 10,
+  layers = 1:5)
 }
 \arguments{
 \item{extent}{Either a length 4 numeric vector giving min longitude, max longitude, min latitude, max latitude; or an object of class Extent}
@@ -38,3 +39,4 @@ Other covariate: \code{\link{AirNCEP}},
 \author{
 ZOON Developers, \email{zoonproject@@gmail.com}
 }
+\concept{covariate}

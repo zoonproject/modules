@@ -52,3 +52,4 @@ Other process: \code{\link{AddRandomUniformPredictors}},
 \author{
 Tom August, \email{tomaug@ceh.ac.uk}
 }
+\concept{process}

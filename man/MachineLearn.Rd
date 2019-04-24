@@ -67,3 +67,4 @@ Other model: \code{\link{BiomodModel}},
 \author{
 Tim CD Lucas, \email{timcdlucas@gmail.com}
 }
+\concept{model}

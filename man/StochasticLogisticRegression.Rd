@@ -40,3 +40,4 @@ Other model: \code{\link{BiomodModel}},
 \author{
 Nick Golding, \email{nick.golding.research@gmail.com}
 }
+\concept{model}

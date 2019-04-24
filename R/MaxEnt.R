@@ -2,13 +2,13 @@
 #'
 #' @description Model module to fit MaxEnt model via the dismo package
 #'
-#'@details In order to fit a MaxEnt model, you must first download the
+#' @details In order to fit a MaxEnt model, you must first download the
 #' MaxEnt executable file \code{maxent.jar} and save it in the correct location.
 #' The zoon function \code{GetMaxEnt} can orchestrate this for you.
 #' Running MaxEnt also requires an up-to-date version of java 
 #' (which you may already have installed).
 #'
-#'@param .df \strong{Internal parameter, do not use in the workflow function}.
+#' @param .df \strong{Internal parameter, do not use in the workflow function}.
 #' \code{.df} is data frame that combines the occurrence data and covariate
 #' data. \code{.df} is passed automatically in workflow from the process
 #' module(s) to the model module(s) and should not be passed by the user.
@@ -21,19 +21,35 @@
 #' (which may or may not be up-to-date) in this forum:
 #' \url{https://groups.google.com/d/msg/maxent/yRBlvZ1_9rQ/Fj8Two0lmHIJ}.
 #'
+#' @param path Filepath to choose where to save MaxEnt's html output file. Defaults
+#' to getwd().
+#' 
+#' @param factors Character string of the name of variables to be treated as factors.
+#' 
 #' @seealso \code{\link{dismo::maxent}}
 #'
-#' @author ZOON Developers, \email{zoonproject@@gmail.com}
-#' @section Version: 1.0
+#' @author ZOON Developers, David Wilkinson \email{zoonproject@@gmail.com}
+#' @section Version: 1.1
 #' @section Date submitted: 2015-11-13
+#' @section Date modified: 2018-04-24
 #' @section Data type: presence/background
 #'
 #' @name MaxEnt
 #' @family model
-MaxEnt <- function(.df, args = ''){
+
+MaxEnt <- function(.df, 
+                   args = '',
+                   path = getwd(),
+                   factors = NULL){
   
   zoon::GetPackage('dismo')
   zoon::GetPackage('rJava')
+  
+  if(!is.null(factors)){
+    
+    .df[ , factors] <- as.factor(.df[ , factors])
+    
+  }
   
   covs <- as.data.frame(.df[, attr(.df, 'covCols')])
   names(covs) <- attr(.df, 'covCols')
@@ -49,7 +65,8 @@ MaxEnt <- function(.df, args = ''){
   
   m <- maxent(x = covs,
               p = .df$value,
-              args = args)
+              args = args,
+              path = path)
   
   # create a ZoonModel object and return it
   ZoonModel(model = m,
@@ -62,9 +79,9 @@ MaxEnt <- function(.df, args = ''){
               na_idx <- attr(newdata_clean, 'na.action')
               if (is.null(na_idx)) idx <- 1:nrow(newdata)
               else idx <- -na_idx
-	      p[idx] <- dismo::predict(model,
-                             newdata_clean,
-                             type = 'response')
+              p[idx] <- dismo::predict(model,
+                                       newdata_clean,
+                                       type = 'response')
               return (p)
             },
             packages = 'dismo')
