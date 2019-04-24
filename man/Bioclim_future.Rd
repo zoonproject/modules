@@ -38,7 +38,8 @@ Other covariate: \code{\link{AirNCEP}},
   \code{\link{Bioclim}}, \code{\link{CarolinaWrenRasters}},
   \code{\link{LocalRaster}}, \code{\link{NCEP}},
   \code{\link{NaiveRandomRaster}}, \code{\link{UKAir}},
-  \code{\link{UKBioclim}}
+  \code{\link{UKBioclim}},
+  \code{\link{malariaAtlas_covariates}}
 }
 \author{
 F. Rodriguez-Sanchez & E. Van Loon, \email{zoonproject@gmail.com}

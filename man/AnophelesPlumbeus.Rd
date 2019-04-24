@@ -37,7 +37,8 @@ Other occurrence: \code{\link{CWBZimbabwe}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{SugarMaple}},
-  \code{\link{UKAnophelesPlumbeus}}
+  \code{\link{UKAnophelesPlumbeus}},
+  \code{\link{malariaAtlas_PR}}
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}

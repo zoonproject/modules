@@ -18,6 +18,11 @@ r_binary_packages:
 # Install zoon from Github
 r_github_packages:
  - zoonproject/zoon
+ 
+# Install devtools to allow travis to work.
+r_packages:
+ - devtools 
+
 
 ## After success update the code coverage
 after_success:
@@ -25,6 +30,7 @@ after_success:
  
 # Warnings don't fail build
 warnings_are_errors: false
+
  
 ## Email notification if the package pass status changes
 notifications:
