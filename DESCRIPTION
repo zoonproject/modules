@@ -34,7 +34,6 @@ Depends:
     glmnet,
     rJava,
     mgcv,
-    GRaF,
     sperrorest,
     SDMTools,
     randomForest,
