@@ -51,3 +51,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 E.E. van Loon, \email{e.e.vanloonD@uva.nl}
 }
+\concept{output}

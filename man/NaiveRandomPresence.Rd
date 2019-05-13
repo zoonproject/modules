@@ -4,8 +4,8 @@
 \alias{NaiveRandomPresence}
 \title{Naive Random Presence}
 \usage{
-NaiveRandomPresence(extent = c(-10, 10, 45, 65), n = 1000, seed = NULL,
-  projection = NULL)
+NaiveRandomPresence(extent = c(-10, 10, 45, 65), n = 1000,
+  seed = NULL, projection = NULL)
 }
 \arguments{
 \item{extent}{A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the random points. order: xmin, xmax, ymin, ymax. By default the extent of the UK.}
@@ -44,8 +44,10 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{SpOcc}}, \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}},
-  \code{\link{malariaAtlas_PR}}
+  \code{\link{malariaAtlas_PR}},
+  \code{\link{malariaAtlas_VecOcc}}
 }
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
+\concept{occurrence}

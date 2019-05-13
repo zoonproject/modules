@@ -54,3 +54,4 @@ Other process: \code{\link{AddRandomUniformPredictors}},
 \author{
 Nick Golding, \email{nick.golding.research@gmail.com}
 }
+\concept{process}

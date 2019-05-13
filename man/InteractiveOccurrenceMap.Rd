@@ -53,3 +53,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 David Wilkinson, \email{davidpw@student.unimelb.edu.au}
 }
+\concept{output}

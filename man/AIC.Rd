@@ -54,3 +54,4 @@ Other output: \code{\link{AUC}}, \code{\link{Appify}},
 \author{
 Liz Martin, \email{lizmartinresearch@gmail.com}
 }
+\concept{output}

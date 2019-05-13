@@ -4,8 +4,8 @@
 \alias{NaiveRandomRaster}
 \title{Naive Random Raster}
 \usage{
-NaiveRandomRaster(extent = c(-10, 10, 45, 65), res = 0.5, seed = NULL,
-  projection = "+proj=longlat +datum=WGS84")
+NaiveRandomRaster(extent = c(-10, 10, 45, 65), res = 0.5,
+  seed = NULL, projection = "+proj=longlat +datum=WGS84")
 }
 \arguments{
 \item{extent}{A numeric vector of length 4 giving the coordinates of the rectangular region within which to create the raaster. order: xmin, xmax, ymin, ymax. By default the extent of the UK}
@@ -41,3 +41,4 @@ Other covariate: \code{\link{AirNCEP}},
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
+\concept{covariate}

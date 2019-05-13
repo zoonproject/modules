@@ -4,7 +4,7 @@
 \alias{MaxEnt}
 \title{Model module: MaxEnt}
 \usage{
-MaxEnt(.df, args = "")
+MaxEnt(.df, args = "", path = getwd(), factors = NULL)
 }
 \arguments{
 \item{.df}{\strong{Internal parameter, do not use in the workflow function}.
@@ -19,6 +19,11 @@ help files, which list all of the options, aren't available on the web.
 You could try the MaxEnt graphical user interface, otherwise there is a list
 (which may or may not be up-to-date) in this forum:
 \url{https://groups.google.com/d/msg/maxent/yRBlvZ1_9rQ/Fj8Two0lmHIJ}.}
+
+\item{path}{Filepath to choose where to save MaxEnt's html output file. Defaults
+to getwd().}
+
+\item{factors}{Character string of the name of variables to be treated as factors.}
 }
 \description{
 Model module to fit MaxEnt model via the dismo package
@@ -31,11 +36,15 @@ Running MaxEnt also requires an up-to-date version of java
 (which you may already have installed).
 }
 \section{Version}{
- 1.0
+ 1.1
 }
 
 \section{Date submitted}{
  2015-11-13
+}
+
+\section{Date modified}{
+ 2018-04-24
 }
 
 \section{Data type}{
@@ -56,5 +65,6 @@ Other model: \code{\link{BiomodModel}},
   \code{\link{mgcv}}
 }
 \author{
-ZOON Developers, \email{zoonproject@gmail.com}
+ZOON Developers, David Wilkinson \email{zoonproject@gmail.com}
 }
+\concept{model}

@@ -4,9 +4,10 @@
 \alias{LocalOccurrenceData}
 \title{Occurrence module: LocalOccurrenceData}
 \usage{
-LocalOccurrenceData(filename = "myData.csv", occurrenceType = "presence",
-  columns = c(long = "longitude", lat = "latitude", value = "value"),
-  subsetSpecies = NULL, externalValidation = FALSE)
+LocalOccurrenceData(filename = "myData.csv",
+  occurrenceType = "presence", columns = c(long = "longitude", lat =
+  "latitude", value = "value"), subsetSpecies = NULL,
+  externalValidation = FALSE)
 }
 \arguments{
 \item{filename}{The path to the spreadsheet. The spreadsheet should have a header giving column names. The column names should be "longitude", latitude, and "value". "value" is a numeric such as a proportion, count or presence/absence (1/0). The file can be .csv, .tab, .tsv, or .xlsx}
@@ -47,8 +48,10 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{SugarMaple}},
   \code{\link{UKAnophelesPlumbeus}},
-  \code{\link{malariaAtlas_PR}}
+  \code{\link{malariaAtlas_PR}},
+  \code{\link{malariaAtlas_VecOcc}}
 }
 \author{
 ZOON Developers, David Wilkinson, \email{zoonproject@@gmail.com}
 }
+\concept{occurrence}

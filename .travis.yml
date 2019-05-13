@@ -18,6 +18,7 @@ r_binary_packages:
 # Install zoon from Github
 r_github_packages:
  - zoonproject/zoon
+ - goldingn/GRaF
  
 # Install devtools to allow travis to work.
 r_packages:

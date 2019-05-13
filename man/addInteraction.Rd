@@ -51,3 +51,4 @@ Other process: \code{\link{AddRandomUniformPredictors}},
 \author{
 Alison Johnston & Carsten F. Dormann, \email{alison.johnston@bto.org}
 }
+\concept{process}

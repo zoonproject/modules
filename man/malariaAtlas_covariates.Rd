@@ -48,3 +48,4 @@ Other covariate: \code{\link{AirNCEP}},
 \author{
 Tim Lucas, \email{timcdlucas@gmail.com}
 }
+\concept{covariate}

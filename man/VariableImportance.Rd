@@ -53,3 +53,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 Tom August, \email{tomaug@ceh.ac.uk}
 }
+\concept{output}

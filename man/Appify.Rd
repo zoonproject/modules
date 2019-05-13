@@ -56,3 +56,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 ZOON Developers, Tom August, \email{zoonproject@gmail.com}
 }
+\concept{output}

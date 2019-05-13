@@ -34,8 +34,10 @@ Other occurrence: \code{\link{AnophelesPlumbeus}},
   \code{\link{NaiveRandomPresenceAbsence}},
   \code{\link{NaiveRandomPresence}}, \code{\link{SpOcc}},
   \code{\link{UKAnophelesPlumbeus}},
-  \code{\link{malariaAtlas_PR}}
+  \code{\link{malariaAtlas_PR}},
+  \code{\link{malariaAtlas_VecOcc}}
 }
 \author{
 Matt Talluto & Nick Golding, \email{mtalluto@gmail.com}
 }
+\concept{occurrence}

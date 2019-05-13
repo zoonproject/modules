@@ -52,3 +52,4 @@ Other model: \code{\link{BiomodModel}},
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
+\concept{model}

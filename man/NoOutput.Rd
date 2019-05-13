@@ -52,3 +52,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 Tim Lucas, \email{timcdlucas@gmail.com}
 }
+\concept{output}

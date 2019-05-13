@@ -48,3 +48,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 ZOON Developers, \email{zoonproject@gmail.com}
 }
+\concept{output}

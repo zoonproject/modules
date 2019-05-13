@@ -54,3 +54,4 @@ Other output: \code{\link{AIC}}, \code{\link{AUC}},
 \author{
 Liz Martin, \email{emartin@student.unimelb.edu.au}
 }
+\concept{output}

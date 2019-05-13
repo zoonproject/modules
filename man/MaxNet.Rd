@@ -4,8 +4,8 @@
 \alias{MaxNet}
 \title{Model module: MaxNet}
 \usage{
-MaxNet(.df, features = "default", regmult = 1, clamp_predictions = TRUE,
-  prediction_type = "logistic")
+MaxNet(.df, features = "default", regmult = 1,
+  clamp_predictions = TRUE, prediction_type = "logistic")
 }
 \arguments{
 \item{.df}{\strong{Internal parameter, do not use in the workflow function}. 
@@ -76,3 +76,4 @@ Other model: \code{\link{BiomodModel}},
 \author{
 Nick Golding, \email{nick.golding.research@gmail.com}
 }
+\concept{model}

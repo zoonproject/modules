@@ -52,3 +52,4 @@ Other output: \code{\link{AIC}}, \code{\link{Appify}},
 \author{
 Liz Martin, \email{emartin@student.unimelb.edu.au}
 }
+\concept{output}
